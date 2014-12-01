@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!-- The attribute 'ng-app' is added to this tag. This defines that it's an AngularJS application with the starting point, module 'OfficeUI'. -->
+<html lang="en" ng-app="OfficeUI">
+<head>
+    <title>OfficeUI (Beta)</title>
+    
+    <!-- External JavaScript Files/Libraries which are needed by the application. -->
+    <!-- Note: In the source code, we're loading AngularJS, but we're not loading the minified version. This is because the minified
+         version has also minified error messages which makes debugging a lot harder to do. Therefore a 'normal' AngularJS file is used.
+         In the release version, this package will be changed to a minified AngularJS version. -->
+    <script src="/Resources/Scripts/External/jQuery/jquery-2.1.1.min.js"></script>
+    <script src="/Resources/Scripts/External/AngularJS/angular.js"></script>
+    
+    <!-- AngularJS Modules, Filters, Services and Controllers. -->
+    <!-- Note: The Modules, Filters, Services and Controllers are not minified. In the release version, we're using minified version of the file(s). -->
+    <script src="/Resources/Scripts/AngularJS/Modules/OfficeUI.AngularJS.Module.js"></script>
+    <script src="/Resources/Scripts/AngularJS/Modules/Ribbon/OfficeUI.AngularJS.Ribbon.Module.js"></script>
+    <script src="/Resources/Scripts/AngularJS/Controllers/OfficeUI.AngularJS.Controller.js"></script>
+    <script src="/Resources/Scripts/AngularJS/Controllers/Ribbon/OfficeUI.AngularJS.Ribbon.Controller.js"></script>
+    
+    <!-- External Stylesheets which are needed by the application. -->
+    
+    <!-- Core Stylesheets, which are stylesheets required for the application, without any plugins. -->
+    <!-- Note: The stylesheets are not minified in this release. In the release version, we're using minified versions of the file. -->
+    <link rel="stylesheet" href="/Resources/Stylesheet/OfficeUI.Core.css" />
+    
+    <!-- Code Styling Stylesheets. This are stylesheets that defines the colors of the application. -->
+    <!-- Note: The stylesheets are not minified in this release. In the release version, we're using minified versions of the file. -->
+    <link rel="stylesheet" href="/Resources/Stylesheet/Styles/OfficeUI.Core.Style.Blue.css" />
+</head>
+<body class="officeui-space-no-padding officeui-space-no-margin">
+    <!-- Defines a placeholder for the OfficeUI application. -->
+    <div id="OfficeUI" ng-controller="OfficeUI as OfficeUI"> <!-- Specify that this area is working with the controller 'OfficeUI'. -->
+        
+        <!-- Specify an area in which the application icons are showed. -->
+        <!-- Note: For the application icons, there's a special rule that applies.
+                   The application icons area can hold many different icons, which are loaded through a JSon file.
+                   However, the first element in the JSon array is always the application icon and CANNOT be disabled. -->
+        <div class="application-icons officeui-position-absolute">
+            <div ng-repeat="icon in OfficeUI.Icons" class="officeui-display-inline-block">
+                <div ng-class="{'action-icon':$first, 'application-icon': !$first}">
+                    <img ng-src="{{icon.Icon}}" />
+                </div>
+            </div>
+        </div>
+        <!-- End: Specify an area in which the application icons are showed. -->
+        
+        <!-- Defines the title of the application. -->
+        <div class="header officeui-borders-border-bottom-grey">
+            <div class="title">{{OfficeUI.Title}}</div>
+        </div>
+        <!-- End: Defines the title of the application. -->
+        
+        <div ng-controller="OfficeUIRibbon as OfficeUIRibbon">
+            <div  ng-repeat="tab in OfficeUIRibbon.Tabs">
+                {{tab.Label}}
+            </div>
+        </div>
+    </div>
+    <!-- End: Defines a placeholder for the OfficeUI application. -->
+</body>
+</html>

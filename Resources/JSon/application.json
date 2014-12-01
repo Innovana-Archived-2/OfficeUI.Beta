@@ -1,0 +1,17 @@
+{
+  "Title": "Inbox - user@github.com - Outlook",
+  "Icons": [
+    {
+      "Icon": "Resources/Images/Application/Application.png",
+      "Enabled": true
+    },
+    {
+      "Icon": "Resources/Images/Application/Send-Receive.png",
+      "Enabled": true
+    },
+    {
+      "Icon": "Resources/Images/Application/Undo.png",
+      "Enabled": false
+    }
+  ]
+}

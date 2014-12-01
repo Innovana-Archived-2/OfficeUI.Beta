@@ -1,0 +1,25 @@
+{
+    "Tabs": 
+    [
+        {
+            "Id": "tabFile",
+            "Label": "File"
+        },
+        {
+            "Id": "tabHome",
+            "Label": "Home"
+        },
+        {
+            "Id": "tabSendReceive",
+            "Label": "Send / Receive"
+        },
+        {
+            "Id": "tabFolder",
+            "Label": "Folder"
+        },
+        {
+            "Id": "tabView",
+            "Label": "View"
+        }
+    ]
+}

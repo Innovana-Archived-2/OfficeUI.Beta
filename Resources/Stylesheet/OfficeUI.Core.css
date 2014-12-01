@@ -1,0 +1,31 @@
+/* Elements that define spaces between elements. */
+.officeui-space-no-margin { margin: 0px; }
+.officeui-space-no-padding { padding: 0px; }
+
+/* Elements that define positioning. */
+.officeui-position-relative { position: relative; }
+.officeui-position-absolute { position: absolute; }
+
+/* Elements that define the alignment. */
+.officeui-align-center { text-align: center; }
+
+/* Elements that define the floating. */
+.officeui-float-right { float: right; }
+.officeui-float-left { float: left; }
+
+/* Elements that define the display. */
+.officeui-display-inline-block { display: inline-block; }
+
+/* Elements that defines borders. */
+.officeui-borders-border-bottom-grey { border-bottom: 1px solid #d4d4d4; }
+.officeui-borders-border-top-grey { border-top: 1px solid #d4d4d4; }
+.officeui-borders-border-left-grey { border-left: 1px solid #d4d4d4; }
+.officeui-borders-border-right-grey { border-right: 1px solid #d4d4d4; }
+
+/* Styling for the application. */
+#OfficeUI { color: #444; font-size: 0.75em; background-color: #fff; font-family: 'Segoe UI'; overflow: hidden; background: url('../Images/Application/Backgrounds/Circuit.png') no-repeat top right; }
+#OfficeUI > .header { width: 100%; text-align: center; height: 46px;}
+#OfficeUI > .header .title { margin: 6px 2px 0px 0px; }
+#OfficeUI .application-icons { top: 3px; left: 7px; }
+#OfficeUI .action-icon {width: 29px;}
+#OfficeUI .application-icon {width: 30px;}
