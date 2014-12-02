@@ -12,6 +12,10 @@
     <script src="/Resources/Scripts/External/jQueryUI/jquery-ui.min.js"></script>
     <script src="/Resources/Scripts/External/AngularJS/angular.js"></script>
     
+    <!-- jQuery plugins which needs to be loaded. -->
+    <!-- Note: The plugins are not minified in this release. In the release version, we're using minified versions of the file. -->
+    <script src="Resources/Scripts/Plugins/Effects/jQuery.Animation.Curtain.js"></script>
+    
     <!-- AngularJS Modules, Filters, Services, Directives and Controllers. -->
     <!-- Note: The Modules, Filters, Services, Directives and Controllers are not minified. In the release version, we're using minified version of the file(s). -->
     <script src="/Resources/Scripts/AngularJS/Modules/OfficeUI.AngularJS.Module.js"></script>
@@ -64,15 +68,19 @@
                 </li>
             </ul>
             
-            <ul role="tabContents" class="officeui-borders-border-bottom-grey officeui-space-no-padding officeui-space-no-margin">
-                <li style="position: relative; width: 100%; height: 92px;">
+            <!-- Defines the contents area of a tab element. -->
+            <ul role="tabContents" ng-class="{'officeui-borders-border-bottom-grey': !OfficeUIRibbon.hidden}" class=" officeui-space-no-padding officeui-space-no-margin">
+                <li class="officeui-position-relative">
+                    <br/><br/><br/>
+                    The contents of the tab are being placed here.
                     <!-- Collapse area. -->
                     <div ngc-hide class="officeui-position-absolute collapse">
                         <img src="/Resources/Images/Ribbon/Built-In/Collapse.png"/>
                     </div>
+                    <!-- End: Collapse area. -->
                 </li>    
             </ul>
-            <!-- End: Collapse area. -->
+            <!-- End: Define the contents area. -->
         </div>
         <!-- End: Define the ribbon. -->
         

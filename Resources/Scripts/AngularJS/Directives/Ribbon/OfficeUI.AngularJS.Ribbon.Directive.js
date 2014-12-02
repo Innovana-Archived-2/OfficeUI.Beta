@@ -29,10 +29,10 @@ OfficeUIRibbon.directive('ngcHide', function() {
         restrict: 'A',
         link: function(scope, element, attributes) {
             element.on('click', function (e) {
+                // ToDo: Recreate the following code to make it a jQuery plugin called 'Curtain'.
                 var tabContentsElement = element.parent().parent(); // Gets the 2nd parent element, this is the element hat holds the contents of the ribbon and which should be hidden.
                 
-                // Slide the tab up, so that the contents of the tab element are not visible anymore.
-                tabContentsElement.slideUp(250, function() {
+                tabContentsElement.curtain({ duration: 250 }, function() {
                     scope.hide();
                 });
             });

@@ -12,3 +12,4 @@
 #OfficeUI ul[role="tabContents"] .collapse { width: 29px; text-align: center; bottom: 0px; right: 0px; }
 #OfficeUI ul[role="tabContents"] .collapse img { padding-bottom: 1px; }
 #OfficeUI ul[role="tabContents"] .collapse:hover { background-color: #CDE6F7; }
+#OfficeUI ul[role="tabContents"] li { width: 100%; height: 92px; }
