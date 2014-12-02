@@ -9,20 +9,25 @@
          version has also minified error messages which makes debugging a lot harder to do. Therefore a 'normal' AngularJS file is used.
          In the release version, this package will be changed to a minified AngularJS version. -->
     <script src="/Resources/Scripts/External/jQuery/jquery-2.1.1.min.js"></script>
+    <script src="/Resources/Scripts/External/jQueryUI/jquery-ui.min.js"></script>
     <script src="/Resources/Scripts/External/AngularJS/angular.js"></script>
     
-    <!-- AngularJS Modules, Filters, Services and Controllers. -->
-    <!-- Note: The Modules, Filters, Services and Controllers are not minified. In the release version, we're using minified version of the file(s). -->
+    <!-- AngularJS Modules, Filters, Services, Directives and Controllers. -->
+    <!-- Note: The Modules, Filters, Services, Directives and Controllers are not minified. In the release version, we're using minified version of the file(s). -->
     <script src="/Resources/Scripts/AngularJS/Modules/OfficeUI.AngularJS.Module.js"></script>
     <script src="/Resources/Scripts/AngularJS/Modules/Ribbon/OfficeUI.AngularJS.Ribbon.Module.js"></script>
     <script src="/Resources/Scripts/AngularJS/Controllers/OfficeUI.AngularJS.Controller.js"></script>
     <script src="/Resources/Scripts/AngularJS/Controllers/Ribbon/OfficeUI.AngularJS.Ribbon.Controller.js"></script>
+    <script src="/Resources/Scripts/AngularJS/Directives/Ribbon/OfficeUI.AngularJS.Ribbon.Directive.js"></script>
     
     <!-- External Stylesheets which are needed by the application. -->
     
     <!-- Core Stylesheets, which are stylesheets required for the application, without any plugins. -->
     <!-- Note: The stylesheets are not minified in this release. In the release version, we're using minified versions of the file. -->
     <link rel="stylesheet" href="/Resources/Stylesheet/OfficeUI.Core.css" />
+    <link rel="stylesheet" href="/Resources/Stylesheet/Styles/OfficeUI.Core.Style.Blue.css" />
+    <link rel="stylesheet" href="/Resources/Stylesheet/Ribbon/OfficeUI.Ribbon.css" />
+    <link rel="stylesheet" href="/Resources/Stylesheet/Ribbon/Styles/OfficeUI.Ribbon.Blue.css" />
     
     <!-- Code Styling Stylesheets. This are stylesheets that defines the colors of the application. -->
     <!-- Note: The stylesheets are not minified in this release. In the release version, we're using minified versions of the file. -->
@@ -46,16 +51,34 @@
         <!-- End: Specify an area in which the application icons are showed. -->
         
         <!-- Defines the title of the application. -->
-        <div class="header officeui-borders-border-bottom-grey">
+        <div class="header">
             <div class="title">{{OfficeUI.Title}}</div>
         </div>
         <!-- End: Defines the title of the application. -->
         
-        <div ng-controller="OfficeUIRibbon as OfficeUIRibbon">
-            <div  ng-repeat="tab in OfficeUIRibbon.Tabs">
-                {{tab.Label}}
-            </div>
+        <!-- Defines the ribbon. -->
+        <div ngc-scroll class="ribbon" ng-controller="OfficeUIRibbon as OfficeUIRibbon">
+            <ul role="tabs" ng-class="{'officeui-borders-border-bottom-grey' : !OfficeUIRibbon.hidden}" class="officeui-borders-border-bottom-grey officeui-space-no-padding officeui-space-no-margin">
+                <li id="{{tab.Id}}" role="tab" ng-class="{application:$first, 'active officeui-borders-border-top-grey officeui-borders-border-left-grey officeui-borders-border-right-grey':!OfficeUIRibbon.hidden && OfficeUIRibbon.isActive(tab.Id)}" ng-repeat="tab in OfficeUIRibbon.Tabs" class="officeui-display-inline-block" ng-click="$first || OfficeUIRibbon.setTab(tab.Id)">
+                    <span class="label">{{tab.Label}}</span>
+                </li>
+            </ul>
+            
+            <ul role="tabContents" class="officeui-borders-border-bottom-grey officeui-space-no-padding officeui-space-no-margin">
+                <li style="position: relative; width: 100%; height: 92px;">
+                    <!-- Collapse area. -->
+                    <div ngc-hide class="officeui-position-absolute collapse">
+                        <img src="/Resources/Images/Ribbon/Built-In/Collapse.png"/>
+                    </div>
+                </li>    
+            </ul>
+            <!-- End: Collapse area. -->
         </div>
+        <!-- End: Define the ribbon. -->
+        
+        <!-- Defines the content area. -->
+        <div class="officeui-space-no-padding officeui-space-no-margin">Content area.</div>
+        <!-- End: Define the content area. -->
     </div>
     <!-- End: Defines a placeholder for the OfficeUI application. -->
 </body>
