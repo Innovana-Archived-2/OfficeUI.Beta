@@ -7,7 +7,7 @@
 */
 var OfficeUIRibbon = angular.module('OfficeUIRibbon');
 
-/* Defines a directive called 'ngcScroll'. According to AngularJS conventions, this directive must be called as 'ngc-Scroll'.
+/* Defines a directive called 'ngcScroll'. According to AngularJS conventions, this directive must be called as 'ngc-scroll'.
    This directive can only be placed as an attribute and will fire when you scroll on the element which is being marked with this
    directive. */
 OfficeUIRibbon.directive('ngcScroll', function() {
@@ -15,13 +15,13 @@ OfficeUIRibbon.directive('ngcScroll', function() {
         restrict: 'A',
         link: function(scope, element, attributes) {
             element.on('DOMMouseScroll mousewheel', function (e) { 
-                scope.changeTab(e);
+                scope.ribbonScroll(e);
             });
         }
     }
 });
 
-/* Defines a directive called 'ngcHide'. According to the AngularJS conventions, this directive must be called as 'ngc-Hide'.
+/* Defines a directive called 'ngcHide'. According to the AngularJS conventions, this directive must be called as 'ngc-hide'.
    This directive can only be placed as an attribute and will fire when you click on the element which is being marked with this 
    directive. */
 OfficeUIRibbon.directive('ngcHide', function() {
@@ -29,12 +29,25 @@ OfficeUIRibbon.directive('ngcHide', function() {
         restrict: 'A',
         link: function(scope, element, attributes) {
             element.on('click', function (e) {
-                // ToDo: Recreate the following code to make it a jQuery plugin called 'Curtain'.
                 var tabContentsElement = element.parent().parent(); // Gets the 2nd parent element, this is the element hat holds the contents of the ribbon and which should be hidden.
                 
                 tabContentsElement.curtain({ duration: 250 }, function() {
-                    scope.hide();
+                    scope.collapseRibbon('hide');
                 });
+            });
+        }
+    }
+});
+
+/* Defines a directive called 'ngcShow'. According to the AngularJS conventions, this directive must be called as 'ngc-show'.
+   This directive can only be placed as an attribute and will fire when you click on the element which is being marked with this 
+   directive. */
+OfficeUIRibbon.directive('ngcShow', function() {
+    return {
+        restrict: 'A',
+        link: function(scope, element, attributes) {
+            element.on('click', function (e) {
+                    scope.collapseRibbon('show');
             });
         }
     }

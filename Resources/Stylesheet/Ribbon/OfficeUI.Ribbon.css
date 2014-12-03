@@ -7,7 +7,7 @@
 #OfficeUI li[role="tab"]:not(.application).active { border-bottom: 1px solid #fff; }
 #OfficeUI li[role="tab"]:not(.application) { padding: 0px 13px 0px 12px; margin-right: 2px; }
 
-#OfficeUI ul[role="tabContents"] { height: 92px; }
+#OfficeUI ul[role="tabContents"] { z-index: 999; height: 92px; width: 100%; background-color: #fff; }
 
 #OfficeUI ul[role="tabContents"] .collapse { width: 29px; text-align: center; bottom: 0px; right: 0px; }
 #OfficeUI ul[role="tabContents"] .collapse img { padding-bottom: 1px; }

@@ -15,6 +15,7 @@
     <!-- jQuery plugins which needs to be loaded. -->
     <!-- Note: The plugins are not minified in this release. In the release version, we're using minified versions of the file. -->
     <script src="Resources/Scripts/Plugins/Effects/jQuery.Animation.Curtain.js"></script>
+    <script src="Resources/Scripts/Plugins/jQuery.Cookies.js"></script>
     
     <!-- AngularJS Modules, Filters, Services, Directives and Controllers. -->
     <!-- Note: The Modules, Filters, Services, Directives and Controllers are not minified. In the release version, we're using minified version of the file(s). -->
@@ -62,20 +63,26 @@
         
         <!-- Defines the ribbon. -->
         <div ngc-scroll class="ribbon" ng-controller="OfficeUIRibbon as OfficeUIRibbon">
-            <ul role="tabs" ng-class="{'officeui-borders-border-bottom-grey' : !OfficeUIRibbon.hidden}" class="officeui-borders-border-bottom-grey officeui-space-no-padding officeui-space-no-margin">
-                <li id="{{tab.Id}}" role="tab" ng-class="{application:$first, 'active officeui-borders-border-top-grey officeui-borders-border-left-grey officeui-borders-border-right-grey':!OfficeUIRibbon.hidden && OfficeUIRibbon.isActive(tab.Id)}" ng-repeat="tab in OfficeUIRibbon.Tabs" class="officeui-display-inline-block" ng-click="$first || OfficeUIRibbon.setTab(tab.Id)">
+            <ul role="tabs" ng-class="{'officeui-borders-border-bottom-grey' : OfficeUIRibbon.state == 1 || OfficeUIRibbon.state == 3}" class="officeui-space-no-padding officeui-space-no-margin">
+                <li id="{{tab.Id}}" role="tab" ng-class="{application:$first, 'active officeui-borders-border-top-grey officeui-borders-border-left-grey officeui-borders-border-right-grey': (OfficeUIRibbon.state == 1 ||  OfficeUIRibbon.state == 3) && OfficeUIRibbon.isActive(tab.Id)}" ng-repeat="tab in OfficeUIRibbon.Tabs" class="officeui-display-inline-block" ng-click="$first || OfficeUIRibbon.setTab(tab.Id)">
                     <span class="label">{{tab.Label}}</span>
                 </li>
             </ul>
             
             <!-- Defines the contents area of a tab element. -->
-            <ul role="tabContents" ng-class="{'officeui-borders-border-bottom-grey': !OfficeUIRibbon.hidden}" class=" officeui-space-no-padding officeui-space-no-margin">
-                <li class="officeui-position-relative">
+            <ul ng-style="{height: OfficeUIRibbon.height}" role="tabContents" ng-class="{'officeui-position-absolute': OfficeUIRibbon.state == 3, 'officeui-borders-border-bottom-grey': OfficeUIRibbon.state == 1 || OfficeUIRibbon.state == 3}" class=" officeui-space-no-padding officeui-space-no-margin">
+                <li ng-class="{'officeui-display-hidden': !OfficeUIRibbon.isActive(tabContents.Id)}" class="officeui-position-relative" ng-repeat="tabContents in OfficeUIRibbon.Tabs">
                     <br/><br/><br/>
-                    The contents of the tab are being placed here.
+                    This is the tab with index: {{$index}}
                     <!-- Collapse area. -->
-                    <div ngc-hide class="officeui-position-absolute collapse">
+                    <!-- Note: In this area, we're placing 2 single times the collapse area, since based on the state of the ribbon,
+                               we need to show a different icon. -->
+                    <div ngc-hide ng-if="OfficeUIRibbon.state == 1" class="officeui-position-absolute collapse">
                         <img src="/Resources/Images/Ribbon/Built-In/Collapse.png"/>
+                    </div>
+                    
+                    <div ngc-show ng-if="OfficeUIRibbon.state == 3" class="officeui-position-absolute collapse">
+                        <img src="/Resources/Images/Ribbon/Built-In/Pin.png"/>
                     </div>
                     <!-- End: Collapse area. -->
                 </li>    
@@ -85,7 +92,7 @@
         <!-- End: Define the ribbon. -->
         
         <!-- Defines the content area. -->
-        <div class="officeui-space-no-padding officeui-space-no-margin">Content area.</div>
+        <div id="contents" class="officeui-space-no-padding officeui-space-no-margin" style="z-index: 100;">Content area.</div>
         <!-- End: Define the content area. -->
     </div>
     <!-- End: Defines a placeholder for the OfficeUI application. -->

@@ -15,6 +15,7 @@
 
 /* Elements that define the display. */
 #OfficeUI .officeui-display-inline-block { display: inline-block; }
+#OfficeUI .officeui-display-hidden { display: none; }
 
 /* Elements that defines borders. */
 #OfficeUI .officeui-borders-border-bottom-grey { border-bottom: 1px solid #d4d4d4 !important; }
