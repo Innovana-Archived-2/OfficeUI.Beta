@@ -7,6 +7,19 @@
 */
 var OfficeUIRibbon = angular.module('OfficeUIRibbon');
 
+/* Defines a directive called 'ribbon'. This directive must be called as an element. */
+OfficeUIRibbon.directive('ribbon', function() {
+    return {
+        restrict: 'E',
+        replace: false,
+        scope: {
+            template: '@template'
+        },
+        link: function(scope, element, attribute) { },
+        templateUrl: '/OfficeUI.Beta/Resources/Templates/Ribbon.html'
+    };
+});
+
 /* Defines a directive called 'ngcRibbon'. According to AngularJS conventions, this directive must be called as 'ngc-ribbon'. */
 OfficeUIRibbon.directive('ngcRibbon', function() {
     return {

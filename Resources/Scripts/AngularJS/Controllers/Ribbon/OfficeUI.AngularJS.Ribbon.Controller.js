@@ -85,7 +85,7 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', function($scope,
     }
 
     // Get the Json file 'ribbon.json' that defines the ribbon data.
-    $http.get('/OfficeUI.Beta/Resources/JSon/Ribbon/ribbon.json')
+    $http.get($scope.template)
         .success(function(data) {
             ribbon.Tabs = data.Tabs;
             
