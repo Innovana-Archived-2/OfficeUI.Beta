@@ -16,7 +16,7 @@
         #OfficeUI li[role="tab"]:not(.application) { padding: 0px 13px 0px 12px; margin-right: 2px; }
 
     /* Styling for the contents of the tabs. */
-    #OfficeUI ul[role="tabContents"] { z-index: 999; height: 92px; width: 100%; background-color: #fff; } /* The contents of the tab has been given a high z-index, to make sure that this element is always on top. */
+    #OfficeUI ul[role="tabContents"] { overflow: hidden; z-index: 999; height: 92px; width: 100%; background-color: #fff; } /* The contents of the tab has been given a high z-index, to make sure that this element is always on top. */
     
         /* Styling for the collapse area of the ribbon. */
         #OfficeUI ul[role="tabContents"] .collapse { width: 29px; text-align: center; bottom: 0px; right: 0px; }
@@ -29,4 +29,4 @@
         /* Styling for the groups. */
         #OfficeUI ul[role="tabContents"] li .groups { height: 84px; padding-top: 4px; padding-bottom: 4px;}
         #OfficeUI ul[role="tabContents"] li .group { height: 100%; }
-        #OfficeUI ul[role="tabContents"] li .group .legend { margin-top: 73px; font-size: 0.9em; color: #666; padding-left: 32px; padding-right: 43px; }
+        #OfficeUI ul[role="tabContents"] li .group .legend { margin-top: 72px; font-size: 0.9em; color: #666; padding-left: 32px; padding-right: 43px; }

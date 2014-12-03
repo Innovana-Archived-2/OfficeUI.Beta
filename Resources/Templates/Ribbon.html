@@ -9,12 +9,11 @@
     <ul ngc-collapse="#contents" ng-style="{height: OfficeUIRibbon.height}" role="tabContents" ng-class="{'officeui-position-absolute': OfficeUIRibbon.state == 3, 'officeui-borders-border-bottom-grey': OfficeUIRibbon.state == 1 || OfficeUIRibbon.state == 3}" class=" officeui-space-no-padding officeui-space-no-margin">
         <li ng-class="{'officeui-display-hidden': !OfficeUIRibbon.isActive(tabContents.Id)}" class="officeui-position-relative" ng-repeat="tabContents in OfficeUIRibbon.Tabs">
             <!-- Define the content area of a ribbon tab. -->
-            <!--<div class="groups">
+            <div class="groups">
                 <div ng-repeat="group in tabContents.Groups" class="group officeui-display-inline-block officeui-position-relative officeui-borders-border-right-grey">
                     <div class="legend">{{group.Legend}}</div>
                 </div>
-            </div>-->
-            sdfsdmlk<br/>sdfsdmlk<br/>sdfsdmlk<br/>sdfsdmlk<br/>sdfsdmlk
+            </div>
             <!-- End of the content area of a ribbon tab. -->
 
             <!-- Collapse area. -->
