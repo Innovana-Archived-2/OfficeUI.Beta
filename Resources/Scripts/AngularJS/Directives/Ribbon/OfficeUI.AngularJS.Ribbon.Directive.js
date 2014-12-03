@@ -78,7 +78,6 @@ OfficeUIRibbon.directive('ngcCollapse', function() {
                     var officeUIContents = $(attributes['ngcCollapse']).addClass('officeui-position-absolute').animate({top: 146}, 250, function () {
                         $(this).removeClass('officeui-position-absolute');
                         scope.setRibbonState(1);
-                        scope.refresh();
                     });
                 }
             });

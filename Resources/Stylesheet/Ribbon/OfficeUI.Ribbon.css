@@ -25,3 +25,8 @@
         
         /* General styling of the contents of the tab. */
         #OfficeUI ul[role="tabContents"] li { width: 100%; height: 92px; }
+
+        /* Styling for the groups. */
+        #OfficeUI ul[role="tabContents"] li .groups { height: 84px; padding-top: 4px; padding-bottom: 4px;}
+        #OfficeUI ul[role="tabContents"] li .group { height: 100%; }
+        #OfficeUI ul[role="tabContents"] li .group .legend { margin-top: 73px; font-size: 0.9em; color: #666; padding-left: 32px; padding-right: 43px; }

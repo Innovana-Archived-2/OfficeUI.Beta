@@ -3,22 +3,20 @@
     [
         {
             "Id": "tabFile",
-            "Label": "File",
-            "Groups": [
-                {
-                    "Legend": "New"
-                },
-                {
-                    "Legend": "New"
-                }
-            ]
+            "Label": "File"
         },
         {
             "Id": "tabHome",
             "Label": "Home",
             "Groups": [
                 {
-
+                    "Legend": "New"
+                },
+                {
+                    "Legend": "Delete"
+                },
+                {
+                    "Legend": "Respond"
                 }
             ]
         },
