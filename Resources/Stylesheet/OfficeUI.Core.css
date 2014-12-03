@@ -3,8 +3,9 @@
 .officeui-space-no-padding { padding: 0px; }
 
 /* Elements that define positioning. */
-#OfficeUI .officeui-position-relative { position: relative; }
-#OfficeUI .officeui-position-absolute { position: absolute; }
+#OfficeUI .officeui-position-relative { position: relative; } /* Position an element relative to it's normal position. Element is NOT removed from the normal flow. */
+#OfficeUI .officeui-position-absolute { position: absolute; } /* Position an element relative to the first parent element that has another display that 'static'. In case such an element does not exists, the <html> element will be used. */
+#OfficeUI .officeui-position-fixed { position: fixed; } /* Element is moved out of the normal place and positioned relatively to the window. */
 
 /* Elements that define the alignment. */
 #OfficeUI .officeui-align-center { text-align: center; }
@@ -23,10 +24,22 @@
 #OfficeUI .officeui-borders-border-left-grey { border-left: 1px solid #d4d4d4 !important; }
 #OfficeUI .officeui-borders-border-right-grey { border-right: 1px solid #d4d4d4 !important; }
 
+/* General OfficeUI elements. */
+#OfficeUI .container-full-width { width: 100%; }
+
 /* Styling for the application. */
 #OfficeUI { color: #444; font-size: 0.75em; background-color: #fff; font-family: 'Segoe UI'; overflow: hidden; background: url('../Images/Application/Backgrounds/Circuit.png') no-repeat top right; }
-#OfficeUI > .header { width: 100%; text-align: center; height: 22px; }
-#OfficeUI > .header .title { margin: 6px 3px 0px 0px; }
-#OfficeUI .application-icons { top: 3px; left: 7px; }
-#OfficeUI .action-icon { width: 29px; }
-#OfficeUI .application-icon { width: 30px; }
+
+    /* Defining the top left of the application. The application icons.
+     * The area at the top as 2 different types of icons which can be showed: 
+     *  - appliction-icon:      The icon of the application, on which no effects are visible. The first icon in the application.json file will always
+     *                          be the application icon.
+     *  - action-icon:          A collection of icons that defines quick-access actions. Special effects are visible when hovering or clicking on those items.
+     */
+    #OfficeUI .application-icons { top: 3px; left: 7px; height: 22px; }
+    #OfficeUI .application-icons .icon-container, #OfficeUI .application-icons .icon-container .application-icon, #OfficeUI .application-icons .icon-container .action-icon { width: 29px; height: 22px; }
+    #OfficeUI .application-icons .icon-container:not(:first-child) { margin-right: 1px; }
+
+    /* Definition for the header. */
+    #OfficeUI > .header { height: 22px; }
+    #OfficeUI > .header .title { margin: 6px 3px 0px 0px; }

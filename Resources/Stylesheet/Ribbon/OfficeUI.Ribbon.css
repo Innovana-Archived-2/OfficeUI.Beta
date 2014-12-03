@@ -1,15 +1,27 @@
 /* General styling for the ribbon. */
-#OfficeUI .ribbon { width: 100%; }
-#OfficeUI ul[role="tabs"], #OfficeUI ul[role="tabContents"] { list-style: none; }
-#OfficeUI ul[role="tabs"] { height: 24px; }
-#OfficeUI li[role="tab"] { height: 23px; line-height: 23px; text-transform: uppercase; border-left: 1px solid #fff; border-top: 1px solid #fff; border-right: 1px solid #fff; }
-#OfficeUI li[role="tab"].application { margin-right: 4px; }
-#OfficeUI li[role="tab"]:not(.application).active { border-bottom: 1px solid #fff; }
-#OfficeUI li[role="tab"]:not(.application) { padding: 0px 13px 0px 12px; margin-right: 2px; }
+#OfficeUI .ribbon { }
+#OfficeUI .ribbon ul { list-style: none; }
 
-#OfficeUI ul[role="tabContents"] { z-index: 999; height: 92px; width: 100%; background-color: #fff; }
+    /* Styling for the tabs of the ribbon. */
+    #OfficeUI ul[role="tabs"] { height: 24px; }
+    
+        /* Styling for the tabs in general. */
+        #OfficeUI li[role="tab"] { height: 23px; line-height: 23px; text-transform: uppercase; border: 1px solid #fff; border-bottom: none; }
 
-#OfficeUI ul[role="tabContents"] .collapse { width: 29px; text-align: center; bottom: 0px; right: 0px; }
-#OfficeUI ul[role="tabContents"] .collapse img { padding-bottom: 1px; }
-#OfficeUI ul[role="tabContents"] .collapse:hover { background-color: #CDE6F7; }
-#OfficeUI ul[role="tabContents"] li { width: 100%; height: 92px; }
+        /* Styling for the application tab. */
+        #OfficeUI li[role="tab"].application { margin-right: 4px; }
+
+        /* Styling exlusively for non-application tabs. */
+        #OfficeUI li[role="tab"]:not(.application).active { border-bottom: 1px solid #fff; }
+        #OfficeUI li[role="tab"]:not(.application) { padding: 0px 13px 0px 12px; margin-right: 2px; }
+
+    /* Styling for the contents of the tabs. */
+    #OfficeUI ul[role="tabContents"] { z-index: 999; height: 92px; width: 100%; background-color: #fff; } /* The contents of the tab has been given a high z-index, to make sure that this element is always on top. */
+    
+        /* Styling for the collapse area of the ribbon. */
+        #OfficeUI ul[role="tabContents"] .collapse { width: 29px; text-align: center; bottom: 0px; right: 0px; }
+        #OfficeUI ul[role="tabContents"] .collapse img { padding-bottom: 1px; }
+        #OfficeUI ul[role="tabContents"] .collapse:hover { background-color: #CDE6F7; }
+        
+        /* General styling of the contents of the tab. */
+        #OfficeUI ul[role="tabContents"] li { width: 100%; height: 92px; }

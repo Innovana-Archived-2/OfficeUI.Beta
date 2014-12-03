@@ -1,1 +1,3 @@
-#OfficeUI .application-icon img:hover { background-color: #cde6f7; }
+/* Specific styling for coloring icons when hovering on them. */
+#OfficeUI .application-icons .icon-container .action-icon img:hover { background-color: #cde6f7; }
+#OfficeUI .application-icons .icon-container .action-icon img:active { background-color: #92C0E0; }
