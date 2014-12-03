@@ -3,23 +3,51 @@
     [
         {
             "Id": "tabFile",
-            "Label": "File"
+            "Label": "File",
+            "Groups": [
+                {
+                    "Legend": "New"
+                },
+                {
+                    "Legend": "New"
+                }
+            ]
         },
         {
             "Id": "tabHome",
-            "Label": "Home"
+            "Label": "Home",
+            "Groups": [
+                {
+
+                }
+            ]
         },
         {
             "Id": "tabSendReceive",
-            "Label": "Send / Receive"
+            "Label": "Send / Receive",
+            "Groups": [
+                {
+
+                }
+            ]
         },
         {
             "Id": "tabFolder",
-            "Label": "Folder"
+            "Label": "Folder",
+            "Groups": [
+                {
+
+                }
+            ]
         },
         {
             "Id": "tabView",
-            "Label": "View"
+            "Label": "View",
+            "Groups": [
+                {
+
+                }
+            ]
         }
     ]
 }

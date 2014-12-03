@@ -69,26 +69,11 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', function($scope,
         $scope.refresh(); // Update the view.
     }
 
-    // Collapse the ribbon.
-    // Parameters:
-    //      State:      The state that defines the animation to execute. Should be either 'show' or 'hide'.
-    $scope.collapseRibbon = function(state) {
-        // Perform validation to the parameter values.
-        if (state != 'hide' && state != 'show') {
-            console.error('Only \'hide\' and \'show\' are valid parameters for the \'collapseRibbon\' function.');
-            // Store the state of the ribbon in cookie.
-        } else if (state == 'show') {
-
-        }
-
-        $scope.refresh(); // Update the view since we've collapsed the ribbon for the moment.
-    }
-
     // Get the Json file 'ribbon.json' that defines the ribbon data.
     $http.get($scope.template)
         .success(function(data) {
             ribbon.Tabs = data.Tabs;
-            
+
             // Sets the second tab as the active one. The second one is the tab next to the application tab.
             ribbon.activeTab = data.Tabs[1].Id;
         })

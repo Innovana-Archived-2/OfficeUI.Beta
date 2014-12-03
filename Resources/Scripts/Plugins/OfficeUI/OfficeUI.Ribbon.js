@@ -23,7 +23,8 @@ var Ribbon = {
                 var tabContentsElement = $(contentsSelector);
 
                 tabContentsElement.curtain({ duration: 250 }, function() {
-                    Ribbon.scope.collapseRibbon('hide');
+                    Ribbon.scope.setRibbonState(2);
+                    Ribbon.scope.refresh();
                 });
             }
         });
