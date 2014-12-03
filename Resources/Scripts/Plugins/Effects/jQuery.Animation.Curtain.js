@@ -3,6 +3,7 @@
     // Provides a way to animate an element as a curtain. This function can be modified by passing options to it.
     // The options contains the following:
     //      duration:       The amount of time in milliseconds that the animation should take.
+    //      direction:      The direction in which the curtain should be move. 'up' or 'down'.
     // Another parameter to pass to the function is a parameter named 'callback'. This parameter defines a function that is executed when 
     // the animation is completed.
     $.fn.curtain = function(options, callback) {
@@ -33,11 +34,6 @@
                         callback(this);
                     }
                 });
-                    
-                    //if ($.isFunction(callback)) {
-                    //    callback(this);
-                    //}
-                //});
             }
         }
     
