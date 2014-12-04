@@ -16,7 +16,7 @@ OfficeUIRibbon.directive('ribbon', function() {
             template: '@template'
         },
         link: function(scope, element, attribute) { },
-        templateUrl: '/Resources/Templates/Ribbon.html'
+        templateUrl: '/OfficeUI.Beta/Resources/Templates/Ribbon.html'
     };
 });
 
