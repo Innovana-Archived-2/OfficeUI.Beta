@@ -5,3 +5,6 @@
     #OfficeUI li[role="tab"].application { background-color: #0072C6; color: #fff; border: 1px solid #0072c6; min-width: 57px; text-align: center; }
     #OfficeUI li[role="tab"].application:hover { background-color: #2A8AD4; border: 1px solid #2A8AD4; }
     #OfficeUI li[role="tab"]:not(.application).active { color: #0072C6; }
+
+    /* Contents styling. */
+    #OfficeUI ul[role="tabContents"] li .group .group-control-container .area .action:hover { background-color: #cde6f7;}

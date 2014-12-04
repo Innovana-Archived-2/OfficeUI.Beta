@@ -6,15 +6,28 @@
     </ul>
 
     <!-- Defines the contents area of a tab element. -->
-    <ul ng-style="{height: OfficeUIRibbon.height}" role="tabContents" ng-class="{'officeui-position-absolute': OfficeUIRibbon.state == 3, 'officeui-borders-border-bottom-grey': OfficeUIRibbon.state == 1 || OfficeUIRibbon.state == 3}" class=" officeui-space-no-padding officeui-space-no-margin">
-        <li ng-class="{'officeui-display-hidden': !OfficeUIRibbon.isActive(tabContents.Id)}" class="officeui-position-relative" ng-repeat="tabContents in OfficeUIRibbon.Tabs">
+    <ul ng-style="{height: OfficeUIRibbon.height}" role="tabContents" ng-class="{'officeui-position-absolute': OfficeUIRibbon.state == 3, 'officeui-borders-border-bottom-grey': OfficeUIRibbon.state == 1 || OfficeUIRibbon.state == 3}" class="officeui-space-no-padding officeui-space-no-margin">
+        <li ng-class="{'officeui-display-hidden': !OfficeUIRibbon.isActive(tabContents.Id)}" ng-repeat="tabContents in OfficeUIRibbon.Tabs">
             <!-- Define the content area of a ribbon tab. -->
-            <div ng-repeat="group in tabContents.Groups" class="group officeui-display-inline-block officeui-position-relative">
-                <div class="legend officeui-position-relative">{{group.Legend}}</div>
-                
-                <div class="group-control-container officeui-position-absolute officeui-borders-border-right-grey">
-                    
+            <div ng-repeat-start="group in tabContents.Groups" class="group officeui-display-inline-block">
+                <div ng-repeat="area in group.Areas">
+                    <!--<div ng-repeat="action in area.Actions" style="display: inline-block;">-->
+                        demo
+                    <!--</div>-->
                 </div>
+                <!--<div>
+                    <div style="height: 77px; display: inline-block;" ng-repeat="area in group.Areas" >
+                        <div ng-repeat="action in area.Actions" style="display: inline-block;">
+                            
+
+                        </div>
+                    </div>  
+                </div>-->
+                <div style="position: relative; top: 75px; text-align: center; font-size: 0.9em; color: #666;">{{group.Legend}}</div>
+            </div>
+            
+            <div ng-repeat-end="" class="officeui-borders-border-right-grey" style="display: inline-block; height: 92px;">
+                &nbsp;
             </div>
             <!-- End of the content area of a ribbon tab. -->
 

@@ -100,4 +100,5 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', function($scope,
     this.isActive = function(tabId) {
         return this.activeTab == tabId;
     }
+    
 }]);

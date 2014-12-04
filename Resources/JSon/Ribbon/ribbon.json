@@ -10,25 +10,71 @@
             "Label": "Home",
             "Groups": [
                 {
-                    "Legend": "New"
+                    "Legend": "New",
+                    "Areas": [
+                        {
+                            "Actions": [
+                                {
+                                    "Resource": "/Resources/Images/Ribbon/Tabs/Home/NewMailMessage.png",
+                                    "Legend": "New<br/>Email",
+                                    "Type": "bIcon"
+                                },
+                                {
+                                    "Resource": "/Resources/Images/Ribbon/Tabs/Home/NewItemMenu.png",
+                                    "Legend": "New<br/>Items",
+                                    "Type": "bIcon"
+                                }
+                            ]
+                        }
+                    ]
                 },
                 {
-                    "Legend": "Delete"
+                    "Legend": "Delete",
+                    "Areas": [
+                        {
+                            "Actions": [{}]
+                        }
+                    ]
                 },
                 {
-                    "Legend": "Respond"
+                    "Legend": "Respond",
+                    "Areas": [
+                        {
+                            "Actions": [{}]
+                        }
+                    ]
                 },
                 {
-                    "Legend": "Quick Steps"
+                    "Legend": "Quick Steps",
+                    "Areas": [
+                        {
+                            "Actions": [{}]
+                        }
+                    ]
                 },
                 {
-                    "Legend": "Move"
+                    "Legend": "Move",
+                    "Areas": [
+                        {
+                            "Actions": [{}]
+                        }
+                    ]
                 },
                 {
-                    "Legend": "Tags"
+                    "Legend": "Tags",
+                    "Areas": [
+                        {
+                            "Actions": [{}]
+                        }
+                    ]
                 },
                 {
-                    "Legend": "Find"
+                    "Legend": "Find",
+                    "Areas": [
+                        {
+                            "Actions": [{}]
+                        }
+                    ]
                 }
             ]
         },
@@ -37,16 +83,36 @@
             "Label": "Send / Receive",
             "Groups": [
                 {
-                    "Legend": "Send & Receive"
+                    "Legend": "Send & Receive",
+                    "Areas": [
+                        {
+                            "Actions": [{}]
+                        }
+                    ]
                 },
                 {
-                    "Legend": "Download"
+                    "Legend": "Download",
+                    "Areas": [
+                        {
+                            "Actions": [{}]
+                        }
+                    ]
                 },
                 {
-                    "Legend": "Server"
+                    "Legend": "Server",
+                    "Areas": [
+                        {
+                            "Actions": [{}]
+                        }
+                    ]
                 },
                 {
-                    "Legend": "Preferences"
+                    "Legend": "Preferences",
+                    "Areas": [
+                        {
+                            "Actions": [{}]
+                        }
+                    ]
                 }
             ]
         },
@@ -55,22 +121,52 @@
             "Label": "Folder",
             "Groups": [
                 {
-                    "Legend": "New"
+                    "Legend": "New",
+                    "Areas": [
+                        {
+                            "Actions": [{}]
+                        }
+                    ]
                 },
                 {
-                    "Legend": "Actions"
+                    "Legend": "Actions",
+                    "Areas": [
+                        {
+                            "Actions": [{}]
+                        }
+                    ]
                 },
                 {
-                    "Legend": "Clean Up"
+                    "Legend": "Clean Up",
+                    "Areas": [
+                        {
+                            "Actions": [{}]
+                        }
+                    ]
                 },
                 {
-                    "Legend": "Favorites"
+                    "Legend": "Favorites",
+                    "Areas": [
+                        {
+                            "Actions": [{}]
+                        }
+                    ]
                 },
                 {
-                    "Legend": "Online View"
+                    "Legend": "Online View",
+                    "Areas": [
+                        {
+                            "Actions": [{}]
+                        }
+                    ]
                 },
                 {
-                    "Legend": "Properties"
+                    "Legend": "Properties",
+                    "Areas": [
+                        {
+                            "Actions": [{}]
+                        }
+                    ]
                 }
             ]
         },
@@ -79,22 +175,52 @@
             "Label": "View",
             "Groups": [
                 {
-                    "Legend": "Current View"
+                    "Legend": "Current View",
+                    "Areas": [
+                        {
+                            "Actions": [{}]
+                        }
+                    ]
                 },
                 {
-                    "Legend": "Messages"
+                    "Legend": "Messages",
+                    "Areas": [
+                        {
+                            "Actions": [{}]
+                        }
+                    ]
                 },
                 {
-                    "Legend": "Arrangement"
+                    "Legend": "Arrangement",
+                    "Areas": [
+                        {
+                            "Actions": [{}]
+                        }
+                    ]
                 },
                 {
-                    "Legend": "Layout"
+                    "Legend": "Layout",
+                    "Areas": [
+                        {
+                            "Actions": [{}]
+                        }
+                    ]
                 },
                 {
-                    "Legend": "People Pane"
+                    "Legend": "People Pane",
+                    "Areas": [
+                        {
+                            "Actions": [{}]
+                        }
+                    ]
                 },
                 {
-                    "Legend": "Window"
+                    "Legend": "Window",
+                    "Areas": [
+                        {
+                            "Actions": [{}]
+                        }
+                    ]
                 }
             ]
         }
