@@ -17,6 +17,18 @@
                 },
                 {
                     "Legend": "Respond"
+                },
+                {
+                    "Legend": "Quick Steps"
+                },
+                {
+                    "Legend": "Move"
+                },
+                {
+                    "Legend": "Tags"
+                },
+                {
+                    "Legend": "Find"
                 }
             ]
         },
@@ -25,7 +37,16 @@
             "Label": "Send / Receive",
             "Groups": [
                 {
-
+                    "Legend": "Send & Receive"
+                },
+                {
+                    "Legend": "Download"
+                },
+                {
+                    "Legend": "Server"
+                },
+                {
+                    "Legend": "Preferences"
                 }
             ]
         },
@@ -34,7 +55,22 @@
             "Label": "Folder",
             "Groups": [
                 {
-
+                    "Legend": "New"
+                },
+                {
+                    "Legend": "Actions"
+                },
+                {
+                    "Legend": "Clean Up"
+                },
+                {
+                    "Legend": "Favorites"
+                },
+                {
+                    "Legend": "Online View"
+                },
+                {
+                    "Legend": "Properties"
                 }
             ]
         },
@@ -43,7 +79,22 @@
             "Label": "View",
             "Groups": [
                 {
-
+                    "Legend": "Current View"
+                },
+                {
+                    "Legend": "Messages"
+                },
+                {
+                    "Legend": "Arrangement"
+                },
+                {
+                    "Legend": "Layout"
+                },
+                {
+                    "Legend": "People Pane"
+                },
+                {
+                    "Legend": "Window"
                 }
             ]
         }

@@ -25,11 +25,7 @@
             if (settings.height == 0) {
                 console.error('When the effect \'curtain\' is called with the \'down\' direction, the height must be specified as an option parameter aswell.');
             } else {
-                $(this).animate({height:settings.height}, settings.duration);
-                $(this).children().animate({'margin-top': elementHeight + 'px'}, settings.duration, function() {
-                    //$(this).css({"margin-top":0});
-
-                    // Execute the callback function when it's defined.
+                $(this).animate({height:settings.height}, settings.duration, function() {
                     if ($.isFunction(callback)) {
                         callback(this);
                     }

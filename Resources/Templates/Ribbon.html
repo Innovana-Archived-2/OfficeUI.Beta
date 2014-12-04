@@ -6,7 +6,7 @@
     </ul>
 
     <!-- Defines the contents area of a tab element. -->
-    <ul ngc-collapse="#contents" ng-style="{height: OfficeUIRibbon.height}" role="tabContents" ng-class="{'officeui-position-absolute': OfficeUIRibbon.state == 3, 'officeui-borders-border-bottom-grey': OfficeUIRibbon.state == 1 || OfficeUIRibbon.state == 3}" class=" officeui-space-no-padding officeui-space-no-margin">
+    <ul ng-style="{height: OfficeUIRibbon.height}" role="tabContents" ng-class="{'officeui-position-absolute': OfficeUIRibbon.state == 3, 'officeui-borders-border-bottom-grey': OfficeUIRibbon.state == 1 || OfficeUIRibbon.state == 3}" class=" officeui-space-no-padding officeui-space-no-margin">
         <li ng-class="{'officeui-display-hidden': !OfficeUIRibbon.isActive(tabContents.Id)}" class="officeui-position-relative" ng-repeat="tabContents in OfficeUIRibbon.Tabs">
             <!-- Define the content area of a ribbon tab. -->
             <div class="groups">
@@ -17,14 +17,16 @@
             <!-- End of the content area of a ribbon tab. -->
 
             <!-- Collapse area. -->
-            <!-- Note: In this area, we're placing 2 single times the collapse area, since based on the state of the ribbon,
-                       we need to show a different icon. -->
-            <div ng-if="OfficeUIRibbon.state == 1" class="officeui-position-absolute collapse">
-                <img src="/OfficeUI.Beta/Resources/Images/Ribbon/Built-In/Collapse.png"/>
-            </div>
+            <div id="collapseArea" ngc-collapse="{area: '#contents'}">
+                <!-- Note: In this area, we're placing 2 single times the collapse area, since based on the state of the ribbon,
+                           we need to show a different icon. -->
+                <div ng-if="OfficeUIRibbon.state == 1" class="officeui-position-absolute collapse">
+                    <img src="/Resources/Images/Ribbon/Built-In/Collapse.png"/>
+                </div>
 
-            <div ng-if="OfficeUIRibbon.state == 3" class="officeui-position-absolute collapse">
-                <img src="/OfficeUI.Beta/Resources/Images/Ribbon/Built-In/Pin.png"/>
+                <div ng-if="OfficeUIRibbon.state == 3" class="officeui-position-absolute collapse">
+                    <img src="/Resources/Images/Ribbon/Built-In/Pin.png"/>
+                </div>
             </div>
             <!-- End: Collapse area. -->
         </li>

@@ -16,7 +16,7 @@ OfficeUIRibbon.directive('ribbon', function() {
             template: '@template'
         },
         link: function(scope, element, attribute) { },
-        templateUrl: '/OfficeUI.Beta/Resources/Templates/Ribbon.html'
+        templateUrl: '/Resources/Templates/Ribbon.html'
     };
 });
 
@@ -62,36 +62,29 @@ OfficeUIRibbon.directive('ngcCollapse', function() {
     return {
         restrict: 'A',
         link: function(scope, element, attributes) {
-            element.on('click', function (e) {
+            // Get and parse the required parameters.
+            var parameters = scope.$eval(attributes['ngcCollapse']);
+            $(element).on('click', function (e) {
                 // If the ribbon is showed, we should hide it.
                 if (scope.ribbonState() == 1) {
-                    element.curtain({ duration: 250 }, function() {
+                    element.parent().parent().curtain({ duration: 250 }, function() {
                         CreateCookie(collapsedCookieName, 'true', 365);
                         scope.setRibbonState(2);
                     });
                 }
-
+                
                 // If the ribbon is hidden, we should show it.
                 if (scope.ribbonState() == 3) {
                     CreateCookie(collapsedCookieName, 'false', 365);
-
-                    var officeUIContents = $(attributes['ngcCollapse']).addClass('officeui-position-absolute').animate({top: 146}, 250, function () {
+                    
+                    element.parent().parent().curtain({direction: 'down', height: 92, duration: 250 });
+                    
+                    var officeUIContents = $(parameters.area).addClass('officeui-position-absolute').animate({top: 146}, 250, function () {
                         $(this).removeClass('officeui-position-absolute');
+                        $(this).css('top', 'auto');
                         scope.setRibbonState(1);
                     });
                 }
-            });
-        }
-    }
-});
-
-/* Defines a directive called 'ngcShow'. According to the AngularJS conventions, this directive must be called as 'ngc-show'. */
-OfficeUIRibbon.directive('ngcShow', function() {
-    return {
-        restrict: 'A',
-        link: function(scope, element, attributes) {
-            element.on('click', function (e) {
-                    scope.collapseRibbon('show');
             });
         }
     }
