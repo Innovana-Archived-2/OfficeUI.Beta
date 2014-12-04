@@ -6,13 +6,13 @@
     #OfficeUI ul[role="tabs"] { height: 24px; }
     
         /* Styling for the tabs in general. */
-        #OfficeUI li[role="tab"] { height: 23px; line-height: 23px; text-transform: uppercase; border: 1px solid #fff; border-bottom: none; }
+        #OfficeUI li[role="tab"] { height: 23px; line-height: 23px; text-transform: uppercase; border: 1px solid transparent; border-bottom: none; }
 
         /* Styling for the application tab. */
         #OfficeUI li[role="tab"].application { margin-right: 4px; }
 
         /* Styling exlusively for non-application tabs. */
-        #OfficeUI li[role="tab"]:not(.application).active { border-bottom: 1px solid #fff; }
+        #OfficeUI li[role="tab"]:not(.application).active { border-bottom: 1px solid #fff; background-color: #fff; }
         #OfficeUI li[role="tab"]:not(.application) { padding: 0px 13px 0px 12px; margin-right: 2px; }
 
     /* Styling for the contents of the tabs. */
