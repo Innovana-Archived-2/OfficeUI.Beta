@@ -30,7 +30,9 @@
 
     /* Styling for the actions. */
     #OfficeUI ul[role="tabContents"] li .group .area .action { vertical-align: top; }
-    #OfficeUI ul[role="tabContents"] li .group .area .action .action-icon { height: 34px; padding: 3px 5px 0px 5px; }
-    #OfficeUI ul[role="tabContents"] li .group .area .action .legend { line-height: 16px; }
+    #OfficeUI ul[role="tabContents"] li .group .area .action .action-icon.icon-big { height: 34px; padding: 3px 5px 0px 5px; }
+    #OfficeUI ul[role="tabContents"] li .group .area .action .action-icon.icon-small { padding: 3px 0px 0px 3px; }
+    #OfficeUI ul[role="tabContents"] li .group .area .action .icon-big.legend { line-height: 16px; }
+    #OfficeUI ul[role="tabContents"] li .group .area .action .icon-small.legend { vertical-align: top; padding-top: 3px; }
     
         

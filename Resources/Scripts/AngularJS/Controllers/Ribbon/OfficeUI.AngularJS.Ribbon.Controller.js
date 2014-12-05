@@ -81,6 +81,15 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', function($scope,
             console.error('An error occured while loading the \'ribbon.json\' file.');
         });
     
+    // Gets the class that should be placed on a specific action.
+    $scope.actionClass = function(action) {
+        if (action.Type == 'bIcon') {
+            return 'officeui-display-inline-block';
+        }
+        
+        return '';
+    }
+    
     // Sets the currently active tab based on it's id.
     this.setTab = function(tabId) {
         ribbon.activeTab = tabId;
@@ -100,5 +109,4 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', function($scope,
     this.isActive = function(tabId) {
         return this.activeTab == tabId;
     }
-    
 }]);
