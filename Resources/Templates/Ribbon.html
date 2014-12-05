@@ -7,21 +7,21 @@
 
     <!-- Defines the contents area of a tab element. -->
     <ul ng-style="{height: OfficeUIRibbon.height}" role="tabContents" ng-class="{'officeui-position-absolute': OfficeUIRibbon.state == 3, 'officeui-borders-border-bottom-grey': OfficeUIRibbon.state == 1 || OfficeUIRibbon.state == 3}" class="officeui-space-no-padding officeui-space-no-margin">
-        <li style="position: relative;" ng-class="{'officeui-display-hidden': !OfficeUIRibbon.isActive(tabContents.Id)}" ng-repeat="tabContents in OfficeUIRibbon.Tabs">
+        <li class="officeui-position-relative" ng-class="{'officeui-display-hidden': !OfficeUIRibbon.isActive(tabContents.Id)}" ng-repeat="tabContents in OfficeUIRibbon.Tabs">
             <!-- Defines the group area. -->
-            <div ng-repeat-start="group in tabContents.Groups" class="group" style="height: 92px; display: inline-block; position: relative; vertical-align:top;">
-                <div ng-repeat="area in group.Areas" style="height: 73px; vertical-align: top; display: inline-block; padding-top: 3px; padding-left: 4px; margin-right: 1px;">
-                    <div ng-repeat="action in area.Actions" class="action" style="vertical-align: top; height: 69px; display: inline-block; position: relative;">
-                        <div style="padding-left: 5px; padding-top: 3px; padding-right: 5px;">
+            <div ng-repeat-start="group in tabContents.Groups" class="group officeui-display-inline-block officeui-position-relative">
+                <div ng-repeat="area in group.Areas" class="area officeui-display-inline-block">
+                    <div ng-repeat="action in area.Actions" class="action officeui-align-center officeui-display-inline-block">
+                        <div class="action-icon">
                             <img ng-src="{{action.Resource}}" />
                         </div>
-                        <div ng-bind-html="action.Legend" style="width: 100%; text-align: center; bottom: 0px; line-height: 16px;">
+                        <div ng-bind-html="action.Legend" class="legend">
                         </div>
                     </div>
                 </div>
 
                 <!-- Defines the legend. -->
-                <div style="padding-left: 1px; padding-right: 2px; width: 100%; text-align: center; font-size: 0.9em; color: #666; bottom: 1px;">
+                <div class="legend officeui-align-center container-full-width officeui-position-absolute">
                     {{group.Legend}}
                 </div>
                 <!-- End: Definition of the group. -->
@@ -35,11 +35,11 @@
             <div id="collapseArea" ngc-collapse="{area: '#contents'}">
                 <!-- Note: In this area, we're placing 2 single times the collapse area, since based on the state of the ribbon,
                            we need to show a different icon. -->
-                <div ng-if="OfficeUIRibbon.state == 1" class="officeui-position-absolute collapse">
+                <div ng-if="OfficeUIRibbon.state == 1" class="officeui-position-absolute collapse officeui-align-center">
                     <img src="/OfficeUI.Beta/Resources/Images/Ribbon/Built-In/Collapse.png"/>
                 </div>
         
-                <div ng-if="OfficeUIRibbon.state == 3" class="officeui-position-absolute collapse">
+                <div ng-if="OfficeUIRibbon.state == 3" class="officeui-position-absolute collapse officeui-align-center">
                     <img src="/OfficeUI.Beta/Resources/Images/Ribbon/Built-In/Pin.png"/>
                 </div>
             </div>

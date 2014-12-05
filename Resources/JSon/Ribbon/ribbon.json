@@ -16,7 +16,7 @@
                             "Actions": [
                                 {
                                     "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/NewMailMessage.png",
-                                    "Legend": "New<br/>Email",
+                                    "Legend": "New<br/> Email",
                                     "Type": "bIcon"
                                 },
                                 {

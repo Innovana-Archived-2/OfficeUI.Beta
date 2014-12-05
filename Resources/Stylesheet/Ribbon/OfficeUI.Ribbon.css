@@ -1,38 +1,36 @@
-/* General styling for the ribbon. */
-#OfficeUI .ribbon { }
-#OfficeUI .ribbon ul { list-style: none; }
-
-    /* Styling for the tabs of the ribbon. */
-    #OfficeUI ul[role="tabs"] { height: 24px; }
+/* Styling for the tabs of the ribbon. */
+#OfficeUI ul[role="tabs"] { height: 24px; }
     
-        /* Styling for the tabs in general. */
-        #OfficeUI li[role="tab"] { height: 23px; line-height: 23px; text-transform: uppercase; border: 1px solid transparent; border-bottom: none; }
+    /* Styling for the tabs in general. */
+    #OfficeUI li[role="tab"] { height: 23px; line-height: 23px; text-transform: uppercase; border: 1px solid transparent; border-bottom: none; }
 
-        /* Styling for the application tab. */
-        #OfficeUI li[role="tab"].application { margin-right: 4px; }
+    /* Styling for the application tab. */
+    #OfficeUI li[role="tab"].application { margin-right: 4px; }
 
-        /* Styling exlusively for non-application tabs. */
-        #OfficeUI li[role="tab"]:not(.application).active { border-bottom: 1px solid #fff; background-color: #fff; }
-        #OfficeUI li[role="tab"]:not(.application) { padding: 0px 13px 0px 12px; margin-right: 2px; }
+    /* Styling exlusively for non-application tabs. */
+    #OfficeUI li[role="tab"]:not(.application).active { border-bottom: 1px solid #fff; background-color: #fff; }
+    #OfficeUI li[role="tab"]:not(.application) { padding: 0px 13px 0px 12px; margin-right: 2px; }
 
-    /* Styling for the contents of the tabs. */
-    #OfficeUI ul[role="tabContents"] { overflow: hidden; z-index: 999; height: 92px; width: 100%; background-color: #fff; } /* The contents of the tab has been given a high z-index, to make sure that this element is always on top. */
+/* Styling for the contents of the tabs. */
+#OfficeUI ul[role="tabContents"] { overflow: hidden; z-index: 999; width: 100%; background-color: #fff; }
     
-        /* Styling for the collapse area of the ribbon. */
-        #OfficeUI ul[role="tabContents"] .collapse { width: 29px; text-align: center; bottom: 0px; right: 0px; }
-        #OfficeUI ul[role="tabContents"] .collapse img { padding-bottom: 1px; }
-        #OfficeUI ul[role="tabContents"] .collapse:hover { background-color: #CDE6F7; }
-        
-        /* General styling of the contents of the tab. */
-        #OfficeUI ul[role="tabContents"] li { width: 100%; height: 92px; }
+    /* Styling for the legend of a group. */
+    #OfficeUI ul[role="tabContents"] li .group > .legend { padding: 0px 2px 0px 1px; color: #666; font-size: 0.9em; overflow: hidden; text-overflow: ellipsis; white-space: no-wrap;}
 
-        /* Styling for the groups. */
-        #OfficeUI ul[role="tabContents"] li .group { }
-        #OfficeUI ul[role="tabContents"] li .group-holder {  }
-        #OfficeUI ul[role="tabContents"] li .group-holder .seperator { }
-        #OfficeUI ul[role="tabContents"] li .group .group-control-container { }
+    /* Styling for the collapse area of the ribbon. */
+    #OfficeUI ul[role="tabContents"] .collapse { width: 29px; bottom: 0px; right: 0px; }
+    #OfficeUI ul[role="tabContents"] .collapse img { padding-bottom: 1px; }
+    #OfficeUI ul[role="tabContents"] .collapse:hover { background-color: #CDE6F7; }
 
-        /* Styling for the area. */
-        #OfficeUI ul[role="tabContents"] li .group .group-control-container .area { }
-        #OfficeUI ul[role="tabContents"] li .group .group-control-container .area .action { }
+    /* Styling for the groups. */
+    #OfficeUI ul[role="tabContents"] li .group { vertical-align: top; }
+
+    /* Styling for the area. */
+    #OfficeUI ul[role="tabContents"] li .group .area { height: 73px; margin-right: 1px; padding: 3px 0px 0px 4px; }
+
+    /* Styling for the actions. */
+    #OfficeUI ul[role="tabContents"] li .group .area .action { vertical-align: top; }
+    #OfficeUI ul[role="tabContents"] li .group .area .action .action-icon { height: 34px; padding: 3px 5px 0px 5px; }
+    #OfficeUI ul[role="tabContents"] li .group .area .action .legend { line-height: 16px; }
+    
         
