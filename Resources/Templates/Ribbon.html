@@ -9,19 +9,19 @@
     <ul ng-style="{height: OfficeUIRibbon.height}" role="tabContents" ng-class="{'officeui-position-absolute': OfficeUIRibbon.state == 3, 'officeui-borders-border-bottom-grey': OfficeUIRibbon.state == 1 || OfficeUIRibbon.state == 3}" class="officeui-space-no-padding officeui-space-no-margin">
         <li style="position: relative;" ng-class="{'officeui-display-hidden': !OfficeUIRibbon.isActive(tabContents.Id)}" ng-repeat="tabContents in OfficeUIRibbon.Tabs">
             <!-- Defines the group area. -->
-            <div ng-repeat-start="group in tabContents.Groups" class="group" style="min-width: 70px; height: 92px; display: inline-block; position: relative; vertical-align:top;">
-                <div ng-repeat="area in group.Areas" style="height: 69px; vertical-align: top; display: inline-block; padding-top: 3px; padding-left: 4px; margin-right: 1px;">
-                    <div ng-repeat="action in area.Actions" class="action" style="height: 100%; display: inline-block; position: relative;">
+            <div ng-repeat-start="group in tabContents.Groups" class="group" style="height: 92px; display: inline-block; position: relative; vertical-align:top;">
+                <div ng-repeat="area in group.Areas" style="height: 73px; vertical-align: top; display: inline-block; padding-top: 3px; padding-left: 4px; margin-right: 1px;">
+                    <div ng-repeat="action in area.Actions" class="action" style="vertical-align: top; height: 69px; display: inline-block; position: relative;">
                         <div style="padding-left: 5px; padding-top: 3px; padding-right: 5px;">
                             <img ng-src="{{action.Resource}}" />
                         </div>
-                        <div ng-bind-html="action.Legend" style="width: 100%; text-align: center; position: absolute; bottom: 0px; line-height: 16px;">
+                        <div ng-bind-html="action.Legend" style="width: 100%; text-align: center; bottom: 0px; line-height: 16px;">
                         </div>
                     </div>
                 </div>
 
                 <!-- Defines the legend. -->
-                <div style="padding-left: 2px; padding-right: 2px; width: 100%; text-align: center; font-size: 0.9em; color: #666; position: absolute; bottom: 1px;">
+                <div style="padding-left: 1px; padding-right: 2px; width: 100%; text-align: center; font-size: 0.9em; color: #666; bottom: 1px;">
                     {{group.Legend}}
                 </div>
                 <!-- End: Definition of the group. -->
