@@ -15,12 +15,12 @@
                         {
                             "Actions": [
                                 {
-                                    "Resource": "/Resources/Images/Ribbon/Tabs/Home/NewMailMessage.png",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/NewMailMessage.png",
                                     "Legend": "New<br/>Email",
                                     "Type": "bIcon"
                                 },
                                 {
-                                    "Resource": "/Resources/Images/Ribbon/Tabs/Home/NewItemMenu.png",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/NewItemMenu.png",
                                     "Legend": "New<br/>Items",
                                     "Type": "bIcon"
                                 }

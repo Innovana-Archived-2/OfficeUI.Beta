@@ -12,6 +12,12 @@
     <script src="/OfficeUI.Beta/Resources/Scripts/External/jQueryUI/jquery-ui.min.js"></script>
     <script src="/OfficeUI.Beta/Resources/Scripts/External/AngularJS/angular.js"></script>
     
+    <!-- External AngularJS modules, which are required for the application to work. -->
+    <!-- Note: In the source code, we're loading AngularJS, but we're not loading the minified version. This is because the minified
+         version has also minified error messages which makes debugging a lot harder to do. Therefore a 'normal' AngularJS file is used.
+         In the release version, this package will be changed to a minified AngularJS version. -->
+    <script src="/OfficeUI.Beta/Resources/Scripts/External/AngularJS/Modules/angular-sanitze.js"></script>
+    
     <!-- jQuery plugins which needs to be loaded. -->
     <!-- Note: The plugins are not minified in this release. In the release version, we're using minified versions of the file. -->
     <script src="/OfficeUI.Beta/Resources/Scripts/Plugins/Effects/jQuery.Animation.Curtain.js"></script>
