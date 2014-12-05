@@ -49,6 +49,15 @@
                                     "Type": "sIcon"
                                 }
                             ]
+                        },
+                        {
+                            "Actions": [
+                                {
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Delete.png",
+                                    "Legend": "Delete",
+                                    "Type": "bIcon"
+                                }
+                            ]
                         }
                     ]
                 },

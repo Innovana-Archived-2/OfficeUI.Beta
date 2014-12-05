@@ -12,7 +12,7 @@
     #OfficeUI li[role="tab"]:not(.application) { padding: 0px 13px 0px 12px; margin-right: 2px; }
 
 /* Styling for the contents of the tabs. */
-#OfficeUI ul[role="tabContents"] { overflow: hidden; z-index: 999; width: 100%; background-color: #fff; }
+#OfficeUI ul[role="tabContents"] { overflow: hidden; z-index: 999; width: 100%; background-color: #fff; cursor: default; }
     
     /* Styling for the legend of a group. */
     #OfficeUI ul[role="tabContents"] li .group > .legend { padding: 0px 2px 0px 1px; color: #666; font-size: 0.9em; overflow: hidden; text-overflow: ellipsis; white-space: no-wrap;}
@@ -26,10 +26,11 @@
     #OfficeUI ul[role="tabContents"] li .group { vertical-align: top; }
 
     /* Styling for the area. */
-    #OfficeUI ul[role="tabContents"] li .group .area { height: 73px; margin-right: 1px; padding: 3px 0px 0px 4px; }
+    #OfficeUI ul[role="tabContents"] li .group .area { height: 73px; margin-right: 1px; padding: 3px 0px 0px 4px; vertical-align: top; }
 
     /* Styling for the actions. */
     #OfficeUI ul[role="tabContents"] li .group .area .action { vertical-align: top; }
+    #OfficeUI ul[role="tabContents"] li .action .small-action-container { padding-right: 7px; }
     #OfficeUI ul[role="tabContents"] li .group .area .action .action-icon.icon-big { height: 34px; padding: 3px 5px 0px 5px; }
     #OfficeUI ul[role="tabContents"] li .group .area .action .action-icon.icon-small { padding: 3px 0px 0px 3px; }
     #OfficeUI ul[role="tabContents"] li .group .area .action .icon-big.legend { line-height: 16px; }

@@ -7,4 +7,8 @@
     #OfficeUI li[role="tab"]:not(.application).active { color: #0072C6; }
 
     /* Contents styling. */
-    #OfficeUI ul[role="tabContents"] li .action:hover { background-color: #cde6f7;}
+    #OfficeUI ul[role="tabContents"] li .action .small-action-container:hover,
+    #OfficeUI ul[role="tabContents"] li .action .big-action-container:hover{ background-color: #cde6f7;}
+
+    #OfficeUI ul[role="tabContents"] li .action .small-action-container:active,
+    #OfficeUI ul[role="tabContents"] li .action .big-action-container:active{ background-color: #92C0E0;}

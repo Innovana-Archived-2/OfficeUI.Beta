@@ -14,10 +14,12 @@
                 <div ng-repeat="area in group.Areas" class="area officeui-display-inline-block">
                     <!-- Defines the actions. -->
                     <div ng-repeat="action in area.Actions" ng-class="actionClass(action)" class="action">
-                        <div class="action-icon" ng-class="{'icon-big': action.Type == 'bIcon', 'officeui-display-inline-block icon-small': action.Type == 'sIcon'}">
-                            <img ng-src="{{action.Resource}}" />
-                        </div>
-                        <div ng-bind-html="action.Legend" class="legend" ng-class="{'officeui-display-inline-block icon-small': action.Type == 'sIcon', 'officeui-align-center icon-big': action.Type == 'bIcon'}">
+                        <div ng-class="{'small-action-container': action.Type == 'sIcon', 'big-action-container': action.Type == 'bIcon'}" class="officeui-display-inline-block">
+                            <div class="action-icon" ng-class="{'icon-big': action.Type == 'bIcon', 'officeui-display-inline-block icon-small': action.Type == 'sIcon'}">
+                                <img ng-src="{{action.Resource}}" />
+                            </div>
+                            <div ng-bind-html="action.Legend" class="legend" ng-class="{'officeui-display-inline-block icon-small': action.Type == 'sIcon', 'officeui-align-center icon-big': action.Type == 'bIcon'}">
+                            </div>
                         </div>
                     </div>
                     <!-- End: Actions definition. -->
