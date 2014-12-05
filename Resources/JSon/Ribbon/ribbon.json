@@ -32,7 +32,23 @@
                     "Legend": "Delete",
                     "Areas": [
                         {
-                            "Actions": [{}]
+                            "Actions": [
+                                {
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Ignore.png",
+                                    "Legend": "Ignore",
+                                    "Type": "sIcon"
+                                },
+                                {
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/CleanUp.png",
+                                    "Legend": "Clean Up",
+                                    "Type": "sIcon"
+                                },
+                                {
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Junk.png",
+                                    "Legend": "Junk",
+                                    "Type": "sIcon"
+                                }
+                            ]
                         }
                     ]
                 },
