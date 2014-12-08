@@ -35,5 +35,7 @@
     #OfficeUI ul[role="tabContents"] li .group .area .action .action-icon.icon-small { padding: 3px 0px 0px 3px; }
     #OfficeUI ul[role="tabContents"] li .group .area .action .icon-big.legend { line-height: 16px; }
     #OfficeUI ul[role="tabContents"] li .group .area .action .icon-small.legend { vertical-align: top; padding-top: 3px; }
+
+    #OfficeUI ul[role="tabContents"] li .group .area .action .legend i { font-size: 0.9em; color: #777; font-size: 8px; vertical-align: top; padding-top: 4px; padding-left: 0px; }
     
         

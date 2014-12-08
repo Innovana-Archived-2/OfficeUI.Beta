@@ -22,7 +22,8 @@
                                 {
                                     "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/NewItemMenu.png",
                                     "Legend": "New<br/>Items",
-                                    "Type": "bIcon"
+                                    "Type": "bIcon",
+                                    "HoldMenu": "True"
                                 }
                             ]
                         }
