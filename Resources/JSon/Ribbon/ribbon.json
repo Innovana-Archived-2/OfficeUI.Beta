@@ -23,7 +23,69 @@
                                     "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/NewItemMenu.png",
                                     "Legend": "New<br/>Items",
                                     "Type": "bIcon",
-                                    "HoldMenu": "True"
+                                    "MenuItems": [
+                                        {
+                                            "Label": "E-mail message"
+                                        },
+                                        {
+                                            "Label": "Appointment"
+                                        },
+                                        {
+                                            "Label": "Meeting"
+                                        },
+                                        {
+                                            "Label": "Contact"
+                                        },
+                                        {
+                                            "Label": "Task"
+                                        },
+                                        {
+                                            "Label": "E-mail message using",
+                                            "MenuItems": [
+                                                {
+                                                    "Label": "More Stationary..."
+                                                },
+                                                {
+                                                    "Label": "Plain Text"
+                                                },
+                                                {
+                                                    "Label": "Rich Text"
+                                                },
+                                                {
+                                                    "Label": "HTML"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "Label": "More Items",
+                                            "MenuItems": [
+                                                {
+                                                    "Label": "Post in This Folder"
+                                                },
+                                                {
+                                                    "Label": "Contact Group"
+                                                },
+                                                {
+                                                    "Label": "Task Request"
+                                                },
+                                                {
+                                                    "Label": "Internet Fax"
+                                                },
+                                                {
+                                                    "Label": "Choose Form..."
+                                                },
+                                                {
+                                                    "Label": "Choose InfoPath Form..."
+                                                },
+                                                {
+                                                    "Label": "Outlook Data File..."
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "Label": "Lync Meeting"
+                                        }
+                                    ]
                                 }
                             ]
                         }
@@ -43,13 +105,42 @@
                                     "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/CleanUp.png",
                                     "Legend": "Clean Up",
                                     "Type": "sIcon",
-                                    "HoldMenu": "True"
+                                    "MenuItems": [
+                                        {
+                                            "Label": "Clean Up Converation"
+                                        },
+                                        {
+                                            "Label": "Clean Up Folder"
+                                        },
+                                        {
+                                            "Label": "Clean Up Folder & Subfolders"
+                                        }
+                                    ]
                                 },
                                 {
                                     "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Junk.png",
                                     "Legend": "Junk",
                                     "Type": "sIcon",
-                                    "HoldMenu": "True"
+                                    "MenuItems": [
+                                        {
+                                            "Label": "Block Sender"
+                                        },
+                                        {
+                                            "Label": "Never Block Sender"
+                                        },
+                                        {
+                                            "Label": "Never Block Sender's Domain (@example.com)"
+                                        },
+                                        {
+                                            "Label": "Never Block this Group or Mailing List"
+                                        },
+                                        {
+                                            "Label": "Not Junk"
+                                        },
+                                        {
+                                            "Label": "Junk E-mail Options"
+                                        }
+                                    ]
                                 }
                             ]
                         },
