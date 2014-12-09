@@ -159,7 +159,23 @@
                     "Legend": "Respond",
                     "Areas": [
                         {
-                            "Actions": [{}]
+                            "Actions": [
+                                {
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Reply.png",
+                                    "Legend": "Reply",
+                                    "Type": "bIcon"
+                                },
+                                {
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/ReplyAll.png",
+                                    "Legend": "Reply<br/>All",
+                                    "Type": "bIcon"
+                                },
+                                {
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Forward.png",
+                                    "Legend": "Forward",
+                                    "Type": "bIcon"
+                                }
+                            ]
                         }
                     ]
                 },
