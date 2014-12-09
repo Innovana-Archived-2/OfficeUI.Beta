@@ -18,9 +18,6 @@
                             <div class="action-icon" ng-class="{'icon-big': action.Type == 'bIcon', 'officeui-display-inline-block icon-small': action.Type == 'sIcon'}">
                                 <img ng-src="{{action.Resource}}" />
                             </div>
-                            <!--<div ng-bind-html="action.Legend " class="legend" ng-class="{'officeui-display-inline-block icon-small': action.Type == 'sIcon', 'officeui-align-center icon-big': action.Type == 'bIcon'}">
-                                
-                            </div>-->
                             <div ng-bind-html="action |actionLegend" class="legend" ng-class="{'officeui-display-inline-block icon-small': action.Type == 'sIcon', 'officeui-align-center icon-big': action.Type == 'bIcon'}">
                             </div>
                         </div>
