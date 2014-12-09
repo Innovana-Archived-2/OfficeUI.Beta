@@ -42,12 +42,14 @@
                                 {
                                     "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/CleanUp.png",
                                     "Legend": "Clean Up",
-                                    "Type": "sIcon"
+                                    "Type": "sIcon",
+                                    "HoldMenu": "True"
                                 },
                                 {
                                     "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Junk.png",
                                     "Legend": "Junk",
-                                    "Type": "sIcon"
+                                    "Type": "sIcon",
+                                    "HoldMenu": "True"
                                 }
                             ]
                         },
