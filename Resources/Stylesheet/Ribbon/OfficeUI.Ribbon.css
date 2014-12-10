@@ -27,14 +27,17 @@
 
     /* Styling for the area. */
     #OfficeUI ul[role="tabContents"] li .group .area { height: 73px; margin-right: 1px; padding: 3px 0px 0px 4px; vertical-align: top; }
-
+    
+     #OfficeUI ul[role="tabContents"] li .action .big-action-container { height: 69px; }
     /* Styling for the actions. */
-    #OfficeUI ul[role="tabContents"] li .group .area .action { vertical-align: top; }
+    #OfficeUI ul[role="tabContents"] li .group .area .action .big-action-container { vertical-align: top; text-align: center; }
     #OfficeUI ul[role="tabContents"] li .action .small-action-container { padding-right: 7px; }
     #OfficeUI ul[role="tabContents"] li .group .area .action .action-icon.icon-big { height: 34px; padding: 3px 5px 0px 5px; }
     #OfficeUI ul[role="tabContents"] li .group .area .action .action-icon.icon-small { padding: 3px 0px 0px 3px; }
     #OfficeUI ul[role="tabContents"] li .group .area .action .icon-big.legend { line-height: 16px; }
     #OfficeUI ul[role="tabContents"] li .group .area .action .icon-small.legend { vertical-align: top; padding-top: 3px; }
+
+    #OfficeUI ul[role="tabContents"] li .group .area .action .icon-big.legend { padding: 0px 2px 0px 2px; }
 
     #OfficeUI ul[role="tabContents"] li .group .area .action .legend i { font-size: 9px; vertical-align: top; padding-top: 4px; padding-left: 0px; }
     
