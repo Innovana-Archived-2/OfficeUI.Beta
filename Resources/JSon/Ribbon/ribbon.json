@@ -23,6 +23,7 @@
                                     "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/NewItemMenu.png",
                                     "Legend": "New<br/>Items",
                                     "Type": "bIcon",
+                                    "HoldMenu": "True",
                                     "MenuItems": [
                                         {
                                             "Label": "E-mail message"
@@ -105,6 +106,7 @@
                                     "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/CleanUp.png",
                                     "Legend": "Clean Up",
                                     "Type": "sIcon",
+                                    "HoldMenu": "True",
                                     "MenuItems": [
                                         {
                                             "Label": "Clean Up Converation"
@@ -121,6 +123,7 @@
                                     "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Junk.png",
                                     "Legend": "Junk",
                                     "Type": "sIcon",
+                                    "HoldMenu": "True",
                                     "MenuItems": [
                                         {
                                             "Label": "Block Sender"

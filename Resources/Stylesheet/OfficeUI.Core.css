@@ -37,7 +37,11 @@
      *  - action-icon:          A collection of icons that defines quick-access actions. Special effects are visible when hovering or clicking on those items.
      */
     #OfficeUI .application-icons { top: 3px; left: 7px; height: 22px; }
-    #OfficeUI .application-icons .icon-container, #OfficeUI .application-icons .icon-container .application-icon, #OfficeUI .application-icons .icon-container .action-icon { width: 29px; height: 22px; }
+    
+    #OfficeUI .application-icons .icon-container, 
+    #OfficeUI .application-icons .icon-container .application-icon, 
+    #OfficeUI .application-icons .icon-container .action-icon { width: 29px; height: 22px; }
+
     #OfficeUI .application-icons .icon-container:not(:first-child) { margin-right: 1px; }
 
     /* Definition for the header. */

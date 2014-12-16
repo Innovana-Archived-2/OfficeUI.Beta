@@ -12,3 +12,6 @@
 
     #OfficeUI ul[role="tabContents"] li .action .small-action-container:active,
     #OfficeUI ul[role="tabContents"] li .action .big-action-container:active{ background-color: #92C0E0;}
+    
+    /* Collapse button styling. */
+    #OfficeUI ul[role="tabContents"] .collapse:hover { background-color: #CDE6F7; }
