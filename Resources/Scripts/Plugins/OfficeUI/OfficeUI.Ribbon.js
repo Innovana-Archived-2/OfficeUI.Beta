@@ -1,6 +1,8 @@
 /* Defines the initialize function of the ribbon. */
 var Ribbon = {
-
+    // Variable area.
+    changeTabOnHover: null,
+    
     // Constants area.
     collapsedCookieName: 'OfficeUIRibbon.Collapsed',
 
@@ -44,5 +46,14 @@ var Ribbon = {
         } else {
             ribbon.state = 1;
         }
+    }, 
+    
+    // Provides some configuration for the OfficeUI Ribbon.
+    config: function(options) {
+        var settings = $.extend({
+            changeTabOnHover: false
+        }, options);
+        
+        Ribbon.changeTabOnHover = settings.changeTabOnHover;
     }
 }

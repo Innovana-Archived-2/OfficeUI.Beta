@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html lang="en" ng-app="Office">
+    <head>
+        <title>OfficeUI (Beta)</title>
+        
+        <!-- External JavaScript Files/Libraries which are needed by the application. -->
+        <!-- Note: In the source code, we're loading AngularJS, but we're not loading the minified version. This is because the minified
+         version has also minified error messages which makes debugging a lot harder to do. Therefore a 'normal' AngularJS file is used.
+         In the release version, this package will be changed to a minified AngularJS version. -->
+        <script src="/OfficeUI.Beta/Resources/Scripts/External/jQuery/jquery-2.1.1.min.js"></script>
+        <script src="/OfficeUI.Beta/Resources/Scripts/External/jQueryUI/jquery-ui.min.js"></script>
+        <script src="/OfficeUI.Beta/Resources/Scripts/External/AngularJS/angular.js"></script>
+        
+        <!-- External AngularJS modules, which are required for the application to work. -->
+        <!-- Note: In the source code, we're loading AngularJS, but we're not loading the minified version. This is because the minified
+         version has also minified error messages which makes debugging a lot harder to do. Therefore a 'normal' AngularJS file is used.
+         In the release version, this package will be changed to a minified AngularJS version. -->
+        <script src="/OfficeUI.Beta/Resources/Scripts/External/AngularJS/Modules/angular-sanitze.js"></script>
+        
+        <!-- AngularJS Modules, Filters, Services, Directives, Filters and Controllers. -->
+        <!-- Note: The Modules, Filters, Services, Directives, Filters and Controllers are not minified. In the release version, we're using minified version of the file(s). -->
+        <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Modules/Office.AngularJS.Module.js"></script>
+        <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Modules/Ribbon/Office.AngularJS.Ribbon.Module.js"></script>
+        <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Controllers/Office.AngularJS.Controller.js"></script>
+        
+        <!-- External Stylesheets which are needed by the application. -->
+        <!-- Note: The stylesheets are not minified in this release. In the release version, we're using minified versions of the file. -->
+        <link rel="stylesheet" href="/OfficeUI.Beta/Resources/Stylesheet/External/Font-Awesome/font-awesome.css" />
+
+        <!-- Core Stylesheets, which are stylesheets required for the application, without any plugins. -->
+        <!-- Note: The stylesheets are not minified in this release. In the release version, we're using minified versions of the file. -->
+        <link rel="stylesheet" href="/OfficeUI.Beta/Resources/Stylesheet/OfficeUI.Core.css" />
+    </head>
+    
+    <!-- Defines the main content area for the website. -->
+    <body class="no-margin no-padding">
+        <!-- Provides the main OfficeUI area. -->
+        <div id="OfficeUI" ng-controller="Office as Office"> <!-- Defines this area as an area which is bound to the AngularJS Office controller. -->
+            
+            <!-- Defines the header itself. -->
+            <header>
+                
+                <!-- Provides the area in which the application icons are being showed. -->
+                <div class="absolute">
+                    <div class="container application-icons icon">
+                        <img ng-repeat-start="icon in Office.Icons" ng-repeat-end ng-src="{{icon.Icon}}" alt="{{icon.Alt}}" />
+                    </div>
+                </div>
+                
+                <!-- Provides the area in which the application title is being rendered. -->
+                <div class="container container-full-width center">
+                    <div class="application-title">{{Office.Title}}</div>
+                </div>
+            </header>
+        </div>
+    </body>
+</html>

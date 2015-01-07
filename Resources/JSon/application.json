@@ -3,15 +3,15 @@
   "Icons": [
     {
       "Icon": "Resources/Images/Application/Application.png",
-      "Enabled": true
+      "Alt": "Outlook"
     },
     {
       "Icon": "Resources/Images/Application/Send-Receive.png",
-      "Enabled": true
+      "Alt": "Send / Receive"
     },
     {
       "Icon": "Resources/Images/Application/Undo.png",
-      "Enabled": false
+      "Alt": "Undo"
     }
   ]
 }
