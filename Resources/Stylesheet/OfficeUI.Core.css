@@ -73,15 +73,20 @@
 /* General styling that can be applied to all kind of elements inside the OfficeUI container. */
 #OfficeUI .center { text-align: center; }
 #OfficeUI .absolute { position: absolute; }
+#OfficeUI .left { float: left; }
+#OfficeUI .right { float: right; }
 
 /* Container elements. */
 #OfficeUI .container { display: inline-block; }
 #OfficeUI .container-full-width { width: 100%; }
 
+#OfficeUI .title { margin-top: 6px; }
+
 /* Styling for the OfficeUI elements itself. */
 #OfficeUI .application-title { margin: 6px 3px 0px 0px; }
-#OfficeUI .application-icons img { margin: 3px 4px 0px 4px; }
-#OfficeUI .application-icons img:first-child { margin: 3px 3px 0px 7px; }
+#OfficeUI .application-icons { margin: 3px 0px 0px 5px; }
+#OfficeUI .application-icons img { margin: 0px 5px 0px 2px; }
+#OfficeUI .application-icons img:not(:first-child) { margin-right: 6px; }
 #OfficeUI .application-icons.icon img:hover:not(:first-child) { background-color: #cde6f7; }
 
 /* Defines general styling for icons. */
