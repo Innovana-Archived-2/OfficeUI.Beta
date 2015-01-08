@@ -18,8 +18,8 @@
         <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Modules/Office.AngularJS.Module.js"></script>
         <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Modules/Ribbon/Office.AngularJS.Ribbon.Module.js"></script>
         <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Controllers/Office.AngularJS.Controller.js"></script>
-        <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/Office.AngularJS.Directive.js"></script>
         <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Controllers/Ribbon/Office.AngularJS.Ribbon.Controller.js"></script>
+        <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/Office.AngularJS.Directive.js"></script>
         <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/Ribbon/Office.AngularJS.Ribbon.Directive.js"></script>
         
         <!-- External Stylesheets which are needed by the application. -->
@@ -51,17 +51,7 @@
                 
                 <!-- Renders the ribbon. -->
                 <ribbon templateUrl="/OfficeUI.Beta/Resources/Templates/Office.Ribbon.html"></ribbon>
-                
-                <div class="container container-full-width">
-                    <ul class="no-margin no-padding" style="border-bottom: 1px solid #d4d4d4; height: 24px; margin-top: 5px;">
-                        <li class="container" style="width: 57px; text-align: center; background-color: #0072c6; color: #fff; height: 23px; line-height: 23px; border: 1px solid #0072c6; text-transform: uppercase;">File</li>
-                        <li class="container">Home</li>
-                        <li class="container">Send / Receive</li>
-                        <li class="container">Folder</li>
-                        <li class="container">View</li>
-                    </ul>
-                    <ul class="no-padding no-margin" style="height: 92px; border-bottom: 1px solid #d4d4d4 !important;">Dit is een demo.</ul>
-                </div>
+
             </header>
         </div>
 
@@ -77,7 +67,7 @@
             });
             
             $(this).OfficeUI.bind("#icoUndo", "mouseenter", function() {
-                console.log('This method is executed when you click on the undo icon.');
+                console.log('This method is executed when you enter the undo icon with your mouse.');
             });
         </script>
     </body>

@@ -8,15 +8,12 @@
 var OfficeUIRibbon = angular.module('OfficeRibbon');
 
 /* Defines a directive called 'ribbon'. This directive must be called as an element. */
-OfficeUIRibbon.directive('ribbon', ['$templateCache', function($templateCache) {
+OfficeUIRibbon.directive('ribbon', function() {
     return {
         restrict: 'E',
-        replace: false,
-        compile: function(element, attribute, transclude) {
-            var html = $templateCache.get(attribute.templateUrl);
-            element.html(html);
-            console.log(html);
-            $scope.apply();
+        replace: true,
+        templateUrl: function(element, attributes) {
+            return attributes.templateurl;
         }
     }
-}]);
+});
