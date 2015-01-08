@@ -12,12 +12,38 @@
 
     // Plugin defaults – added as a property on our plugin function.
     $.fn.OfficeUI.Defaults = { };
+    
+    var eventCollection = []; // Defines a private collection of registered events.
 
-    $.fn.OfficeUI.bind = function(elementSelector, bound, action) {
-        $(elementSelector).on(bound, function() { action(); });
-
-        return this;
+    // Bind a given event handler to a specific element.
+    // Parameters:
+    //      element:        The element on which to bind the handler.
+    //      handler:        The handler that's being executed.
+    //      action:         The action to execute.
+    $.fn.OfficeUI.bind = function(element, handler, action) {
+        eventCollection.push({
+            element: element,
+            handler: handler,
+            action: action
+        });
     };
+    
+    // Provides a way to search for an event for a given element.
+    // Parameters:
+    //      element:        The name of the element for which to search the event.
+    $.fn.OfficeUI.searchEvent = function(element) {
+        
+        // Search if an event is registered by looping over the array that holds all are events.
+        // If an event is found, return this.
+        var foundElement = $.grep(eventCollection, function(item) {
+            return item.element == '#' + element
+        });
 
-    // Provide some external access to plugin functions.
+        // Return the correct element if there is any, otherwise, return null.
+        if (foundElement.length != 0) {        
+            return foundElement[0];
+        } 
+        
+        return null;
+    };
 }(jQuery));
