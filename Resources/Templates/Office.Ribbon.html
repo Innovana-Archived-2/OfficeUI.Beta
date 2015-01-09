@@ -1,15 +1,15 @@
-<div class="container container-full-width" ng-controller="OfficeRibbon as OfficeRibbon">
+<div class="container container-full-width" ng-controller="OfficeRibbon as OfficeRibbon" ngc-scroll>
     <div class="container container-full-width">
         <ul role="ribbonTabs" class="no-margin no-padding" ng-class="{'no-border': OfficeRibbon.isHidden()}">
 
-            <li class="container" ng-repeat="tab in OfficeRibbon.Tabs" ng-class="{'no-border': OfficeRibbon.isHidden(), active: OfficeRibbon.isActive(tab.Id) && !OfficeRibbon.isHidden(), application:$first}" ng-click="$first || OfficeRibbon.setActiveTab(tab.Id);">
+            <li id="{{tab.Id}}" role="tab" class="container" ng-repeat="tab in OfficeRibbon.Tabs" ng-class="{'no-border': OfficeRibbon.isHidden(), active: OfficeRibbon.isActive(tab.Id) && !OfficeRibbon.isHidden(), application:$first}" ng-click="$first || OfficeRibbon.setActiveTab(tab.Id);" stop-event="click">
                 {{tab.Label}}
             </li>
         </ul>
         
         <ul role="ribbonContents" id="ribbonContents" class="no-margin no-padding" ng-class="{'no-border': OfficeRibbon.isHidden(), 'absolute': OfficeRibbon.isVisible()}">
             <div class="container absolute">Hier komen de contents van de ribbon.</div>
-            <div ngc-collapse="{area: '#website'}" class="container absolute icon collapse">
+            <div ngc-collapse="{area: '#website'}" class="container absolute icon collapse" stop-event="click">
                 
                 <!-- We display 2 possible icons in the ribbon. A 'Pin' icon or an 'Arrow' icon. This is done using 'ng-if' directive. -->
                 <img src="/OfficeUI.Beta/Resources/Images/Ribbon/Built-In/Collapse.png" style="padding-bottom: 1px;" ng-if="OfficeRibbon.isShowed()"/>

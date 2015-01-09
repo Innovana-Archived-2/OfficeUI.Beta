@@ -44,7 +44,7 @@ OfficeUIRibbon.controller('OfficeRibbon', ['$scope', '$http', function($scope, $
     // Sets the currently active tab based on it's id.
     ribbon.setActiveTab = function(tabId) {
         ribbon.activeTab = tabId;
-        
+
         // Check if the ribbon is hidden or not.
         if (ribbon.state == ribbonStates.Hidden) {
             var ribbonContents = $('#ribbonContents');
@@ -106,4 +106,44 @@ OfficeUIRibbon.controller('OfficeRibbon', ['$scope', '$http', function($scope, $
     $scope.isShowed = function() {
         return ribbon.isShowed();
     }
+
+    // Defines the function which is executed when we scroll on the ribbon.
+    // Remark: This function is only executed when the element is marked with the 'ngc-scroll' attribute.
+    $scope.ribbonScroll = function(scrollEvent) {
+        // Based on scrolling up or down, some other events needs to be executed.
+        // In the code below, we're checking two properties of the scroll event, this is done because firefox, chrome and internet explorer uses another way
+        // of handling scroll events. By using the code below, we're sure that the scrolling is enabled for all the browsers, and that the direction doesn't mind.
+        if (scrollEvent.originalEvent.detail > 0 || scrollEvent.originalEvent.wheelDelta < 0) {
+            // Get the next available ribbon tab and set it as being active.
+            if ($('li[role=tab].active').next().attr('id') != null) {
+                ribbon.setActiveTab($('li[role=tab].active').next().attr('id'));
+            }
+        } else {
+            // Get the previous available ribbon tab and set is as being active.
+            if ($('li[role=tab].active').prev().not('.application').attr('id') != null) {
+                ribbon.setActiveTab($('li[role=tab].active').prev().attr('id'));
+            }
+        }
+
+        $scope.$apply();
+    }
+
+    // General events - not specifically tied to the controller.
+    // Executed when you click somewhere on the page.
+    $(window).on('click', function(e) {
+        e.stopPropagation();
+        // Check if the state of the ribbon is 'Overlay'.
+        if (ribbon.state == ribbonStates.Visible) {
+            // Hide the ribbon directly, without animating (curtain) animation.
+            var elementHeight = $('#ribbonContents').height();
+            $('#ribbonContents').css('height', '0px');
+            $('#ribbonContents').children().css('margin-top', '-' + elementHeight + 'px');
+
+            $scope.setRibbonHidden();
+        }
+    });
+
+    $('#ribbonContents').on('click', function(e) {
+        e.stopPropagation();
+    });
 }]);

@@ -21,6 +21,18 @@ OfficeUIRibbon.directive('ribbon', function() {
     }
 });
 
+/* Defines a directive called 'ngcScroll'. This directive must be called as an attribute. */
+OfficeUIRibbon.directive('ngcScroll', function() {
+    return {
+        restrict: 'A',
+        link: function(scope, element) {
+            element.on('DOMMouseScroll mousewheel', function (e) {
+                scope.ribbonScroll(e); // Execute the function 'ribbonScroll'.
+            });
+        }
+    }
+});
+
 /* Defines a directive called 'ngcCollapse'. This directive must be called as an attribute. */
 OfficeUIRibbon.directive('ngcCollapse', function() {
     return {
@@ -39,18 +51,19 @@ OfficeUIRibbon.directive('ngcCollapse', function() {
                         scope.setRibbonHidden();
                     });
                 } else if (scope.isVisible()) {
-                    animatedElement.animate({'margin-top': '92px'}, 250, function() {
-                        
+                    var elementHeight = element.parent().height();
+                    animatedElement.animate({'margin-top': elementHeight + 'px'}, $.fn.OfficeUI.Defaults.duration, function() {
+
                         // Remove the margin-top again right now since the absolute class will be removed, and otherwise the element will be displayed too low.
                         animatedElement.css('margin-top', '0px');
-                        
+
                         // Sets the ribbon as showed.
                         scope.setRibbonShowed();
                     });
                     
                     $(element).parent().curtain({
                         direction: 'down',
-                        height: 92
+                        height: elementHeight
                     }, function() {
                         
                     });

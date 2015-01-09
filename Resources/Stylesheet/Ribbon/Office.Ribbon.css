@@ -16,7 +16,7 @@
 #OfficeUI ul[role="ribbonTabs"] li { text-transform: uppercase; text-align: center; line-height: 23px; padding: 0px 13px 0px 12px; border-top: 1px solid transparent; border-left: 1px solid transparent; border-right: 1px solid transparent; }
 
 /* Tabs Styling - Conditional. */
-#OfficeUI ul[role="ribbonTabs"] li.application { padding: 0px; background-color: #0072c6; color: #fff; border: 1px solid #0072c6; min-width: 57px; margin-right: 4px; }
+#OfficeUI ul[role="ribbonTabs"] li.application { padding: 0px 3px 0px 3px; background-color: #0072c6; color: #fff; border: 1px solid #0072c6; margin-right: 4px; min-width: 51px; }
 #OfficeUI ul[role="ribbonTabs"] li.application:hover { background-color: #2a8ad4; border: 1px solid #2a8ad4; }
 #OfficeUI ul[role="ribbonTabs"] li:not(.application):hover { color: #0072c6; }
 #OfficeUI ul[role="ribbonTabs"] li:not(:first-child) { margin-right: 2px; }
