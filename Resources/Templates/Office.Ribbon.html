@@ -1,10 +1,20 @@
-<div class="container container-full-width">
-    <ul class="no-margin no-padding" style="border-bottom: 1px solid #d4d4d4; height: 24px; margin-top: 5px;">
-        <li class="container" style="width: 57px; text-align: center; background-color: #0072c6; color: #fff; height: 23px; line-height: 23px; border: 1px solid #0072c6; text-transform: uppercase;">File</li>
-        <li class="container">Home</li>
-        <li class="container">Send / Receive</li>
-        <li class="container">Folder</li>
-        <li class="container">View</li>
-    </ul>
-    <ul class="no-padding no-margin" style="height: 92px; border-bottom: 1px solid #d4d4d4 !important;">Dit is een demo.</ul>
+<div class="container container-full-width" ng-controller="OfficeRibbon as OfficeRibbon">
+    <div class="container container-full-width">
+        <ul role="ribbonTabs" class="no-margin no-padding" ng-class="{'no-border': OfficeRibbon.isHidden()}">
+
+            <li class="container" ng-repeat="tab in OfficeRibbon.Tabs" ng-class="{'no-border': OfficeRibbon.isHidden(), active: OfficeRibbon.isActive(tab.Id) && !OfficeRibbon.isHidden(), application:$first}" ng-click="$first || OfficeRibbon.setActiveTab(tab.Id);">
+                {{tab.Label}}
+            </li>
+        </ul>
+        
+        <ul role="ribbonContents" id="ribbonContents" class="no-margin no-padding" ng-class="{'no-border': OfficeRibbon.isHidden(), 'absolute': OfficeRibbon.isVisible()}">
+            <div class="container absolute">Hier komen de contents van de ribbon.</div>
+            <div ngc-collapse="{area: '#website'}" class="container absolute icon collapse">
+                
+                <!-- We display 2 possible icons in the ribbon. A 'Pin' icon or an 'Arrow' icon. This is done using 'ng-if' directive. -->
+                <img src="/OfficeUI.Beta/Resources/Images/Ribbon/Built-In/Collapse.png" style="padding-bottom: 1px;" ng-if="OfficeRibbon.isShowed()"/>
+                <img src="/OfficeUI.Beta/Resources/Images/Ribbon/Built-In/Pin.png" style="padding-bottom: 1px;" ng-if="OfficeRibbon.isVisible()"/>
+            </div>
+        </ul>
+    </div>
 </div>

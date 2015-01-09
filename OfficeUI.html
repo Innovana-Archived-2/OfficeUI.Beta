@@ -8,9 +8,10 @@
         <script src="/OfficeUI.Beta/Resources/Scripts/External/jQueryUI/jquery-ui.min.js"></script>
         <script src="/OfficeUI.Beta/Resources/Scripts/External/AngularJS/angular.js"></script>
 
-        <!-- Core jQuery plugins. -->
+        <!-- jQuery plugins. -->
         <script src="/OfficeUI.Beta/Resources/Scripts/Plugins/OfficeUI/OfficeUI.js"></script>
-
+        <script src="/OfficeUI.Beta/Resources/Scripts/Plugins/Effects/jQuery.Animation.Curtain.js"></script>
+        
         <!-- External AngularJS modules, which are required for the application to work. -->
         <script src="/OfficeUI.Beta/Resources/Scripts/External/AngularJS/Modules/angular-sanitze.js"></script>
         
@@ -22,11 +23,13 @@
         <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/Office.AngularJS.Directive.js"></script>
         <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/Ribbon/Office.AngularJS.Ribbon.Directive.js"></script>
         
+        
         <!-- External Stylesheets which are needed by the application. -->
         <link rel="stylesheet" href="/OfficeUI.Beta/Resources/Stylesheet/External/Font-Awesome/font-awesome.css" />
 
         <!-- Core Stylesheets, which are stylesheets required for the application, without any plugins. -->
-        <link rel="stylesheet" href="/OfficeUI.Beta/Resources/Stylesheet/OfficeUI.Core.css" />
+        <link rel="stylesheet" href="/OfficeUI.Beta/Resources/Stylesheet/Office.Core.css" />
+        <link rel="stylesheet" href="/OfficeUI.Beta/Resources/Stylesheet/Ribbon/Office.Ribbon.css" />
     </head>
     
     <!-- Defines the main content area for the website. -->
@@ -39,8 +42,8 @@
 
                 <!-- Provides the area in which the application icons are being showed. -->
                 <div class="absolute">
-                    <div class="container application-icons icon">
-                        <img ngc-dynamic-event-handling="icon.Id" id="{{icon.Id}}" ng-repeat-start="icon in Office.Icons" ng-repeat-end ng-src="{{icon.Icon}}" alt="{{icon.Alt}}" />
+                    <div class="container application-icons">
+                        <img ngc-dynamic-event-handling="icon.Id" id="{{icon.Id}}" ng-class="{'icon': !$first}" ng-repeat-start="icon in Office.Icons" ng-repeat-end ng-src="{{icon.Icon}}" alt="{{icon.Alt}}" />
                     </div>
                 </div>
                 
@@ -49,9 +52,18 @@
                     <div class="application-title">{{Office.Title}}</div>
                 </div>
                 
-                <!-- Renders the ribbon. -->
-                <ribbon templateUrl="/OfficeUI.Beta/Resources/Templates/Office.Ribbon.html"></ribbon>
+                <!-- Renders the ribbon. 
+                        This AngularJS directive takes 2 elements as input parameters:
+                        templateUrl:        The url (path) of the template that contains the AngularJS HTML to be rendered. (However this can stay the same, it's done
+                                            to allow users to customize the ribbon when they want to.
 
+                        data:               The url to a JSon file, defining the ribbon that should be rendered.
+                -->
+                <ribbon templateUrl="/OfficeUI.Beta/Resources/Templates/Office.Ribbon.html" data="/OfficeUI.Beta/Resources/JSon/Ribbon/ribbon.json"></ribbon>
+                
+                <div id="website" class="container">
+                    Hier komt de content van de website.
+                </div>
             </header>
         </div>
 
@@ -64,10 +76,6 @@
             
             $(this).OfficeUI.bind("#icoSendReceive", "click", function() {
                 console.log('This method is executed when you click on the send / receive icon.');
-            });
-            
-            $(this).OfficeUI.bind("#icoUndo", "mouseenter", function() {
-                console.log('This method is executed when you enter the undo icon with your mouse.');
             });
         </script>
     </body>

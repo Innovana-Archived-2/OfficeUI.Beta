@@ -9,7 +9,6 @@ var OfficeUI = angular.module('Office');
 
 // Defines the Office controller for the application.
 OfficeUI.controller('Office', ['$scope', '$http', function($scope, $http) {
-    // Defines required variables.
     var application = this;
     
     // Get the Json file 'application.json' that defines the application data.
