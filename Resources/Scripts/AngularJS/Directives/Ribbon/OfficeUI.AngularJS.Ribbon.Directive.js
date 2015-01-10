@@ -72,7 +72,7 @@ OfficeUIRibbon.directive('ngcCollapse', function() {
     }
 });
 
-// Provides a way to stop propagating an event.
+// Provides a way to set a tab active when you hover on it.
 OfficeUIRibbon.directive('ngcActiveTabOnHover', function () {
     return {
         restrict: 'A',
@@ -82,6 +82,27 @@ OfficeUIRibbon.directive('ngcActiveTabOnHover', function () {
                 if ($.fn.OfficeUI.Defaults.changeActiveTabOnHover) {
                     scope.setActiveTab(element.attr('id'));
                 }
+            });
+        }
+    };
+});
+
+// Provides a way to stop propagating an event.
+OfficeUIRibbon.directive('ngcTooltip', function () {
+    return {
+        restrict: 'A',
+        link: function (scope, element, attr) {
+            element.bind("mouseenter", function (e) {
+                var tooltipElement = element.next();
+
+                var tooltipTimeout = setTimeout(function() {
+                    tooltipElement.show();
+                }, 1000);
+
+                element.bind("mouseleave", function (e) {
+                    clearTimeout(tooltipTimeout);
+                    tooltipElement.hide();
+                });
             });
         }
     };

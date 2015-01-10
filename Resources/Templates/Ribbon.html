@@ -9,16 +9,22 @@
         
         <ul role="ribbonContents" id="ribbonContents" class="no-margin no-padding" ng-class="{'no-border': OfficeUIRibbon.isHidden(), 'absolute': OfficeUIRibbon.isVisible(), 'hidden': OfficeUIRibbon.isHidden()}">
             <li ng-repeat="tabContents in OfficeUIRibbon.Tabs" ng-class="{'hidden': !OfficeUIRibbon.isActive(tabContents.Id)}">
-                <div class="container">
+                <div class="container" style="vertical-align: top;">
                     <div class="container group" ng-repeat-start="group in tabContents.Groups">
                         <div class="legend">{{group.Legend}}</div>
 
                         <div class="container area" ng-repeat="area in group.Areas">
                             <!-- The area to render a big icon. -->
-                            <div class="container icon big-icon" ng-repeat="action in area.Actions" ng-if="action.Type == 'bIcon'" ngc-dynamic-event-handling="action.Id" id="{{action.Id}}">
-                                <img ng-src="{{action.Resource}}"/>
-                                <div class="label" ng-bind-html="action |actionLegend"></div>
+                            <div class="container" ng-repeat="action in area.Actions" ng-if="action.Type == 'bIcon'">
+                                <div ngc-tooltip class="container icon big-icon"  ngc-dynamic-event-handling="action.Id" id="{{action.Id}}">
+                                    <img ng-src="{{action.Resource}}"/>
+                                    <div class="label" ng-bind-html="action |actionLegend"></div>
+                                </div>
+                                <div class="tooltip" ng-if="action.Tooltip" style="display: none;">
+                                    <div ng-bind-html="action.Tooltip |actionTooltip"></div>
+                                </div>
                             </div>
+
 
                             <!-- The area to render a small icon. -->
                             <div class="container-block" ng-repeat="action in area.Actions" ng-if="action.Type == 'sIcon'">

@@ -39,3 +39,5 @@
 #OfficeUI ul[role="ribbonContents"] i { font-size: 0.7em; vertical-align: top; padding-top: 4px; }
 #OfficeUI ul[role="ribbonContents"] .pipe { margin-left: 1px; height: 84px; vertical-align: top; border-right: 1px solid #d4d4d4; margin-top: 4px; }
 #OfficeUI ul[role="ribbonContents"] .pin-icon { padding-bottom: 1px; }
+
+#OfficeUI .tooltip { background-color: #ffffff; position: absolute; background-image: linear-gradient(#c6c6c6, #c6c6c6), linear-gradient(#c6c6c6, #c6c6c6); background-position: 0 0px, 100% 0; background-repeat: no-repeat; background-size: 1px 100%; border: 1px solid #d4d4d4; box-shadow: 3px 3px 3px #e0e0e0; padding: 5px 10px; top: 90px; width: 180px; }

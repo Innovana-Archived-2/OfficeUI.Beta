@@ -16,3 +16,9 @@ OfficeUIRibbon.filter('actionLegend', function() {
         return input.Legend;
     }
 });
+
+OfficeUIRibbon.filter('actionTooltip', function() {
+    return function(input) {
+        return input;
+    }
+});

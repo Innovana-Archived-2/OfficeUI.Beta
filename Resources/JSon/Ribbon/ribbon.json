@@ -18,7 +18,8 @@
                                     "Id": "icoNewEmail",
                                     "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/NewMailMessage.png",
                                     "Legend": "New<br/> Email",
-                                    "Type": "bIcon"
+                                    "Type": "bIcon",
+                                    "Tooltip": "<strong>New Item (Ctrl+N)</strong><p>Create a new item.</p>"
                                 },
                                 {
                                     "Id": "icoNewItems",
