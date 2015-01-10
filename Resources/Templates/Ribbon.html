@@ -28,6 +28,11 @@
                                 </div>
                             </div>
 
+                            <!-- The area to render an input element. -->
+                            <div class="container-block" ng-repeat="action in area.Actions" ng-if="action.Type == 'Input'">
+                                <input type="text" placeholder="{{action.Legend}}" style="width: {{action.Width}}"/>
+                            </div>
+
                         </div>
 
                     </div>

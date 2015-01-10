@@ -48,6 +48,9 @@
 /* Defines the styling for the contents of the website, the contents which can be found beneath the ribbon. */
 #OfficeUI .contents { margin-top: 146px; }
 
+#OfficeUI input { border: 1px solid #ababab; font-family: 'Segoe UI'; color: black; font-size: 1em; padding-left: 3px; padding-right: 3px; }
+#OfficeUI input:hover, #OfficeUI input:focus { border: 1px solid #92c0e0; }
+
 /* Provide some responsive styling. 
    The following styling is applied to the screen when the width of the window is less than 497px. */
 @media screen and (max-width: 497px) {
