@@ -95,13 +95,16 @@ OfficeUIRibbon.directive('ngcTooltip', function () {
             element.bind("mouseenter", function (e) {
                 var tooltipElement = element.next();
 
-                var tooltipTimeout = setTimeout(function() {
+                var showHandleTimeout = setTimeout(function() {
                     tooltipElement.show();
                 }, 1000);
 
                 element.bind("mouseleave", function (e) {
-                    clearTimeout(tooltipTimeout);
-                    tooltipElement.hide();
+                    clearTimeout(showHandleTimeout);
+
+                    setTimeout(function() {
+                        tooltipElement.hide();
+                    }, 500);
                 });
             });
         }
