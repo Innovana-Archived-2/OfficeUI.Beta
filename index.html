@@ -1,91 +1,82 @@
-<!DOCTYPE html>
-<!-- The attribute 'ng-app' is added to this tag. This defines that it's an AngularJS application with the starting point, module 'OfficeUI'. -->
-<html lang="en" ng-app="OfficeUI">
-<head>
-    <title>OfficeUI (Beta)</title>
-    
-    <!-- External JavaScript Files/Libraries which are needed by the application. -->
-    <!-- Note: In the source code, we're loading AngularJS, but we're not loading the minified version. This is because the minified
-         version has also minified error messages which makes debugging a lot harder to do. Therefore a 'normal' AngularJS file is used.
-         In the release version, this package will be changed to a minified AngularJS version. -->
-    <script src="/OfficeUI.Beta/Resources/Scripts/External/jQuery/jquery-2.1.1.min.js"></script>
-    <script src="/OfficeUI.Beta/Resources/Scripts/External/jQueryUI/jquery-ui.min.js"></script>
-    <script src="/OfficeUI.Beta/Resources/Scripts/External/AngularJS/angular.js"></script>
-    
-    <!-- External AngularJS modules, which are required for the application to work. -->
-    <!-- Note: In the source code, we're loading AngularJS, but we're not loading the minified version. This is because the minified
-         version has also minified error messages which makes debugging a lot harder to do. Therefore a 'normal' AngularJS file is used.
-         In the release version, this package will be changed to a minified AngularJS version. -->
-    <script src="/OfficeUI.Beta/Resources/Scripts/External/AngularJS/Modules/angular-sanitze.js"></script>
-    
-    <!-- jQuery plugins which needs to be loaded. -->
-    <!-- Note: The plugins are not minified in this release. In the release version, we're using minified versions of the file. -->
-    <script src="/OfficeUI.Beta/Resources/Scripts/Plugins/Effects/jQuery.Animation.Curtain.js"></script>
-    <script src="/OfficeUI.Beta/Resources/Scripts/Plugins/jQuery.Cookies.js"></script>
-    <script src="/OfficeUI.Beta/Resources/Scripts/Plugins/OfficeUI/OfficeUI.Ribbon.js"></script>
-    
-    <!-- AngularJS Modules, Filters, Services, Directives, Filters and Controllers. -->
-    <!-- Note: The Modules, Filters, Services, Directives, Filters and Controllers are not minified. In the release version, we're using minified version of the file(s). -->
-    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Modules/OfficeUI.AngularJS.Module.js"></script>
-    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Modules/Ribbon/OfficeUI.AngularJS.Ribbon.Module.js"></script>
-    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Controllers/OfficeUI.AngularJS.Controller.js"></script>
-    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Controllers/Ribbon/OfficeUI.AngularJS.Ribbon.Controller.js"></script>
-    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Controllers/Ribbon/Components/OfficeUI.AngularJS.Ribbon.Components.Ribbon.js"></script>
-    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Filters/Ribbon/OfficeUI.AngularJS.Ribbon.Filter.js"></script>
-    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/Ribbon/OfficeUI.AngularJS.Ribbon.Directive.js"></script>
-    
-    <!-- External Stylesheets which are needed by the application. -->
-    <!-- Note: The stylesheets are not minified in this release. In the release version, we're using minified versions of the file. -->
-    <link rel="stylesheet" href="/OfficeUI.Beta/Resources/Stylesheet/External/Font-Awesome/font-awesome.css" />
-    
-    <!-- Core Stylesheets, which are stylesheets required for the application, without any plugins. -->
-    <!-- Note: The stylesheets are not minified in this release. In the release version, we're using minified versions of the file. -->
-    <link rel="stylesheet" href="/OfficeUI.Beta/Resources/Stylesheet/OfficeUI.Core.css" />
-    <link rel="stylesheet" href="/OfficeUI.Beta/Resources/Stylesheet/Styles/OfficeUI.Core.Style.Blue.css" />
-    <link rel="stylesheet" href="/OfficeUI.Beta/Resources/Stylesheet/Ribbon/OfficeUI.Ribbon.css" />
-    <link rel="stylesheet" href="/OfficeUI.Beta/Resources/Stylesheet/Ribbon/Styles/OfficeUI.Ribbon.Blue.css" />
-    
-    <!-- Code Styling Stylesheets. This are stylesheets that defines the colors of the application. -->
-    <!-- Note: The stylesheets are not minified in this release. In the release version, we're using minified versions of the file. -->
-    <link rel="stylesheet" href="/OfficeUI.Beta/Resources/Stylesheet/Styles/OfficeUI.Core.Style.Blue.css" />
-</head>
-<body class="officeui-space-no-padding officeui-space-no-margin">
-    <!-- Defines a placeholder for the OfficeUI application. -->
-    <div id="OfficeUI" ng-controller="OfficeUI as OfficeUI"> <!-- Specify that this area is working with the controller 'OfficeUI'. -->
+<!DOCTYPE HTML>
+<html lang="en" ng-app="Office">
+    <head>
+        <title>OfficeUI (Beta)</title>
         
-        <!-- Specify an area in which the application icons are showed. -->
-        <!-- Note: For the application icons, there's a special rule that applies.
-                   The application icons area can hold many different icons, which are loaded through a JSon file.
-                   However, the first element in the JSon array is always the application icon and CANNOT be disabled. -->
-        <div class="application-icons officeui-position-absolute">
-            <div ng-repeat="icon in OfficeUI.Icons" class="icon-container officeui-display-inline-block">
-                <div ng-class="{'action-icon':!$first, 'application-icon': $first}">
-                    <img ng-src="{{icon.Icon}}" />
-                </div>
-            </div>
-        </div>
-        <!-- End: Specify an area in which the application icons are showed. -->
-        
-        <!-- Defines the title of the application. -->
-        <div class="header container-full-width officeui-align-center">
-            <div class="title">{{OfficeUI.Title}}</div>
-        </div>
-        <!-- End: Defines the title of the application. -->
+        <!-- External JavaScript Files/Libraries which are needed by the application. -->
+        <script src="/OfficeUI.Beta/Resources/Scripts/External/jQuery/jquery-2.1.1.min.js"></script>
+        <script src="/OfficeUI.Beta/Resources/Scripts/External/jQueryUI/jquery-ui.min.js"></script>
+        <script src="/OfficeUI.Beta/Resources/Scripts/External/AngularJS/angular.js"></script>
 
-        <!-- Defines the ribbon. -->
-        <ribbon template="/OfficeUI.Beta/Resources/JSon/Ribbon/ribbon.json"></ribbon>
-        <!-- End: Define the ribbon. -->
+        <!-- jQuery plugins. -->
+        <script src="/OfficeUI.Beta/Resources/Scripts/Plugins/OfficeUI/OfficeUI.js"></script>
+        <script src="/OfficeUI.Beta/Resources/Scripts/Plugins/Effects/jQuery.Animation.Curtain.js"></script>
         
-        <!-- Defines the content area. -->
-        <div id="contents" class="officeui-space-no-padding officeui-space-no-margin" style="z-index: 100;">Content area.</div>
-        <!-- End: Define the content area. -->
-    </div>
-    <!-- End: Defines a placeholder for the OfficeUI application. -->
+        <!-- External AngularJS modules, which are required for the application to work. -->
+        <script src="/OfficeUI.Beta/Resources/Scripts/External/AngularJS/Modules/angular-sanitze.js"></script>
+        
+        <!-- AngularJS Modules, Filters, Services, Directives, Filters and Controllers. -->
+        <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Modules/Office.AngularJS.Module.js"></script>
+        <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Modules/Ribbon/Office.AngularJS.Ribbon.Module.js"></script>
+        <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Controllers/Office.AngularJS.Controller.js"></script>
+        <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Controllers/Ribbon/Office.AngularJS.Ribbon.Controller.js"></script>
+        <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/Office.AngularJS.Directive.js"></script>
+        <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/Ribbon/Office.AngularJS.Ribbon.Directive.js"></script>
+        <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Filters/Ribbon/Office.AngularJS.Ribbon.filter.js"></script>
+        
+        
+        <!-- External Stylesheets which are needed by the application. -->
+        <link rel="stylesheet" href="/OfficeUI.Beta/Resources/Stylesheet/External/Font-Awesome/font-awesome.css" />
+
+        <!-- Core Stylesheets, which are stylesheets required for the application, without any plugins. -->
+        <link rel="stylesheet" href="/OfficeUI.Beta/Resources/Stylesheet/Office.Core.css" />
+        <link rel="stylesheet" href="/OfficeUI.Beta/Resources/Stylesheet/Ribbon/Office.Ribbon.css" />
+    </head>
     
-    <script type="text/javascript">
-        Ribbon.config({
-            changeTabOnHover: true
-        });
-    </script>
-</body>
+    <!-- Defines the main content area for the website. -->
+    <body class="no-margin no-padding">
+        <!-- Provides the main OfficeUI area. -->
+        <div id="OfficeUI" ng-controller="Office as Office"> <!-- Defines this area as an area which is bound to the AngularJS Office controller. -->
+            <!-- Defines the header itself. -->
+            <header>
+
+                <!-- Provides the area in which the application icons are being showed. -->
+                <div class="absolute">
+                    <div class="container application-icons">
+                        <img ngc-dynamic-event-handling="icon.Id" id="{{icon.Id}}" ng-class="{'icon': !$first}" ng-repeat-start="icon in Office.Icons" ng-repeat-end ng-src="{{icon.Icon}}" alt="{{icon.Alt}}" />
+                    </div>
+                </div>
+                
+                <!-- Provides the area in which the application title is being rendered. -->
+                <div class="container container-full-width center">
+                    <div class="application-title">{{Office.Title}}</div>
+                </div>
+                
+                <!-- Renders the ribbon. 
+                        This AngularJS directive takes 2 elements as input parameters:
+                        templateUrl:        The url (path) of the template that contains the AngularJS HTML to be rendered. (However this can stay the same, it's done
+                                            to allow users to customize the ribbon when they want to.
+
+                        data:               The url to a JSon file, defining the ribbon that should be rendered.
+                -->
+                <ribbon templateUrl="/OfficeUI.Beta/Resources/Templates/Office.Ribbon.html" data="/OfficeUI.Beta/Resources/JSon/Ribbon/ribbon.json"></ribbon>
+                
+                <div id="website" class="container">
+                    The contents of the website is placed here.
+                </div>
+            </header>
+        </div>
+
+        <!-- Provides some javascript that needs to be executed on the page. -->
+        <script type="text/javascript">
+            // Bind various events to the OfficeUI application.
+            $(this).OfficeUI.bind("#icoApplication", "click", function() {
+                console.log('This method is executed when you click on the application icon.');
+            });
+            
+            $(this).OfficeUI.bind("#icoSendReceive", "click", function() {
+                console.log('This method is executed when you click on the send / receive icon.');
+            });
+        </script>
+    </body>
 </html>
