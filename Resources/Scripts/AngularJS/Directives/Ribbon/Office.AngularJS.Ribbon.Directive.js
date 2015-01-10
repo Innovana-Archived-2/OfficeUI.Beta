@@ -46,12 +46,12 @@ OfficeUIRibbon.directive('ngcCollapse', function() {
 
                 // Rise the curtain is it's not showed.
                 if (scope.isShowed()) {
-                    $(element).parent().curtain(null, function() {
+                    $(element).parent().parent().curtain(null, function() {
                         // Sets the ribbon as hidden.
                         scope.setRibbonHidden();
                     });
                 } else if (scope.isVisible()) {
-                    var elementHeight = element.parent().height();
+                    var elementHeight = element.parent().parent().height();
                     animatedElement.animate({'margin-top': elementHeight + 'px'}, $.fn.OfficeUI.Defaults.duration, function() {
 
                         // Remove the margin-top again right now since the absolute class will be removed, and otherwise the element will be displayed too low.
@@ -61,7 +61,7 @@ OfficeUIRibbon.directive('ngcCollapse', function() {
                         scope.setRibbonShowed();
                     });
                     
-                    $(element).parent().curtain({
+                    $(element).parent().parent().curtain({
                         direction: 'down',
                         height: elementHeight
                     }, function() {

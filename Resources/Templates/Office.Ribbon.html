@@ -7,7 +7,7 @@
             </li>
         </ul>
         
-        <ul role="ribbonContents" id="ribbonContents" class="no-margin no-padding" ng-class="{'no-border': OfficeRibbon.isHidden(), 'absolute': OfficeRibbon.isVisible()}">
+        <ul role="ribbonContents" id="ribbonContents" class="no-margin no-padding" ng-class="{'no-border': OfficeRibbon.isHidden(), 'absolute': OfficeRibbon.isVisible(), 'hidden': OfficeRibbon.isHidden()}">
             <li ng-repeat="tabContents in OfficeRibbon.Tabs" ng-class="{'hidden': !OfficeRibbon.isActive(tabContents.Id)}">
                 <div class="container absolute">Hier komen de contents van het ribbon item: {{tabContents.Id}}</div>
                 <div ngc-collapse="{area: '#website'}" class="container absolute icon collapse" stop-event="click">
