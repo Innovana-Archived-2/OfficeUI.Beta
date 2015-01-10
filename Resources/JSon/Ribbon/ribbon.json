@@ -15,11 +15,13 @@
                         {
                             "Actions": [
                                 {
+                                    "Id": "icoNewEmail",
                                     "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/NewMailMessage.png",
                                     "Legend": "New<br/> Email",
                                     "Type": "bIcon"
                                 },
                                 {
+                                    "Id": "icoNewItems",
                                     "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/NewItemMenu.png",
                                     "Legend": "New<br/>Items",
                                     "Type": "bIcon",
@@ -98,11 +100,13 @@
                         {
                             "Actions": [
                                 {
+                                    "Id": "icoIgnore",
                                     "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Ignore.png",
                                     "Legend": "Ignore",
                                     "Type": "sIcon"
                                 },
                                 {
+                                    "Id": "icoCleanUp",
                                     "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/CleanUp.png",
                                     "Legend": "Clean Up",
                                     "Type": "sIcon",
@@ -120,6 +124,7 @@
                                     ]
                                 },
                                 {
+                                    "Id": "icoJunk",
                                     "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Junk.png",
                                     "Legend": "Junk",
                                     "Type": "sIcon",
@@ -150,6 +155,7 @@
                         {
                             "Actions": [
                                 {
+                                    "Id": "icoDelete",
                                     "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Delete.png",
                                     "Legend": "Delete",
                                     "Type": "bIcon"
@@ -164,16 +170,19 @@
                         {
                             "Actions": [
                                 {
+                                    "Id": "icoReply",
                                     "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Reply.png",
                                     "Legend": "Reply",
                                     "Type": "bIcon"
                                 },
                                 {
+                                    "Id": "icoBigIcon",
                                     "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/ReplyAll.png",
                                     "Legend": "Reply<br/>All",
                                     "Type": "bIcon"
                                 },
                                 {
+                                    "Id": "icoForward",
                                     "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Forward.png",
                                     "Legend": "Forward",
                                     "Type": "bIcon"

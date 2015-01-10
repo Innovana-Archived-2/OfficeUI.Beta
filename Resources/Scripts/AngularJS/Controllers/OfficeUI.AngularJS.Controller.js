@@ -5,10 +5,10 @@
    Remarks: We're using the function 'module' of AngularJS here which accepts only 1 single parameter.
             This signature defines that we're only loading the AngularJS module 'OfficeUI'.
 */
-var OfficeUI = angular.module('Office');
+var OfficeUI = angular.module('OfficeUI');
 
 // Defines the Office controller for the application.
-OfficeUI.controller('Office', ['$scope', '$http', function($scope, $http) {
+OfficeUI.controller('OfficeUI', ['$scope', '$http', function($scope, $http) {
     var application = this;
     
     // Get the Json file 'application.json' that defines the application data.

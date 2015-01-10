@@ -5,7 +5,7 @@
  Remarks: We're using the function 'module' of AngularJS here which accepts only 1 single parameter.
  This signature defines that we're only loading the AngularJS module 'OfficeRibbon'.
  */
-var OfficeUIRibbon = angular.module('OfficeRibbon');
+var OfficeUIRibbon = angular.module('OfficeUIRibbon');
 
 
 OfficeUIRibbon.filter('actionLegend', function() {

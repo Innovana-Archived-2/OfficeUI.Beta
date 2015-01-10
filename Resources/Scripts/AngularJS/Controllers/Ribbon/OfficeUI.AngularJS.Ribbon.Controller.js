@@ -5,10 +5,10 @@
    Remarks: We're using the function 'module' of AngularJS here which accepts only 1 single parameter.
             This signature defines that we're only loading the AngularJS module 'OfficeUI.Ribbon'.
 */
-var OfficeUIRibbon = angular.module('OfficeRibbon');
+var OfficeUIRibbon = angular.module('OfficeUIRibbon');
 
 // Defines the OfficeUIRibbon controller for the application.
-OfficeUIRibbon.controller('OfficeRibbon', ['$scope', '$http', function($scope, $http) {
+OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', function($scope, $http) {
     // Defines the various states that a ribbon can have.
     //      Hidden:     The ribbon is hidden completely.
     //      Visible:    The ribbon is visible, but not showed, which means it will be collapsed again when needed.

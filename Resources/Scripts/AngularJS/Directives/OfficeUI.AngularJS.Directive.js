@@ -1,5 +1,5 @@
 /* Loads the AngularJS module 'Office'. */
-var OfficeUI = angular.module('Office');
+var OfficeUI = angular.module('OfficeUI');
 
 /* Defines a directive called 'dynamic-event-handler'. This directive must be called as an element. */
 OfficeUI.directive('ngcDynamicEventHandling', function() {

@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" ng-app="Office">
+<html lang="en" ng-app="OfficeUI">
     <head>
         <title>OfficeUI (Beta)</title>
         
@@ -16,13 +16,13 @@
         <script src="/OfficeUI.Beta/Resources/Scripts/External/AngularJS/Modules/angular-sanitze.js"></script>
         
         <!-- AngularJS Modules, Filters, Services, Directives, Filters and Controllers. -->
-        <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Modules/Office.AngularJS.Module.js"></script>
-        <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Modules/Ribbon/Office.AngularJS.Ribbon.Module.js"></script>
-        <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Controllers/Office.AngularJS.Controller.js"></script>
-        <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Controllers/Ribbon/Office.AngularJS.Ribbon.Controller.js"></script>
-        <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/Office.AngularJS.Directive.js"></script>
-        <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/Ribbon/Office.AngularJS.Ribbon.Directive.js"></script>
-        <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Filters/Ribbon/Office.AngularJS.Ribbon.filter.js"></script>
+        <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Modules/OfficeUI.AngularJS.Module.js"></script>
+        <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Modules/Ribbon/OfficeUI.AngularJS.Ribbon.Module.js"></script>
+        <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Controllers/OfficeUI.AngularJS.Controller.js"></script>
+        <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Controllers/Ribbon/OfficeUI.AngularJS.Ribbon.Controller.js"></script>
+        <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.AngularJS.Directive.js"></script>
+        <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/Ribbon/OfficeUI.AngularJS.Ribbon.Directive.js"></script>
+        <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Filters/Ribbon/OfficeUI.AngularJS.Ribbon.filter.js"></script>
         
         
         <!-- External Stylesheets which are needed by the application. -->
@@ -36,20 +36,20 @@
     <!-- Defines the main content area for the website. -->
     <body class="no-margin no-padding">
         <!-- Provides the main OfficeUI area. -->
-        <div id="OfficeUI" ng-controller="Office as Office"> <!-- Defines this area as an area which is bound to the AngularJS Office controller. -->
+        <div id="OfficeUI" ng-controller="OfficeUI as OfficeUI"> <!-- Defines this area as an area which is bound to the AngularJS Office controller. -->
             <!-- Defines the header itself. -->
             <header>
 
                 <!-- Provides the area in which the application icons are being showed. -->
                 <div class="absolute">
                     <div class="container application-icons">
-                        <img ngc-dynamic-event-handling="icon.Id" id="{{icon.Id}}" ng-class="{'icon': !$first}" ng-repeat-start="icon in Office.Icons" ng-repeat-end ng-src="{{icon.Icon}}" alt="{{icon.Alt}}" />
+                        <img ngc-dynamic-event-handling="icon.Id" id="{{icon.Id}}" ng-class="{'icon': !$first}" ng-repeat-start="icon in OfficeUI.Icons" ng-repeat-end ng-src="{{icon.Icon}}" alt="{{icon.Alt}}" />
                     </div>
                 </div>
                 
                 <!-- Provides the area in which the application title is being rendered. -->
                 <div class="container container-full-width center">
-                    <div class="application-title">{{Office.Title}}</div>
+                    <div class="application-title">{{OfficeUI.Title}}</div>
                 </div>
                 
                 <!-- Renders the ribbon. 
@@ -59,7 +59,7 @@
 
                         data:               The url to a JSon file, defining the ribbon that should be rendered.
                 -->
-                <ribbon templateUrl="/OfficeUI.Beta/Resources/Templates/Office.Ribbon.html" data="/OfficeUI.Beta/Resources/JSon/Ribbon/ribbon.json"></ribbon>
+                <ribbon templateUrl="/OfficeUI.Beta/Resources/Templates/Ribbon.html" data="/OfficeUI.Beta/Resources/JSon/Ribbon/ribbon.json"></ribbon>
                 
                 <div id="website" class="container">
                     The contents of the website is placed here.
@@ -75,6 +75,10 @@
             });
             
             $(this).OfficeUI.bind("#icoSendReceive", "click", function() {
+                console.log('This method is executed when you click on the send / receive icon.');
+            });
+
+            $(this).OfficeUI.bind("#icoNewEmail", "click", function() {
                 console.log('This method is executed when you click on the send / receive icon.');
             });
         </script>

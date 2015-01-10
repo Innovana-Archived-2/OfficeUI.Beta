@@ -1,0 +1,50 @@
+<div class="container container-full-width" ng-controller="OfficeUIRibbon as OfficeUIRibbon" ngc-scroll>
+    <div class="container container-full-width">
+        <ul role="ribbonTabs" class="no-margin no-padding" ng-class="{'no-border': OfficeRibbon.isHidden()}">
+
+            <li id="{{tab.Id}}" role="tab" class="container" ng-repeat="tab in OfficeUIRibbon.Tabs" ng-class="{'no-border': OfficeUIRibbon.isHidden(), active: OfficeUIRibbon.isActive(tab.Id) && !OfficeUIRibbon.isHidden(), application:$first}" ng-click="$first || OfficeUIRibbon.setActiveTab(tab.Id);" stop-event="click">
+                {{tab.Label}}
+            </li>
+        </ul>
+        
+        <ul role="ribbonContents" id="ribbonContents" class="no-margin no-padding" ng-class="{'no-border': OfficeUIRibbon.isHidden(), 'absolute': OfficeUIRibbon.isVisible(), 'hidden': OfficeUIRibbon.isHidden()}">
+            <li ng-repeat="tabContents in OfficeUIRibbon.Tabs" ng-class="{'hidden': !OfficeUIRibbon.isActive(tabContents.Id)}">
+                <div class="container">
+                    <div class="container group" ng-repeat-start="group in tabContents.Groups">
+                        <div class="legend">{{group.Legend}}</div>
+
+                        <div class="container area" ng-repeat="area in group.Areas">
+                            <!-- The area to render a big icon. -->
+                            <div class="container icon big-icon" ng-repeat="action in area.Actions" ng-if="action.Type == 'bIcon'" ngc-dynamic-event-handling="action.Id" id="{{action.Id}}">
+                                <img ng-src="{{action.Resource}}"/>
+                                <div class="label" ng-bind-html="action |actionLegend"></div>
+                            </div>
+
+                            <!-- The area to render a small icon. -->
+                            <div class="container-block" ng-repeat="action in area.Actions" ng-if="action.Type == 'sIcon'">
+                                <div class="container icon small-icon" ngc-dynamic-event-handling="action.Id" id="{{action.Id}}">
+                                    <img ng-src="{{action.Resource}}" />
+                                    <div class="container label" ng-bind-html="action |actionLegend"></div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Defines the vertical 'pipe' sign. -->
+                    <div class="container pipe" ng-repeat-end>
+
+                    </div>
+
+                </div>
+                <div ngc-collapse="{area: '#website'}" class="container absolute icon collapse" stop-event="click">
+
+                    <!-- We display 2 possible icons in the ribbon. A 'Pin' icon or an 'Arrow' icon. This is done using 'ng-if' directive. -->
+                    <img src="/OfficeUI.Beta/Resources/Images/Ribbon/Built-In/Collapse.png" class="pin-icon" ng-if="OfficeUIRibbon.isShowed()"/>
+                    <img src="/OfficeUI.Beta/Resources/Images/Ribbon/Built-In/Pin.png" class="pin-icon" ng-if="OfficeUIRibbon.isVisible()"/>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
