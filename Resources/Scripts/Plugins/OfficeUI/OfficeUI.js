@@ -11,7 +11,9 @@
     }
 
     // Plugin defaults – added as a property on our plugin function.
-    $.fn.OfficeUI.Defaults = { };
+    $.fn.OfficeUI.Defaults = {
+        changeActiveTabOnHover: false
+    };
     
     var eventCollection = []; // Defines a private collection of registered events.
 

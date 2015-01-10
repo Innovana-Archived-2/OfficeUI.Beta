@@ -71,3 +71,18 @@ OfficeUIRibbon.directive('ngcCollapse', function() {
         }
     }
 });
+
+// Provides a way to stop propagating an event.
+OfficeUIRibbon.directive('ngcActiveTabOnHover', function () {
+    return {
+        restrict: 'A',
+        link: function (scope, element, attr) {
+            element.bind("mouseenter", function (e) {
+                // Only enable the tab when the plugin is configured to do so.
+                if ($.fn.OfficeUI.Defaults.changeActiveTabOnHover) {
+                    scope.setActiveTab(element.attr('id'));
+                }
+            });
+        }
+    };
+});
