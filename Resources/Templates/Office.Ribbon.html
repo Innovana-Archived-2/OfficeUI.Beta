@@ -8,28 +8,32 @@
         </ul>
         
         <ul role="ribbonContents" id="ribbonContents" class="no-margin no-padding" ng-class="{'no-border': OfficeRibbon.isHidden(), 'absolute': OfficeRibbon.isVisible(), 'hidden': OfficeRibbon.isHidden()}">
-            <li ng-repeat="tabContents in OfficeRibbon.Tabs" ng-class="{'hidden': !OfficeRibbon.isActive(tabContents.Id)}" style="height: 100%;">
+            <li ng-repeat="tabContents in OfficeRibbon.Tabs" ng-class="{'hidden': !OfficeRibbon.isActive(tabContents.Id)}">
                 <div class="container">
-                    <div class="container" ng-repeat-start="group in tabContents.Groups" style="margin-left: 4px; margin-top: 3px; height: 90px; position: relative;">
-                        <div style="font-size: 0.9em; color: #666; text-align: center; position: absolute; bottom: 2px; margin-left: -1px; width: 100%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">{{group.Legend}}</div>
+                    <div class="container group" ng-repeat-start="group in tabContents.Groups">
+                        <div class="legend">{{group.Legend}}</div>
 
-                        <div class="container" ng-repeat="area in group.Areas" style="vertical-align: top;">
+                        <div class="container area" ng-repeat="area in group.Areas">
                             <!-- The area to render a big icon. -->
-                            <div class="container icon" ng-repeat="action in area.Actions" style="position: relative; height: 66px; margin-right: 0px; padding-top: 3px; vertical-align: top;" ng-if="action.Type == 'bIcon'">
-                                <img ng-src="{{action.Resource}}" style="padding-left: 5px; padding-right: 5px;"/>
-                                <div ng-bind-html="action |actionLegend" style="text-align: center; line-height: 16px; position: absolute; top: 37px; width: 100%;"></div>
+                            <div class="container icon big-icon" ng-repeat="action in area.Actions" ng-if="action.Type == 'bIcon'">
+                                <img ng-src="{{action.Resource}}"/>
+                                <div class="label" ng-bind-html="action |actionLegend"></div>
                             </div>
 
                             <!-- The area to render a small icon. -->
-                            <div class="container icon" ng-repeat="action in area.Actions" style="display: block; padding-top: 3px; text-align: left; margin-right: 5px;" ng-if="action.Type == 'sIcon'">
-                                <img ng-src="{{action.Resource}}" style="padding-left: 3px; padding-right: 0px;"/>
-                                <div class="container" ng-bind-html="action |actionLegend" style="text-align: center; vertical-align: top;"></div>
+                            <div class="container-block" ng-repeat="action in area.Actions" ng-if="action.Type == 'sIcon'">
+                                <div class="container icon small-icon">
+                                    <img ng-src="{{action.Resource}}" />
+                                    <div class="container label" ng-bind-html="action |actionLegend"></div>
+                                </div>
                             </div>
 
                         </div>
 
                     </div>
-                    <div class="container" ng-repeat-end style="margin-left: 1px; height: 84px; vertical-align: top; border-right: 1px solid #d4d4d4; margin-top: 4px;">
+
+                    <!-- Defines the vertical 'pipe' sign. -->
+                    <div class="container pipe" ng-repeat-end>
 
                     </div>
 
@@ -37,8 +41,8 @@
                 <div ngc-collapse="{area: '#website'}" class="container absolute icon collapse" stop-event="click">
 
                     <!-- We display 2 possible icons in the ribbon. A 'Pin' icon or an 'Arrow' icon. This is done using 'ng-if' directive. -->
-                    <img src="/OfficeUI.Beta/Resources/Images/Ribbon/Built-In/Collapse.png" style="padding-bottom: 1px;" ng-if="OfficeRibbon.isShowed()"/>
-                    <img src="/OfficeUI.Beta/Resources/Images/Ribbon/Built-In/Pin.png" style="padding-bottom: 1px;" ng-if="OfficeRibbon.isVisible()"/>
+                    <img src="/OfficeUI.Beta/Resources/Images/Ribbon/Built-In/Collapse.png" class="pin-icon" ng-if="OfficeRibbon.isShowed()"/>
+                    <img src="/OfficeUI.Beta/Resources/Images/Ribbon/Built-In/Pin.png" class="pin-icon" ng-if="OfficeRibbon.isVisible()"/>
                 </div>
             </li>
         </ul>

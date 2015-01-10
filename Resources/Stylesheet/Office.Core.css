@@ -29,6 +29,7 @@
 
 /* Container elements. */
 #OfficeUI .container { display: inline-block; }
+#OfficeUI .container-block { display: block; }
 #OfficeUI .container-full-width { width: 100%; }
 
 #OfficeUI .title { margin-top: 6px; }
