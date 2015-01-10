@@ -28,9 +28,12 @@
 
                             <!-- The area to render a small icon. -->
                             <div class="container-block" ng-repeat="action in area.Actions" ng-if="action.Type == 'sIcon'">
-                                <div class="container icon small-icon" ngc-dynamic-event-handling="action.Id" id="{{action.Id}}">
+                                <div ngc-tooltip class="container icon small-icon" ngc-dynamic-event-handling="action.Id" id="{{action.Id}}">
                                     <img ng-src="{{action.Resource}}" />
                                     <div class="container label" ng-bind-html="action |actionLegend"></div>
+                                </div>
+                                <div class="tooltip" ng-if="action.Tooltip" style="display: none;">
+                                    <div ng-bind-html="action.Tooltip |actionTooltip"></div>
                                 </div>
                             </div>
 
