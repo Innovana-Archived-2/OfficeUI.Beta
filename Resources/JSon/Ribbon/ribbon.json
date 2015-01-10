@@ -27,22 +27,26 @@
                                     "Legend": "New<br/>Items",
                                     "Tooltip": "<strong>New Items</strong><p>Create a new item, such as a new Meeting or Contact.</p>",
                                     "Type": "bIcon",
-                                    "HoldMenu": "True",
                                     "MenuItems": [
                                         {
-                                            "Label": "E-mail message"
+                                            "Label": "E-mail Message",
+                                            "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Menu/EmailMessage.png"
                                         },
                                         {
-                                            "Label": "Appointment"
+                                            "Label": "Appointment",
+                                            "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Menu/Appointment.png"
                                         },
                                         {
-                                            "Label": "Meeting"
+                                            "Label": "Meeting",
+                                            "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Menu/Meeting.png"
                                         },
                                         {
-                                            "Label": "Contact"
+                                            "Label": "Contact",
+                                            "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Menu/Contact.png"
                                         },
                                         {
-                                            "Label": "Task"
+                                            "Label": "Task",
+                                            "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Menu/Task.png"
                                         },
                                         {
                                             "Label": "E-mail message using",
@@ -88,7 +92,8 @@
                                             ]
                                         },
                                         {
-                                            "Label": "Lync Meeting"
+                                            "Label": "Lync Meeting",
+                                            "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Menu/Lync.png"
                                         }
                                     ]
                                 }
@@ -114,10 +119,10 @@
                                     "Legend": "Clean Up",
                                     "Type": "sIcon",
                                     "Tooltip": "<strong>Clean Up</strong><p>Remove redundant messages in the selected conversation.</p>",
-                                    "HoldMenu": "True",
                                     "MenuItems": [
                                         {
-                                            "Label": "Clean Up Converation"
+                                            "Label": "Clean Up Converation",
+                                            "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Menu/CleanUpMenu.png"
                                         },
                                         {
                                             "Label": "Clean Up Folder"
@@ -133,7 +138,6 @@
                                     "Legend": "Junk",
                                     "Tooltip": "<strong>Junk</strong><p>Mark the selected items as junk or prevent items sent by this sender, this sender's domain, or this group or mailing list from being marked as junk.</p>",
                                     "Type": "sIcon",
-                                    "HoldMenu": "True",
                                     "MenuItems": [
                                         {
                                             "Label": "Block Sender"

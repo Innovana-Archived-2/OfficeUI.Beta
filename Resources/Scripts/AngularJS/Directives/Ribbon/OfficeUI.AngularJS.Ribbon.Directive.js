@@ -95,12 +95,12 @@ OfficeUIRibbon.directive('ngcTooltip', function () {
             element.bind("mouseenter", function (e) {
                 var tooltipElement = element.next();
 
-                var showHandleTimeout = setTimeout(function() {
+                $.fn.OfficeUI.waitHandlerTooltip = setTimeout(function() {
                     tooltipElement.show();
                 }, 1000);
 
                 element.bind("mouseleave", function (e) {
-                    clearTimeout(showHandleTimeout);
+                    clearTimeout($.fn.OfficeUI.waitHandlerTooltip);
 
                     setTimeout(function() {
                         tooltipElement.hide();

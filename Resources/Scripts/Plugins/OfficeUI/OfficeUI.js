@@ -14,6 +14,8 @@
     $.fn.OfficeUI.Defaults = {
         changeActiveTabOnHover: false
     };
+
+    $.fn.OfficeUI.waitHandlerTooltip = null;
     
     var eventCollection = []; // Defines a private collection of registered events.
 

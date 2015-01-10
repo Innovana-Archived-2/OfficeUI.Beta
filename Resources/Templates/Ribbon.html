@@ -16,9 +16,22 @@
                         <div class="container area" ng-repeat="area in group.Areas">
                             <!-- The area to render a big icon. -->
                             <div class="container" ng-repeat="action in area.Actions" ng-if="action.Type == 'bIcon'">
-                                <div ngc-tooltip class="container icon big-icon"  ngc-dynamic-event-handling="action.Id" id="{{action.Id}}">
+                                <div ngc-menu-holder="{menu: '#{{action.Id}}_menu'}" ngc-tooltip class="container icon big-icon"  ngc-dynamic-event-handling="action.Id" id="{{action.Id}}">
                                     <img ng-src="{{action.Resource}}"/>
                                     <div class="label" ng-bind-html="action |actionLegend"></div>
+
+                                    <div class="container menu absolute" id="{{action.Id}}_menu" ng-if="action.MenuItems">
+                                        <ul class="no-padding no-margin">
+                                            <li ng-repeat="menuItem in action.MenuItems">
+                                                <div class="container">
+                                                    <div class="container image">
+                                                        <img ng-src="{{menuItem.Resource}}" />
+                                                    </div>
+                                                    <div class="container text">{{menuItem.Label}}</div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                                 <div class="tooltip" ng-if="action.Tooltip" style="display: none;">
                                     <div ng-bind-html="action.Tooltip |actionTooltip"></div>
@@ -28,9 +41,22 @@
 
                             <!-- The area to render a small icon. -->
                             <div class="container-block" ng-repeat="action in area.Actions" ng-if="action.Type == 'sIcon'">
-                                <div ngc-tooltip class="container icon small-icon" ngc-dynamic-event-handling="action.Id" id="{{action.Id}}">
+                                <div ngc-menu-holder="{menu: '#{{action.Id}}_menu'}" ngc-tooltip class="container icon small-icon" ngc-dynamic-event-handling="action.Id" id="{{action.Id}}">
                                     <img ng-src="{{action.Resource}}" />
                                     <div class="container label" ng-bind-html="action |actionLegend"></div>
+
+                                    <div class="container menu menu-small absolute" id="{{action.Id}}_menu" ng-if="action.MenuItems">
+                                        <ul class="no-padding no-margin">
+                                            <li ng-repeat="menuItem in action.MenuItems">
+                                                <div class="container">
+                                                    <div class="container image">
+                                                        <img ng-src="{{menuItem.Resource}}" />
+                                                    </div>
+                                                    <div class="container text">{{menuItem.Label}}</div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                                 <div class="tooltip" ng-if="action.Tooltip" style="display: none;">
                                     <div ng-bind-html="action.Tooltip |actionTooltip"></div>
