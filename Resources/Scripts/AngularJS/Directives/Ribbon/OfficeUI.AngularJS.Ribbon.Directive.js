@@ -28,6 +28,8 @@ OfficeUIRibbon.directive('ngcScroll', function() {
         link: function(scope, element) {
             element.on('DOMMouseScroll mousewheel', function (e) {
                 scope.ribbonScroll(e); // Execute the function 'ribbonScroll'.
+
+                e.preventDefault(); // Prevent the window from scrolling when scrolling on the ribbon tabs to change tabs.
             });
         }
     }
@@ -46,16 +48,13 @@ OfficeUIRibbon.directive('ngcCollapse', function() {
 
                 // Rise the curtain is it's not showed.
                 if (scope.isShowed()) {
+                    $(animatedElement).animate({'margin-top': '53px'}, $.fn.OfficeUI.Defaults.duration);
                     $(element).parent().parent().curtain(null, function() {
                         // Sets the ribbon as hidden.
                         scope.setRibbonHidden();
                     });
                 } else if (scope.isVisible()) {
-                    var elementHeight = element.parent().parent().height();
-                    animatedElement.animate({'margin-top': elementHeight + 'px'}, $.fn.OfficeUI.Defaults.duration, function() {
-
-                        // Remove the margin-top again right now since the absolute class will be removed, and otherwise the element will be displayed too low.
-                        animatedElement.css('margin-top', '0px');
+                    animatedElement.animate({'margin-top': '146px'}, $.fn.OfficeUI.Defaults.duration, function() {
 
                         // Sets the ribbon as showed.
                         scope.setRibbonShowed();
@@ -63,7 +62,7 @@ OfficeUIRibbon.directive('ngcCollapse', function() {
                     
                     $(element).parent().parent().curtain({
                         direction: 'down',
-                        height: elementHeight
+                        height: 92
                     }, function() {
                         
                     });
