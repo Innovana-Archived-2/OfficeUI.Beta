@@ -18,13 +18,14 @@
                                     "Id": "icoNewEmail",
                                     "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/NewMailMessage.png",
                                     "Legend": "New<br/> Email",
-                                    "Type": "bIcon",
-                                    "Tooltip": "<strong>New Item (Ctrl+N)</strong><p>Create a new item.</p>"
+                                    "Tooltip": "<strong>New Item (Ctrl+N)</strong><p>Create a new item.</p>",
+                                    "Type": "bIcon"
                                 },
                                 {
                                     "Id": "icoNewItems",
                                     "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/NewItemMenu.png",
                                     "Legend": "New<br/>Items",
+                                    "Tooltip": "<strong>New Items</strong><p>Create a new item, such as a new Meeting or Contact.</p>",
                                     "Type": "bIcon",
                                     "HoldMenu": "True",
                                     "MenuItems": [
@@ -104,6 +105,7 @@
                                     "Id": "icoIgnore",
                                     "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Ignore.png",
                                     "Legend": "Ignore",
+                                    "Tooltip": "<strong>Ignore Conversation (Ctrl+Del)</strong><p>Move current and future messages in the selected conversation to the Deleted Items folder.</p>",
                                     "Type": "sIcon"
                                 },
                                 {
@@ -111,6 +113,7 @@
                                     "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/CleanUp.png",
                                     "Legend": "Clean Up",
                                     "Type": "sIcon",
+                                    "Tooltip": "<strong>Clean Up</strong><p>Remove redundant messages in the selected conversation.</p>",
                                     "HoldMenu": "True",
                                     "MenuItems": [
                                         {
@@ -128,6 +131,7 @@
                                     "Id": "icoJunk",
                                     "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Junk.png",
                                     "Legend": "Junk",
+                                    "Tooltip": "<strong>Junk</strong><p>Mark the selected items as junk or prevent items sent by this sender, this sender's domain, or this group or mailing list from being marked as junk.</p>",
                                     "Type": "sIcon",
                                     "HoldMenu": "True",
                                     "MenuItems": [
@@ -159,6 +163,7 @@
                                     "Id": "icoDelete",
                                     "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Delete.png",
                                     "Legend": "Delete",
+                                    "Tooltip": "<strong>Delete (Ctrl+D)</strong><p>Delete this item.</p>",
                                     "Type": "bIcon"
                                 }
                             ]
@@ -174,18 +179,21 @@
                                     "Id": "icoReply",
                                     "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Reply.png",
                                     "Legend": "Reply",
+                                    "Tooltip": "<strong>Reply (Ctrl+R)</strong><p>Reply to the sender of this message.</p>",
                                     "Type": "bIcon"
                                 },
                                 {
                                     "Id": "icoBigIcon",
                                     "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/ReplyAll.png",
                                     "Legend": "Reply<br/>All",
+                                    "Tooltip": "<strong>Reply All (Ctrl+Shift+R)</strong><p>Reply to the sender and all other recipients of this message.</p>",
                                     "Type": "bIcon"
                                 },
                                 {
                                     "Id": "icoForward",
                                     "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Forward.png",
                                     "Legend": "Forward",
+                                    "Tooltip": "<strong>Forward (Ctrl+F)</strong><p>Forward this item to someone else.</p>",
                                     "Type": "bIcon"
                                 }
                             ]
