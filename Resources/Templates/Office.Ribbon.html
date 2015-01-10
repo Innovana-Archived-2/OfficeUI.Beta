@@ -8,13 +8,15 @@
         </ul>
         
         <ul role="ribbonContents" id="ribbonContents" class="no-margin no-padding" ng-class="{'no-border': OfficeRibbon.isHidden(), 'absolute': OfficeRibbon.isVisible()}">
-            <div class="container absolute">Hier komen de contents van de ribbon.</div>
-            <div ngc-collapse="{area: '#website'}" class="container absolute icon collapse" stop-event="click">
-                
-                <!-- We display 2 possible icons in the ribbon. A 'Pin' icon or an 'Arrow' icon. This is done using 'ng-if' directive. -->
-                <img src="/OfficeUI.Beta/Resources/Images/Ribbon/Built-In/Collapse.png" style="padding-bottom: 1px;" ng-if="OfficeRibbon.isShowed()"/>
-                <img src="/OfficeUI.Beta/Resources/Images/Ribbon/Built-In/Pin.png" style="padding-bottom: 1px;" ng-if="OfficeRibbon.isVisible()"/>
-            </div>
+            <li ng-repeat="tabContents in OfficeRibbon.Tabs" ng-class="{'hidden': !OfficeRibbon.isActive(tabContents.Id)}">
+                <div class="container absolute">Hier komen de contents van het ribbon item: {{tabContents.Id}}</div>
+                <div ngc-collapse="{area: '#website'}" class="container absolute icon collapse" stop-event="click">
+
+                    <!-- We display 2 possible icons in the ribbon. A 'Pin' icon or an 'Arrow' icon. This is done using 'ng-if' directive. -->
+                    <img src="/OfficeUI.Beta/Resources/Images/Ribbon/Built-In/Collapse.png" style="padding-bottom: 1px;" ng-if="OfficeRibbon.isShowed()"/>
+                    <img src="/OfficeUI.Beta/Resources/Images/Ribbon/Built-In/Pin.png" style="padding-bottom: 1px;" ng-if="OfficeRibbon.isVisible()"/>
+                </div>
+            </li>
         </ul>
     </div>
 </div>

@@ -25,6 +25,7 @@
 #OfficeUI .absolute { position: absolute !important; }
 #OfficeUI .left { float: left !important; }
 #OfficeUI .right { float: right !important; }
+#OfficeUI .hidden { display: none; }
 
 /* Container elements. */
 #OfficeUI .container { display: inline-block; }
