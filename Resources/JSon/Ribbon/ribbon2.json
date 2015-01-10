@@ -30,6 +30,41 @@
                     ]
                 },
                 {
+                    "Legend": "Delete",
+                    "Areas": [
+                        {
+                            "Actions": [
+                                {
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Ignore.png",
+                                    "Legend": "Ignore",
+                                    "Type": "sIcon"
+                                },
+                                {
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/CleanUp.png",
+                                    "Legend": "Clean Up",
+                                    "Type": "sIcon",
+                                    "HoldMenu": "True"
+                                },
+                                {
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Junk.png",
+                                    "Legend": "Junk",
+                                    "Type": "sIcon",
+                                    "HoldMenu": "True"
+                                }
+                            ]
+                        },
+                        {
+                            "Actions": [
+                                {
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Delete.png",
+                                    "Legend": "Delete",
+                                    "Type": "bIcon"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
                     "Legend": "Respond",
                     "Areas": [
                         {
