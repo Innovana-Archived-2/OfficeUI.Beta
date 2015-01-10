@@ -8,8 +8,24 @@
         </ul>
         
         <ul role="ribbonContents" id="ribbonContents" class="no-margin no-padding" ng-class="{'no-border': OfficeRibbon.isHidden(), 'absolute': OfficeRibbon.isVisible(), 'hidden': OfficeRibbon.isHidden()}">
-            <li ng-repeat="tabContents in OfficeRibbon.Tabs" ng-class="{'hidden': !OfficeRibbon.isActive(tabContents.Id)}">
-                <div class="container absolute">Hier komen de contents van het ribbon item: {{tabContents.Id}}</div>
+            <li ng-repeat="tabContents in OfficeRibbon.Tabs" ng-class="{'hidden': !OfficeRibbon.isActive(tabContents.Id)}" style="height: 100%;">
+                <div class="container">
+                    <div class="container" ng-repeat-start="group in tabContents.Groups" style="margin-left: 4px; margin-top: 3px; height: 90px; position: relative;">
+                        <div style="font-size: 0.9em; color: #666; text-align: center; position: absolute; bottom: 2px; margin-left: -1px; width: 100%;">{{group.Legend}}</div>
+
+                        <div class="container" ng-repeat="area in group.Areas">
+                            <div class="container" ng-repeat="action in area.Actions" style="margin-right: 0px; padding-top: 3px; vertical-align: top;">
+                                <img ng-src="{{action.Resource}}" style="padding-left: 5px; padding-right: 5px;"/>
+                                <div ng-bind-html="action |actionLegend" style="text-align: center;"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="container" ng-repeat-end style="margin-left: 1px; height: 84px; vertical-align: top; border-right: 1px solid #d4d4d4; margin-top: 4px;">
+
+                    </div>
+
+                </div>
                 <div ngc-collapse="{area: '#website'}" class="container absolute icon collapse" stop-event="click">
 
                     <!-- We display 2 possible icons in the ribbon. A 'Pin' icon or an 'Arrow' icon. This is done using 'ng-if' directive. -->

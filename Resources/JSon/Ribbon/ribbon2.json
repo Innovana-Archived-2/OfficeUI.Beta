@@ -1,0 +1,205 @@
+{
+    "Tabs": 
+    [
+        {
+            "Id": "tabFile",
+            "Label": "File"
+        },
+        {
+            "Id": "tabHome",
+            "Label": "Home",
+            "Groups": [
+                {
+                    "Legend": "New",
+                    "Areas": [
+                        {
+                            "Actions": [
+                                {
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/NewMailMessage.png",
+                                    "Legend": "New<br/> Email",
+                                    "Type": "bIcon"
+                                },
+                                {
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/NewItemMenu.png",
+                                    "Legend": "New<br/>Items",
+                                    "Type": "bIcon",
+                                    "HoldMenu": "True"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "Legend": "Respond",
+                    "Areas": [
+                        {
+                            "Actions": [
+                                {
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Reply.png",
+                                    "Legend": "Reply",
+                                    "Type": "bIcon"
+                                },
+                                {
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/ReplyAll.png",
+                                    "Legend": "Reply<br/>All",
+                                    "Type": "bIcon"
+                                },
+                                {
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Forward.png",
+                                    "Legend": "Forward",
+                                    "Type": "bIcon"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "Id": "tabSendReceive",
+            "Label": "Send / Receive",
+            "Groups": [
+                {
+                    "Legend": "Send & Receive",
+                    "Areas": [
+                        {
+                            "Actions": [{}]
+                        }
+                    ]
+                },
+                {
+                    "Legend": "Download",
+                    "Areas": [
+                        {
+                            "Actions": [{}]
+                        }
+                    ]
+                },
+                {
+                    "Legend": "Server",
+                    "Areas": [
+                        {
+                            "Actions": [{}]
+                        }
+                    ]
+                },
+                {
+                    "Legend": "Preferences",
+                    "Areas": [
+                        {
+                            "Actions": [{}]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "Id": "tabFolder",
+            "Label": "Folder",
+            "Groups": [
+                {
+                    "Legend": "New",
+                    "Areas": [
+                        {
+                            "Actions": [{}]
+                        }
+                    ]
+                },
+                {
+                    "Legend": "Actions",
+                    "Areas": [
+                        {
+                            "Actions": [{}]
+                        }
+                    ]
+                },
+                {
+                    "Legend": "Clean Up",
+                    "Areas": [
+                        {
+                            "Actions": [{}]
+                        }
+                    ]
+                },
+                {
+                    "Legend": "Favorites",
+                    "Areas": [
+                        {
+                            "Actions": [{}]
+                        }
+                    ]
+                },
+                {
+                    "Legend": "Online View",
+                    "Areas": [
+                        {
+                            "Actions": [{}]
+                        }
+                    ]
+                },
+                {
+                    "Legend": "Properties",
+                    "Areas": [
+                        {
+                            "Actions": [{}]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "Id": "tabView",
+            "Label": "View",
+            "Groups": [
+                {
+                    "Legend": "Current View",
+                    "Areas": [
+                        {
+                            "Actions": [{}]
+                        }
+                    ]
+                },
+                {
+                    "Legend": "Messages",
+                    "Areas": [
+                        {
+                            "Actions": [{}]
+                        }
+                    ]
+                },
+                {
+                    "Legend": "Arrangement",
+                    "Areas": [
+                        {
+                            "Actions": [{}]
+                        }
+                    ]
+                },
+                {
+                    "Legend": "Layout",
+                    "Areas": [
+                        {
+                            "Actions": [{}]
+                        }
+                    ]
+                },
+                {
+                    "Legend": "People Pane",
+                    "Areas": [
+                        {
+                            "Actions": [{}]
+                        }
+                    ]
+                },
+                {
+                    "Legend": "Window",
+                    "Areas": [
+                        {
+                            "Actions": [{}]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
