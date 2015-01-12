@@ -26,29 +26,31 @@
                             
                             <!-- The area to render a big icon. -->
                             <div class="container action" ng-repeat="action in area.Actions" ng-if="action.Type == 'bIcon'">
-                                <a href="#" ng-href="{{action.Uri}}">
-                                    <div ngc-menu-holder="{menu: '#{{action.Id}}_menu'}" ngc-tooltip="action.setTooltip()" class="container icon big-icon"  ngc-dynamic-event-handling="action.Id" id="{{action.Id}}">
+                                <a href="#" ng-href="{{action.Uri}}" ngc-tooltip="action.setTooltip()">
+                                    <div ngc-menu-holder="{menu: '#{{action.Id}}_menu'}" class="container icon big-icon"  ngc-dynamic-event-handling="action.Id" id="{{action.Id}}">
                                         <img ng-src="{{action.Resource}}"/>
                                         <div class="label" ng-bind-html="action |actionLegend"></div>
                                     </div>
-                                    <div class="tooltip" ng-if="action.hasTooltip" style="display: none;">
-                                        <div ng-bind-html="action.Tooltip |actionTooltip"></div>
-                                    </div>
                                 </a>
+
+                                <div class="tooltip" ng-if="action.hasTooltip" style="display: none;">
+                                    <div ng-bind-html="action.Tooltip |actionTooltip"></div>
+                                </div>
                             </div>
 
 
                             <!-- The area to render a small icon. -->
                             <div class="container-block" ng-repeat="action in area.Actions" ng-if="action.Type == 'sIcon'">
-                                <a href="#" ng-href="{{action.Uri}}">
-                                    <div ngc-menu-holder="{menu: '#{{action.Id}}_menu'}" ngc-tooltip class="container icon small-icon" ngc-dynamic-event-handling="action.Id" id="{{action.Id}}">
+                                <a href="#" ng-href="{{action.Uri}}" ngc-tooltip>
+                                    <div ngc-menu-holder="{menu: '#{{action.Id}}_menu'}" class="container icon small-icon" ngc-dynamic-event-handling="action.Id" id="{{action.Id}}">
                                         <img ng-src="{{action.Resource}}" />
                                         <div class="container label" ng-bind-html="action |actionLegend"></div>
                                     </div>
-                                    <div class="tooltip" ng-if="action.Tooltip" style="display: none;">
-                                        <div ng-bind-html="action.Tooltip |actionTooltip"></div>
-                                    </div>
                                 </a>
+
+                                <div class="tooltip" ng-if="action.Tooltip" style="display: none;">
+                                    <div ng-bind-html="action.Tooltip |actionTooltip"></div>
+                                </div>
                             </div>
 
                             
