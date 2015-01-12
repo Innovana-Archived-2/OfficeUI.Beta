@@ -201,6 +201,17 @@
                                     "Type": "bIcon"
                                 }
                             ]
+                        },
+                        {
+                            "Actions": [
+                                {
+                                    "Id": "icoMeeting",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Meetings.png",
+                                    "Legend": "Meeting",
+                                    "Tooltip": "<strong>Reply with Meeting(Ctrl+Alt+R)</strong><p>Create a meeting request from this item.</p>",
+                                    "Type": "sIcon"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -216,7 +227,16 @@
                     "Legend": "Move",
                     "Areas": [
                         {
-                            "Actions": [{}]
+                            "Actions": [
+                                {
+                                    "Id": "icoMove",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Move.png",
+                                    "Legend": "Move<br/>",
+                                    "Tooltip": "<strong>Move</strong><p>Move or copy the selected items to another folder.</p><p>For e-mail messages, you can create a rule to always move messages in the selected conversation to another folder.</p>",
+                                    "Type": "bIcon",
+                                    "MenuItems": [{}]
+                                }
+                            ]
                         }
                     ]
                 },
@@ -224,7 +244,36 @@
                     "Legend": "Tags",
                     "Areas": [
                         {
-                            "Actions": [{}]
+                            "Actions": [
+                                {
+                                    "Id": "icoAssignPolicy",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Policy.png",
+                                    "Legend": "Assign<br/>Policy",
+                                    "Tooltip": "<strong>Assign Policy</strong><p>Move or copy the selected items to another folder.</p><p>Assign an archive or retention policy to automatticly archive or delete the selected items.</p>",
+                                    "Type": "bIcon",
+                                    "MenuItems": [{}]
+                                }
+                            ]
+                        },
+                        {
+                            "Actions": [
+                                {
+                                    "Id": "icoCategorize",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Categorize.png",
+                                    "Legend": "Categorize",
+                                    "Tooltip": "<strong>Categorize</strong><p>Categorize this item.</p><p>Categories applied to a conversation will be applied to all current and future items in the conversation.</p>",
+                                    "Type": "sIcon",
+                                    "MenuItems": [{}]
+                                },
+                                {
+                                    "Id": "icoFollowUp",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/FollowUp.png",
+                                    "Legend": "Follow Up",
+                                    "Tooltip": "<strong>Follow Up</strong><p>Set a flag to remind you to follow up this item later. Flagged items appear in the To-Do Bar, Daily Task List and Tasks.</p>",
+                                    "Type": "sIcon",
+                                    "MenuItems": [{}]
+                                }
+                            ]
                         }
                     ]
                 },
@@ -232,7 +281,22 @@
                     "Legend": "Find",
                     "Areas": [
                         {
-                            "Actions": [{}]
+                            "Actions": [
+                                {
+                                    "Id": "txtSearchPeople",
+                                    "Legend": "Search People",
+                                    "Type": "Input",
+                                    "Width": "87px"
+                                },
+                                {
+                                    "Id": "icoFilterEmail",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Filter.png",
+                                    "Legend": "Filter Email",
+                                    "Tooltip": "<strong>Filter Email</strong><p>Filter email messages to only show certain items such as unread or flagged items.</p>",
+                                    "Type": "sIcon",
+                                    "MenuItems": [{}]
+                                }
+                            ]
                         }
                     ]
                 }

@@ -14,6 +14,11 @@
                         <div class="legend">{{group.Legend}}</div>
 
                         <div class="container area" ng-repeat="area in group.Areas">
+                            <!-- The area to render an input element. -->
+                            <div class="container-block" ng-repeat="action in area.Actions" ng-if="action.Type == 'Input'">
+                                <input type="text" placeholder="{{action.Legend}}" style="width: {{action.Width}}"/>
+                            </div>
+                            
                             <!-- The area to render a big icon. -->
                             <div class="container action" ng-repeat="action in area.Actions" ng-if="action.Type == 'bIcon'">
                                 <div ngc-menu-holder="{menu: '#{{action.Id}}_menu'}" ngc-tooltip="action.setTooltip()" class="container icon big-icon"  ngc-dynamic-event-handling="action.Id" id="{{action.Id}}">
@@ -37,10 +42,7 @@
                                 </div>
                             </div>
 
-                            <!-- The area to render an input element. -->
-                            <div class="container-block" ng-repeat="action in area.Actions" ng-if="action.Type == 'Input'">
-                                <input type="text" placeholder="{{action.Legend}}" style="width: {{action.Width}}"/>
-                            </div>
+                            
 
                         </div>
 
