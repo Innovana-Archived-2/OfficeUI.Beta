@@ -28,6 +28,36 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', function($scope,
     $http.get($scope.data)
         .success(function(data) {
             ribbon.Tabs = data.Tabs;
+
+            // Loop until we have the actions.
+            $.each(ribbon.Tabs, function(tabIndex, tab) {
+                
+                // Only loop over the groups if there are any.
+                if (tab.Groups) {
+                    $.each(tab.Groups, function(groupIndex, group) {
+                        
+                        // Only loop over the areas if there are any.
+                        if (group.Areas) {
+                            $.each(group.Areas, function(areaIndex, area) {
+                                
+                                // Only loop over the actions if there are any.
+                                if (area.Actions) {
+                                    $.each(area.Actions, function(actionIndex, action) {
+                                        
+                                        // Set a property 'hasTooltip' when the a tooltip is available for this action.
+                                        if (action.Tooltip) { action.hasTooltip = true; }
+                                        else { action.hasTooltip = false; }
+                                        
+                                        action.setTooltip = function() {
+                                            action.Tooltip = "Dit is een test om na te gaan of de tooltip aangepast kan worden.";
+                                        }
+                                    });
+                                }
+                            });
+                        }
+                    });
+                }
+            });
         
             // Sets the second tab as the active one. The second one is the tab next to the application tab.
             ribbon.activeTab = data.Tabs[1].Id;

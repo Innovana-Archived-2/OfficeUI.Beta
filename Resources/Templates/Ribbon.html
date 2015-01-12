@@ -2,7 +2,7 @@
     <div class="container container-full-width">
         <ul role="ribbonTabs" class="no-margin no-padding" ng-class="{'no-border': OfficeRibbon.isHidden()}">
 
-            <li id="{{tab.Id}}" ngc-active-tab-on-hover role="tab" class="container" ng-repeat="tab in OfficeUIRibbon.Tabs" ng-class="{'no-border': OfficeUIRibbon.isHidden(), active: OfficeUIRibbon.isActive(tab.Id) && !OfficeUIRibbon.isHidden(), application:$first}" ng-click="$first || OfficeUIRibbon.setActiveTab(tab.Id);" stop-event="click">
+            <li id="{{tab.Id}}" ngc-active-tab-on-hover role="tab" class="container" ng-repeat="tab in OfficeUIRibbon.Tabs" ng-class="{'no-border': OfficeUIRibbon.isHidden(), active: OfficeUIRibbon.isActive(tab.Id) && !OfficeUIRibbon.isHidden(), application:$first}" ng-click="$first || OfficeUIRibbon.setActiveTab(tab.Id);" stop-propagation="click">
                 {{tab.Label}}
             </li>
         </ul>
@@ -16,24 +16,11 @@
                         <div class="container area" ng-repeat="area in group.Areas">
                             <!-- The area to render a big icon. -->
                             <div class="container action" ng-repeat="action in area.Actions" ng-if="action.Type == 'bIcon'">
-                                <div ngc-menu-holder="{menu: '#{{action.Id}}_menu'}" ngc-tooltip class="container icon big-icon"  ngc-dynamic-event-handling="action.Id" id="{{action.Id}}">
+                                <div ngc-menu-holder="{menu: '#{{action.Id}}_menu'}" ngc-tooltip="action.setTooltip()" class="container icon big-icon"  ngc-dynamic-event-handling="action.Id" id="{{action.Id}}">
                                     <img ng-src="{{action.Resource}}"/>
                                     <div class="label" ng-bind-html="action |actionLegend"></div>
-
-                                    <!--<div class="container menu absolute" id="{{action.Id}}_menu" ng-if="action.MenuItems">
-                                        <ul class="no-padding no-margin">
-                                            <li ng-repeat="menuItem in action.MenuItems">
-                                                <div class="container">
-                                                    <div class="container image">
-                                                        <img ng-src="{{menuItem.Resource}}" />
-                                                    </div>
-                                                    <div class="container text">{{menuItem.Label}}</div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>-->
                                 </div>
-                                <div class="tooltip" ng-if="action.Tooltip" style="display: none;">
+                                <div class="tooltip" ng-if="action.hasTooltip" style="display: none;">
                                     <div ng-bind-html="action.Tooltip |actionTooltip"></div>
                                 </div>
                             </div>
@@ -44,19 +31,6 @@
                                 <div ngc-menu-holder="{menu: '#{{action.Id}}_menu'}" ngc-tooltip class="container icon small-icon" ngc-dynamic-event-handling="action.Id" id="{{action.Id}}">
                                     <img ng-src="{{action.Resource}}" />
                                     <div class="container label" ng-bind-html="action |actionLegend"></div>
-
-                                    <!--<div class="container menu menu-small absolute" id="{{action.Id}}_menu" ng-if="action.MenuItems">
-                                        <ul class="no-padding no-margin">
-                                            <li ng-repeat="menuItem in action.MenuItems">
-                                                <div class="container">
-                                                    <div class="container image">
-                                                        <img ng-src="{{menuItem.Resource}}" />
-                                                    </div>
-                                                    <div class="container text">{{menuItem.Label}}</div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>-->
                                 </div>
                                 <div class="tooltip" ng-if="action.Tooltip" style="display: none;">
                                     <div ng-bind-html="action.Tooltip |actionTooltip"></div>
@@ -78,7 +52,7 @@
                     </div>
 
                 </div>
-                <div ngc-collapse="{area: '#website'}" class="container absolute icon collapse" stop-event="click">
+                <div ngc-collapse="{area: '#website'}" class="container absolute icon collapse" stop-propagation="click">
 
                     <!-- We display 2 possible icons in the ribbon. A 'Pin' icon or an 'Arrow' icon. This is done using 'ng-if' directive. -->
                     <img src="/OfficeUI.Beta/Resources/Images/Ribbon/Built-In/Collapse.png" class="pin-icon" ng-if="OfficeUIRibbon.isShowed()"/>

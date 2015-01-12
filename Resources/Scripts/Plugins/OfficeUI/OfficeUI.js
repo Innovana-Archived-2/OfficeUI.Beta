@@ -15,7 +15,8 @@
         changeActiveTabOnHover: false
     };
 
-    $.fn.OfficeUI.waitHandlerTooltip = null;
+    $.fn.OfficeUI.waitHandleShowTooltip = null; // A timeout handle for showing tooltips on the ribbon.
+    $.fn.OfficeUI.waitHandleHideTooltip = null; // A timeout handle for hiding tooltips on the ribbon.
     
     var eventCollection = []; // Defines a private collection of registered events.
 

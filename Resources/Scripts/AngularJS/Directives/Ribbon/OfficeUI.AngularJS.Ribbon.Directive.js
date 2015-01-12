@@ -91,18 +91,24 @@ OfficeUIRibbon.directive('ngcActiveTabOnHover', function () {
 OfficeUIRibbon.directive('ngcTooltip', function () {
     return {
         restrict: 'A',
-        link: function (scope, element, attr) {
+        scope: { method: '&ngcTooltip' },
+        link: function (scope, element, attributes) {
+            //element.click(function() {
+            //    scope.method();
+            //    scope.$apply();
+            //});
+            
             element.bind("mouseenter", function (e) {
                 var tooltipElement = element.next();
 
-                $.fn.OfficeUI.waitHandlerTooltip = setTimeout(function() {
+                $.fn.OfficeUI.waitHandleShowTooltip = setTimeout(function() {
                     tooltipElement.show();
                 }, 1000);
 
                 element.bind("mouseleave", function (e) {
-                    clearTimeout($.fn.OfficeUI.waitHandlerTooltip);
+                    clearTimeout($.fn.OfficeUI.waitHandleShowTooltip);
 
-                    setTimeout(function() {
+                    $.fn.OfficeUI.waitHandleHideTooltip = setTimeout(function() {
                         tooltipElement.hide();
                     }, 500);
                 });
