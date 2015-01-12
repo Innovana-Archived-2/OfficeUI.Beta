@@ -20,6 +20,8 @@
 /* General styling for the root of the website. */
 #OfficeUI { min-height: 52px; color: #444; font-family: 'Segoe UI'; font-size: 0.75em; overflow: hidden; }
 #OfficeUI a { color: #444; cursor: default; }
+#OfficeUI p { padding: 5px 0px; margin: 0px; line-height: 15px; }
+#OfficeUI strong { color: #5d5d5d; }
 #OfficeUI header { background: url('../Images/Application/Backgrounds/Circuit.png') no-repeat scroll right top rgba(255, 255, 255, 1); position: fixed; width: 100%; }
 
 /* General styling that can be applied to all kind of elements inside the OfficeUI container. */
