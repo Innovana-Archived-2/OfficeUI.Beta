@@ -35,7 +35,7 @@
 #OfficeUI .container { display: inline-block; }
 #OfficeUI .container-block { display: block; }
 #OfficeUI .container-full-width { width: 100%; }
-#OfficeUI .container-input { height: 20px; }
+#OfficeUI .container-input { height: 24px; }
 
 #OfficeUI .title { margin-top: 6px; }
 
@@ -54,6 +54,7 @@
 #OfficeUI .contents { margin-top: 146px; }
 
 #OfficeUI input { border: 1px solid #ababab; font-family: 'Segoe UI'; color: black; font-size: 1em; padding-left: 3px; padding-right: 3px; }
+#OfficeUI input:-ms-input-placeholder, #OfficeUI input:-moz-placeholder, #OfficeUI input::-moz-placeholder, #OfficeUI input::-webkit-input-placeholder { color: #6d6d6d; }
 #OfficeUI input:hover, #OfficeUI input:focus { border: 1px solid #92c0e0; }
 
 #OfficeUI .menu { display: none; left: 0px; top: 69px; z-index: 100; background-color: white; box-shadow: 0 0 0 #888888; min-width: 80px; background-color: white; background-image: linear-gradient(#c6c6c6, #c6c6c6), linear-gradient(#c6c6c6, #c6c6c6); background-repeat: no-repeat; background-position: 0 0px, 100% 0; background-size: 1px 100%; border-bottom: 1px solid #c6c6c6; border-top: 1px solid #c6c6c6; box-shadow: 3px 3px 3px #e0e0e0; min-width: 80px; padding: 1px 2px; }
