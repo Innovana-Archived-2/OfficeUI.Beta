@@ -210,6 +210,23 @@
                                     "Legend": "Meeting",
                                     "Tooltip": "<strong>Reply with Meeting(Ctrl+Alt+R)</strong><p>Create a meeting request from this item.</p>",
                                     "Type": "sIcon"
+                                },
+                                {
+                                    "Id": "icoInstantMessage",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/InstantMessage.png",
+                                    "Legend": "IM",
+                                    "Tooltip": "<strong>IM</strong><p>Reply to this message with an instant item.</p>",
+                                    "Type": "sIcon",
+                                    "MenuItems": [{}]
+                                }
+                                ,
+                                {
+                                    "Id": "icoRespondMoreActions",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/RespondMore.png",
+                                    "Legend": "More",
+                                    "Tooltip": "<strong>More Respond Actions</strong><p>Use other response actions that can include forwarding this item as an attachment or text message (SMS) or calling the sender of this item.</p>",
+                                    "Type": "sIcon",
+                                    "MenuItems": [{}]
                                 }
                             ]
                         }
@@ -235,6 +252,14 @@
                                     "Tooltip": "<strong>Move</strong><p>Move or copy the selected items to another folder.</p><p>For e-mail messages, you can create a rule to always move messages in the selected conversation to another folder.</p>",
                                     "Type": "bIcon",
                                     "MenuItems": [{}]
+                                },
+                                {
+                                    "Id": "icoRules",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Rules.png",
+                                    "Legend": "Rules<br/>",
+                                    "Tooltip": "<strong>Rules</strong><p>Create a rule based on the sender, recipients or conversation topic of this message to always move mail to a different folder.</p>",
+                                    "Type": "bIcon",
+                                    "MenuItems": [{}]
                                 }
                             ]
                         }
@@ -257,6 +282,13 @@
                         },
                         {
                             "Actions": [
+                                {
+                                    "Id": "icoReadUnread",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/MarkAsRead.png",
+                                    "Legend": "Unread/ Read",
+                                    "Tooltip": "<strong>Unread/ Read (Ctrl+U/Ctrl+Q)</strong><p>Mark this item as read or unread.</p>",
+                                    "Type": "sIcon"
+                                },
                                 {
                                     "Id": "icoCategorize",
                                     "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Categorize.png",
@@ -286,7 +318,14 @@
                                     "Id": "txtSearchPeople",
                                     "Legend": "Search People",
                                     "Type": "Input",
-                                    "Width": "87px"
+                                    "Width": "93px"
+                                },
+                                {
+                                    "Id": "icoAddressBook",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/AddressBook.png",
+                                    "Legend": "Address Book",
+                                    "Tooltip": "<strong>Address Book (Ctrl+Shift+B)</strong><p>Open the Address Book to look for names, phone numbers and e-mail addresses</p>",
+                                    "Type": "sIcon"
                                 },
                                 {
                                     "Id": "icoFilterEmail",

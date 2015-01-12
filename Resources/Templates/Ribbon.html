@@ -1,6 +1,6 @@
 <div class="container container-full-width" ng-controller="OfficeUIRibbon as OfficeUIRibbon" ngc-scroll>
     <div class="container container-full-width">
-        <ul role="ribbonTabs" class="no-margin no-padding" ng-class="{'no-border': OfficeRibbon.isHidden()}">
+        <ul role="ribbonTabs" class="no-margin no-padding" ng-class="{'no-border': OfficeUIRibbon.isHidden()}">
 
             <li id="{{tab.Id}}" ngc-active-tab-on-hover role="tab" class="container" ng-repeat="tab in OfficeUIRibbon.Tabs" ng-class="{'no-border': OfficeUIRibbon.isHidden(), active: OfficeUIRibbon.isActive(tab.Id) && !OfficeUIRibbon.isHidden(), application:$first}" ng-click="$first || OfficeUIRibbon.setActiveTab(tab.Id);" stop-propagation="click">
                 {{tab.Label}}

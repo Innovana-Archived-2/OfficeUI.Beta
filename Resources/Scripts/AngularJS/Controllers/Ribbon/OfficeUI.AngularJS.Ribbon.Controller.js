@@ -77,9 +77,9 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', function($scope,
 
         // Check if the ribbon is hidden or not.
         if (ribbon.state == ribbonStates.Hidden) {
-            var ribbonContents = $('#ribbonContents');
-            
             ribbon.state = ribbonStates.Visible;
+            
+            var ribbonContents = $('#ribbonContents');
             
             // Lower the curtain.
             ribbonContents.curtain({ direction: 'down', height: 92 });
@@ -88,17 +88,17 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', function($scope,
     
     // Checks if the ribbon is hidden.
     ribbon.isHidden = function() {
-        return ribbon.state === ribbonStates.Hidden;
+        return ribbon.state == ribbonStates.Hidden;
     }
     
     // Checks if the ribbon is visible.
     ribbon.isVisible = function() {
-        return ribbon.state === ribbonStates.Visible;
+        return ribbon.state == ribbonStates.Visible;
     }
     
     // Checks if the ribbon is showed.
     ribbon.isShowed = function() {
-        return ribbon.state === ribbonStates.Showed;
+        return ribbon.state == ribbonStates.Showed;
     }
 
     // Sets the currently active tab based on it's id.
@@ -168,7 +168,6 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', function($scope,
     // General events - not specifically tied to the controller.
     // Executed when you click somewhere on the page.
     $(window).on('click', function(e) {
-        e.stopPropagation();
         // Check if the state of the ribbon is 'Overlay'.
         if (ribbon.state == ribbonStates.Visible) {
             // Hide the ribbon directly, without animating (curtain) animation.
