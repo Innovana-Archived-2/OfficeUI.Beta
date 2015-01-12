@@ -349,7 +349,41 @@
                     "Legend": "Send & Receive",
                     "Areas": [
                         {
-                            "Actions": [{}]
+                            "Actions": [
+                                {
+                                    "Id": "icoSendReceiveAll",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/SendReceive/SendReceiveAllFolders.png",
+                                    "Legend": "Send/Receive<br/>All Folders",
+                                    "Tooltip": "<strong>Send/Receive All Folders (F9)</strong><p>Send and receive items such as mail messages, calendar appointments and tasks in all folders.</p>",
+                                    "Type": "bIcon"
+                                }
+                            ]
+                        }, 
+                        {
+                            "Actions": [
+                                {
+                                    "Id": "icoUpdateFolder",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/SendReceive/UpdateFolder.png",
+                                    "Legend": "Update Folder",
+                                    "Tooltip": "<strong>Update Folder (Shift+F9)</strong><p>Send and receive items in this folder.</p>",
+                                    "Type": "sIcon"
+                                },
+                                {
+                                    "Id": "icoSendAll",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/SendReceive/SendAll.png",
+                                    "Legend": "Send All",
+                                    "Tooltip": "<strong>Send All</strong><p>Sent all unset mail.</p>",
+                                    "Type": "sIcon"
+                                },
+                                {
+                                    "Id": "icoSendReceiveGroups",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/SendReceive/SendReceiveGroups.png",
+                                    "Legend": "Send/Receive Groups",
+                                    "Tooltip": "<strong>Send/Receive Groups</strong><p>Send and receive items in a particular send/receive group.</p><p>Send/Receive groups can have different behaviors such at the frequence with which Oulook connects to the server.</p>",
+                                    "Type": "sIcon",
+                                    "MenuItems": [{}]
+                                }
+                            ]
                         }
                     ]
                 },
@@ -357,7 +391,22 @@
                     "Legend": "Download",
                     "Areas": [
                         {
-                            "Actions": [{}]
+                            "Actions": [
+                                {
+                                    "Id": "icoShowProgress",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/SendReceive/ShowProgress.png",
+                                    "Legend": "Show<br/>Progress",
+                                    "Tooltip": "<strong>Show Progress</strong><p>Shows the current send/receive status.</p>",
+                                    "Type": "bIcon"
+                                },
+                                {
+                                    "Id": "icoCancellAll",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/SendReceive/CancelAll.png",
+                                    "Legend": "Cancel<br/>All",
+                                    "Tooltip": "<strong>Cancel All</strong><p>Cancel all pending send/receive requests.</p>",
+                                    "Type": "bIcon"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -365,7 +414,43 @@
                     "Legend": "Server",
                     "Areas": [
                         {
-                            "Actions": [{}]
+                            "Actions": [
+                                {
+                                    "Id": "icoDownloadHeaders",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/SendReceive/DownloadHeaders.png",
+                                    "Legend": "Download<br/>Headers",
+                                    "Tooltip": "<strong>Download Headers</strong><p>Download all mail headers in this folder.</p><p>A mail header contains some message fields such as the e-mail address of the sender, subject and date.</p>",
+                                    "Type": "bIcon"
+                                }
+                            ]
+                        },
+                        {
+                            "Actions": [
+                                {
+                                    "Id": "icoMarkToDownload",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/SendReceive/MarkToDownload.png",
+                                    "Legend": "Mark to Download",
+                                    "Tooltip": "<strong>Mark to Download(Ctrl+Alt+M)</strong><p>Mark this message to be downloaded the next time marked headers are processed.</p>",
+                                    "Type": "sIcon",
+                                    "MenuItems": [{}]
+                                },
+                                {
+                                    "Id": "icoUnmarkToDownload",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/SendReceive/UnmarkToDownload.png",
+                                    "Legend": "Unmark to Download",
+                                    "Tooltip": "<strong>Unmark to Download(Ctrl+Alt+U)</strong><p>Unmark this message header so that it is not downloaded.</p>",
+                                    "Type": "sIcon",
+                                    "MenuItems": [{}]
+                                },
+                                {
+                                    "Id": "icoProcessMarkedHeaders",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/SendReceive/ProcessMarkedHeaders.png",
+                                    "Legend": "Process Marked Headers",
+                                    "Tooltip": "<strong>Process Marked Headers</strong><p>Download the content of all marked headers in this folder.</p>",
+                                    "Type": "sIcon",
+                                    "MenuItems": [{}]
+                                }
+                            ]
                         }
                     ]
                 },
@@ -373,7 +458,23 @@
                     "Legend": "Preferences",
                     "Areas": [
                         {
-                            "Actions": [{}]
+                            "Actions": [
+                                {
+                                    "Id": "icoDownloadPreferences",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/SendReceive/DownloadPreferences.png",
+                                    "Legend": "Download<br/>Preferences",
+                                    "Tooltip": "<strong>Download Preferences</strong><p>Change the preferences for downloading message headers.</p>",
+                                    "Type": "bIcon",
+                                    "MenuItems": [{}]
+                                },
+                                {
+                                    "Id": "icoWorkOffline",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/SendReceive/WorkOffline.png",
+                                    "Legend": "Work<br/>Offline",
+                                    "Tooltip": "<strong>Work Offline</strong><p>Work offline if you do not want to receive new mail.</p><p></p>",
+                                    "Type": "bIcon"
+                                }
+                            ]
                         }
                     ]
                 }

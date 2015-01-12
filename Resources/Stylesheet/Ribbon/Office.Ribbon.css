@@ -24,7 +24,7 @@
 #OfficeUI ul[role="ribbonTabs"] li.active.no-border { border-right: 1px solid transparent; border-left: 1px solid transparent; border-top: 1px solid transparent; }
 
 /* Tabs Contents Styling. */
-#OfficeUI ul[role="ribbonContents"] { z-index: 999; border-bottom: 1px solid #d4d4d4; height: 92px; position: relative; background-color: white; width: 100%; } 
+#OfficeUI ul[role="ribbonContents"] { overflow: hidden; z-index: 999; border-bottom: 1px solid #d4d4d4; height: 92px; position: relative; background-color: white; width: 100%; } 
 #OfficeUI ul[role="ribbonContents"].no-border { border-bottom: none; }
 #OfficeUI ul[role="ribbonContents"] .collapse { bottom: 0px; right: 0px; width: 29px; height: 16px; text-align: center; }
 #OfficeUI ul[role="ribbonContents"] .group { margin-left: 4px; margin-top: 3px; height: 90px; position: relative; vertical-align: top;}
