@@ -15,8 +15,13 @@
 
                         <div class="container area" ng-repeat="area in group.Areas">
                             <!-- The area to render an input element. -->
-                            <div class="container-block" ng-repeat="action in area.Actions" ng-if="action.Type == 'Input'">
-                                <input type="text" placeholder="{{action.Legend}}" style="width: {{action.Width}}"/>
+                            <div class="container-block container-input" ng-repeat="action in area.Actions" ng-if="action.Type == 'Input'">
+                                <input type="text" id="{{action.Id}}" placeholder="{{action.Legend}}" style="width: {{action.Width}}"/>
+                            </div>
+
+                            <!-- The area to render an checkbox element. -->
+                            <div class="container-block container-input" ng-repeat="action in area.Actions" ng-if="action.Type == 'Checkbox'">
+                                <input type="checkbox" id="{{action.Id}}" /><div class="container">{{action.Legend}}</div>
                             </div>
                             
                             <!-- The area to render a big icon. -->

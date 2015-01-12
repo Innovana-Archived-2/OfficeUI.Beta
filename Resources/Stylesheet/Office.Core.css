@@ -33,6 +33,7 @@
 #OfficeUI .container { display: inline-block; }
 #OfficeUI .container-block { display: block; }
 #OfficeUI .container-full-width { width: 100%; }
+#OfficeUI .container-input { height: 20px; }
 
 #OfficeUI .title { margin-top: 6px; }
 

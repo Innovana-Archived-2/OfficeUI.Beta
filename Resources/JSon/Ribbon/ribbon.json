@@ -685,6 +685,12 @@
                         {
                             "Actions": [
                                 {
+                                    "Id": "chkShowAsConversations",
+                                    "Legend": "Show as Conversations",
+                                    "Tooltip": "<strong>Show as Conversations</strong><p>Show messages arranged by conversation.</p>",
+                                    "Type": "Checkbox"
+                                },
+                                {
                                     "Id": "icoResetView",
                                     "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/View/ConversationSettings.png",
                                     "Legend": "Conversation Settings",
