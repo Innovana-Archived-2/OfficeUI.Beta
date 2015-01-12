@@ -690,7 +690,7 @@
                                     "Legend": "Conversation Settings",
                                     "Tooltip": "<strong>Conversation Options</strong><p>Change the way conversations are displayed in the message list.</p>",
                                     "Type": "sIcon",
-                                    "MenuItem": [{}]
+                                    "MenuItems": [{}]
                                 }
                             ]
                         }
@@ -707,7 +707,7 @@
                                     "Legend": "Message<br/>Preview",
                                     "Tooltip": "<strong>Message Preview</strong><p>Use AutoPreview to quickly scan items.</p>",
                                     "Type": "bIcon",
-                                    "MenuItem": [{}]
+                                    "MenuItems": [{}]
                                 }
                             ]
                         }
@@ -738,7 +738,7 @@
                                     "Legend": "Expand/Collapse",
                                     "Tooltip": "<strong>Expand/Collapse</strong><p>Expand or collapse groups in the list.</p>",
                                     "Type": "sIcon",
-                                    "MenuItem": [{}]
+                                    "MenuItems": [{}]
                                 }
                             ]
                         }
