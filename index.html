@@ -28,6 +28,7 @@
         <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.AngularJS.StopPropagation.js"></script>
         <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.AngularJS.Directive.js"></script>
         <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/Ribbon/OfficeUI.AngularJS.Ribbon.Directive.js"></script>
+        <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/Ribbon/OfficeUI.AngularJS.Ribbon.ApplicationMenu.Directive.js"></script>
         
         <!-- AngularJS filters. -->
         <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Filters/Ribbon/OfficeUI.AngularJS.Ribbon.filter.js"></script>
@@ -74,6 +75,10 @@
                 The contents of the website is placed here.
             </div>
         </div>
+
+        <!-- Renders the ribbon application menu. This must be placed here because it will take up all the screen space. -->
+        <!-- TESTING: Do NOT enable this. This feature is still in development. -->
+        <!--<ribbon-application-menu templateUrl="/OfficeUI.Beta/Resources/Templates/ApplicationMenu.html" data="/OfficeUI.Beta/Resources/JSon/Ribbon/ribbon.json"></ribbon-application-menu>-->
 
         <script type="text/javascript">
             // Plugin configuration can be done here.

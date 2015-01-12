@@ -2,7 +2,11 @@
     <div class="container container-full-width">
         <ul role="ribbonTabs" class="no-margin no-padding" ng-class="{'no-border': OfficeUIRibbon.isHidden()}">
 
-            <li id="{{tab.Id}}" ngc-active-tab-on-hover role="tab" class="container" ng-repeat="tab in OfficeUIRibbon.Tabs" ng-class="{'no-border': OfficeUIRibbon.isHidden(), active: OfficeUIRibbon.isActive(tab.Id) && !OfficeUIRibbon.isHidden(), application:$first}" ng-click="$first || OfficeUIRibbon.setActiveTab(tab.Id);" stop-propagation="click">
+            <li id="{{tab.Id}}" ng-if="$first" application-menu role="tab" class="container" ng-repeat="tab in OfficeUIRibbon.Tabs" ng-class="{'no-border': OfficeUIRibbon.isHidden(), active: OfficeUIRibbon.isActive(tab.Id) && !OfficeUIRibbon.isHidden(), application:$first}" ng-click="$first || OfficeUIRibbon.setActiveTab(tab.Id);" stop-propagation="click">
+                {{tab.Label}}
+            </li>
+
+            <li id="{{tab.Id}}" ng-if="!$first" ngc-active-tab-on-hover role="tab" class="container" ng-repeat="tab in OfficeUIRibbon.Tabs" ng-class="{'no-border': OfficeUIRibbon.isHidden(), active: OfficeUIRibbon.isActive(tab.Id) && !OfficeUIRibbon.isHidden(), application:$first}" ng-click="$first || OfficeUIRibbon.setActiveTab(tab.Id);" stop-propagation="click">
                 {{tab.Label}}
             </li>
         </ul>
