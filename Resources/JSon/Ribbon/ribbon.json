@@ -249,7 +249,7 @@
                                     "Id": "icoAssignPolicy",
                                     "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Policy.png",
                                     "Legend": "Assign<br/>Policy",
-                                    "Tooltip": "<strong>Assign Policy</strong><p>Move or copy the selected items to another folder.</p><p>Assign an archive or retention policy to automatticly archive or delete the selected items.</p>",
+                                    "Tooltip": "<strong>Assign Policy</strong><p>Assign an archive or retention policy to automatticly archive or delete the selected items.</p>",
                                     "Type": "bIcon",
                                     "MenuItems": [{}]
                                 }
