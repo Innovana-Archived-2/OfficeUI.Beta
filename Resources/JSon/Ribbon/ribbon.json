@@ -703,7 +703,7 @@
                             "Actions": [
                                 {
                                     "Id": "icoMessagePreview",
-                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/View/ConversationSettings.png",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/View/MessagePreview.png",
                                     "Legend": "Message<br/>Preview",
                                     "Tooltip": "<strong>Message Preview</strong><p>Use AutoPreview to quickly scan items.</p>",
                                     "Type": "bIcon",
