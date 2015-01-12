@@ -233,14 +233,6 @@
                     ]
                 },
                 {
-                    "Legend": "Quick Steps",
-                    "Areas": [
-                        {
-                            "Actions": [{}]
-                        }
-                    ]
-                },
-                {
                     "Legend": "Move",
                     "Areas": [
                         {
@@ -471,7 +463,7 @@
                                     "Id": "icoWorkOffline",
                                     "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/SendReceive/WorkOffline.png",
                                     "Legend": "Work<br/>Offline",
-                                    "Tooltip": "<strong>Work Offline</strong><p>Work offline if you do not want to receive new mail.</p><p></p>",
+                                    "Tooltip": "<strong>Work Offline</strong><p>Work offline if you do not want to receive new mail.</p>",
                                     "Type": "bIcon"
                                 }
                             ]
@@ -488,7 +480,22 @@
                     "Legend": "New",
                     "Areas": [
                         {
-                            "Actions": [{}]
+                            "Actions": [
+                                {
+                                    "Id": "icoFolder",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Folder/Folder.png",
+                                    "Legend": "New<br/>Folder",
+                                    "Tooltip": "<strong>Work Folder (Ctrl+Shift+E)</strong><p>Create a new folder in the navigation pane.</p>",
+                                    "Type": "bIcon"
+                                },
+                                {
+                                    "Id": "icoSearchFolder",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Folder/NewSearchFolder.png",
+                                    "Legend": "New Search<br/>Folder",
+                                    "Tooltip": "<strong>New Search Folder (Ctrl+Shift+P)</strong><p>Create a new search folder.</p><p>A search folder displays messages based on specified criteria. Some example search folders include all messages flagged for follow up and unread mail.</p>",
+                                    "Type": "bIcon"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -496,7 +503,40 @@
                     "Legend": "Actions",
                     "Areas": [
                         {
-                            "Actions": [{}]
+                            "Actions": [
+                                {
+                                    "Id": "icoRenameFolder",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Folder/RenameFolder.png",
+                                    "Legend": "Rename<br/>Folder",
+                                    "Tooltip": "<strong>Rename This Folder</strong><p>Rename the selected folder.</p>",
+                                    "Type": "bIcon"
+                                }
+                            ]
+                        },
+                        {
+                            "Actions": [
+                                {
+                                    "Id": "icoCopyFolder",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Folder/CopyFolder.png",
+                                    "Legend": "Copy Folder",
+                                    "Tooltip": "<strong>Copy This Folder</strong><p>Copy this folder to a new location.</p>",
+                                    "Type": "sIcon"
+                                },
+                                {
+                                    "Id": "icoMoveFolder",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Folder/MoveFolder.png",
+                                    "Legend": "Move Folder",
+                                    "Tooltip": "<strong>Move This Folder</strong><p>Move the selected folder to a new location.</p>",
+                                    "Type": "sIcon"
+                                },
+                                {
+                                    "Id": "icoDeleteFolder",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Folder/DeleteFolder.png",
+                                    "Legend": "Delete Folder",
+                                    "Tooltip": "<strong>Delete This Folder</strong><p>Delete the selected folder.</p>",
+                                    "Type": "sIcon"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -504,7 +544,55 @@
                     "Legend": "Clean Up",
                     "Areas": [
                         {
-                            "Actions": [{}]
+                            "Actions": [
+                                {
+                                    "Id": "icoMarkAllAsRead",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Folder/MarkAllAsRead.png",
+                                    "Legend": "Mark All<br/>as Read",
+                                    "Tooltip": "<strong>Mark All as Read</strong><p>Mark all messages in this folder as read.</p>",
+                                    "Type": "bIcon"
+                                },
+                                {
+                                    "Id": "icoRunRulesNow",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Folder/RunRulesNow.png",
+                                    "Legend": "Run Rules<br/>Now",
+                                    "Tooltip": "<strong>Run Rules Now</strong><p>Apply all rules to the items currently in your mailbox.</p>",
+                                    "Type": "bIcon"
+                                },
+                                {
+                                    "Id": "icoShowAllFoldersAToZ",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Folder/ShowAllFoldersAToZ.png",
+                                    "Legend": "Show All<br/>Folder A to Z",
+                                    "Tooltip": "<strong>Show all Folders A to Z</strong><p>Always shows folders in alphabetical order.</p>",
+                                    "Type": "bIcon"
+                                }
+                            ]
+                        },
+                        {
+                            "Actions": [
+                                {
+                                    "Id": "icoCleanUpFolder",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Folder/CleanUpFolder.png",
+                                    "Legend": "Clean Up Folder",
+                                    "Tooltip": "<strong>Clean Up Folder</strong><p>Remove redundant messages from every conversation in the selected folder.</p>",
+                                    "Type": "sIcon",
+                                    "MenuItems": [{}]
+                                },
+                                {
+                                    "Id": "icoDeleteAll",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Folder/DeleteAll.png",
+                                    "Legend": "Delete All",
+                                    "Tooltip": "<strong>Delete All</strong><p>Delete all of the items in this folder.</p>",
+                                    "Type": "sIcon"
+                                },
+                                {
+                                    "Id": "icoRecoverDeletedItem",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Folder/DeleteFolder.png",
+                                    "Legend": "Recover Deleted Items",
+                                    "Tooltip": "<strong>Recover Deleted Items</strong><p>Recover items deleted from this folder.</p>",
+                                    "Type": "sIcon"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -512,15 +600,15 @@
                     "Legend": "Favorites",
                     "Areas": [
                         {
-                            "Actions": [{}]
-                        }
-                    ]
-                },
-                {
-                    "Legend": "Online View",
-                    "Areas": [
-                        {
-                            "Actions": [{}]
+                            "Actions": [
+                                {
+                                    "Id": "icoShowInFavorites",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Folder/ShowInFavorites.png",
+                                    "Legend": "Show in<br/>Favorites",
+                                    "Tooltip": "<strong>Show in Favorites</strong><p>Show this folder in the Favorites section at the top of the Folder Pane.</p>",
+                                    "Type": "bIcon"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -528,7 +616,29 @@
                     "Legend": "Properties",
                     "Areas": [
                         {
-                            "Actions": [{}]
+                            "Actions": [
+                                {
+                                    "Id": "icoAutoArchiveSettings",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Folder/AutoArchiveSettings.png",
+                                    "Legend": "AutoArchive<br/>Settings",
+                                    "Tooltip": "<strong>AutoArchive Settings</strong><p>Specify when items in this folder are archived, and where they are stored.</p>",
+                                    "Type": "bIcon"
+                                },
+                                {
+                                    "Id": "icoFolderPermissions",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Folder/FolderPermissions.png",
+                                    "Legend": "Folder<br/>Permissions",
+                                    "Tooltip": "<strong>Share</strong><p>View and edit the sharing permissions for this folder.</p>",
+                                    "Type": "bIcon"
+                                },
+                                {
+                                    "Id": "icoFolderProperties",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Folder/FolderProperties.png",
+                                    "Legend": "Folder<br/>Properties",
+                                    "Tooltip": "<strong>Folder Properties</strong><p>View the properties for this folder.</p>",
+                                    "Type": "bIcon"
+                                }
+                            ]
                         }
                     ]
                 }
@@ -542,7 +652,30 @@
                     "Legend": "Current View",
                     "Areas": [
                         {
-                            "Actions": [{}]
+                            "Actions": [
+                                {
+                                    "Id": "icoChangeView",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/View/ChangeView.png",
+                                    "Legend": "Change<br/>View",
+                                    "Tooltip": "<strong>Change View</strong><p>Change the current view to another view.</p>",
+                                    "Type": "bIcon",
+                                    "MenuItem": [{}]
+                                },
+                                {
+                                    "Id": "icoViewSettings",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/View/ViewSettings.png",
+                                    "Legend": "View<br/>Settings",
+                                    "Tooltip": "<strong>View Settings</strong><p>Customize the current view using advanced view settings.</p><p>Advanced view settings include adding and removing fields, grouping, sorting, filtering, column formatting and other settings.</p>",
+                                    "Type": "bIcon"
+                                },
+                                {
+                                    "Id": "icoResetView",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/View/ResetCurrentView.png",
+                                    "Legend": "Reset<br/>View",
+                                    "Tooltip": "<strong>Reset View</strong><p>Reset all current view settings to the default settings for this folder.</p>",
+                                    "Type": "bIcon"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -550,7 +683,16 @@
                     "Legend": "Messages",
                     "Areas": [
                         {
-                            "Actions": [{}]
+                            "Actions": [
+                                {
+                                    "Id": "icoResetView",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/View/ConversationSettings.png",
+                                    "Legend": "Conversation Settings",
+                                    "Tooltip": "<strong>Conversation Options</strong><p>Change the way conversations are displayed in the message list.</p>",
+                                    "Type": "sIcon",
+                                    "MenuItem": [{}]
+                                }
+                            ]
                         }
                     ]
                 },
@@ -558,7 +700,16 @@
                     "Legend": "Arrangement",
                     "Areas": [
                         {
-                            "Actions": [{}]
+                            "Actions": [
+                                {
+                                    "Id": "icoMessagePreview",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/View/ConversationSettings.png",
+                                    "Legend": "Message<br/>Preview",
+                                    "Tooltip": "<strong>Message Preview</strong><p>Use AutoPreview to quickly scan items.</p>",
+                                    "Type": "bIcon",
+                                    "MenuItem": [{}]
+                                }
+                            ]
                         }
                     ]
                 },
@@ -566,7 +717,30 @@
                     "Legend": "Layout",
                     "Areas": [
                         {
-                            "Actions": [{}]
+                            "Actions": [
+                                {
+                                    "Id": "icoReverseSort",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/View/ReverseSort.png",
+                                    "Legend": "Reverse Sort",
+                                    "Tooltip": "<strong>Reverse Sort</strong><p>Reverse the sort order of the current view.</p><p>For example, reverse the sort order of the message list from newest to oldest.</p>",
+                                    "Type": "sIcon"
+                                },
+                                {
+                                    "Id": "icoAddColumns",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/View/AddColumns.png",
+                                    "Legend": "Add Columns",
+                                    "Tooltip": "<strong>Add Columns</strong><p>Choose which fields are showed in the view.</p>",
+                                    "Type": "sIcon"
+                                },
+                                {
+                                    "Id": "icoExpandCollapse",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/View/ExpandCollapse.png",
+                                    "Legend": "Expand/Collapse",
+                                    "Tooltip": "<strong>Expand/Collapse</strong><p>Expand or collapse groups in the list.</p>",
+                                    "Type": "sIcon",
+                                    "MenuItem": [{}]
+                                }
+                            ]
                         }
                     ]
                 },
@@ -574,7 +748,49 @@
                     "Legend": "People Pane",
                     "Areas": [
                         {
-                            "Actions": [{}]
+                            "Actions": [
+                                {
+                                    "Id": "icoFolderPane",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/View/FolderPane.png",
+                                    "Legend": "Folder<br/>Pane",
+                                    "Tooltip": "<strong>Folder Pane</strong><p>Show, Hide, or minimize the Folder Pane and show or hide Favorites.</p>",
+                                    "Type": "bIcon",
+                                    "MenuItems": [{}]
+                                },
+                                {
+                                    "Id": "icoReadingPane",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/View/ReadingPane.png",
+                                    "Legend": "Reading<br/>Pane",
+                                    "Tooltip": "<strong>Reading Properties</strong><p>Show, Hide, or change the layout Reading Pane.</p>",
+                                    "Type": "bIcon",
+                                    "MenuItems": [{}]
+                                },
+                                {
+                                    "Id": "icoToDoBar",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/View/ToDoBar.png",
+                                    "Legend": "To-Do<br/>Bar",
+                                    "Tooltip": "<strong>To-Do Bar</strong><p>Show, Hide, or minimize the To-Do Bar and choose what is shown.</p>",
+                                    "Type": "bIcon",
+                                    "MenuItems": [{}]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "Legend": "People Pane",
+                    "Areas": [
+                        {
+                            "Actions": [
+                                {
+                                    "Id": "icoPeoplePane",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/View/PeoplePane.png",
+                                    "Legend": "People<br/>Pane",
+                                    "Tooltip": "<strong>People Pane</strong><p>Show, Hide, or minimize the People Pane and configure social network accounts.</p>",
+                                    "Type": "bIcon",
+                                    "MenuItems": [{}]
+                                }
+                            ]
                         }
                     ]
                 },
@@ -582,7 +798,29 @@
                     "Legend": "Window",
                     "Areas": [
                         {
-                            "Actions": [{}]
+                            "Actions": [
+                                {
+                                    "Id": "icoRemindersWindow",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/View/RemindersWindow.png",
+                                    "Legend": "Reminders<br/>Window",
+                                    "Tooltip": "<strong>Reminders Window</strong><p>Show the reminders window.</p>",
+                                    "Type": "bIcon"
+                                },
+                                {
+                                    "Id": "icoOpenInNewWindow",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/View/OpenInNewWindow.png",
+                                    "Legend": "Open in New<br/>Window",
+                                    "Tooltip": "<strong>Open in New Window</strong><p>Opens this folder is a new window.</p>",
+                                    "Type": "bIcon"
+                                },
+                                {
+                                    "Id": "icoCloseAllItems",
+                                    "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/View/CloseAllItems.png",
+                                    "Legend": "Close All Items",
+                                    "Tooltip": "<strong>Folder Properties</strong><p>Close all additional windows.</p>",
+                                    "Type": "bIcon"
+                                }
+                            ]
                         }
                     ]
                 }
