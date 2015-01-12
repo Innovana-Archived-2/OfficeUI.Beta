@@ -816,7 +816,7 @@
                                 {
                                     "Id": "icoCloseAllItems",
                                     "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/View/CloseAllItems.png",
-                                    "Legend": "Close All Items",
+                                    "Legend": "Close<br/>All Items",
                                     "Tooltip": "<strong>Folder Properties</strong><p>Close all additional windows.</p>",
                                     "Type": "bIcon"
                                 }
