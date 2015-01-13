@@ -24,14 +24,39 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', function($scope,
     
     ribbon.state = ribbonStates.Showed; // Set the default state for the ribbon, the state when the ribbon is loaded.
     
+    // Area: Functions defined below are used for the application tab.
+    
+        // Marks an application menu as the active one.
+        $scope.setApplicationMenuItemAsActive = function(applicationMenuItem) {
+            ribbon.setApplicationMenuItemAsActive(applicationMenuItem);
+        }
+        
+        // Marks an application menu item as the active one.
+        // There's a check happening here so that only menuitems that doesn't are a seperator are able to being marked as active.
+        ribbon.setApplicationMenuItemAsActive = function(applicationMenuItem) {
+            if (applicationMenuItem.Seperator != 'True') {
+                ribbon.activeApplicationMenuItem = applicationMenuItem;
+            }
+        }
+        
+        // Checks is a given application menu is being active.
+        ribbon.isApplicationMenuActive = function(applicationMenuItem) {
+            return ribbon.activeApplicationMenuItem == applicationMenuItem;
+        }
+    
+    // End Of Area: End of the functions which are being used for the application tab.
+    
     // Get the Json file defined on the directive that points to the correct location of the JSon file.
     $http.get($scope.data)
         .success(function(data) {
             ribbon.Tabs = data.Tabs;
-
+            
+            // Retrieve the first application menu entry and set this as the active one.
+            var firstApplicationMenuEntryID = ribbon.Tabs[0].MenuItems[0];
+            $scope.setApplicationMenuItemAsActive(firstApplicationMenuEntryID);
+            
             // Loop until we have the actions.
             $.each(ribbon.Tabs, function(tabIndex, tab) {
-                
                 // Only loop over the groups if there are any.
                 if (tab.Groups) {
                     $.each(tab.Groups, function(groupIndex, group) {

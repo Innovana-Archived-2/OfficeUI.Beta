@@ -8,14 +8,21 @@
 var OfficeUIRibbon = angular.module('OfficeUIRibbon');
 
 /* Defines a directive called 'applicationMenu'. This directive must be called as an element. */
-OfficeUIRibbon.directive('applicationMenu', function() {
+OfficeUIRibbon.directive('applicationMenuContents', function() {
     return {
-        restrict: 'A',
+        restrict: 'E',
         replace: false,
+        scope: {
+            url: '@'
+        },
+        url: '<h1>demo</h1>',
         link: function(scope, element, attributes) {
-            element.on('click', function(e) {
-                console.log('I have clicked on the element.');
+            scope.$watch('url', function(value) { 
+                scope.contentUrl = value;
             });
+        },
+        template: function() {
+            return '<div ng-include="contentUrl"></div>';
         }
     }
-});
+}); 

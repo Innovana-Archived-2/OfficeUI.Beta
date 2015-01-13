@@ -1,28 +1,69 @@
 <style>
     .back-arrow { background-image: url('/OfficeUI.Beta/Resources/Images/Ribbon/ApplicationMenu/NavigationArrow.png'); height: 35px; width: 35px; background-repeat: no-repeat; margin-left: 23px; margin-top: 19px; }
     .back-arrow:hover { background-image: url('/OfficeUI.Beta/Resources/Images/Ribbon/ApplicationMenu/NavigationArrow_hover.png'); }
-    ul { color: #fff; list-style: none; }
-    ul li { vertical-align: middle; padding-left: 26px; padding-right: 10px; padding-top: 11px; padding-bottom: 11px; line-height: 16px; }
+    #application { background: url("/OfficeUI.Beta/Resources/Images/Application/Backgrounds/Circuit.png") no-repeat scroll right top rgba(255, 255, 255, 1); height: 100%; top: 0px; bottom: 0px; left: 0px; right: 0px; color: #444; font-family: 'Segoe UI'; font-size: 0.75em; }
+    #application h1 { font-weight: 100; font-size: 3.2em; } 
+    #application .container-full-height { height: 100%; }
+    #application .container .left { float: left; width: 135px; height: 100%; }
+    #application .container .navigation { background-color: #0072c6; }
+    #application .container .navigation ul { color: #fff; list-style: none; margin-top: 15px; }
+    #application .container .navigation ul li { vertical-align: middle; padding-left: 26px; padding-right: 10px; padding-top: 11px; padding-bottom: 11px; line-height: 16px; }
+    #application .container .navigation ul li:not(.seperator).active { background-color: #2a8dd4; }
+    #application .container .navigation ul li:not(.seperator):hover { background-color: #0067B0; }
+    #application .container .navigation ul li.seperator { margin-bottom: -1px; }
+    #application .container .navigation ul li .seperator { border-bottom: 1px solid #2A8DD4; padding-right: 20px; margin-right: 16px; }
+    #application .container .right { margin-left: 135px; }
+    #application .container .right .title { text-align: center; padding: 6px 138px 0 0; }
+    
+    #application .contents { margin-top: 34px; margin-left: 41px; }
 </style>
-<div id="OfficeUI">
-<div style="background-color: white; position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 99999;">
-    <div style="float: left; width: 135px; background-color: #0072c6; height: 100%;">
-        <div class="back-arrow"></div>
-        <ul class="no-padding no-margin" style="margin-top: 15px;">
-            <li style="background-color: #2a8dd4;">Info</li>
-            <li>Open & Export</li>
-            <li>Save As</li>
-            <li>Save as Adobe PDF</li>
-            <li>Save Attachments</li>
-            <li>Print</li>
-            <li></li>
-            <li>Office Account</li>
-            <li>Options</li>
-            <li>Exit</li>
-        </ul>
-    </div>
-    <div style="float: right; background-color: green;">
-
+<div id="application" ng-controller="OfficeUIRibbon as OfficeUIRibbon">
+    <div class="container container-full-width container-full-height">
+        <div class="left navigation">
+            <div class="back-arrow"></div>
+            <ul class="left no-padding no-margin" ng-repeat="tab in OfficeUIRibbon.Tabs" ng-if="$first">
+                <li ng-repeat="menuItem in tab.MenuItems" ng-class="{active: OfficeUIRibbon.isApplicationMenuActive(menuItem), seperator: menuItem.Seperator == 'True'}" ng-click="setApplicationMenuItemAsActive(menuItem)">
+                    <div ng-if="menuItem.Seperator != 'True'">{{menuItem.Label}}</div>
+                    <div class="seperator" ng-if="menuItem.Seperator == 'True'"></div>
+                </li>
+            </ul>
+        </div>
+        <div class="right" ng-controller="OfficeUI as OfficeUI">
+            <div class="title">{{OfficeUI.Title}}</div>
+            
+            <div class="contents">
+                <div ng-repeat="tab in OfficeUIRibbon.Tabs" ng-if="$first">
+                        <div ng-repeat="menuItem in tab.MenuItems" ng-if="OfficeUIRibbon.isApplicationMenuActive(menuItem)">
+                            <h1>{{menuItem.Title}}</h1>
+                            <application-menu-contents url="{{menuItem.Url}}" />
+                        </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+<!--<div id="OfficeUI" ng-controller="OfficeUI as OfficeUI">
+    <header style="height: 20px; height: 52px; z-index: 1;">
+        
+    </header>
+    <div id="container">
+        <div id="div1">test</div>
+        <div id="div2">demo</div>
+    </div>
+    <div>
+        <div style="float: left; position: relative; width: 135px; background-color: #0072c6; height: 100%;">
+            <div class="back-arrow"></div>
+            <ul class="no-padding no-margin" style="margin-top: 15px;">
+                <li style="background-color: #2a8dd4;">Info</li>
+                <li>Open & Export</li>
+                <li>Save As</li>
+                <li>Save Attachments</li>
+                <li>Print</li>
+                <li class="seperator"><div class="seperator"></div></li>
+                <li>Office Account</li>
+                <li>Options</li>
+                <li>Exit</li>
+            </ul>
+        </div>
+    </div>-->
 </div>

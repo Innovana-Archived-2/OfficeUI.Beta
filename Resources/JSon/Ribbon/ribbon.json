@@ -3,7 +3,54 @@
     [
         {
             "Id": "tabFile",
-            "Label": "File"
+            "Label": "File",
+            "MenuItems": [
+                {
+                    "Id": "applicationMenuInfo",
+                    "Label": "Info",
+                    "Title": "Account Information",
+                    "Url": "/OfficeUI.Beta/Resources/Ribbon/ApplicationMenu/Info.html"
+                },
+                {
+                    "Id": "applicationMenuOpenAndExport",
+                    "Label": "Open & Export",
+                    "Title": "Open",
+                    "Url": "/OfficeUI.Beta/Resources/Ribbon/ApplicationMenu/OpenAndExport.html"
+                },
+                {
+                    "Id": "applicationMenuSaveAs",
+                    "Label": "Save As",
+                    "Title": "Save As",
+                    "Url": "/OfficeUI.Beta/Resources/Ribbon/ApplicationMenu/SaveAs.html"
+                },
+                {
+                    "Id": "applicationMenuSaveAttachments",
+                    "Label": "Save Attachments",
+                    "Title": "Save Attachments",
+                    "Url": "/OfficeUI.Beta/Resources/Ribbon/ApplicationMenu/SaveAttachments.html"
+                },
+                {
+                    "Id": "applicationMenuPrint",
+                    "Label": "Print",
+                    "Title": "Print",
+                    "Url": "/OfficeUI.Beta/Resources/Ribbon/ApplicationMenu/Print.html"
+                },
+                {
+                    "Seperator": "True"
+                },
+                {
+                    "Id": "applicationMenuOfficeAccount",
+                    "Label": "Office Account",
+                    "Title": "Account",
+                    "Url": "/OfficeUI.Beta/Resources/Ribbon/ApplicationMenu/OfficeAccount.html"
+                },
+                {
+                    "Id": "applicationMenuOptions",
+                    "Label": "Options",
+                    "Title": "Options",
+                    "Url": "/OfficeUI.Beta/Resources/Ribbon/ApplicationMenu/Options.html"
+                }
+            ]
         },
         {
             "Id": "tabHome",
