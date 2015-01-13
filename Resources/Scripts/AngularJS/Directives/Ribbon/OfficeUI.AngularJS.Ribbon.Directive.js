@@ -21,20 +21,6 @@ OfficeUIRibbon.directive('ribbon', function() {
     }
 });
 
-/* Defines a directive called 'ribbonApplicationMenu'. This directive must be called as an element. */
-OfficeUIRibbon.directive('ribbonApplicationMenu', function() {
-    return {
-        restrict: 'E',
-        replace: false,
-        scope: {
-            data: '@'
-        },
-        templateUrl: function(element, attributes) {
-            return attributes.templateurl;
-        }
-    }
-});
-
 /* Defines a directive called 'ngcScroll'. This directive must be called as an attribute. */
 OfficeUIRibbon.directive('ngcScroll', function() {
     return {

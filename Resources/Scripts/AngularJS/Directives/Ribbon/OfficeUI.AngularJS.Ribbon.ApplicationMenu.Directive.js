@@ -15,7 +15,6 @@ OfficeUIRibbon.directive('applicationMenuContents', function() {
         scope: {
             url: '@'
         },
-        url: '<h1>demo</h1>',
         link: function(scope, element, attributes) {
             scope.$watch('url', function(value) { 
                 scope.contentUrl = value;

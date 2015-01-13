@@ -8,7 +8,7 @@
 var OfficeUIRibbon = angular.module('OfficeUIRibbon');
 
 // Defines the OfficeUIRibbon controller for the application.
-OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', function($scope, $http) {
+OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', '$animate', function($scope, $http, $animate) {
     // Defines the various states that a ribbon can have.
     //      Hidden:     The ribbon is hidden completely.
     //      Visible:    The ribbon is visible, but not showed, which means it will be collapsed again when needed.
@@ -18,7 +18,7 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', function($scope,
         Visible: 2,
         Showed: 3
     }
-        
+
     // Defines the various variables needed for this controller.
     var ribbon = this;
     
@@ -43,7 +43,22 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', function($scope,
         ribbon.isApplicationMenuActive = function(applicationMenuItem) {
             return ribbon.activeApplicationMenuItem == applicationMenuItem;
         }
-    
+
+        // Sets the application menu as being active, which means that it should be showed.
+        ribbon.setApplicationMenuAsOpened = function() {
+            ribbon.applicationMenuActive = true;
+        }
+
+        // Sets the application menu as being inactive, which means that it should be showed.
+        ribbon.setApplicationMenuAsClosed = function() {
+            ribbon.applicationMenuActive = false;
+        }
+
+        // Check if the application menu is active.
+        ribbon.isApplicationMenuOpened = function() {
+            return ribbon.applicationMenuActive;
+        }
+
     // End Of Area: End of the functions which are being used for the application tab.
     
     // Get the Json file defined on the directive that points to the correct location of the JSon file.
@@ -86,6 +101,9 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', function($scope,
         
             // Sets the second tab as the active one. The second one is the tab next to the application tab.
             ribbon.activeTab = data.Tabs[1].Id;
+
+            // Set the application menu as not active, this will always be the default behaviour on page load.
+            ribbon.applicationMenuActive = false;
         })
         .error(function(data) {
             console.error('An error occured while loading the data file.');
