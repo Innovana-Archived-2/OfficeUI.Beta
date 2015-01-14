@@ -23,8 +23,9 @@
     .animate-move-to-the-left { margin-left: 0px; }
     .animate-move-to-the-left.ng-hide { margin-left: -135px; }
 
-    .animate-move-to-the-left.ng-hide-add.ng-hide-add-active .animate-menu-contents { transition: all linear 0.2s; }
-    .animate-move-to-the-left .animate-menu-contents { opacity: 1; }
-    .animate-move-to-the-left.ng-hide .animate-menu-contents { opacity: 0; }
+    .animate-move-to-the-left .animate-menu-contents.ng-hide-add.ng-hide-add-active,
+    .animate-move-to-the-left .animate-menu-contents.ng-hide-remove.ng-hide-remove-active { transition: all linear 0.2s; }
+    .animate-move-to-the-left .animate-menu-contents { opacity: 1; position: relative; top: 0px; }
+    .animate-move-to-the-left .animate-menu-contents.ng-hide { opacity: 0; }
 
 /* End Of Area: Animations to show and hide elements. */

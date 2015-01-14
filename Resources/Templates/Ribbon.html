@@ -98,9 +98,11 @@
 
                     <div class="application-contents" style="position: relative;">
                         <div ng-repeat="tab in OfficeUIRibbon.Tabs" ng-show="$first">
-                            <div ng-repeat="menuItem in tab.MenuItems" ng-show="OfficeUIRibbon.isApplicationMenuActive(menuItem)" class="animate-show">
-                                <h1>{{menuItem.Title}}</h1>
-                                <application-menu-contents url="{{menuItem.Url}}" />
+                            <div ng-repeat="menuItem in tab.MenuItems" ng-show="OfficeUIRibbon.isApplicationMenuActive(menuItem)" class="animate-menu-contents">
+                                <div style="position: absolute; top: 0px;">
+                                    <h1>{{menuItem.Title}}</h1>
+                                    <application-menu-contents url="{{menuItem.Url}}" />
+                                </div>
                             </div>
                         </div>
                     </div>
