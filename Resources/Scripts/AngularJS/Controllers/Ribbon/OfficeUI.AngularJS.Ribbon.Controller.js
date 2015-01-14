@@ -144,6 +144,11 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', '$animate', func
         return ribbon.state == ribbonStates.Showed;
     }
 
+    // Hide the ribbon.
+    ribbon.hideRibbon = function() {
+        ribbon.state = ribbonStates.Hidden;
+    }
+
     // Sets the currently active tab based on it's id.
     $scope.setActiveTab = function(tabId) {
         ribbon.setActiveTab(tabId);

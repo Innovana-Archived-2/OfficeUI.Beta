@@ -43,7 +43,7 @@ body, html { height: 100%; width: 100%; }
 #OfficeUI .container-input { height: 24px; }
 
 /* OfficeUI elements. */
-#OfficeUI > .header { background: url('../Images/Application/Backgrounds/Circuit.png') no-repeat scroll right top rgba(255, 255, 255, 1); height: 52px; }
+#OfficeUI > .header { background: url('../Images/Application/Backgrounds/Circuit.png') no-repeat scroll right top rgba(255, 255, 255, 1); height: 52px; position: relative; z-index: 2; }
 #OfficeUI > .header .title { margin-top: 6px; margin-left: -1px; }
 #OfficeUI ribbon { position: absolute; top: 23px; width: 100%; }
 

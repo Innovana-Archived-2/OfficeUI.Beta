@@ -11,19 +11,22 @@
 */
 
 /* Tabs styling. */
-#OfficeUI ul[role="ribbonTabs"] { border-bottom: 1px solid #d4d4d4; height: 24px; margin-top: 5px; text-transform: uppercase; }
-#OfficeUI ul[role="ribbonTabs"] li { text-align: center; line-height: 23px; padding: 0px 13px 0px 12px; }
+#OfficeUI ul[role="ribbonTabs"] { background: url("/OfficeUI.Beta/Resources/Images/Application/Backgrounds/Circuit.png") no-repeat scroll right -28px rgba(255, 255, 255, 1); border-bottom: 1px solid #d4d4d4; height: 24px; margin-top: 5px;  position: relative; z-index: 2; }
+#OfficeUI ul[role="ribbonTabs"] li { line-height: 23px; padding: 0px 13px 0px 12px; }
+#OfficeUI ul[role="ribbonTabs"] li .title { text-transform: uppercase; }
+#OfficeUI ul[role="ribbonTabs"] li:not(.application) .title:hover { color: #0072c6; }
 
 /* Tabs Styling - Conditional. */
 #OfficeUI ul[role="ribbonTabs"] li.application { padding: 0px 3px 0px 3px; background-color: #0072c6; color: #fff; border: 1px solid #0072c6; margin-right: 1px; min-width: 51px; }
+#OfficeUI ul[role="ribbonTabs"] li.application .title { padding-left: 14px; padding-right: 12px; }
 #OfficeUI ul[role="ribbonTabs"] li.application:hover { background-color: #2a8ad4; border: 1px solid #2a8ad4; }
-#OfficeUI ul[role="ribbonTabs"] li:not(.application):hover { color: #0072c6; }
 #OfficeUI ul[role="ribbonTabs"] li:not(:first-child) { margin-right: 2px; }
-#OfficeUI ul[role="ribbonTabs"] li.active { background-color: white; color: #0072c6; border-bottom: 1px solid #fff; border-right: 1px solid #d4d4d4; border-left: 1px solid #d4d4d4; border-top: 1px solid #d4d4d4; }
+#OfficeUI ul[role="ribbonTabs"] li.active .title { color: #0072c6; }
+#OfficeUI ul[role="ribbonTabs"] li.active { background-color: white;  border-bottom: 1px solid #fff; border-right: 1px solid #d4d4d4; border-left: 1px solid #d4d4d4; border-top: 1px solid #d4d4d4; }
 #OfficeUI ul[role="ribbonTabs"] li.active.no-border { border-right: 1px solid transparent; border-left: 1px solid transparent; border-top: 1px solid transparent; }
 
 /* Tabs Contents Styling. */
-#OfficeUI ul[role="ribbonContents"] { border-bottom: 1px solid #d4d4d4; height: 92px; position: relative; background-color: white; width: 100%; }
+#OfficeUI ul[role="ribbonContents"] { border-bottom: 1px solid #d4d4d4; height: 92px; position: relative; background-color: white; width: 100%; z-index: 1; }
 #OfficeUI ul[role="ribbonContents"].no-border { border-bottom: none; }
 #OfficeUI ul[role="ribbonContents"] .collapse { bottom: 0px; right: 0px; width: 29px; height: 16px; text-align: center; }
 #OfficeUI ul[role="ribbonContents"] .group { margin-left: 4px; margin-top: 3px; height: 90px; position: relative; vertical-align: top;}
@@ -45,3 +48,13 @@
 #OfficeUI ul[role="ribbonContents"] .pin-icon { padding-bottom: 1px; }
 
 #OfficeUI .tooltip { background-color: #ffffff; position: absolute; background-image: none, linear-gradient(#c6c6c6, #c6c6c6); background-position: 0 0px, 100% 0; background-repeat: no-repeat; background-size: 1px 100%; border: 1px solid #d4d4d4; box-shadow: 3px 3px 3px #e0e0e0; padding: 5px 11px; top: 90px; width: 191px; }
+
+/* Area: Animations to show and hide elements. */
+
+   /* Animation to show and hide the contents of the ribbon. */
+   .animate-ribbon-contents.ng-hide-add.ng-hide-add-active,
+   .animate-ribbon-contents.ng-hide-remove.ng-hide-remove-active { transition: all linear 0.2s; }
+   .animate-ribbon-contents { top: 0px; opacity: 1; }
+   .animate-ribbon-contents.ng-hide { top: -93px; opacity: 0; }
+
+/* End Of Area: Animations to show and hide elements. */
