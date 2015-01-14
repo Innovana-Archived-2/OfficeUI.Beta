@@ -1,12 +1,16 @@
-<div class="container container-full-width" ng-controller="OfficeUIRibbon as OfficeUIRibbon" ngc-scroll>
-    <div class="container container-full-width">
-        <ul role="ribbonTabs" class="no-margin no-padding" ng-class="{'no-border': OfficeUIRibbon.isHidden()}">
+<!-- Defines the main 'parent' element in which the ribbon is saved. -->
+<div ng-controller="OfficeUIRibbon as OfficeUIRibbon" ngc-scroll>
+    <!-- Provides an DIV element to hold the ribbon. This is needed because we have another element in which the application menu is being showed. -->
+    <div>
+        <ul role="ribbonTabs" class="no-margin no-padding" ng-class="{'no-border-bottom': OfficeUIRibbon.isHidden()}">
 
-            <li id="{{tab.Id}}" ng-click="OfficeUIRibbon.setApplicationMenuAsOpened()" ng-if="$first" application-menu role="tab" class="container" ng-repeat="tab in OfficeUIRibbon.Tabs" ng-class="{'no-border': OfficeUIRibbon.isHidden(), active: OfficeUIRibbon.isActive(tab.Id) && !OfficeUIRibbon.isHidden(), application:$first}" ng-click="$first || OfficeUIRibbon.setActiveTab(tab.Id);" stop-propagation="click">
+            <!-- Renders the first tab element. This is a seperate item since a 'click' action is needed. We need to show the application contents then. -->
+            <li id="{{tab.Id}}" ng-click="OfficeUIRibbon.setApplicationMenuAsOpened()" ng-if="$first" role="tab" class="container" ng-repeat="tab in OfficeUIRibbon.Tabs" ng-class="{'no-border-bottom': OfficeUIRibbon.isHidden(), active: OfficeUIRibbon.isActive(tab.Id) && !OfficeUIRibbon.isHidden(), application:$first}" ng-click="$first || OfficeUIRibbon.setActiveTab(tab.Id);" stop-propagation="click">
                 {{tab.Label}}
             </li>
 
-            <li id="{{tab.Id}}" ng-if="!$first" ngc-active-tab-on-hover role="tab" class="container" ng-repeat="tab in OfficeUIRibbon.Tabs" ng-class="{'no-border': OfficeUIRibbon.isHidden(), active: OfficeUIRibbon.isActive(tab.Id) && !OfficeUIRibbon.isHidden(), application:$first}" ng-click="$first || OfficeUIRibbon.setActiveTab(tab.Id);" stop-propagation="click">
+            <!-- Renders all the other tab elements. This is a seperate item. See the explanation above to understand why. -->
+            <li id="{{tab.Id}}" ng-if="!$first" ngc-active-tab-on-hover role="tab" class="container" ng-repeat="tab in OfficeUIRibbon.Tabs" ng-class="{'no-border': OfficeUIRibbon.isHidden() || !OfficeUIRibbon.isActive(tab.Id), active: OfficeUIRibbon.isActive(tab.Id) && !OfficeUIRibbon.isHidden(), application:$first}" ng-click="$first || OfficeUIRibbon.setActiveTab(tab.Id);" stop-propagation="click">
                 {{tab.Label}}
             </li>
         </ul>
@@ -111,3 +115,4 @@
         </div>
     </div>
 </div>
+<!-- End: Defines the main 'parent' element in which the ribbon is saved. -->

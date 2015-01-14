@@ -18,19 +18,23 @@ body, html { height: 100%; width: 100%; }
 .no-margin { margin: 0px; }
 .no-padding { padding: 0px; }
 
-/* General styling for the root of the website. */
-#OfficeUI { min-height: 52px; color: #444; font-family: 'Segoe UI'; font-size: 0.75em; overflow: hidden; }
+/* General styling for any OfficeUI application. */
+#OfficeUI { color: #444; font-family: 'Segoe UI'; font-size: 0.75em; overflow: hidden; width: 100%; }
 #OfficeUI a { color: #444; cursor: default; }
 #OfficeUI p { padding: 5px 0px; margin: 0px; line-height: 15px; }
 #OfficeUI strong { color: #5d5d5d; }
-#OfficeUI header { background: url('../Images/Application/Backgrounds/Circuit.png') no-repeat scroll right top rgba(255, 255, 255, 1); position: fixed; width: 100%; }
 
 /* General styling that can be applied to all kind of elements inside the OfficeUI container. */
 #OfficeUI .center { text-align: center !important; }
 #OfficeUI .absolute { position: absolute !important; }
 #OfficeUI .left { float: left !important; }
 #OfficeUI .right { float: right !important; }
-#OfficeUI .hidden { display: none; }
+#OfficeUI .hidden { display: none !important; }
+#OfficeUI .no-border { border: 1px solid transparent !important; }
+#OfficeUI .no-border-left { border-left: 1px solid transparent !important; }
+#OfficeUI .no-border-right { border-right: 1px solid transparent !important; }
+#OfficeUI .no-border-top { border-top: 1px solid transparent !important; }
+#OfficeUI .no-border-bottom { border-bottom: 1px solid transparent !important; }
 
 /* Container elements. */
 #OfficeUI .container { display: inline-block; }
@@ -38,39 +42,32 @@ body, html { height: 100%; width: 100%; }
 #OfficeUI .container-full-width { width: 100%; }
 #OfficeUI .container-input { height: 24px; }
 
-#OfficeUI .title { margin-top: 6px; }
+/* OfficeUI elements. */
+#OfficeUI > .header { background: url('../Images/Application/Backgrounds/Circuit.png') no-repeat scroll right top rgba(255, 255, 255, 1); height: 52px; }
+#OfficeUI > .header .title { margin-top: 6px; margin-left: -1px; }
+#OfficeUI ribbon { position: absolute; top: 23px; width: 100%; }
 
-/* Styling for the OfficeUI elements itself. */
-#OfficeUI .application-title { margin: 6px 3px 0px 0px; }
-#OfficeUI .application-icons { margin: 3px 0px 0px 5px; }
-#OfficeUI .application-icons img { margin: 0px 5px 0px 2px; }
-#OfficeUI .application-icons img:not(:first-child) { margin-right: 6px; }
-#OfficeUI .application-icons.icon img:hover:not(:first-child) { background-color: #cde6f7; }
+   /* Styling for the application icons on top of the page. */
+   #OfficeUI .application-title { margin: 6px 3px 0px 0px; }
+   #OfficeUI .application-icons { margin: 3px 0px 0px 5px; }
+   #OfficeUI .application-icons img { margin: 0px 5px 0px 2px; }
+   #OfficeUI .application-icons img:not(:first-child) { margin-right: 6px; }
+   #OfficeUI .application-icons.icon img:hover:not(:first-child) { background-color: #cde6f7; }
 
-/* Defines general styling for icons. */
-#OfficeUI .icon:hover { background-color: #cde6f7; }
-#OfficeUI .icon:active { background-color: #92c0e0; }
+   /* Defines general styling for icons. */
+   #OfficeUI .icon:hover { background-color: #cde6f7; }
+   #OfficeUI .icon:active { background-color: #92c0e0; }
 
-/* Defines the styling for the contents of the website, the contents which can be found beneath the ribbon. */
-#OfficeUI .contents { margin-top: 146px; }
+   /* Defines the styling for the contents of the website, the contents which can be found beneath the ribbon. */
+   #OfficeUI .contents { margin-top: 94px; }
 
 #OfficeUI input { border: 1px solid #ababab; font-family: 'Segoe UI'; color: black; font-size: 1em; padding-left: 3px; padding-right: 3px; }
 #OfficeUI input:-ms-input-placeholder { color: #6d6d6d; }
 #OfficeUI input:hover, #OfficeUI input:focus { border: 1px solid #92c0e0; outline: none; }
 
-#OfficeUI .menu { display: none; left: 0px; top: 69px; z-index: 100; background-color: white; box-shadow: 0 0 0 #888888; min-width: 80px; background-color: white; background-image: linear-gradient(#c6c6c6, #c6c6c6), linear-gradient(#c6c6c6, #c6c6c6); background-repeat: no-repeat; background-position: 0 0px, 100% 0; background-size: 1px 100%; border-bottom: 1px solid #c6c6c6; border-top: 1px solid #c6c6c6; box-shadow: 3px 3px 3px #e0e0e0; min-width: 80px; padding: 1px 2px; }
-#OfficeUI .menu-small { top: 23px; }
-#OfficeUI .menu ul { list-style: none; }
-#OfficeUI .menu ul li { padding-right: 32px; white-space: nowrap; height: 24px; }
-#OfficeUI .menu ul li:hover { background-color: #cde6f7; }
-#OfficeUI .menu ul li .image { width: 24px; padding-left: 4px; padding-top: 5px; }
-#OfficeUI .menu ul li .image img { padding-left: 0px !important; padding-right: 0px !important; }
-#OfficeUI .menu ul li .text { vertical-align: top; padding-top: 3px; width: 100%; }
-
 /* Provide some responsive styling. 
    The following styling is applied to the screen when the width of the window is less than 497px. */
 @media screen and (max-width: 497px) {
 
-    /* Hide the background image when the size of the screen is smaller than the size of the background-image. */
-    #OfficeUI { background-image: none; }
+    #OfficeUI > .header { background-image: none; } /* Hide the background image when the size of the screen is smaller than the size of the background-image. */
 }

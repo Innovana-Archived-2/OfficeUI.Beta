@@ -48,8 +48,9 @@
     <body class="no-margin no-padding">
         <!-- Provides the main OfficeUI area. -->
         <div id="OfficeUI" ng-controller="OfficeUI as OfficeUI"> <!-- Defines this area as an area which is bound to the AngularJS Office controller. -->
-            <!-- Defines the header itself. -->
-            <header>
+
+            <!-- Defines the top class, which means the class on which the background is showed. -->
+            <div class="header">
 
                 <!-- Provides the area in which the application icons are being showed. -->
                 <div class="absolute">
@@ -57,20 +58,25 @@
                         <img ngc-dynamic-event-handling="icon.Id" id="{{icon.Id}}" ng-class="{'icon': !$first}" ng-repeat-start="icon in OfficeUI.Icons" ng-repeat-end ng-src="{{icon.Icon}}" alt="{{icon.Alt}}" />
                     </div>
                 </div>
-                
-                <!-- Provides the area in which the application title is being rendered. -->
-                <div class="container container-full-width center">
-                    <div class="application-title">{{OfficeUI.Title}}</div>
-                </div>
-                
-                <!-- Renders the ribbon. 
+
+                <span class="container container-full-width center title">{{OfficeUI.Title}}</span>
+            </div>
+
+            <!-- Renders the ribbon.
                         This AngularJS directive takes 2 elements as input parameters:
                         templateUrl:        The url (path) of the template that contains the AngularJS HTML to be rendered. (However this can stay the same, it's done
                                             to allow users to customize the ribbon when they want to.
 
                         data:               The url to a JSon file, defining the ribbon that should be rendered.
                 -->
-                <ribbon templateUrl="/OfficeUI.Beta/Resources/Templates/Ribbon.html" data="/OfficeUI.Beta/Resources/JSon/Ribbon/ribbon.json"></ribbon>
+            <ribbon templateUrl="/OfficeUI.Beta/Resources/Templates/Ribbon.html" data="/OfficeUI.Beta/Resources/JSon/Ribbon/ribbon.json"></ribbon>
+
+            <!-- Defines the header itself. -->
+            <header>
+
+
+                
+
             </header>
 
             <div id="website" class="container contents">
