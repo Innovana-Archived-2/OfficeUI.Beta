@@ -2,8 +2,7 @@
     <div class="container container-full-width">
         <ul role="ribbonTabs" class="no-margin no-padding" ng-class="{'no-border': OfficeUIRibbon.isHidden()}">
 
-            <!--ng-click="OfficeUIRibbon.setApplicationMenuAsOpened()"-->
-            <li id="{{tab.Id}}"  ng-if="$first" application-menu role="tab" class="container" ng-repeat="tab in OfficeUIRibbon.Tabs" ng-class="{'no-border': OfficeUIRibbon.isHidden(), active: OfficeUIRibbon.isActive(tab.Id) && !OfficeUIRibbon.isHidden(), application:$first}" ng-click="$first || OfficeUIRibbon.setActiveTab(tab.Id);" stop-propagation="click">
+            <li id="{{tab.Id}}" ng-if="$first" application-menu role="tab" class="container" ng-repeat="tab in OfficeUIRibbon.Tabs" ng-class="{'no-border': OfficeUIRibbon.isHidden(), active: OfficeUIRibbon.isActive(tab.Id) && !OfficeUIRibbon.isHidden(), application:$first}" ng-click="$first || OfficeUIRibbon.setActiveTab(tab.Id);" stop-propagation="click">
                 {{tab.Label}}
             </li>
 
@@ -82,9 +81,9 @@
 
     <!-- Renders the ribbon application menu. This must be placed here because it will take up all the screen space. -->
     <!-- TESTING: Do NOT enable this. This feature is still in development. -->
-    <div class="applicationMenuHolder fade-out" ng-show="OfficeUIRibbon.isApplicationMenuOpened()">
+    <div class="applicationMenuHolder" ng-show="OfficeUIRibbon.isApplicationMenuOpened()">
         <div class="container container-full-width container-full-height">
-            <div class="container-left navigation animate-hide-blue-area">
+            <div class="container-left navigation animate-hide-blue-area" ng-show="OfficeUIRibbon.isApplicationMenuOpened()">
                 <div class="back-arrow" ng-click="OfficeUIRibbon.setApplicationMenuAsClosed()"></div>
                 <ul class="left no-padding no-margin" ng-repeat="tab in OfficeUIRibbon.Tabs" ng-if="$first">
                     <li ng-repeat="menuItem in tab.MenuItems" ng-class="{active: OfficeUIRibbon.isApplicationMenuActive(menuItem), seperator: menuItem.Seperator == 'True'}" ng-click="setApplicationMenuItemAsActive(menuItem)">

@@ -103,7 +103,7 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', '$animate', func
             ribbon.activeTab = data.Tabs[1].Id;
 
             // Set the application menu as not active, this will always be the default behaviour on page load.
-            ribbon.applicationMenuActive = false;
+            ribbon.applicationMenuActive = true;
         })
         .error(function(data) {
             console.error('An error occured while loading the data file.');
