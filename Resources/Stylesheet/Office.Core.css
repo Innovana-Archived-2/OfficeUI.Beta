@@ -71,3 +71,13 @@ body, html { height: 100%; width: 100%; }
 
     #OfficeUI > .header { background-image: none; } /* Hide the background image when the size of the screen is smaller than the size of the background-image. */
 }
+
+/* Area: Animations to show and hide elements. */
+
+   /* Animation to show and hide the contents of the ribbon. */
+   .contents.ng-hide-add.ng-hide-add-active,
+   .contents.ng-hide-remove.ng-hide-remove-active { transition: all linear 0.2s; }
+   .contents { top: 145px; display: block !important; position: relative; }
+   .contents.ng-hide { top: 53px; display: block !important; position: relative; }
+
+/* End Of Area: Animations to show and hide elements. */

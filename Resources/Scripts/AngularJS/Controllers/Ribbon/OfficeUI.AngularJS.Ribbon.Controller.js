@@ -62,7 +62,7 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', '$animate', func
     // End Of Area: End of the functions which are being used for the application tab.
     
     // Get the Json file defined on the directive that points to the correct location of the JSon file.
-    $http.get($scope.data)
+    $http.get("/OfficeUI.Beta/Resources/JSon/Ribbon/ribbon.json")
         .success(function(data) {
             ribbon.Tabs = data.Tabs;
             

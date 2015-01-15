@@ -45,9 +45,9 @@
     </head>
     
     <!-- Defines the main content area for the website. -->
-    <body class="no-margin no-padding">
+    <body class="no-margin no-padding"  ng-controller="OfficeUIRibbon as OfficeUIRibbon">
         <!-- Provides the main OfficeUI area. -->
-        <div id="OfficeUI" ng-controller="OfficeUI as OfficeUI"> <!-- Defines this area as an area which is bound to the AngularJS Office controller. -->
+        <div id="OfficeUI" ng-controller="OfficeUI as OfficeUI" style="position: fixed; top: 0px; width: 100%;"> <!-- Defines this area as an area which is bound to the AngularJS Office controller. -->
 
             <!-- Defines the top class, which means the class on which the background is showed. -->
             <div class="header">
@@ -69,20 +69,131 @@
 
                         data:               The url to a JSon file, defining the ribbon that should be rendered.
                 -->
-            <ribbon templateUrl="/OfficeUI.Beta/Resources/Templates/Ribbon.html" data="/OfficeUI.Beta/Resources/JSon/Ribbon/ribbon.json"></ribbon>
+            <!-- Defines the main 'parent' element in which the ribbon is saved. -->
+            <div ngc-scroll style="top: -29px; position: relative;">
+                <!-- Provides an DIV element to hold the ribbon. This is needed because we have another element in which the application menu is being showed. -->
+                <div>
+                    <ul role="ribbonTabs" class="no-margin no-padding" ng-class="{'no-border-bottom': OfficeUIRibbon.isHidden()}">
 
-            <!-- Defines the header itself. -->
-            <header>
+                        <!-- Renders the first tab element. This is a seperate item since a 'click' action is needed. We need to show the application contents then. -->
+                        <li id="{{tab.Id}}" ng-click="OfficeUIRibbon.setApplicationMenuAsOpened()" ng-if="$first" role="tab" class="container" ng-repeat="tab in OfficeUIRibbon.Tabs" ng-class="{'no-border-bottom': OfficeUIRibbon.isHidden(), active: OfficeUIRibbon.isActive(tab.Id) && !OfficeUIRibbon.isHidden(), application:$first}" ng-click="$first || OfficeUIRibbon.setActiveTab(tab.Id);" stop-propagation="click">
+                            {{tab.Label}}
+                        </li>
+
+                        <!-- Renders all the other tab elements. This is a seperate item. See the explanation above to understand why. -->
+                        <li id="{{tab.Id}}" ng-if="!$first" ngc-active-tab-on-hover role="tab" class="container" ng-repeat="tab in OfficeUIRibbon.Tabs" ng-class="{'no-border': OfficeUIRibbon.isHidden() || !OfficeUIRibbon.isActive(tab.Id), active: OfficeUIRibbon.isActive(tab.Id) && !OfficeUIRibbon.isHidden(), application:$first}" ng-click="$first || OfficeUIRibbon.setActiveTab(tab.Id);" stop-propagation="click">
+                            {{tab.Label}}
+                        </li>
+                    </ul>
+
+                    <ul role="ribbonContents" id="ribbonContents" class="no-margin no-padding animate-ribbon-contents" ng-show="OfficeUIRibbon.isShowed() || OfficeUIRibbon.isVisible()">
+                        <li ng-repeat="tabContents in OfficeUIRibbon.Tabs" ng-show="OfficeUIRibbon.isActive(tabContents.Id)">
+                            <div class="container" style="vertical-align: top;">
+                                <div class="container group" ng-repeat-start="group in tabContents.Groups">
+                                    <div class="legend">{{group.Legend}}</div>
+
+                                    <div class="container area" ng-repeat="area in group.Areas">
+                                        <!-- The area to render an input element. -->
+                                        <div class="container-block container-input" ng-repeat="action in area.Actions" ng-if="action.Type == 'Input'">
+                                            <input type="text" id="{{action.Id}}" placeholder="{{action.Legend}}" ng-style="myStyle={width:'{{action.Width}}'}"/>
+                                        </div>
+
+                                        <!-- The area to render an checkbox element. -->
+                                        <div class="container-block container-input" ng-repeat="action in area.Actions" ng-if="action.Type == 'Checkbox'">
+                                            <input type="checkbox" id="{{action.Id}}" /><div class="container">{{action.Legend}}</div>
+                                        </div>
+
+                                        <!-- The area to render a big icon. -->
+                                        <div class="container action" ng-repeat="action in area.Actions" ng-if="action.Type == 'bIcon'">
+                                            <a href="#" ng-href="{{action.Uri}}" ngc-tooltip="action.setTooltip()">
+                                                <div ngc-menu-holder="{menu: '#{{action.Id}}_menu'}" class="container icon big-icon"  ngc-dynamic-event-handling="action.Id" id="{{action.Id}}">
+                                                    <img ng-src="{{action.Resource}}"/>
+                                                    <div class="label" ng-bind-html="action |actionLegend"></div>
+                                                </div>
+                                            </a>
+
+                                            <div class="tooltip" ng-if="action.hasTooltip" style="display: none;">
+                                                <div ng-bind-html="action.Tooltip |actionTooltip"></div>
+                                            </div>
+                                        </div>
 
 
-                
+                                        <!-- The area to render a small icon. -->
+                                        <div class="container-block" ng-repeat="action in area.Actions" ng-if="action.Type == 'sIcon'">
+                                            <a href="#" ng-href="{{action.Uri}}" ngc-tooltip>
+                                                <div ngc-menu-holder="{menu: '#{{action.Id}}_menu'}" class="container icon small-icon" ngc-dynamic-event-handling="action.Id" id="{{action.Id}}">
+                                                    <img ng-src="{{action.Resource}}" />
+                                                    <div class="container label" ng-bind-html="action |actionLegend"></div>
+                                                </div>
+                                            </a>
 
-            </header>
+                                            <div class="tooltip" ng-if="action.Tooltip" style="display: none;">
+                                                <div ng-bind-html="action.Tooltip |actionTooltip"></div>
+                                            </div>
+                                        </div>
 
-            <div id="website" class="container contents">
+
+
+                                    </div>
+
+                                </div>
+
+                                <!-- Defines the vertical 'pipe' sign. -->
+                                <div class="container pipe" ng-repeat-end>
+
+                                </div>
+
+                            </div>
+                            <div ng-click="OfficeUIRibbon.toggleRibbonState()" class="container absolute icon collapse">
+
+                                <!-- We display 2 possible icons in the ribbon. A 'Pin' icon or an 'Arrow' icon. This is done using 'ng-if' directive. -->
+                                <img src="/OfficeUI.Beta/Resources/Images/Ribbon/Built-In/Collapse.png" class="pin-icon" ng-if="OfficeUIRibbon.isShowed()"/>
+                                <img src="/OfficeUI.Beta/Resources/Images/Ribbon/Built-In/Pin.png" class="pin-icon" ng-if="OfficeUIRibbon.isVisible()"/>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Renders the ribbon application menu. This must be placed here because it will take up all the screen space. -->
+                <!-- TESTING: Do NOT enable this. This feature is still in development. -->
+                <div class="applicationMenuHolder animate-move-to-the-left" ng-show="OfficeUIRibbon.isApplicationMenuOpened()">
+                    <div class="container container-full-width container-full-height">
+                        <div class="container-left navigation animate-hide-blue-area" >
+                            <div class="back-arrow" ng-click="OfficeUIRibbon.setApplicationMenuAsClosed()"></div>
+                            <ul class="left no-padding no-margin" ng-repeat="tab in OfficeUIRibbon.Tabs" ng-if="$first">
+                                <li ng-repeat="menuItem in tab.MenuItems" ng-class="{active: OfficeUIRibbon.isApplicationMenuActive(menuItem), seperator: menuItem.Seperator == 'True'}" ng-click="setApplicationMenuItemAsActive(menuItem)">
+                                    <div ng-if="menuItem.Seperator != 'True'">{{menuItem.Label}}</div>
+                                    <div class="seperator" ng-if="menuItem.Seperator == 'True'"></div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="container-right animate-menu-contents">
+                            <div ng-controller="OfficeUI as OfficeUI">
+                                <div class="title">{{OfficeUI.Title}}</div>
+
+                                <div class="application-contents" style="position: relative;">
+                                    <div ng-repeat="tab in OfficeUIRibbon.Tabs" ng-show="$first">
+                                        <div ng-repeat="menuItem in tab.MenuItems" ng-show="OfficeUIRibbon.isApplicationMenuActive(menuItem)" class="animate-menu-contents">
+                                            <div style="position: absolute; top: 0px;">
+                                                <h1>{{menuItem.Title}}</h1>
+                                                <application-menu-contents url="{{menuItem.Url}}" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End: Defines the main 'parent' element in which the ribbon is saved. -->
+
+        </div>
+
+            <div id="website" class="container contents" ng-show="OfficeUIRibbon.isShowed()" style="font-family: 'Segoe UI'; color: #444; font-size: 0.75em;">
                 The contents of the website is placed here.
             </div>
-        </div>
+        
 
         <script type="text/javascript">
             // Plugin configuration can be done here.
