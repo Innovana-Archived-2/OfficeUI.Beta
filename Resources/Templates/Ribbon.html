@@ -6,25 +6,34 @@
 
             <!-- Renders the first tab element. This is a seperate item since a 'click' action is needed. We need to show the application contents then. -->
             <li id="{{tab.Id}}" ng-click="OfficeUIRibbon.setApplicationMenuAsOpened()" ng-if="$first" role="tab" class="container" ng-repeat="tab in OfficeUIRibbon.Tabs" ng-class="{'no-border-bottom': OfficeUIRibbon.isHidden(), active: OfficeUIRibbon.isActive(tab.Id) && !OfficeUIRibbon.isHidden(), application:$first}" ng-click="$first || OfficeUIRibbon.setActiveTab(tab.Id);" stop-propagation="click">
-                <span class="title">{{tab.Label}}</span>
+                {{tab.Label}}
             </li>
 
             <!-- Renders all the other tab elements. This is a seperate item. See the explanation above to understand why. -->
             <li id="{{tab.Id}}" ng-if="!$first" ngc-active-tab-on-hover role="tab" class="container" ng-repeat="tab in OfficeUIRibbon.Tabs" ng-class="{'no-border': OfficeUIRibbon.isHidden() || !OfficeUIRibbon.isActive(tab.Id), active: OfficeUIRibbon.isActive(tab.Id) && !OfficeUIRibbon.isHidden(), application:$first}" ng-click="$first || OfficeUIRibbon.setActiveTab(tab.Id);" stop-propagation="click">
-                <span class="title">{{tab.Label}}</span>
+                {{tab.Label}}
+            </li>
+        </ul>
+        
+        <ul role="ribbonContents" id="ribbonContents" class="no-margin no-padding animate-ribbon-contents" ng-show="OfficeUIRibbon.isShowed() || OfficeUIRibbon.isVisible()">
+            <li ng-repeat="tabContents in OfficeUIRibbon.Tabs" ng-show="OfficeUIRibbon.isActive(tabContents.Id)">
+                <div class="container" style="vertical-align: top;">
+                    <div class="container group" ng-repeat-start="group in tabContents.Groups">
+                        <div class="legend">{{group.Legend}}</div>
 
-                <div class="tab-contents" ng-show="OfficeUIRibbon.isActive(tab.Id)" style="position: absolute; height: 92px; border-bottom: 1px solid #d4d4d4; width: 100%; left: 0px; top: 25px; text-align: left; text-decoration: none;">
-                    <div class="container group" ng-repeat-start="group in tab.Groups">
                         <div class="container area" ng-repeat="area in group.Areas">
+                            <!-- The area to render an input element. -->
                             <div class="container-block container-input" ng-repeat="action in area.Actions" ng-if="action.Type == 'Input'">
                                 <input type="text" id="{{action.Id}}" placeholder="{{action.Legend}}" ng-style="myStyle={width:'{{action.Width}}'}"/>
                             </div>
 
+                            <!-- The area to render an checkbox element. -->
                             <div class="container-block container-input" ng-repeat="action in area.Actions" ng-if="action.Type == 'Checkbox'">
                                 <input type="checkbox" id="{{action.Id}}" /><div class="container">{{action.Legend}}</div>
                             </div>
-
-                            <div class="container action" ng-repeat="action in area.Actions" ng-if="action.Type == 'bIcon'" style="vertical-align: top;">
+                            
+                            <!-- The area to render a big icon. -->
+                            <div class="container action" ng-repeat="action in area.Actions" ng-if="action.Type == 'bIcon'">
                                 <a href="#" ng-href="{{action.Uri}}" ngc-tooltip="action.setTooltip()">
                                     <div ngc-menu-holder="{menu: '#{{action.Id}}_menu'}" class="container icon big-icon"  ngc-dynamic-event-handling="action.Id" id="{{action.Id}}">
                                         <img ng-src="{{action.Resource}}"/>
@@ -36,77 +45,42 @@
                                     <div ng-bind-html="action.Tooltip |actionTooltip"></div>
                                 </div>
                             </div>
+
+
+                            <!-- The area to render a small icon. -->
+                            <div class="container-block" ng-repeat="action in area.Actions" ng-if="action.Type == 'sIcon'">
+                                <a href="#" ng-href="{{action.Uri}}" ngc-tooltip>
+                                    <div ngc-menu-holder="{menu: '#{{action.Id}}_menu'}" class="container icon small-icon" ngc-dynamic-event-handling="action.Id" id="{{action.Id}}">
+                                        <img ng-src="{{action.Resource}}" />
+                                        <div class="container label" ng-bind-html="action |actionLegend"></div>
+                                    </div>
+                                </a>
+
+                                <div class="tooltip" ng-if="action.Tooltip" style="display: none;">
+                                    <div ng-bind-html="action.Tooltip |actionTooltip"></div>
+                                </div>
+                            </div>
+
+                            
+
                         </div>
+
                     </div>
 
+                    <!-- Defines the vertical 'pipe' sign. -->
                     <div class="container pipe" ng-repeat-end>
 
                     </div>
+
                 </div>
-                <!--<ul role="ribbonContents" id="ribbonContents" class="no-margin no-padding animate-ribbon-contents" ng-show="OfficeUIRibbon.isShowed()" ng-class="{'no-border': OfficeUIRibbon.isHidden()}">
-                    <li ng-class="{'hidden': !OfficeUIRibbon.isActive(tab.Id)}">
-                        <div class="container" style="vertical-align: top;">
-                            <div class="container group" ng-repeat-start="group in tab.Groups">
-                                <div class="legend">{{group.Legend}}</div>
+                <div ng-click="OfficeUIRibbon.toggleRibbonState()" class="container absolute icon collapse">
 
-                                <div class="container area" ng-repeat="area in group.Areas">
-                                    <div class="container-block container-input" ng-repeat="action in area.Actions" ng-if="action.Type == 'Input'">
-                                        <input type="text" id="{{action.Id}}" placeholder="{{action.Legend}}" ng-style="myStyle={width:'{{action.Width}}'}"/>
-                                    </div>
-
-                                    <div class="container-block container-input" ng-repeat="action in area.Actions" ng-if="action.Type == 'Checkbox'">
-                                        <input type="checkbox" id="{{action.Id}}" /><div class="container">{{action.Legend}}</div>
-                                    </div>
-
-                                    <div class="container action" ng-repeat="action in area.Actions" ng-if="action.Type == 'bIcon'">
-                                        <a href="#" ng-href="{{action.Uri}}" ngc-tooltip="action.setTooltip()">
-                                            <div ngc-menu-holder="{menu: '#{{action.Id}}_menu'}" class="container icon big-icon"  ngc-dynamic-event-handling="action.Id" id="{{action.Id}}">
-                                                <img ng-src="{{action.Resource}}"/>
-                                                <div class="label" ng-bind-html="action |actionLegend"></div>
-                                            </div>
-                                        </a>
-
-                                        <div class="tooltip" ng-if="action.hasTooltip" style="display: none;">
-                                            <div ng-bind-html="action.Tooltip |actionTooltip"></div>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="container-block" ng-repeat="action in area.Actions" ng-if="action.Type == 'sIcon'">
-                                        <a href="#" ng-href="{{action.Uri}}" ngc-tooltip>
-                                            <div ngc-menu-holder="{menu: '#{{action.Id}}_menu'}" class="container icon small-icon" ngc-dynamic-event-handling="action.Id" id="{{action.Id}}">
-                                                <img ng-src="{{action.Resource}}" />
-                                                <div class="container label" ng-bind-html="action |actionLegend"></div>
-                                            </div>
-                                        </a>
-
-                                        <div class="tooltip" ng-if="action.Tooltip" style="display: none;">
-                                            <div ng-bind-html="action.Tooltip |actionTooltip"></div>
-                                        </div>
-                                    </div>
-
-
-
-                                </div>
-
-                            </div>
-
-                            <div class="container pipe" ng-repeat-end>
-
-                            </div>
-
-                        </div>
-                        <div ng-click="OfficeUIRibbon.hideRibbon()" class="container absolute icon collapse">
-
-                            <img src="/OfficeUI.Beta/Resources/Images/Ribbon/Built-In/Collapse.png" class="pin-icon" ng-if="OfficeUIRibbon.isShowed()"/>
-                            <img src="/OfficeUI.Beta/Resources/Images/Ribbon/Built-In/Pin.png" class="pin-icon" ng-if="OfficeUIRibbon.isVisible()"/>
-                        </div>
-                    </li>
-                </ul>-->
+                    <!-- We display 2 possible icons in the ribbon. A 'Pin' icon or an 'Arrow' icon. This is done using 'ng-if' directive. -->
+                    <img src="/OfficeUI.Beta/Resources/Images/Ribbon/Built-In/Collapse.png" class="pin-icon" ng-if="OfficeUIRibbon.isShowed()"/>
+                    <img src="/OfficeUI.Beta/Resources/Images/Ribbon/Built-In/Pin.png" class="pin-icon" ng-if="OfficeUIRibbon.isVisible()"/>
+                </div>
             </li>
         </ul>
-        
-
     </div>
 
     <!-- Renders the ribbon application menu. This must be placed here because it will take up all the screen space. -->
