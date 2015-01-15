@@ -19,7 +19,7 @@ body, html { height: 100%; width: 100%; }
 .no-padding { padding: 0px; }
 
 /* General styling for any OfficeUI application. */
-#OfficeUI { color: #444; font-family: 'Segoe UI'; font-size: 0.75em; overflow: hidden; width: 100%; }
+#OfficeUI { color: #444; font-family: 'Segoe UI'; font-size: 0.75em; overflow: hidden; width: 100%; position: fixed; top: 0px; height: 100%; }
 #OfficeUI a { color: #444; cursor: default; }
 #OfficeUI p { padding: 5px 0px; margin: 0px; line-height: 15px; }
 #OfficeUI strong { color: #5d5d5d; }
