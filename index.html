@@ -88,7 +88,7 @@
 
                     <ul role="ribbonContents" id="ribbonContents" class="no-margin no-padding animate-ribbon-contents" ng-show="OfficeUIRibbon.isShowed() || OfficeUIRibbon.isVisible()">
                         <li ng-repeat="tabContents in OfficeUIRibbon.Tabs" ng-show="OfficeUIRibbon.isActive(tabContents.Id)">
-                            <div class="container" style="vertical-align: top;">
+                            <div class="container" style="vertical-align: top; height: 92px; overflow: hidden;">
                                 <div class="container group" ng-repeat-start="group in tabContents.Groups">
                                     <div class="legend">{{group.Legend}}</div>
 
@@ -197,6 +197,7 @@
 
         <script type="text/javascript">
             // Plugin configuration can be done here.
+            $.fn.OfficeUI.Defaults.changeActiveTabOnHover = false;
         </script>
     </body>
 </html>
