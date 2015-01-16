@@ -215,7 +215,6 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', '$animate', func
     // General events - not specifically tied to the controller.
     // Executed when you click somewhere on the page.
     $(window).on('click', function(e) {
-        console.log('Clicked the window.');
         // Check if the state of the ribbon is 'Overlay'.
         if (ribbon.state == ribbonStates.Visible) {
             $scope.setRibbonHidden();

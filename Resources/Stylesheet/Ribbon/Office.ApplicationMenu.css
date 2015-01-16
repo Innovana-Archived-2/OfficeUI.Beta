@@ -5,7 +5,7 @@
 #OfficeUI .applicationMenuHolder h1 { font-weight: 100; font-size: 3.2em; }
 #OfficeUI .applicationMenuHolder .container-full-height { height: 100%; }
 #OfficeUI .applicationMenuHolder .container .container-left { float: left; height: 100%; }
-#OfficeUI .applicationMenuHolder .container .navigation { background-color: #0072c6; }
+#OfficeUI .applicationMenuHolder .container .navigation { background-color: #0072c6; width: 135px; }
 #OfficeUI .applicationMenuHolder .container .navigation ul { width: 100%; color: #fff; list-style: none; margin-top: 15px; }
 #OfficeUI .applicationMenuHolder .container .navigation ul li { vertical-align: middle; padding-left: 26px; padding-right: 10px; padding-top: 11px; padding-bottom: 11px; line-height: 16px; }
 #OfficeUI .applicationMenuHolder .container .navigation ul li:not(.seperator).active { background-color: #2a8dd4; }
@@ -20,7 +20,7 @@
 
     /* Animations to show and hide the entire contents of the application menu. */
     .animate-move-to-the-left.ng-hide-add.ng-hide-add-active,
-    .animate-move-to-the-left.ng-hide-remove.ng-hide-remove-active { transition: all linear 0.2s; }
+    .animate-move-to-the-left.ng-hide-remove.ng-hide-remove-active { transition: all linear 0.05s; }
     .animate-move-to-the-left { margin-left: 0px; }
     .animate-move-to-the-left.ng-hide { margin-left: -135px; }
 

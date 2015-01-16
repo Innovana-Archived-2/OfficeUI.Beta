@@ -27,7 +27,7 @@
 #OfficeUI ul[role="ribbonContents"] { border-bottom: 1px solid #d4d4d4; height: 92px; position: relative; background-color: white; width: 100%; z-index: 1; }
 #OfficeUI ul[role="ribbonContents"] li { position: absolute; top: 0px; width: 100%; }
 #OfficeUI ul[role="ribbonContents"].no-border { border-bottom: none; }
-#OfficeUI ul[role="ribbonContents"] .collapse { bottom: 0px; right: 0px; width: 29px; height: 16px; text-align: center; }
+#OfficeUI ul[role="ribbonContents"] .collapse { bottom: 0px; right: 0px; width: 29px; height: 17px; text-align: center; padding-bottom: 1px; }
 #OfficeUI ul[role="ribbonContents"] .group { margin-left: 4px; margin-top: 3px; height: 90px; position: relative; vertical-align: top;}
 #OfficeUI ul[role="ribbonContents"] .group .legend { font-size: 0.9em; color: #666; text-align: center; position: absolute; bottom: 2px; margin-left: -1px; width: 100%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
 #OfficeUI ul[role="ribbonContents"] .group .icon { position: relative; height: 66px; margin-right: 0px; padding-top: 3px; vertical-align: top; }
@@ -52,7 +52,7 @@
 
    /* Animation to show and hide the contents of the ribbon. */
    .animate-ribbon-contents.ng-hide-add.ng-hide-add-active,
-   .animate-ribbon-contents.ng-hide-remove.ng-hide-remove-active { transition: all linear 0.2s; }
+   .animate-ribbon-contents.ng-hide-remove.ng-hide-remove-active { transition: all linear 0.05s; }
    .animate-ribbon-contents { top: 0px; opacity: 1; display: block !important; }
    .animate-ribbon-contents.ng-hide { top: -93px; opacity: 0; }
 

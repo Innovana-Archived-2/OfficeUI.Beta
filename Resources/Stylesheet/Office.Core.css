@@ -76,7 +76,7 @@ body, html { height: 100%; width: 100%; }
 
    /* Animation to show and hide the contents of the ribbon. */
    .contents.ng-hide-add.ng-hide-add-active,
-   .contents.ng-hide-remove.ng-hide-remove-active { transition: all linear 0.2s; }
+   .contents.ng-hide-remove.ng-hide-remove-active { transition: all linear 0.05s; }
    .contents { top: 145px; display: block !important; position: relative; }
    .contents.ng-hide { top: 53px; display: block !important; position: relative; }
 
