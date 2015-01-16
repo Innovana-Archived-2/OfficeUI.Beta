@@ -1,0 +1,17 @@
+C:\Projects\Github\OfficeUI.Beta\OfficeUI.Beta.Web\bin\OfficeUI.Beta.Web.dll
+C:\Projects\Github\OfficeUI.Beta\OfficeUI.Beta.Web\bin\OfficeUI.Beta.Web.pdb
+C:\Projects\Github\OfficeUI.Beta\OfficeUI.Beta.Web\bin\System.Web.Helpers.dll
+C:\Projects\Github\OfficeUI.Beta\OfficeUI.Beta.Web\bin\System.Web.Mvc.dll
+C:\Projects\Github\OfficeUI.Beta\OfficeUI.Beta.Web\bin\System.Web.Razor.dll
+C:\Projects\Github\OfficeUI.Beta\OfficeUI.Beta.Web\bin\System.Web.Webpages.Deployment.dll
+C:\Projects\Github\OfficeUI.Beta\OfficeUI.Beta.Web\bin\System.Web.Webpages.dll
+C:\Projects\Github\OfficeUI.Beta\OfficeUI.Beta.Web\bin\System.Web.Webpages.Razor.dll
+C:\Projects\Github\OfficeUI.Beta\OfficeUI.Beta.Web\bin\System.Web.Razor.xml
+C:\Projects\Github\OfficeUI.Beta\OfficeUI.Beta.Web\bin\System.Web.Webpages.xml
+C:\Projects\Github\OfficeUI.Beta\OfficeUI.Beta.Web\bin\System.Web.Webpages.Deployment.xml
+C:\Projects\Github\OfficeUI.Beta\OfficeUI.Beta.Web\bin\System.Web.Webpages.Razor.xml
+C:\Projects\Github\OfficeUI.Beta\OfficeUI.Beta.Web\bin\System.Web.Helpers.xml
+C:\Projects\Github\OfficeUI.Beta\OfficeUI.Beta.Web\bin\System.Web.Mvc.xml
+C:\Projects\Github\OfficeUI.Beta\OfficeUI.Beta.Web\obj\Debug\OfficeUI.Beta.Web.csprojResolveAssemblyReference.cache
+C:\Projects\Github\OfficeUI.Beta\OfficeUI.Beta.Web\obj\Debug\OfficeUI.Beta.Web.dll
+C:\Projects\Github\OfficeUI.Beta\OfficeUI.Beta.Web\obj\Debug\OfficeUI.Beta.Web.pdb
