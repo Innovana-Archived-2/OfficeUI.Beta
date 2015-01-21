@@ -1,0 +1,80 @@
+body, html { height: 100%; width: 100%; }
+.no-margin { margin: 0; }
+.no-padding { padding: 0; }
+
+#OfficeUI {
+  color: #444;
+  font-family: 'Segoe UI', serif;
+  font-size: 0.75em;
+
+  /* General elements. */
+  a { color: #444; cursor: default; }
+  p { padding: 5px 0; margin: 0; line-height: 15px; }
+  strong { color: #5d5d5d; }
+
+  /* Input elements. */
+  input{
+    border: 1px solid #ababab;
+    font-family: 'Segoe UI', serif;
+    color: black;
+    font-size: 1em;
+    padding-left: 3px;
+    padding-right: 3px;
+
+  }
+  input:hover, input:focus { outline: none; border: 1px solid #ffffff; }
+  input:-ms-input-placeholder { color: #6d6d6d; }
+
+  /* Positional elements. */
+  .absolute { position: absolute; }
+  .relative { position: relative; }
+  .fixed { position: fixed; }
+
+  /* Floating elements. */
+  .left { float: left; }
+  .right { float: right; }
+
+  /* Text positioning. */
+  .center { text-align: center; }
+
+  /* Displaying elements. */
+  .hidden { display: none; }
+
+  .no-border { border: 1px solid transparent; }
+  .no-border-bottom { border-bottom: 1px solid transparent !important; }
+
+  /* Container elements. */
+  .container { display: inline-block; }
+  .container-block { display: block; }
+  .container-full-width { width: 100%; }
+  .container-input { height: 24px; }
+
+  /* Defines the header. */
+  > .header {
+    background: url('/OfficeUI.Beta/Resources/Images/Application/Backgrounds/Circuit.png') no-repeat scroll right top rgba(255, 255, 255, 1);
+    height: 52px;
+    z-index: 2;
+    width: 100%;
+    .title { margin-top: 6px; margin-left: -1px; }
+  }
+
+  /* Defines the application icons. */
+  .application-icons {
+    margin: 3px 0 0 5px;
+
+    /* Default image. */
+    img {
+      margin: 0 5px 0 2px;
+    }
+
+    /* Small right margin on every image element, except the first. */
+    img:not(:first-child) {
+      margin-right: 6px;
+    }
+  }
+}
+
+/* Some queries to make the page adapt itself to various widths. */
+@media screen and (max-width: 497px) {
+  #OfficeUI > .header { background-image: none; }
+}

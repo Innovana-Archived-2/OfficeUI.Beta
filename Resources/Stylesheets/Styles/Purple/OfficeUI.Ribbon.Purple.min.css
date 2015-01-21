@@ -1,0 +1,1 @@
+#OfficeUI ul[role="ribbonTabs"] li:not(.application):hover,#OfficeUI ul[role="ribbonTabs"] li.active{color:#6a3889}#OfficeUI ul[role="ribbonTabs"] li.application{background-color:#6a3889;border-color:#6a3889}#OfficeUI ul[role="ribbonTabs"] li.application:hover{background-color:#8653a5;border-color:#8653a5}
