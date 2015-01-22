@@ -92,8 +92,8 @@ html {
 }
 #OfficeUI > .header {
   background: url('/OfficeUI.Beta/Resources/Images/Application/Backgrounds/Circuit.png') no-repeat scroll right top #ffffff;
-  height: 52px;
-  z-index: 30;
+  height: 28px;
+  z-index: 50;
   width: 100%;
   background-color: white;
 }
