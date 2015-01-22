@@ -194,7 +194,7 @@
 /* Animations. */
 .animate-ribbon-contents.ng-hide-add.ng-hide-add-active,
 .animate-ribbon-contents.ng-hide-remove.ng-hide-remove-active {
-  transition: all linear 5.05s;
+  transition: all linear 0.05s;
 }
 .animate-ribbon-contents {
   top: 0;
