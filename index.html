@@ -7,6 +7,7 @@
     <script src="/OfficeUI.Beta/Resources/Scripts/External/Angular.js"></script>
     <script src="/OfficeUI.Beta/Resources/Scripts/External/jQuery-2.1.3.min.js"></script>
     <script src="/OfficeUI.Beta/Resources/Scripts/OfficeUI.js"></script>
+    <script src="/OfficeUI.Beta/Resources/Scripts/OfficeUI.ThemeManager.min.js"></script>
 
     <!-- External Stylesheet files which are needed for the application to run. -->
     <link rel="stylesheet" href="/OfficeUI.Beta/Resources/Stylesheets/External/Font-Awesome/font-awesome.min.css" />
@@ -30,9 +31,6 @@
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Angular.Directive.ApplicationMenuContents.min.js"></script>
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Filters/OfficeUI.Angular.Filter.ActionLegend.js"></script>
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Filters/OfficeUI.Angular.Filter.ActionTooltip.js"></script>
-
-    <!-- The OfficeUI application can be runt in different styles. The stylesheets below defines the styles that should be loaded. -->
-    <link rel="stylesheet" href="/OfficeUI.Beta/Resources/Stylesheets/Styles/Blue/OfficeUI.Style.Blue.min.css" />
 </head>
 <body class="no-padding no-margin" ng-controller="OfficeUI as OfficeUI">
 <div id="OfficeUI" ng-controller="OfficeUIRibbon as OfficeUIRibbon">
@@ -222,22 +220,15 @@
 
 <!-- Provides some functions to configure the OfficeUI application. -->
 <script type="text/javascript">
-    // Configuration of the application.
-    $.fn.OfficeUI.Defaults.changeActiveTabOnHover = false; // Tabs will not become active when you're hovering on the tab element. Change this to 'TRUE' to change this behaviour.
+    // Sets the ThemeManager and initialize it.
+    $.fn.OfficeUI.ThemeManager.SetTheme($.fn.OfficeUI.ThemeManager.Themes.Blue);
 
-    // Specify the files where the data is being stored.
+    // Sets some default OfficeUI properties in order to initialize everything property.
     $.fn.OfficeUI.applicationDataFile = '/OfficeUI.Beta/Resources/data/application.json'; // Specify the file in which the application data is stored.
     $.fn.OfficeUI.ribbonDataFile = '/OfficeUI.Beta/Resources/Data/ribbon.json'; // Specify the file in which the ribbon data is stored.
-</script>
 
-<script>
-    //console.log('test');
-    //alert('test');
-    function test1()
-    {
-        alert('this is a demo.');
-        console.log('test1');
-    }
+    // Configuration of the application.
+    //$.fn.OfficeUI.Defaults.changeActiveTabOnHover = false; // Tabs will not become active when you're hovering on the tab element. Change this to 'TRUE' to change this behaviour.
 </script>
 </body>
 </html>

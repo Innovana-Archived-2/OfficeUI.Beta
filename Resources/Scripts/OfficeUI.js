@@ -11,7 +11,8 @@
 
     // Plugin defaults – added as a property on our plugin function.
     $.fn.OfficeUI.Defaults = {
-        changeActiveTabOnHover: false
+        changeActiveTabOnHover: false,
+        theme: 'Blue'
     };
 
     $.fn.OfficeUI.waitHandleShowTooltip = null; // A timeout handle for showing tooltips on the ribbon.

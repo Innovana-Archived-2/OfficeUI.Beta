@@ -1,0 +1,49 @@
+/* Import Statements. */
+/* Import statements. */
+/* General styling. */
+#OfficeUI .application-icons.icon img:hover:not(:first-child),
+#OfficeUI .icon:hover {
+  background-color: #fadcdd;
+}
+#OfficeUI .icon:active {
+  background-color: #f7a8ab;
+}
+#OfficeUI input:hover,
+#OfficeUI input:focus {
+  border-color: #f7a8ab;
+}
+/* Import statements. */
+/* General styling. */
+#OfficeUI ul[role="ribbonTabs"] li:not(.application):hover,
+#OfficeUI ul[role="ribbonTabs"] li.active {
+  color: #a4373a;
+}
+#OfficeUI ul[role="ribbonTabs"] li.application {
+  background-color: #a4373a;
+  border-color: #a4373a;
+}
+#OfficeUI ul[role="ribbonTabs"] li.application:hover {
+  background-color: #c75659;
+  border-color: #c75659;
+}
+/* Import statements. */
+/* General styling. */
+#OfficeUI .applicationMenuHolder .container .navigation {
+  background-color: #a4373a;
+}
+#OfficeUI .applicationMenuHolder .container .navigation ul li:not(.seperator).active {
+  background-color: #c75659;
+}
+#OfficeUI .applicationMenuHolder .container .navigation ul li:not(.seperator):hover {
+  background-color: #912c2f;
+}
+#OfficeUI .applicationMenuHolder .container .navigation ul li .seperator {
+  border-color: #c75659;
+}
+#OfficeUI .applicationMenuHolder .navigation .back-arrow {
+  background-image: url('/OfficeUI.Beta/Resources/Images/Ribbon/ApplicationMenu/NavigationArrow-Red.png');
+}
+#OfficeUI .applicationMenuHolder .navigation .back-arrow:hover {
+  background-image: url('/OfficeUI.Beta/Resources/Images/Ribbon/ApplicationMenu/NavigationArrow-Red_hover.png');
+}
+/* Section: Variables. */
