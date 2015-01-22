@@ -1,5 +1,3 @@
-/* Provides a jQuery plugin for working with an OfficeUI application. */
-/* ToDo: Rework this directive, because right now, it still depends on the OfficeUI Core library. This dependency should be removed. */
 (function ( $ ) {
     $.fn.OfficeUI = function(options) {
 
@@ -18,6 +16,8 @@
 
     $.fn.OfficeUI.waitHandleShowTooltip = null; // A timeout handle for showing tooltips on the ribbon.
     $.fn.OfficeUI.waitHandleHideTooltip = null; // A timeout handle for hiding tooltips on the ribbon.
+    $.fn.OfficeUI.applicationDataFile = null; // The file in which the application data is stored.
+    $.fn.OfficeUI.ribbonDataFile = null; // The file in which the ribbon data is stored.
 
     var eventCollection = []; // Defines a private collection of registered events.
 

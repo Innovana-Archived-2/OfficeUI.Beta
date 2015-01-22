@@ -1,5 +1,7 @@
+// Loads the module 'OfficeUIRibbon'.
 var OfficeUIRibbon = angular.module('OfficeUIRibbon');
 
+// Defines the AngularJS 'OfficeUIRibbon' controller.
 OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', '$animate', function($scope, $http, $animate) {
     var ribbonStates = {
         Hidden: 1,
@@ -11,7 +13,7 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', '$animate', func
 
     ribbon.state = ribbonStates.Showed;
 
-    $http.get("/OfficeUI.Beta/Resources/Data/ribbon.json")
+    $http.get($.fn.OfficeUI.ribbonDataFile)
         .success(function(data) {
             ribbon.Tabs = data.Tabs;
 
@@ -36,16 +38,13 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', '$animate', func
         }
     }
 
+    ribbon.toggleApplicationMenu = function() {
+        if (!ribbon.applicationMenuActive) { ribbon.applicationMenuActive = true; }
+        else { ribbon.applicationMenuActive = false; }
+    }
+
     ribbon.isApplicationMenuActive = function(applicationMenuItem) {
         return ribbon.activeApplicationMenuItem == applicationMenuItem;
-    }
-
-    ribbon.setApplicationMenuAsOpened = function() {
-        ribbon.applicationMenuActive = true;
-    }
-
-    ribbon.setApplicationMenuAsClosed = function() {
-        ribbon.applicationMenuActive = false;
     }
 
     ribbon.isApplicationMenuOpened = function() {

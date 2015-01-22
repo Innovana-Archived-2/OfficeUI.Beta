@@ -73,7 +73,7 @@
                 <li id="{{tab.Id}}" role="tab" class="container"
                     stop-propagation="click"
                     ng-repeat="tab in OfficeUIRibbon.Tabs"
-                    ng-click="$first && OfficeUIRibbon.setApplicationMenuAsOpened() || !$first && OfficeUIRibbon.setActiveTab(tab.Id);"
+                    ng-click="$first && OfficeUIRibbon.toggleApplicationMenu() || !$first && OfficeUIRibbon.setActiveTab(tab.Id);"
                     hover="!$first && OfficeUIRibbon.setActiveTabOnHover(tab.Id);"
                     ng-class="{'application': $first,
                                'active': !OfficeUIRibbon.isHidden() && OfficeUIRibbon.isActive(tab.Id),
@@ -166,7 +166,7 @@
                 <div class="container-left navigation animate-hide-blue-area" >
 
                     <div class="back-arrow"
-                         ng-click="OfficeUIRibbon.setApplicationMenuAsClosed()"></div>
+                         ng-click="OfficeUIRibbon.toggleApplicationMenu()"></div>
 
                     <ul class="left no-padding no-margin"
                         ng-repeat="tab in OfficeUIRibbon.Tabs"
@@ -222,6 +222,9 @@
 <!-- Provides some functions to configure the OfficeUI application. -->
 <script type="text/javascript">
     $.fn.OfficeUI.Defaults.changeActiveTabOnHover = false; // Tabs will not become active when you're hovering on the tab element. Change this to 'TRUE' to change this behaviour.
+
+    $.fn.OfficeUI.applicationDataFile = '/OfficeUI.Beta/Resources/data/application.json'; // Specify the file in which the application data is stored.
+    $.fn.OfficeUI.ribbonDataFile = '/OfficeUI.Beta/Resources/Data/ribbon.json'; // Specify the file in which the ribbon data is stored.
 </script>
 </body>
 </html>
