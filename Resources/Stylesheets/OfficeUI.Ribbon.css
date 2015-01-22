@@ -30,6 +30,11 @@
   border-style: solid;
   border-width: 1px;
 }
+#OfficeUI .ribbon ul[role="ribbonTabs"] li[role="tab"].contextual {
+  height: 51px;
+  top: -28px;
+  border-bottom: 1px solid #d4d4d4;
+}
 #OfficeUI .ribbon ul[role="ribbonTabs"] li.active {
   background-color: white;
   border-bottom: 1px solid #fff;

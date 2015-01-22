@@ -70,7 +70,7 @@
                         - When you click on any item except the first, than that tab is being marked as active.
                         - When you hover on a tab element except the first, that tab is being marked as active. (Only when it's configured to do so).
                 -->
-                <li id="{{tab.Id}}" role="tab" class="container"
+                <li id="{{tab.Id}}" role="tab" class="container relative"
                     stop-propagation="click"
                     ng-repeat="tab in OfficeUIRibbon.Tabs"
                     ng-click="$first && OfficeUIRibbon.toggleApplicationMenu() || !$first && OfficeUIRibbon.setActiveTab(tab.Id, false);"
@@ -78,6 +78,7 @@
                     ng-class="{'application': $first,
                                'active': !OfficeUIRibbon.isHidden() && OfficeUIRibbon.isTabActive(tab.Id),
                                'no-border': !OfficeUIRibbon.isTabActive(tab.Id)}">
+
                     {{tab.Label}}
                 </li>
             </ul>

@@ -878,6 +878,15 @@
           ]
         }
       ]
+    },
+    {
+      "Id": "tabDesign",
+      "Label": "Design",
+      "ContextualTab": "True",
+      "PrimaryColor": "#fffbe6",
+      "SecondaryColor": "#f2cb1d",
+      "ContextTitleColor": "#987715",
+      "TabTitleColor": "#856300"
     }
   ]
 }
