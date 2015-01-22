@@ -32,9 +32,9 @@
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Filters/OfficeUI.Angular.Filter.ActionTooltip.js"></script>
 
     <!-- The OfficeUI application can be runt in different styles. The stylesheets below defines the styles that should be loaded. -->
-    <link rel="stylesheet" href="/OfficeUI.Beta/Resources/Stylesheets/Styles/LightBlue/OfficeUI.Core.LightBlue.min.css" />
-    <link rel="stylesheet" href="/OfficeUI.Beta/Resources/Stylesheets/Styles/LightBlue/OfficeUI.Ribbon.LightBlue.min.css" />
-    <link rel="stylesheet" href="/OfficeUI.Beta/Resources/Stylesheets/Styles/LightBlue/OfficeUI.Ribbon.ApplicationMenu.LightBlue.min.css" />
+    <link rel="stylesheet" href="/OfficeUI.Beta/Resources/Stylesheets/Styles/Blue/OfficeUI.Core.Blue.min.css" />
+    <link rel="stylesheet" href="/OfficeUI.Beta/Resources/Stylesheets/Styles/Blue/OfficeUI.Ribbon.Blue.min.css" />
+    <link rel="stylesheet" href="/OfficeUI.Beta/Resources/Stylesheets/Styles/Blue/OfficeUI.Ribbon.ApplicationMenu.Blue.min.css" />
 </head>
 <body class="no-padding no-margin" ng-controller="OfficeUI as OfficeUI">
 <div id="OfficeUI" ng-controller="OfficeUIRibbon as OfficeUIRibbon">
@@ -73,11 +73,11 @@
                 <li id="{{tab.Id}}" role="tab" class="container"
                     stop-propagation="click"
                     ng-repeat="tab in OfficeUIRibbon.Tabs"
-                    ng-click="$first && OfficeUIRibbon.toggleApplicationMenu() || !$first && OfficeUIRibbon.setActiveTab(tab.Id);"
-                    hover="!$first && OfficeUIRibbon.setActiveTabOnHover(tab.Id);"
+                    ng-click="$first && OfficeUIRibbon.toggleApplicationMenu() || !$first && OfficeUIRibbon.setActiveTab(tab.Id, false);"
+                    hover="!$first && OfficeUIRibbon.setActiveTab(tab.Id, true);"
                     ng-class="{'application': $first,
-                               'active': !OfficeUIRibbon.isHidden() && OfficeUIRibbon.isActive(tab.Id),
-                               'no-border': !OfficeUIRibbon.isActive(tab.Id)}">
+                               'active': !OfficeUIRibbon.isHidden() && OfficeUIRibbon.isTabActive(tab.Id),
+                               'no-border': !OfficeUIRibbon.isTabActive(tab.Id)}">
                     {{tab.Label}}
                 </li>
             </ul>
@@ -88,7 +88,7 @@
 
                 <li class="absolute"
                     ng-repeat="tabContents in OfficeUIRibbon.Tabs"
-                    ng-show="OfficeUIRibbon.isActive(tabContents.Id)">
+                    ng-show="OfficeUIRibbon.isTabActive(tabContents.Id)">
 
                     <div class="container">
                         <div class="container group relative"
@@ -173,7 +173,7 @@
                         ng-if="$first">
 
                         <li ng-repeat="menuItem in tab.MenuItems"
-                            ng-class="{active: OfficeUIRibbon.isApplicationMenuActive(menuItem),
+                            ng-class="{active: OfficeUIRibbon.isApplicationMenuItemActive(menuItem),
                                        seperator: menuItem.Seperator == 'True'}"
                             ng-click="setApplicationMenuItemAsActive(menuItem)">
 
@@ -195,7 +195,7 @@
 
                                 <div class="animate-menu-contents relative"
                                      ng-repeat="menuItem in tab.MenuItems"
-                                     ng-show="OfficeUIRibbon.isApplicationMenuActive(menuItem)">
+                                     ng-show="OfficeUIRibbon.isApplicationMenuItemActive(menuItem)">
 
                                     <div class="contents_area absolute">
                                         <h1>{{menuItem.Title}}</h1>
