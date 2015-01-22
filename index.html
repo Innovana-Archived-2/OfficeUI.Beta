@@ -118,13 +118,14 @@
 
                                     <!-- Defines an icon - There are 2 possible icons (Big and Small). -->
                                     <div ng-show="action.Type == 'bIcon' || action.Type == 'sIcon'">
-                                        <a href="#" ng-href="{{action.Uri}}" ngc-tooltip>
+                                        <a href="#"
+                                           ng-href="{{action.Uri}}"
+                                           ngc-tooltip>
                                             <div id="{{action.Id}}" class="container icon relative"
                                                  ngc-menu-holder="{menu: '#{{action.Id}}_menu'}"
                                                  dynamic-event-handling="action.Id"
                                                  ng-class="{'big-icon': action.Type == 'bIcon',
                                                             'small-icon': action.Type == 'sIcon'}">
-
                                                 <img ng-src="{{action.Resource}}"/>
 
                                                 <div class="label"

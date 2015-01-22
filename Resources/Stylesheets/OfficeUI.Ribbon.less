@@ -3,14 +3,15 @@
   .ribbon {
     top: 23px;
     width: 100%;
-    z-index: 3;
 
     /* Defines the UL element that contains the various tabs. */
     ul[role="ribbonTabs"] {
       border-bottom: 1px solid #d4d4d4;
       height: 24px;
       margin-top: 5px;
-      z-index: 2;
+      z-index: 40;
+      background-color: #fff;
+      background: url("/OfficeUI.Beta/Resources/Images/Application/Backgrounds/Circuit.png") no-repeat scroll right -28px #fff;
 
       /* Defines the style for a general LI element. */
       li {
@@ -42,7 +43,7 @@
       height: 92px;
       background-color: white;
       width: 100%;
-      z-index: 1;
+      z-index: 5;
 
       /* Defines an LI element inside the ribbon contents. */
       li {
@@ -115,7 +116,7 @@
 
 /* Animations. */
 .animate-ribbon-contents.ng-hide-add.ng-hide-add-active,
-.animate-ribbon-contents.ng-hide-remove.ng-hide-remove-active { transition: all linear 0.05s; }
+.animate-ribbon-contents.ng-hide-remove.ng-hide-remove-active { transition: all linear 5.05s; }
 .animate-ribbon-contents { top: 0; opacity: 1; display: block !important; }
 .animate-ribbon-contents.ng-hide { top: -93px; opacity: 0; }
 .website-contents-showed { transition: all linear 0.05s; position: relative; top: 144px; }
