@@ -52,4 +52,10 @@
 
         return null;
     };
+
+    // Change the currently active tab on the ribbon.
+    // This is done by specifying the id of the tab.
+    $.fn.OfficeUI.setActiveTab = function(element) {
+        angular.element(document.querySelector('#OfficeUI')).scope().setActiveTab(element);
+    };
 }(jQuery));
