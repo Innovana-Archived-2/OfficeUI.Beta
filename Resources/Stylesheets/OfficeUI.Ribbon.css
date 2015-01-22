@@ -58,13 +58,7 @@
   background-color: white;
   width: 100%;
   z-index: 1;
-  /* Defines the styling for a tooltip element. */
   /* Defines an LI element inside the ribbon contents. */
-}
-#OfficeUI .ribbon ul[role="ribbonContents"] .tooltip {
-  display: none;
-  position: fixed;
-  top: 145px;
 }
 #OfficeUI .ribbon ul[role="ribbonContents"] li {
   top: 0;
@@ -183,6 +177,9 @@
   border-bottom: none;
 }
 #OfficeUI .tooltip {
+  display: none;
+  position: fixed;
+  top: 146px;
   background-color: #ffffff;
   background-image: none, linear-gradient(#c6c6c6, #c6c6c6);
   background-position: 0 0, 100% 0;
@@ -191,7 +188,6 @@
   border: 1px solid #d4d4d4;
   box-shadow: 3px 3px 3px #e0e0e0;
   padding: 5px 11px;
-  top: 90px;
   width: 191px;
 }
 /* Animations. */
