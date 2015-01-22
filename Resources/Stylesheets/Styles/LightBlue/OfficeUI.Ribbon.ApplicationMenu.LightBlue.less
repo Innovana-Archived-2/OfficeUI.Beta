@@ -1,7 +1,11 @@
-#OfficeUI .applicationMenuHolder .container .navigation { background-color: #0072c6; }
-#OfficeUI .applicationMenuHolder .container .navigation ul li:not(.seperator).active { background-color: #2a8dd4; }
-#OfficeUI .applicationMenuHolder .container .navigation ul li:not(.seperator):hover { background-color: #0067b0; }
-#OfficeUI .applicationMenuHolder .container .navigation ul li .seperator { border-color: #2a8dd4; }
+/* Import statements. */
+@import (reference) 'OfficeUI.Style.LightBlue.less';
+
+/* General styling. */
+#OfficeUI .applicationMenuHolder .container .navigation { background-color: @navigationDefaultColor; }
+#OfficeUI .applicationMenuHolder .container .navigation ul li:not(.seperator).active { background-color: @navigationActiveElement; }
+#OfficeUI .applicationMenuHolder .container .navigation ul li:not(.seperator):hover { background-color: @navigationElementHoverColor; }
+#OfficeUI .applicationMenuHolder .container .navigation ul li .seperator { border-color: @navigationActiveElement; }
 
 #OfficeUI .applicationMenuHolder .navigation .back-arrow { background-image: url('/OfficeUI.Beta/Resources/Images/Ribbon/ApplicationMenu/NavigationArrow-LightBlue.png'); }
 #OfficeUI .applicationMenuHolder .navigation .back-arrow:hover { background-image: url('/OfficeUI.Beta/Resources/Images/Ribbon/ApplicationMenu/NavigationArrow-LightBlue_hover.png'); }

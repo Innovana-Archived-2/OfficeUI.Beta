@@ -1,4 +1,7 @@
-#OfficeUI ul[role="ribbonTabs"] li:not(.application):hover,
-#OfficeUI ul[role="ribbonTabs"] li.active { color: #A4373A; }
-#OfficeUI ul[role="ribbonTabs"] li.application { background-color: #A4373A; border-color: #A4373A; }
-#OfficeUI ul[role="ribbonTabs"] li.application:hover { background-color: #C75659; border-color: #C75659; }
+/* Import statements. */
+@import (reference) 'OfficeUI.Style.Red.less';
+
+/* General styling. */
+#OfficeUI ul[role="ribbonTabs"] li:not(.application):hover, #OfficeUI ul[role="ribbonTabs"] li.active { color: @navigationDefaultColor; }
+#OfficeUI ul[role="ribbonTabs"] li.application { background-color: @navigationDefaultColor; border-color: @navigationDefaultColor; }
+#OfficeUI ul[role="ribbonTabs"] li.application:hover { background-color: @navigationActiveElement; border-color: @navigationActiveElement; }

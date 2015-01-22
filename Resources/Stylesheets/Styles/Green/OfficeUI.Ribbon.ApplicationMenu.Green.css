@@ -1,3 +1,5 @@
+/* Import statements. */
+/* General styling. */
 #OfficeUI .applicationMenuHolder .container .navigation {
   background-color: #217346;
 }
@@ -5,7 +7,7 @@
   background-color: #439467;
 }
 #OfficeUI .applicationMenuHolder .container .navigation ul li:not(.seperator):hover {
-  background-color: #0A6332;
+  background-color: #0a6332;
 }
 #OfficeUI .applicationMenuHolder .container .navigation ul li .seperator {
   border-color: #439467;

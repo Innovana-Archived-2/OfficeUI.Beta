@@ -1,14 +1,16 @@
+/* Import statements. */
+/* General styling. */
 #OfficeUI .applicationMenuHolder .container .navigation {
-  background-color: #D24726;
+  background-color: #d24726;
 }
 #OfficeUI .applicationMenuHolder .container .navigation ul li:not(.seperator).active {
-  background-color: #F0623E;
+  background-color: #f0623e;
 }
 #OfficeUI .applicationMenuHolder .container .navigation ul li:not(.seperator):hover {
-  background-color: #B83B1D;
+  background-color: #b83b1d;
 }
 #OfficeUI .applicationMenuHolder .container .navigation ul li .seperator {
-  border-color: #F0623E;
+  border-color: #f0623e;
 }
 #OfficeUI .applicationMenuHolder .navigation .back-arrow {
   background-image: url('/OfficeUI.Beta/Resources/Images/Ribbon/ApplicationMenu/NavigationArrow-Orange.png');

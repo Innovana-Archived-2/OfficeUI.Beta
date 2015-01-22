@@ -32,7 +32,9 @@
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Filters/OfficeUI.Angular.Filter.ActionTooltip.js"></script>
 
     <!-- The OfficeUI application can be runt in different styles. The stylesheets below defines the styles that should be loaded. -->
-    <link rel="stylesheet" href="/OfficeUI.Beta/Resources/Stylesheets/Styles/Blue/OfficeUI.Style.Blue.min.css" />
+    <link rel="stylesheet" href="/OfficeUI.Beta/Resources/Stylesheets/Styles/Blue/OfficeUI.Core.Blue.min.css" />
+    <link rel="stylesheet" href="/OfficeUI.Beta/Resources/Stylesheets/Styles/Blue/OfficeUI.Ribbon.Blue.min.css" />
+    <link rel="stylesheet" href="/OfficeUI.Beta/Resources/Stylesheets/Styles/Blue/OfficeUI.Ribbon.ApplicationMenu.Blue.min.css" />
 </head>
 <body class="no-padding no-margin" ng-controller="OfficeUI as OfficeUI">
 <div id="OfficeUI" ng-controller="OfficeUIRibbon as OfficeUIRibbon">
@@ -228,16 +230,6 @@
     // Specify the files where the data is being stored.
     $.fn.OfficeUI.applicationDataFile = '/OfficeUI.Beta/Resources/data/application.json'; // Specify the file in which the application data is stored.
     $.fn.OfficeUI.ribbonDataFile = '/OfficeUI.Beta/Resources/Data/ribbon.json'; // Specify the file in which the ribbon data is stored.
-</script>
-
-<script>
-    //console.log('test');
-    //alert('test');
-    function test1()
-    {
-        alert('this is a demo.');
-        console.log('test1');
-    }
 </script>
 </body>
 </html>

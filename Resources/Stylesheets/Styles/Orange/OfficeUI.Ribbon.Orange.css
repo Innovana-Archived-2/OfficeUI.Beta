@@ -1,12 +1,14 @@
+/* Import statements. */
+/* General styling. */
 #OfficeUI ul[role="ribbonTabs"] li:not(.application):hover,
 #OfficeUI ul[role="ribbonTabs"] li.active {
-  color: #D24726;
+  color: #d24726;
 }
 #OfficeUI ul[role="ribbonTabs"] li.application {
-  background-color: #D24726;
-  border-color: #D24726;
+  background-color: #d24726;
+  border-color: #d24726;
 }
 #OfficeUI ul[role="ribbonTabs"] li.application:hover {
-  background-color: #F0623E;
-  border-color: #F0623E;
+  background-color: #f0623e;
+  border-color: #f0623e;
 }
