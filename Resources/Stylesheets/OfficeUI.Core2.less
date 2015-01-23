@@ -1,0 +1,105 @@
+/* OfficeUI Core stylesheet v 1.0
+
+   All elements in the OfficeUI library are wrapped inside an OfficeUI element.
+   There are only 2 elements which are not wrapped inside the OfficeUI element and that's because those elements are used on the body tag.
+*/
+body, html { width: 100%; }
+.no-margin { margin: 0; }
+.no-padding { padding: 0; }
+
+/* Section: Variables. */
+@defaultTextColor: #444; // The default text color.
+@emphasizedTextColor: #5d5d5d; // The default emphasis color.
+
+@grayBorderColor: #d4d4d4; // The gray color for a border element.
+
+#OfficeUI {
+  /* General styling for all the elements inside the OfficeUI element. */
+  color: @defaultTextColor; font-family: 'Segoe UI', serif; font-size: 0.75em;
+
+  /* General elements that should look the same on the whole website. */
+  a { color: @defaultTextColor; cursor: default; }
+  p { padding: 0; margin: 0; line-height: 15px; }
+  strong { color: @emphasizedTextColor; }
+
+  /* Positional elements. */
+  .absolute { position: absolute; }
+  .relative { position: relative; }
+  .fixed { position: fixed; }
+
+  /* Alignment elements. */
+  .center { text-align: center; }
+
+  /* Container elements. */
+  .container {
+    display: inline-block;
+    &.full-width { width: 100%; }
+  }
+
+  /* Styling of the header. */
+  /* Stacking information, regarding the Z-Index is placed below:
+   *  - The title itself has a z-index of 60, meaning that the title will always be on top.
+   *  - The UL element holding the tabs has a z-index of 50, meaning that the title will always be displayed on top of it.
+  */
+  header {
+    width: 100%; min-height: 52px;
+
+    /* Styling of the title. */
+    .title {  margin-left: -1px; margin-top: 6px; z-index: 60; }
+
+    /* Ribbon styling. */
+    .ribbon {
+      top: -23px;
+
+      .tabs {
+
+
+
+        /* Defines the tabs area. */
+        > ul {
+          height: 52px;
+          background: url("/OfficeUI.Beta/Resources/Images/Application/Backgrounds/Circuit.png") no-repeat scroll right top white;
+          z-index: 100;
+          border-bottom: 1px solid @grayBorderColor;
+        }
+
+
+        /* Styling of the different tab elements that a ribbon can have. */
+        /* There are 2 different tab elements, a normal tab and a contextual tab. A contextual tab is recognized by it's special color and contextual title. */
+        /* A common example for a contextual tab is the tab that shows up in Office Applications when you're creating a table on the page. */
+        /* When you need to implement any custom tabs, put them inside this section. */
+
+        ul li.tab-contextual {
+          margin-right: 5px !important;
+
+          ul li{ margin-left: 50px;}
+        }
+        ul li.tab {
+          text-transform: uppercase;
+          height: 23px;
+          margin-right: 2px;
+
+          .active { background-color: #fff; }
+
+          &.tab-contextual ul li{ margin-top: 0px; }
+          &.tab-normal {
+            margin-top: 28px;
+            line-height: 23px;
+            padding-left: 12px;
+            padding-right: 13px;
+            border: 1px solid transparent;
+            &.application { background-color: #2b579a; color: #fff;  border-color: #2b579a; padding-left: 2px; padding-right: 3px; min-width: 52px; margin-right: 4px; }
+            &:not(.application).active { border-color: #d4d4d4 #d4d4d4 #fff; border-style: solid; border-width: 1px; background-color: white; }
+          }
+
+          &.tab-contextual {
+            margin-left: -1px;
+            vertical-align: top; height: 52px;
+            .accent { height: 4px; background-color: #f2cb1d; }
+            .tab-title { top: -10px; }
+          }
+        }
+      }
+    }
+  }
+}

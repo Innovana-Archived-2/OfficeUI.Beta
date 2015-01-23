@@ -20,6 +20,7 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', '$animate', func
     $http.get($.fn.OfficeUI.ribbonDataFile)
         .success(function(data) {
             ribbon.Tabs = data.Tabs;
+            ribbon.ContextualGroups = data.ContextualGroups;
 
             // Get the first menu entry in the application menu, and make sure that that element is set as the active one.
             var firstApplicationMenuEntryID = ribbon.Tabs[0].MenuItems[0];

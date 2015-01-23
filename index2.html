@@ -1,3 +1,18 @@
+<!--    Office User Interface (OfficeUI) version 1.0
+
+        This website aims to mimic the Office User Interface like it's defined in various Office applications
+        such as Microsoft Word, Microsoft Powerpoint, Microsoft Outlook.
+
+        The purpose of this application is to bring the rich User Interface as defined by Microsoft to the web.
+        In order to make sure that this application does work correctly it has been tested on the following browsers:
+
+        - Google Chrome
+        - Mozilla Firefox
+        - Internet Explorer
+
+        If you've tested the application in another browser and confirms that everything is working, please report it on
+        the official Github project page so that I can include it inside the list.
+-->
 <!DOCTYPE html>
 <html lang="en" ng-app="OfficeUI">
 <head>
@@ -7,14 +22,15 @@
     <script src="/OfficeUI.Beta/Resources/Scripts/External/Angular.js"></script>
     <script src="/OfficeUI.Beta/Resources/Scripts/External/jQuery-2.1.3.min.js"></script>
     <script src="/OfficeUI.Beta/Resources/Scripts/OfficeUI.js"></script>
+    <script src="/OfficeUI.Beta/Resources/Scripts/OfficeUI.ThemeManager.min.js"></script>
 
     <!-- External Stylesheet files which are needed for the application to run. -->
     <link rel="stylesheet" href="/OfficeUI.Beta/Resources/Stylesheets/External/Font-Awesome/font-awesome.min.css" />
 
     <!-- Internal stylesheets and scripts, required for the application to run. -->
-    <link rel="stylesheet" href="/OfficeUI.Beta/Resources/Stylesheets/OfficeUI.Core.min.css" />
-    <link rel="stylesheet" href="/OfficeUI.Beta/Resources/Stylesheets/OfficeUI.Ribbon.min.css" />
-    <link rel="stylesheet" href="/OfficeUI.Beta/Resources/Stylesheets/OfficeUI.Ribbon.ApplicationMenu.min.css" />
+    <link rel="stylesheet" href="/OfficeUI.Beta/Resources/Stylesheets/OfficeUI.Core2.min.css" />
+    <!--<link rel="stylesheet" href="/OfficeUI.Beta/Resources/Stylesheets/OfficeUI.Ribbon2.min.css" />-->
+    <!--<link rel="stylesheet" href="/OfficeUI.Beta/Resources/Stylesheets/OfficeUI.Ribbon.ApplicationMenu2.min.css" />-->
     <script src="/OfficeUI.Beta/Resources/Scripts/External/Angular-animate.min.js"></script>
     <script src="/OfficeUI.Beta/Resources/Scripts/External/Angular-sanitize.min.js"></script>
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Modules/OfficeUI.Ribbon.Angular.Module.min.js"></script>
@@ -30,204 +46,98 @@
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Angular.Directive.ApplicationMenuContents.min.js"></script>
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Filters/OfficeUI.Angular.Filter.ActionLegend.js"></script>
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Filters/OfficeUI.Angular.Filter.ActionTooltip.js"></script>
-
-    <!-- The OfficeUI application can be runt in different styles. The stylesheets below defines the styles that should be loaded. -->
-    <link rel="stylesheet" href="/OfficeUI.Beta/Resources/Stylesheets/Styles/Blue/OfficeUI.Core.Blue.min.css" />
-    <link rel="stylesheet" href="/OfficeUI.Beta/Resources/Stylesheets/Styles/Blue/OfficeUI.Ribbon.Blue.min.css" />
-    <link rel="stylesheet" href="/OfficeUI.Beta/Resources/Stylesheets/Styles/Blue/OfficeUI.Ribbon.ApplicationMenu.Blue.min.css" />
 </head>
 <body class="no-padding no-margin" ng-controller="OfficeUI as OfficeUI">
-<div id="OfficeUI" ng-controller="OfficeUIRibbon as OfficeUIRibbon">
+    <div id="OfficeUI" ng-controller="OfficeUIRibbon as OfficeUIRibbon">
 
-    <div class="header fixed">
+        <header class="fixed">
+                    <!--<div class="container application-icons">
+                        <img id="{{icon.Id}}" alt="{{icon.Alt}}"
+                             dynamic-event-handling="icon.Id"
+                             ng-class="{'icon': !$first}"
+                             ng-repeat="icon in OfficeUI.Icons"
+                             ng-src="{{icon.Icon}}" />
+                    </div>-->
 
-        <!-- Provides the area in which the application icons are being showed. -->
-        <div class="absolute">
-            <div class="container application-icons">
-                <img id="{{icon.Id}}" alt="{{icon.Alt}}"
-                     dynamic-event-handling="icon.Id"
-                     ng-class="{'icon': !$first}"
-                     ng-repeat="icon in OfficeUI.Icons"
-                     ng-src="{{icon.Icon}}" />
-            </div>
-        </div>
+                <div class="title container full-width center relative">{{OfficeUI.Title}}</div>
 
-        <span class="container container-full-width center title">{{OfficeUI.Title}}</span>
-    </div>
+                <!-- Defines the styling for the ribbon. -->
+                <div class="ribbon relative container full-width">
+                    <div class="tabs">
+                        <ul class="no-padding no-margin relative container full-width">
+                            <!-- Place all the normal tabs. -->
+                            <li class="tab tab-normal container center"
+                                ng-repeat="tab in OfficeUIRibbon.Tabs"
+                                ng-click="!$first && OfficeUIRibbon.setActiveTab(tab.Id, false);"
+                                ng-class="{application: $first,
+                                           active: OfficeUIRibbon.isTabActive(tab.Id)}">
+                                {{tab.Label}}
+                            </li>
 
-    <!-- Defines the main 'parent' element in which the ribbon is saved. -->
-    <div class="ribbon fixed"
-         scroll>
-        <!-- Provides an DIV element to hold the ribbon. This is needed because we have another element in which the application menu is being showed. -->
-        <div ng-show="!OfficeUIRibbon.isApplicationMenuOpened()">
-            <ul role="ribbonTabs" class="no-margin no-padding relative"
-                ng-class="{'no-border-bottom': OfficeUIRibbon.isHidden()}">
+                            <!-- Place all the contextual tabs. Those are rendered here because contextual tabs are always placed on the right. -->
+                            <li class="tab tab-contextual container center"
+                                ng-repeat="contextual in OfficeUIRibbon.ContextualGroups"
+                                ng-style="{'background-color': contextual.GroupColor}">
 
-                <!-- Renders all the tab elements.
-                        The following options are possible due to the usage of directives:
+                                <div class="accent container full-width"
+                                     ng-style="{'background-color': contextual.AccentColor}">&nbsp;</div>
 
-                        - When you click on the first item, the application menu is opened.
-                        - When you click on any item except the first, than that tab is being marked as active.
-                        - When you hover on a tab element except the first, that tab is being marked as active. (Only when it's configured to do so).
-                -->
-                <li id="{{tab.Id}}" role="tab" class="container relative"
-                    stop-propagation="click"
-                    ng-repeat="tab in OfficeUIRibbon.Tabs"
-                    ng-click="$first && OfficeUIRibbon.toggleApplicationMenu() || !$first && OfficeUIRibbon.setActiveTab(tab.Id, false);"
-                    hover="!$first && OfficeUIRibbon.setActiveTab(tab.Id, true);"
-                    ng-class="{'application': $first,
-                               'active': !OfficeUIRibbon.isHidden() && OfficeUIRibbon.isTabActive(tab.Id),
-                               'no-border': !OfficeUIRibbon.isTabActive(tab.Id),
-                               'contextualTab': tab.ContextualTab == 'True'}">
+                                <div class="tab-title relative" >
 
-                    {{tab.Label}}
-                </li>
-            </ul>
+                                    <div style="font-size: 0.90em; text-align: center; width: 100%;"
+                                         ng-style="{'color': contextual.GroupTextColor}">
 
-            <!-- Defines the contents of the ribbon. -->
-            <ul role="ribbonContents" id="ribbonContents" class="no-margin no-padding animate-ribbon-contents relative"
-                ng-show="OfficeUIRibbon.isShowed() || OfficeUIRibbon.isVisible()">
+                                        <span style="padding-left: 6px; padding-right: 6px;">{{contextual.Label}}</span>
 
-                <li class="absolute"
-                    ng-repeat="tabContents in OfficeUIRibbon.Tabs"
-                    ng-show="OfficeUIRibbon.isTabActive(tabContents.Id)">
-
-                    <div class="container">
-                        <div class="container group relative"
-                             ng-repeat-start="group in tabContents.Groups">
-
-                            <div class="legend absolute">{{group.Legend}}</div>
-
-                            <div class="container area"
-                                 ng-repeat="area in group.Areas">
-
-                                <!-- Defines all the different type elements that can be showed in the ribbon. -->
-                                <div ng-repeat="action in area.Actions"
-                                     ng-class="{'container-block': action.Type == 'Input' || action.Type == 'Checkbox' || action.Type == 'sIcon',
-                                                'container': action.Type == 'bIcon'}">
-
-                                    <!-- Defines an input element. -->
-                                    <div ng-show="action.Type == 'Input'">
-                                        <input type="text" id="{{action.Id}}" placeholder="{{action.Legend}}"
-                                               ng-style="myStyle={width:'{{action.Width}}'}"/>
                                     </div>
 
-                                    <!-- Defines a checkbox element. -->
-                                    <div ng-show="action.Type == 'Checkbox'">
-                                        <input type="checkbox" id="{{action.Id}}" />
-                                        <div class="container">{{action.Legend}}</div>
-                                    </div>
+                                    <div style="height: 6px;">&nbsp;</div>
 
-                                    <!-- Defines an icon - There are 2 possible icons (Big and Small). -->
-                                    <div ng-show="action.Type == 'bIcon' || action.Type == 'sIcon'">
-                                        <a href="#"
-                                           ng-href="{{action.Uri}}"
-                                           ngc-tooltip>
-                                            <div id="{{action.Id}}" class="container icon relative"
-                                                 ngc-menu-holder="{menu: '#{{action.Id}}_menu'}"
-                                                 dynamic-event-handling="action.Id"
-                                                 ng-class="{'big-icon': action.Type == 'bIcon',
-                                                            'small-icon': action.Type == 'sIcon'}">
-                                                <img ng-src="{{action.Resource}}"/>
+                                    <div style="display: table; width: 100%;">
+                                        <ul class="no-padding no-margin container" style="display: table-row; margin-top: 10px;">
+                                            <li id="tab.Id" class="tab tab-normal container center" style="display: table-cell;"
+                                                ng-repeat="tab in contextual.Tabs"
+                                                ng-click="OfficeUIRibbon.setActiveTab(tab.Id, false);"
+                                                ng-class="{active: OfficeUIRibbon.isTabActive(tab.Id)}">
 
-                                                <div class="label"
-                                                     ng-bind-html="action |actionLegend"
-                                                     ng-class="{'container': action.Type == 'sIcon'}"></div>
-                                            </div>
-                                        </a>
-
-                                        <div class="tooltip absolute">
-                                            <div ng-bind-html="action.Tooltip |actionTooltip"></div>
-                                        </div>
-                                    </div>
-
-
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Defines the vertical 'pipe' sign. -->
-                        <div class="container pipe" ng-repeat-end>
-
-                        </div>
-
-                    </div>
-                    <div ng-click="OfficeUIRibbon.toggleRibbonState()" class="container absolute icon collapse">
-                        <img src="/OfficeUI.Beta/Resources/Images/Ribbon/Built-In/Collapse.png" class="pin-icon" ng-if="OfficeUIRibbon.isShowed()"/>
-                        <img src="/OfficeUI.Beta/Resources/Images/Ribbon/Built-In/Pin.png" class="pin-icon" ng-if="OfficeUIRibbon.isVisible()"/>
-                    </div>
-                </li>
-            </ul>
-        </div>
-
-        <!-- Defines the content behind the application tab. -->
-        <div class="applicationMenuHolder animate-move-to-the-left"
-             ng-show="OfficeUIRibbon.isApplicationMenuOpened()">
-
-            <div class="container container-full-width container-full-height">
-
-                <div class="container-left navigation animate-hide-blue-area" >
-
-                    <div class="back-arrow"
-                         ng-click="OfficeUIRibbon.toggleApplicationMenu()"></div>
-
-                    <ul class="left no-padding no-margin"
-                        ng-repeat="tab in OfficeUIRibbon.Tabs"
-                        ng-if="$first">
-
-                        <li ng-repeat="menuItem in tab.MenuItems"
-                            ng-class="{active: OfficeUIRibbon.isApplicationMenuItemActive(menuItem),
-                                       seperator: menuItem.Seperator == 'True'}"
-                            ng-click="setApplicationMenuItemAsActive(menuItem)">
-
-                            <div ng-if="menuItem.Seperator != 'True'">{{menuItem.Label}}</div>
-
-                            <div class="seperator"
-                                 ng-if="menuItem.Seperator == 'True'"></div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="container-right animate-menu-contents relative">
-
-                    <div ng-controller="OfficeUI as OfficeUI">
-
-                        <div class="application-contents">
-
-                            <div ng-repeat="tab in OfficeUIRibbon.Tabs"
-                                 ng-show="$first">
-
-                                <div class="animate-menu-contents relative"
-                                     ng-repeat="menuItem in tab.MenuItems"
-                                     ng-show="OfficeUIRibbon.isApplicationMenuItemActive(menuItem)">
-
-                                    <div class="contents_area absolute">
-                                        <h1>{{menuItem.Title}}</h1>
-                                        <application-menu-contents url="{{menuItem.Url}}" />
+                                                {{tab.Label}}
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+                            </li>
+                            <!--<li class="tab tab-contextual container center relative">
+                                <div class="accent container full-width">&nbsp;</div>
+                                <div class="tab-title relative">Table Tools</div>
+                            </li>-->
+                            <!--<li class="tab tab-normal container center application">File</li>
+                            <li class="tab tab-normal container center active">Home</li>
+                            <li class="tab tab-normal container center">Send / Receive</li>
+                            <li class="tab tab-normal container center">Folder</li>
+                            <li class="tab tab-normal container center">View</li>-->
+                        </ul>
+                        <!--<ul class="no-padding no-margin relative container">
+                            <li class="tab tab-contextual container center relative" style="background-color: #fcf0f7;">
+                                <div class="accent container full-width" style="background-color: #c9599c;">&nbsp;</div>
+                                <div class="tab-title relative" style="background-color: #fcf0f7;">Picture Tools</div>
+                            </li>
+                            <li class="tab tab-contextual container center relative">
+                                <div class="accent container full-width">&nbsp;</div>
+                                <div class="tab-title relative">Table Tools</div>
+                            </li>
+                        </ul>-->
                     </div>
+                    <div style="position: relative; height: 50px; z-index: 40; top:0px; background-color: rgb(250,250,250);">Demo</div>
                 </div>
-            </div>
-        </div>
+        </header>
     </div>
-    <!-- End: Defines the main 'parent' element in which the ribbon is saved. -->
-    <div class="container"
-         ng-show="!OfficeUIRibbon.isApplicationMenuOpened()"
-         ng-class="{'website-contents-showed': OfficeUIRibbon.isShowed() || OfficeUIRibbon.isVisible(),
-                    'website-contents-hidden': OfficeUIRibbon.isHidden(),
-                    'website-contents-collapsed': OfficeUIRibbon.isVisible()}">
-        The contents of the website is placed here 1.
-    </div>
-</div>
 
 <!-- Provides some functions to configure the OfficeUI application. -->
 <script type="text/javascript">
-    // Configuration of the application.
-    $.fn.OfficeUI.Defaults.changeActiveTabOnHover = false; // Tabs will not become active when you're hovering on the tab element. Change this to 'TRUE' to change this behaviour.
+    // Sets the ThemeManager and initialize it.
+    $.fn.OfficeUI.ThemeManager.SetTheme($.fn.OfficeUI.ThemeManager.Themes.Blue);
 
-    // Specify the files where the data is being stored.
+    // Sets some default OfficeUI properties in order to initialize everything property.
     $.fn.OfficeUI.applicationDataFile = '/OfficeUI.Beta/Resources/data/application.json'; // Specify the file in which the application data is stored.
     $.fn.OfficeUI.ribbonDataFile = '/OfficeUI.Beta/Resources/Data/ribbon.json'; // Specify the file in which the ribbon data is stored.
 </script>
