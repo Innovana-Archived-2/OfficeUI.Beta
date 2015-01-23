@@ -50,85 +50,139 @@
 <body class="no-padding no-margin" ng-controller="OfficeUI as OfficeUI">
     <div id="OfficeUI" ng-controller="OfficeUIRibbon as OfficeUIRibbon">
 
+        <!-- Defines the header area of the application. -->
         <header class="fixed">
-                    <!--<div class="container application-icons">
-                        <img id="{{icon.Id}}" alt="{{icon.Alt}}"
-                             dynamic-event-handling="icon.Id"
-                             ng-class="{'icon': !$first}"
-                             ng-repeat="icon in OfficeUI.Icons"
-                             ng-src="{{icon.Icon}}" />
-                    </div>-->
 
-                <div class="title container full-width center relative">{{OfficeUI.Title}}</div>
+            <!-- The title of the application. This element is visible when not using the ribbon. -->
+            <div class="title container full-width center relative">{{OfficeUI.Title}}</div>
 
-                <!-- Defines the styling for the ribbon. -->
-                <div class="ribbon relative container full-width">
-                    <div class="tabs">
-                        <ul class="no-padding no-margin relative container full-width">
-                            <!-- Place all the normal tabs. -->
-                            <li class="tab tab-normal container center"
-                                ng-repeat="tab in OfficeUIRibbon.Tabs"
-                                ng-click="!$first && OfficeUIRibbon.setActiveTab(tab.Id, false);"
-                                ng-class="{application: $first,
-                                           active: OfficeUIRibbon.isTabActive(tab.Id)}">
-                                {{tab.Label}}
-                            </li>
+            <!-- Defines the styling for the ribbon. -->
+            <div class="ribbon relative container full-width">
 
-                            <!-- Place all the contextual tabs. Those are rendered here because contextual tabs are always placed on the right. -->
-                            <li class="tab tab-contextual container center"
-                                ng-repeat="contextual in OfficeUIRibbon.ContextualGroups"
-                                ng-style="{'background-color': contextual.GroupColor}">
 
-                                <div class="accent container full-width"
-                                     ng-style="{'background-color': contextual.AccentColor}">&nbsp;</div>
+                <!-- The area in which all the tabs are being rendered. -->
+                <ul class="no-padding no-margin relative container full-width">
 
-                                <div class="tab-title relative" >
+                    <!-- We only have a single LI element inside the UL. This is because in there, we do have 2 div elements. One for the normal tab elements
+                         and one for the contextual tab elements. -->
+                    <li class="container no-padding no-margin full-width">
 
-                                    <div style="font-size: 0.90em; text-align: center; width: 100%;"
-                                         ng-style="{'color': contextual.GroupTextColor}">
+                        <!-- All the normal tabs goes here. -->
+                        <div class="container relative">
 
-                                        <span style="padding-left: 6px; padding-right: 6px;">{{contextual.Label}}</span>
+                            <!-- The title is rendered here again. This div makes sure that the title is visible just above the normal tabs. -->
+                            <div class="title container full-width center absolute">{{OfficeUI.Title}}</div>
 
+                            <!-- A single UL element that displays all the normal tabs. -->
+                            <ul class="no-padding no-margin relative container">
+                                <!-- All the normal tabs are rendered here. -->
+                                <li class="tab tab-normal container center"
+                                    ng-repeat="tab in OfficeUIRibbon.Tabs"
+                                    ng-click="!$first && OfficeUIRibbon.setActiveTab(tab.Id, false);"
+                                    ng-class="{application: $first,
+                                   active: OfficeUIRibbon.isTabActive(tab.Id)}">
+                                    {{tab.Label}}
+                                </li>
+                            </ul>
+
+                        </div>
+
+                        <!-- All the contextual tabs goes here. -->
+                        <div class="container">
+
+                            <ul class="no-padding no-margin relative container">
+                                <li class="tab tab-contextual container center"
+                                    ng-repeat="contextual in OfficeUIRibbon.ContextualGroups"
+                                    ng-style="{'background-color': contextual.GroupColor,
+                                               'border-top': contextual.AccentColor}">
+
+                                    <div class="tab-title relative" >
+
+                                        <div style=""
+                                             ng-style="{'color': contextual.GroupTextColor}">
+
+                                            <span style="padding-left: 6px; padding-right: 6px;">{{contextual.Label}}</span>
+
+                                        </div>
                                     </div>
 
-                                    <div style="height: 6px;">&nbsp;</div>
+                                    <div style="margin-top: 9px;">
+                                        <div style="width: 100%;">
+                                            <ul class="no-padding no-margin container">
+                                                <li id="tab.Id" class="tab tab-contextual container center" style="height: 24px;"
+                                                    ng-repeat="tab in contextual.Tabs"
+                                                    ng-click="OfficeUIRibbon.setActiveTab(tab.Id, false);"
+                                                    ng-class="{active: OfficeUIRibbon.isTabActive(tab.Id)}">
 
-                                    <div style="display: table; width: 100%;">
-                                        <ul class="no-padding no-margin container" style="display: table-row; margin-top: 10px;">
-                                            <li id="tab.Id" class="tab tab-normal container center" style="display: table-cell;"
-                                                ng-repeat="tab in contextual.Tabs"
-                                                ng-click="OfficeUIRibbon.setActiveTab(tab.Id, false);"
-                                                ng-class="{active: OfficeUIRibbon.isTabActive(tab.Id)}">
-
-                                                {{tab.Label}}
-                                            </li>
-                                        </ul>
+                                                    {{tab.Label}}
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                </div>
-                            </li>
-                            <!--<li class="tab tab-contextual container center relative">
-                                <div class="accent container full-width">&nbsp;</div>
-                                <div class="tab-title relative">Table Tools</div>
-                            </li>-->
-                            <!--<li class="tab tab-normal container center application">File</li>
-                            <li class="tab tab-normal container center active">Home</li>
-                            <li class="tab tab-normal container center">Send / Receive</li>
-                            <li class="tab tab-normal container center">Folder</li>
-                            <li class="tab tab-normal container center">View</li>-->
-                        </ul>
-                        <!--<ul class="no-padding no-margin relative container">
-                            <li class="tab tab-contextual container center relative" style="background-color: #fcf0f7;">
-                                <div class="accent container full-width" style="background-color: #c9599c;">&nbsp;</div>
-                                <div class="tab-title relative" style="background-color: #fcf0f7;">Picture Tools</div>
-                            </li>
-                            <li class="tab tab-contextual container center relative">
-                                <div class="accent container full-width">&nbsp;</div>
-                                <div class="tab-title relative">Table Tools</div>
-                            </li>
-                        </ul>-->
-                    </div>
-                    <div style="position: relative; height: 50px; z-index: 40; top:0px; background-color: rgb(250,250,250);">Demo</div>
-                </div>
+                                    <!--<div class="tab-title relative" >
+
+                                        <div style="font-size: 0.90em; text-align: center; width: 100%;"
+                                             ng-style="{'color': contextual.GroupTextColor}">
+
+                                            <span style="padding-left: 6px; padding-right: 6px;">{{contextual.Label}}</span>
+
+                                        </div>
+
+                                        <div style="height: 6px;">&nbsp;</div>
+
+                                        <div style="display: table; width: 100%;">
+                                            <ul class="no-padding no-margin container" style="display: table-row; margin-top: 10px;">
+                                                <li id="tab.Id" class="tab tab-normal container center" style="display: table-cell;"
+                                                    ng-repeat="tab in contextual.Tabs"
+                                                    ng-click="OfficeUIRibbon.setActiveTab(tab.Id, false);"
+                                                    ng-class="{active: OfficeUIRibbon.isTabActive(tab.Id)}">
+
+                                                    {{tab.Label}}
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>-->
+                                </li>
+                            </ul>
+
+                        </div>
+                    </li>
+
+                    <!-- All the normal tabs are rendered here. -->
+                    <!--<li class="tab tab-normal container center"
+                        ng-repeat="tab in OfficeUIRibbon.Tabs"
+                        ng-click="!$first && OfficeUIRibbon.setActiveTab(tab.Id, false);"
+                        ng-class="{application: $first,
+                                   active: OfficeUIRibbon.isTabActive(tab.Id)}">
+                        {{tab.Label}}
+                    </li>-->
+
+                    <!-- All the contextual tabs are placed here.
+                         This is by design. All contextual tabs are placed on the right of the normal tabs.
+                         It's not possible to place any contextual tabs in between the other tabs. -->
+
+                    <!--<li class="tab tab-contextual container center relative">
+                        <div class="accent container full-width">&nbsp;</div>
+                        <div class="tab-title relative">Table Tools</div>
+                    </li>-->
+                    <!--<li class="tab tab-normal container center application">File</li>
+                    <li class="tab tab-normal container center active">Home</li>
+                    <li class="tab tab-normal container center">Send / Receive</li>
+                    <li class="tab tab-normal container center">Folder</li>
+                    <li class="tab tab-normal container center">View</li>-->
+                </ul>
+                <!--<ul class="no-padding no-margin relative container">
+                    <li class="tab tab-contextual container center relative" style="background-color: #fcf0f7;">
+                        <div class="accent container full-width" style="background-color: #c9599c;">&nbsp;</div>
+                        <div class="tab-title relative" style="background-color: #fcf0f7;">Picture Tools</div>
+                    </li>
+                    <li class="tab tab-contextual container center relative">
+                        <div class="accent container full-width">&nbsp;</div>
+                        <div class="tab-title relative">Table Tools</div>
+                    </li>
+                </ul>-->
+                <div style="position: relative; height: 50px; z-index: 40; top:0px; background-color: rgb(250,250,250);">Demo</div>
+            </div>
         </header>
     </div>
 

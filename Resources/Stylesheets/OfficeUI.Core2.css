@@ -25,8 +25,8 @@ html {
   /* Container elements. */
   /* Styling of the header. */
   /* Stacking information, regarding the Z-Index is placed below:
-   *  - The title itself has a z-index of 60, meaning that the title will always be on top.
-   *  - The UL element holding the tabs has a z-index of 50, meaning that the title will always be displayed on top of it.
+   *  - The title itself (without a ribbon) has a z-index of 60, meaning that the title will always be on top.
+   *  - The UL element holding the tabs has a z-index of 70.
   */
 }
 #OfficeUI a {
@@ -55,6 +55,7 @@ html {
 }
 #OfficeUI .container {
   display: inline-block;
+  vertical-align: top;
 }
 #OfficeUI .container.full-width {
   width: 100%;
@@ -72,45 +73,35 @@ html {
 }
 #OfficeUI header .ribbon {
   top: -23px;
-}
-#OfficeUI header .ribbon .tabs {
   /* Defines the tabs area. */
+  /* Defines the style for a single tab element. */
   /* Styling of the different tab elements that a ribbon can have. */
   /* There are 2 different tab elements, a normal tab and a contextual tab. A contextual tab is recognized by it's special color and contextual title. */
   /* A common example for a contextual tab is the tab that shows up in Office Applications when you're creating a table on the page. */
   /* When you need to implement any custom tabs, put them inside this section. */
 }
-#OfficeUI header .ribbon .tabs > ul {
-  height: 52px;
+#OfficeUI header .ribbon > ul {
   background: url("/OfficeUI.Beta/Resources/Images/Application/Backgrounds/Circuit.png") no-repeat scroll right top white;
-  z-index: 100;
+  height: 52px;
+  z-index: 70;
   border-bottom: 1px solid #d4d4d4;
 }
-#OfficeUI header .ribbon .tabs ul li.tab-contextual {
-  margin-right: 5px !important;
-}
-#OfficeUI header .ribbon .tabs ul li.tab-contextual ul li {
-  margin-left: 50px;
-}
-#OfficeUI header .ribbon .tabs ul li.tab {
+#OfficeUI header .ribbon > ul li.tab {
   text-transform: uppercase;
-  height: 23px;
   margin-right: 2px;
 }
-#OfficeUI header .ribbon .tabs ul li.tab .active {
+#OfficeUI header .ribbon > ul li.tab.active {
   background-color: #fff;
+  color: #2b579a;
 }
-#OfficeUI header .ribbon .tabs ul li.tab.tab-contextual ul li {
-  margin-top: 0px;
-}
-#OfficeUI header .ribbon .tabs ul li.tab.tab-normal {
+#OfficeUI header .ribbon > ul li.tab.tab-normal {
   margin-top: 28px;
   line-height: 23px;
   padding-left: 12px;
   padding-right: 13px;
   border: 1px solid transparent;
 }
-#OfficeUI header .ribbon .tabs ul li.tab.tab-normal.application {
+#OfficeUI header .ribbon > ul li.tab.tab-normal.application {
   background-color: #2b579a;
   color: #fff;
   border-color: #2b579a;
@@ -119,21 +110,32 @@ html {
   min-width: 52px;
   margin-right: 4px;
 }
-#OfficeUI header .ribbon .tabs ul li.tab.tab-normal:not(.application).active {
+#OfficeUI header .ribbon > ul li.tab.tab-normal:not(.application).active {
   border-color: #d4d4d4 #d4d4d4 #fff;
   border-style: solid;
   border-width: 1px;
-  background-color: white;
 }
-#OfficeUI header .ribbon .tabs ul li.tab.tab-contextual {
-  margin-left: -1px;
-  vertical-align: top;
-  height: 52px;
+#OfficeUI header .ribbon > ul li.tab {
+  border: 1px solid transparent;
 }
-#OfficeUI header .ribbon .tabs ul li.tab.tab-contextual .accent {
-  height: 4px;
-  background-color: #f2cb1d;
+#OfficeUI header .ribbon > ul li.tab:last-child {
+  margin-right: 1px;
 }
-#OfficeUI header .ribbon .tabs ul li.tab.tab-contextual .tab-title {
-  top: -10px;
+#OfficeUI header .ribbon > ul li.tab.tab-contextual {
+  height: 47px;
+}
+#OfficeUI header .ribbon > ul li.tab.tab-contextual .tab-title {
+  font-size: 0.90em;
+  text-align: center;
+  width: 100%;
+}
+#OfficeUI header .ribbon ul li.tab-contextual {
+  margin-right: 5px !important;
+}
+#OfficeUI header .ribbon ul li.tab-contextual.active {
+  border-color: #d4d4d4 #d4d4d4 #fff;
+  border-style: solid;
+  border-width: 1px;
+  background-color: #fff;
+  color: #2b579a;
 }

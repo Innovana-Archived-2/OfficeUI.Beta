@@ -32,37 +32,53 @@ body, html { width: 100%; }
 
   /* Container elements. */
   .container {
-    display: inline-block;
+    display: inline-block; vertical-align: top;
     &.full-width { width: 100%; }
   }
 
   /* Styling of the header. */
   /* Stacking information, regarding the Z-Index is placed below:
-   *  - The title itself has a z-index of 60, meaning that the title will always be on top.
-   *  - The UL element holding the tabs has a z-index of 50, meaning that the title will always be displayed on top of it.
+   *  - The title itself (without a ribbon) has a z-index of 60, meaning that the title will always be on top.
+   *  - The UL element holding the tabs has a z-index of 70.
   */
   header {
     width: 100%; min-height: 52px;
 
     /* Styling of the title. */
-    .title {  margin-left: -1px; margin-top: 6px; z-index: 60; }
+    .title { margin-left: -1px; margin-top: 6px; z-index: 60; }
 
     /* Ribbon styling. */
     .ribbon {
       top: -23px;
 
-      .tabs {
+      /* Defines the tabs area. */
+      > ul { // Selects all the ul elements that has an element with class '.ribbon' as their parent.
+        background: url("/OfficeUI.Beta/Resources/Images/Application/Backgrounds/Circuit.png") no-repeat scroll right top white; height: 52px; z-index: 70; border-bottom: 1px solid @grayBorderColor;
 
+        li.tab {
+          text-transform: uppercase; margin-right: 2px;
 
+          &.active { background-color: #fff; color: #2b579a; }
+          &.tab-normal {
+            margin-top: 28px; line-height: 23px; padding-left: 12px; padding-right: 13px; border: 1px solid transparent;
 
-        /* Defines the tabs area. */
-        > ul {
-          height: 52px;
-          background: url("/OfficeUI.Beta/Resources/Images/Application/Backgrounds/Circuit.png") no-repeat scroll right top white;
-          z-index: 100;
-          border-bottom: 1px solid @grayBorderColor;
+            // General styling for the application tab.
+            &.application { background-color: #2b579a; color: #fff;  border-color: #2b579a; padding-left: 2px; padding-right: 3px; min-width: 52px; margin-right: 4px; }
+
+            // General styling for an active tab (when it's not the application tab.
+            &:not(.application).active { border-color: #d4d4d4 #d4d4d4 #fff; border-style: solid; border-width: 1px; }
+          }
         }
+      }
 
+      /* Defines the style for a single tab element. */
+      > ul li.tab {
+        border: 1px solid transparent;
+        &:last-child { margin-right: 1px; }
+        &.tab-contextual { height: 47px;
+          .tab-title { font-size: 0.90em; text-align: center; width: 100%; }
+        }
+      }
 
         /* Styling of the different tab elements that a ribbon can have. */
         /* There are 2 different tab elements, a normal tab and a contextual tab. A contextual tab is recognized by it's special color and contextual title. */
@@ -72,34 +88,9 @@ body, html { width: 100%; }
         ul li.tab-contextual {
           margin-right: 5px !important;
 
-          ul li{ margin-left: 50px;}
+          &.active { border-color: #d4d4d4 #d4d4d4 #fff; border-style: solid; border-width: 1px; background-color: #fff; color: #2b579a; }
         }
-        ul li.tab {
-          text-transform: uppercase;
-          height: 23px;
-          margin-right: 2px;
 
-          .active { background-color: #fff; }
-
-          &.tab-contextual ul li{ margin-top: 0px; }
-          &.tab-normal {
-            margin-top: 28px;
-            line-height: 23px;
-            padding-left: 12px;
-            padding-right: 13px;
-            border: 1px solid transparent;
-            &.application { background-color: #2b579a; color: #fff;  border-color: #2b579a; padding-left: 2px; padding-right: 3px; min-width: 52px; margin-right: 4px; }
-            &:not(.application).active { border-color: #d4d4d4 #d4d4d4 #fff; border-style: solid; border-width: 1px; background-color: white; }
-          }
-
-          &.tab-contextual {
-            margin-left: -1px;
-            vertical-align: top; height: 52px;
-            .accent { height: 4px; background-color: #f2cb1d; }
-            .tab-title { top: -10px; }
-          }
-        }
-      }
     }
   }
 }

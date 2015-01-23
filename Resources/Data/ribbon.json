@@ -904,7 +904,7 @@
   "ContextualGroups": [
     {
       "Label": "Drawing Tools",
-      "AccentColor": "#ff9d00",
+      "AccentColor": "4px solid #ff9d00",
       "GroupColor": "#fff8ed",
       "GroupTextColor": "#cf5c0a",
       "Tabs":
@@ -917,7 +917,7 @@
     },
     {
       "Label": "Table Tools",
-      "AccentColor": "#f2cb1d",
+      "AccentColor": "4px solid #f2cb1d",
       "GroupColor": "#fffbe6",
       "GroupTextColor": "#987715",
       "Tabs":
