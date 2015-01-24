@@ -19,6 +19,7 @@ html {
   color: #444444;
   font-family: 'Segoe UI', serif;
   font-size: 0.75em;
+  /* General styling elements. */
   /* General elements that should look the same on the whole website. */
   /* Positional elements. */
   /* Alignment elements. */
@@ -28,6 +29,17 @@ html {
    *  - The title itself (without a ribbon) has a z-index of 60, meaning that the title will always be on top.
    *  - The UL element holding the tabs has a z-index of 70.
   */
+}
+#OfficeUI .noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+#OfficeUI .cursor-default {
+  cursor: default;
 }
 #OfficeUI a {
   color: #444444;

@@ -17,6 +17,10 @@ body, html { width: 100%; }
   /* General styling for all the elements inside the OfficeUI element. */
   color: @defaultTextColor; font-family: 'Segoe UI', serif; font-size: 0.75em;
 
+  /* General styling elements. */
+  .noselect { -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+  .cursor-default { cursor: default; }
+
   /* General elements that should look the same on the whole website. */
   a { color: @defaultTextColor; cursor: default; }
   p { padding: 0; margin: 0; line-height: 15px; }
