@@ -382,7 +382,7 @@
     },
     {
       "Id": "tabSendReceive",
-      "Label": "Insert",
+      "Label": "Send / Receive",
       "Groups": [
         {
           "Legend": "Send & Receive",
@@ -521,7 +521,7 @@
     },
     {
       "Id": "tabFolder",
-      "Label": "Design",
+      "Label": "Folder",
       "Groups": [
         {
           "Legend": "New",
@@ -693,7 +693,7 @@
     },
     {
       "Id": "tabView",
-      "Label": "Page Layout",
+      "Label": "View",
       "Groups": [
         {
           "Legend": "Current View",
@@ -878,33 +878,12 @@
           ]
         }
       ]
-    },
-    {
-      "Id": "tabView1",
-      "Label": "References"
-    }
-  ,
-    {
-      "Id": "tabView2",
-      "Label": "Mailings"
-    },
-    {
-      "Id": "tabView3",
-      "Label": "Review"
-    },
-    {
-      "Id": "tabView4",
-      "Label": "View"
-    },
-    {
-      "Id": "tabView5",
-      "Label": "Acrobat"
     }
   ],
   "ContextualGroups": [
     {
       "Label": "Drawing Tools",
-      "AccentColor": "4px solid #ff9d00",
+      "AccentColor": "#ff9d00",
       "GroupColor": "#fff8ed",
       "GroupTextColor": "#cf5c0a",
       "Tabs":
@@ -917,7 +896,7 @@
     },
     {
       "Label": "Table Tools",
-      "AccentColor": "4px solid #f2cb1d",
+      "AccentColor": "#f2cb1d",
       "GroupColor": "#fffbe6",
       "GroupTextColor": "#987715",
       "Tabs":
@@ -934,7 +913,7 @@
     },
     {
       "Label": "Smart Tools",
-      "AccentColor": "4px solid #935ed3",
+      "AccentColor": "#935ed3",
       "GroupColor": "#f6f1fc",
       "GroupTextColor": "#884ecf",
       "Tabs":

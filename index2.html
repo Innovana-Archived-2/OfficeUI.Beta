@@ -93,10 +93,12 @@
                             <ul class="no-padding no-margin relative container">
                                 <li class="tab tab-contextual container center"
                                     ng-repeat="contextual in OfficeUIRibbon.ContextualGroups"
-                                    ng-style="{'background-color': contextual.GroupColor,
-                                               'border-top': contextual.AccentColor}">
+                                    ng-style="{'background-color': contextual.GroupColor}"
+                                    style="height: 52px; border: none; position: relative; margin-right: 4px !important;">
 
-                                    <div class="tab-title relative" style="height: 15px;" >
+                                    <div style="height: 4px; position: relative;" ng-style="{'background-color': contextual.AccentColor}">&nbsp;</div>
+
+                                    <div class="tab-title relative" style="height: 15px; top: 3px;" >
 
                                         <div style=""
                                              ng-style="{'color': contextual.GroupTextColor}">
@@ -108,15 +110,17 @@
 
                                     <!--<div style="margin-top: 9px;">
                                         <div style="width: 100%;">-->
-                                            <ul class="no-padding no-margin container relative">
-                                                <li id="tab.Id" class="tab tab-contextual container center relative" style="top: 10px; height: 22px; line-height: 23px;"
+                                    <div style="position: relative; top: 9px; width: 100%; display: table;">
+                                            <ul class="no-padding no-margin container relative" style="width: 100%; display: table-row;">
+                                                <li id="tab.Id" class="tab tab-contextual container center relative" style="height: 23px; line-height: 23px; margin-right: 2px; display: table-cell;"
                                                     ng-repeat="tab in contextual.Tabs"
                                                     ng-click="OfficeUIRibbon.setActiveTab(tab.Id, false);"
                                                     ng-class="{active: OfficeUIRibbon.isTabActive(tab.Id)}">
 
-                                                    {{tab.Label}}
+                                                    <span style="padding-left: 15px; padding-right: 16px;">{{tab.Label}}</span>
                                                 </li>
                                             </ul>
+                                    </div>
                                         <!--</div>
                                     </div>-->
                                     <!--<div class="tab-title relative" >
