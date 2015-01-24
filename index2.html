@@ -63,13 +63,19 @@
 
                 <!-- Provides the UL element in which the tabs will be rendered. -->
                 <ul class="no-padding no-margin relative">
+                    <li>
 
-                    <li class="container no-padding no-margin full-width">
-
+                        <!-- We have 2 containers inside this LI element.
+                             In the first element, we do place all the normal tabs, in the second DIV element
+                             all the contextual tabs are placed. This is by design. Contextual tabs
+                             are always placed at the most right, after all the normal tabs. -->
                         <div class="container relative">
 
+                            <!-- As explained above, a seperate Title needs to be placed here.
+                                 This is because the whole ribbon sits over all the other elements. -->
                             <div class="title container full-width center absolute">{{OfficeUI.Title}}</div>
 
+                            <!-- Defines the area for all the normal tabs. -->
                             <ul class="no-padding no-margin relative container">
                                 <li class="tab tab-normal container center"
                                     ng-repeat="tab in OfficeUIRibbon.Tabs"
@@ -82,15 +88,18 @@
 
                         </div>
 
+                        <!-- Container for all the contextual tabs. -->
                         <div class="container">
 
-                            <ul class="no-padding no-margin relative container">
-                                <li class="tab tab-contextual container center"
+                            <!-- Defines the area for all the contextual tabs. -->
+                            <ul class="no-padding no-margin">
+                                <li class="tab tab-contextual container"
                                     ng-repeat="contextual in OfficeUIRibbon.ContextualGroups"
                                     ng-style="{'background-color': contextual.GroupColor}"
-                                    style="height: 52px; border: none; position: relative; margin-right: 4px !important;">
+                                    style="height: 52px; border: none; margin-right: 4px !important;">
 
-                                    <div style="height: 4px; position: relative;" ng-style="{'background-color': contextual.AccentColor}">&nbsp;</div>
+                                    <!-- Defines the top, darker, accent area of a contextual group. -->
+                                    <div style="height: 4px;" ng-style="{'background-color': contextual.AccentColor}">&nbsp;</div>
 
                                     <div class="tab-title relative" style="height: 15px; top: 3px;" >
 
@@ -103,8 +112,8 @@
                                     </div>
 
                                     <div style="position: relative; top: 9px; width: 100%; display: table;">
-                                            <ul class="no-padding no-margin container relative" style="width: 100%; display: table-row;">
-                                                <li id="tab.Id" class="tab tab-contextual container center relative" style="height: 23px; line-height: 23px; margin-right: 2px; display: table-cell;"
+                                            <ul style="display: table-row;">
+                                                <li id="tab.Id" class="tab tab-contextual center" style="height: 23px; line-height: 23px; margin-right: 2px; display: table-cell;"
                                                     ng-repeat="tab in contextual.Tabs"
                                                     ng-click="OfficeUIRibbon.setActiveTab(tab.Id, false);"
                                                     ng-class="{active: OfficeUIRibbon.isTabActive(tab.Id)}">
