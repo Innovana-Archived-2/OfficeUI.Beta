@@ -931,6 +931,23 @@
           "Label": "Layout"
         }
       ]
+    },
+    {
+      "Label": "Smart Tools",
+      "AccentColor": "4px solid #935ed3",
+      "GroupColor": "#f6f1fc",
+      "GroupTextColor": "#884ecf",
+      "Tabs":
+      [
+        {
+          "Id": "tabSmartTools_Design",
+          "Label": "Design"
+        },
+        {
+          "Id": "tabSmartTools_Format",
+          "Label": "Format"
+        }
+      ]
     }
   ]
 }
