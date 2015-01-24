@@ -96,7 +96,7 @@
                                     ng-style="{'background-color': contextual.GroupColor,
                                                'border-top': contextual.AccentColor}">
 
-                                    <!--<div class="tab-title relative" >
+                                    <div class="tab-title relative" style="height: 15px;" >
 
                                         <div style=""
                                              ng-style="{'color': contextual.GroupTextColor}">
@@ -104,12 +104,12 @@
                                             <span style="padding-left: 6px; padding-right: 6px;">{{contextual.Label}}</span>
 
                                         </div>
-                                    </div>-->
+                                    </div>
 
                                     <!--<div style="margin-top: 9px;">
                                         <div style="width: 100%;">-->
                                             <ul class="no-padding no-margin container relative">
-                                                <li id="tab.Id" class="tab tab-contextual container center relative" style="top: 25px; height: 22px; line-height: 23px;"
+                                                <li id="tab.Id" class="tab tab-contextual container center relative" style="top: 10px; height: 22px; line-height: 23px;"
                                                     ng-repeat="tab in contextual.Tabs"
                                                     ng-click="OfficeUIRibbon.setActiveTab(tab.Id, false);"
                                                     ng-class="{active: OfficeUIRibbon.isTabActive(tab.Id)}">
