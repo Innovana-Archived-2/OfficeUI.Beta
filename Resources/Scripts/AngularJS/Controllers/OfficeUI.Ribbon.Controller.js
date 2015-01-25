@@ -223,4 +223,30 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', function($scope,
 
         return items.length > 0;
     }
+
+    /* @ngdoc Function
+     * @name setTabColor
+     *
+     * @description
+     * Sets the color of a given tab.
+     *
+     * @parameters
+     * tabId        The id of the tab for which to set the color.
+     * tabColor     The color that the tab should have.
+     *
+     * @element ANY
+     *
+     * @example
+     *  <example module="setActiveTabColorExample" deps="OfficeUI.min.js">
+     *    <file name="index.html">
+     *      <body ng-controller="OfficeUIRibbon as OfficeUIRibbon">
+     *        <div ng-repeat="tab in OfficeUIRibbon.tabs" ng-style="{color: setActiveTabColor('myTab', '#bebe32')}>
+     *        </div>
+     *      </body>
+     *    </file>
+     *  </example>
+     */
+    $scope.setActiveTabColor = function(tabId, tabColor) {
+        if (controllerData.activeTab == tabId) { return tabColor; }
+    }
 }]);

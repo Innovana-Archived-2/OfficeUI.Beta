@@ -119,7 +119,7 @@
                                     <!-- Defines the actual tabs that belongs to this contextual group. -->
                                     <div class="tabs relative">
                                         <ul>
-                                            <li id="tab.Id" class="tab tab-contextual center"
+                                            <li id="tab.Id" class="tab tab-contextual center" ng-style="{color: setActiveTabColor(tab.Id, contextual.GroupTextColor)}"
                                                 ng-repeat="tab in contextual.Tabs"
                                                 ng-click="setActive(tab.Id)"
                                                 ng-class="{active: isActive(tab.Id)}"
