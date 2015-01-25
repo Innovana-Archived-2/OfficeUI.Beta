@@ -9,7 +9,6 @@
         return this;
     }
 
-
     $.fn.OfficeUI.ThemeManager.Themes = {
         Blue: 'Blue',
         Green: 'Green',

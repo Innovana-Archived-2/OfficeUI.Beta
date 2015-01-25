@@ -11,3 +11,7 @@
 #OfficeUI input:focus {
   border-color: #86bfa0;
 }
+/* Ribbon styling. */
+.ribbon > ul li .tab.active {
+  color: #217346;
+}

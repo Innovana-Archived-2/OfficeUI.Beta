@@ -101,10 +101,10 @@ html {
 #OfficeUI header .ribbon > ul li.tab {
   text-transform: uppercase;
   margin-right: 2px;
+  border: 1px solid transparent;
 }
 #OfficeUI header .ribbon > ul li.tab.active {
   background-color: #fff;
-  color: #2b579a;
 }
 #OfficeUI header .ribbon > ul li.tab.tab-normal {
   margin-top: 28px;
@@ -114,9 +114,7 @@ html {
   border: 1px solid transparent;
 }
 #OfficeUI header .ribbon > ul li.tab.tab-normal.application {
-  background-color: #2b579a;
   color: #fff;
-  border-color: #2b579a;
   padding-left: 2px;
   padding-right: 3px;
   min-width: 52px;
@@ -127,22 +125,45 @@ html {
   border-style: solid;
   border-width: 1px;
 }
-#OfficeUI header .ribbon > ul li.tab {
-  border: 1px solid transparent;
-}
 #OfficeUI header .ribbon > ul li.tab:last-child {
   margin-right: 1px;
 }
-#OfficeUI header .ribbon > ul li.tab.tab-contextual {
-  height: 47px;
+#OfficeUI header .ribbon > ul li.tab.contextual-group {
+  height: 52px;
+  margin-right: 4px;
+  border: none;
 }
-#OfficeUI header .ribbon > ul li.tab.tab-contextual .tab-title {
+#OfficeUI header .ribbon > ul li.tab.contextual-group .accent {
+  height: 4px;
+}
+#OfficeUI header .ribbon > ul li.tab.contextual-group .group-title {
   font-size: 0.90em;
   text-align: center;
   width: 100%;
+  height: 15px;
+  top: 3px;
 }
-#OfficeUI header .ribbon ul li.tab-contextual {
-  margin-right: 5px !important;
+#OfficeUI header .ribbon > ul li.tab.contextual-group .group-title span {
+  padding-left: 6px;
+  padding-right: 6px;
+}
+#OfficeUI header .ribbon > ul li.tab.contextual-group .tabs {
+  top: 9px;
+  width: 100%;
+  display: table;
+}
+#OfficeUI header .ribbon > ul li.tab.contextual-group .tabs ul {
+  display: table-row;
+}
+#OfficeUI header .ribbon > ul li.tab.contextual-group .tabs ul .tab-contextual {
+  height: 23px;
+  line-height: 23px;
+  margin-right: 2px;
+  display: table-cell;
+}
+#OfficeUI header .ribbon > ul li.tab.contextual-group .tabs ul .tab-contextual span {
+  padding-left: 15px;
+  padding-right: 16px;
 }
 #OfficeUI header .ribbon ul li.tab-contextual.active {
   border-color: #d4d4d4 #d4d4d4 #fff;

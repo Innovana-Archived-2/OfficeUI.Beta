@@ -93,35 +93,32 @@
 
                             <!-- Defines the area for all the contextual tabs. -->
                             <ul class="no-padding no-margin">
-                                <li class="tab tab-contextual container"
+                                <li class="tab contextual-group container"
                                     ng-repeat="contextual in OfficeUIRibbon.ContextualGroups"
-                                    ng-style="{'background-color': contextual.GroupColor}"
-                                    style="height: 52px; border: none; margin-right: 4px !important;">
+                                    ng-style="{'background-color': contextual.GroupColor}">
 
                                     <!-- Defines the top, darker, accent area of a contextual group. -->
-                                    <div style="height: 4px;" ng-style="{'background-color': contextual.AccentColor}">&nbsp;</div>
+                                    <div class="accent" ng-style="{'background-color': contextual.AccentColor}">&nbsp;</div>
 
-                                    <div class="tab-title relative" style="height: 15px; top: 3px;" ng-click="OfficeUIRibbon.setActiveTab(contextual.Tabs[0].Id, false);">
-
-                                        <div style=""
-                                             ng-style="{'color': contextual.GroupTextColor}">
-
-                                            <span style="padding-left: 6px; padding-right: 6px;">{{contextual.Label}}</span>
-
+                                    <!-- Defines the area in which the title of the group is being displayed. -->
+                                    <div class="group-title relative" ng-click="OfficeUIRibbon.setActiveTab(contextual.Tabs[0].Id, false);">
+                                        <div ng-style="{'color': contextual.GroupTextColor}">
+                                            <span>{{contextual.Label}}</span>
                                         </div>
                                     </div>
 
-                                    <div style="position: relative; top: 9px; width: 100%; display: table;">
-                                            <ul style="display: table-row;">
-                                                <li id="tab.Id" class="tab tab-contextual center" style="height: 23px; line-height: 23px; margin-right: 2px; display: table-cell;"
-                                                    ng-repeat="tab in contextual.Tabs"
-                                                    ng-click="OfficeUIRibbon.setActiveTab(tab.Id, false);"
-                                                    ng-class="{active: OfficeUIRibbon.isTabActive(tab.Id)}"
-                                                        stop-propagation="click">
+                                    <!-- Defines the actual tabs that belongs to this contextual group. -->
+                                    <div class="tabs relative">
+                                        <ul>
+                                            <li id="tab.Id" class="tab tab-contextual center"
+                                                ng-repeat="tab in contextual.Tabs"
+                                                ng-click="OfficeUIRibbon.setActiveTab(tab.Id, false);"
+                                                ng-class="{active: OfficeUIRibbon.isTabActive(tab.Id)}"
+                                                    stop-propagation="click">
 
-                                                    <span style="padding-left: 15px; padding-right: 16px;">{{tab.Label}}</span>
-                                                </li>
-                                            </ul>
+                                                <span>{{tab.Label}}</span>
+                                            </li>
+                                        </ul>
                                     </div>
 
                                 </li>
@@ -140,7 +137,7 @@
 <!-- Provides some functions to configure the OfficeUI application. -->
 <script type="text/javascript">
     // Sets the ThemeManager and initialize it.
-    $.fn.OfficeUI.ThemeManager.SetTheme($.fn.OfficeUI.ThemeManager.Themes.Blue);
+    $.fn.OfficeUI.ThemeManager.SetTheme($.fn.OfficeUI.ThemeManager.Themes.Turquoise);
 
     // Sets some default OfficeUI properties in order to initialize everything property.
     $.fn.OfficeUI.applicationDataFile = '/OfficeUI.Beta/Resources/data/application.json'; // Specify the file in which the application data is stored.

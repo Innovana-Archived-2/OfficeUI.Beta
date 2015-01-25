@@ -1,7 +1,11 @@
 /* Import statements. */
 @import (reference) 'OfficeUI.Style.Blue.less';
 
-/* General styling. */
+/* Ribbon styling. */
+.ribbon > ul li .tab.active { color: @navigationDefaultColor; }
+.ribbon > ul li .tab.application { background-color: @navigationDefaultColor; }
+.ribbon > ul li .tab.application { border-color: @navigationDefaultColor; }
+
 #OfficeUI ul[role="ribbonTabs"] li:not(.application):hover, #OfficeUI ul[role="ribbonTabs"] li.active { color: @navigationDefaultColor; }
 #OfficeUI ul[role="ribbonTabs"] li.application { background-color: @navigationDefaultColor; border-color: @navigationDefaultColor; }
 #OfficeUI ul[role="ribbonTabs"] li.application:hover { background-color: @navigationActiveElement; border-color: @navigationActiveElement; }

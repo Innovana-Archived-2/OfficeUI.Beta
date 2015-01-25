@@ -10,7 +10,6 @@ body, html { width: 100%; }
 /* Section: Variables. */
 @defaultTextColor: #444; // The default text color.
 @emphasizedTextColor: #5d5d5d; // The default emphasis color.
-
 @grayBorderColor: #d4d4d4; // The gray color for a border element.
 
 #OfficeUI {
@@ -56,31 +55,56 @@ body, html { width: 100%; }
       top: -23px;
 
       /* Defines the tabs area. */
-      > ul { // Selects all the ul elements that has an element with class '.ribbon' as their parent.
+
+      // Selects all the ul elements that has an element with class '.ribbon' as their parent.
+      > ul {
         background: url("/OfficeUI.Beta/Resources/Images/Application/Backgrounds/Circuit.png") no-repeat scroll right top white; height: 52px; z-index: 70; border-bottom: 1px solid @grayBorderColor;
 
+        // Defines the settings for a tab element.
         li.tab {
-          text-transform: uppercase; margin-right: 2px;
+          text-transform: uppercase; margin-right: 2px; border: 1px solid transparent;
 
-          &.active { background-color: #fff; color: #2b579a; }
-          &.tab-normal {
+          &.active { background-color: #fff; }
+          &.tab-normal { // Defines the styling for a normal tab.
             margin-top: 28px; line-height: 23px; padding-left: 12px; padding-right: 13px; border: 1px solid transparent;
 
-            // General styling for the application tab.
-            &.application { background-color: #2b579a; color: #fff;  border-color: #2b579a; padding-left: 2px; padding-right: 3px; min-width: 52px; margin-right: 4px; }
-
-            // General styling for an active tab (when it's not the application tab.
+            &.application { color: #fff; padding-left: 2px; padding-right: 3px; min-width: 52px; margin-right: 4px; }
             &:not(.application).active { border-color: #d4d4d4 #d4d4d4 #fff; border-style: solid; border-width: 1px; }
+          }
+
+          &:last-child { margin-right: 1px; } // When it's the last child, only add 1px to the margin right. This is required for the correct placements of the contextual tabs.
+
+          &.contextual-group { // Defines the styling for a contextual group.
+            height: 52px;  margin-right: 4px; border: none;
+
+            .accent { height: 4px; } // Defines the accent color. (The color on top, which is 4px height).
+
+            .group-title { font-size: 0.90em; text-align: center; width: 100%; height: 15px; top: 3px;
+              span { padding-left: 6px; padding-right: 6px; }
+            }
+
+            .tabs {
+              top: 9px; width: 100%; display: table;
+
+              ul {
+                display: table-row;
+
+                .tab-contextual {
+                  height: 23px; line-height: 23px; margin-right: 2px; display: table-cell;
+
+                  span { padding-left: 15px; padding-right: 16px; }
+                }
+              }
+            }
           }
         }
       }
 
       /* Defines the style for a single tab element. */
       > ul li.tab {
-        border: 1px solid transparent;
-        &:last-child { margin-right: 1px; }
-        &.tab-contextual { height: 47px;
-          .tab-title { font-size: 0.90em; text-align: center; width: 100%; }
+
+        &.contextual-group {
+
         }
       }
 
@@ -90,7 +114,7 @@ body, html { width: 100%; }
         /* When you need to implement any custom tabs, put them inside this section. */
 
         ul li.tab-contextual {
-          margin-right: 5px !important;
+
 
           &.active { border-color: #d4d4d4 #d4d4d4 #fff; border-style: solid; border-width: 1px; background-color: #fff; color: #2b579a; }
         }

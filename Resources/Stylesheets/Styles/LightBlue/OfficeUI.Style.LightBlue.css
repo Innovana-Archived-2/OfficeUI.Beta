@@ -12,8 +12,21 @@
 #OfficeUI input:focus {
   border-color: #92c0e0;
 }
+/* Ribbon styling. */
+.ribbon > ul li .tab.active {
+  color: #0072c6;
+}
 /* Import statements. */
-/* General styling. */
+/* Ribbon styling. */
+.ribbon > ul li .tab.active {
+  color: #0072c6;
+}
+.ribbon > ul li .tab.application {
+  background-color: #0072c6;
+}
+.ribbon > ul li .tab.application {
+  border-color: #0072c6;
+}
 #OfficeUI ul[role="ribbonTabs"] li:not(.application):hover,
 #OfficeUI ul[role="ribbonTabs"] li.active {
   color: #0072c6;
