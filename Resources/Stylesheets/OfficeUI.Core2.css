@@ -175,3 +175,15 @@ html {
   background-color: #fff;
   color: #2b579a;
 }
+/* Animations. */
+.contextual-group.ng-hide-add.ng-hide-add-active,
+.contextual-group.ng-hide-remove.ng-hide-remove-active {
+  -webkit-transition: 0.2s linear all;
+  transition: 0.2s linear all;
+}
+.contextual-group {
+  opacity: 1;
+}
+.contextual-group.ng-hide {
+  opacity: 0;
+}

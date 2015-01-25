@@ -48,8 +48,6 @@
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Angular.Directive.ApplicationMenuContents.min.js"></script>
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Filters/OfficeUI.Angular.Filter.ActionLegend.js"></script>
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Filters/OfficeUI.Angular.Filter.ActionTooltip.js"></script>
-
-    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.OfficeActiveStyle.js"></script>
 </head>
 <body class="no-padding no-margin" ng-controller="OfficeUI as OfficeUI">
     <div id="OfficeUI" ng-controller="OfficeUIRibbon as OfficeUIRibbon">
@@ -123,7 +121,6 @@
                                                 ng-repeat="tab in contextual.Tabs"
                                                 ng-click="setActive(tab.Id)"
                                                 ng-class="{active: isActive(tab.Id)}"
-                                                office-active-style="{'background-color': 'green'}"
                                                 stop-propagation="click">
 
                                                 <span>{{tab.Label}}</span>
