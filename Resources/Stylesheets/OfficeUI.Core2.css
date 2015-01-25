@@ -92,6 +92,9 @@ html {
   /* A common example for a contextual tab is the tab that shows up in Office Applications when you're creating a table on the page. */
   /* When you need to implement any custom tabs, put them inside this section. */
 }
+#OfficeUI header .ribbon .title {
+  z-index: 80;
+}
 #OfficeUI header .ribbon > ul {
   background: url("/OfficeUI.Beta/Resources/Images/Application/Backgrounds/Circuit.png") no-repeat scroll right top white;
   height: 52px;

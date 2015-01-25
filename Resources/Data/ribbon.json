@@ -882,6 +882,7 @@
   ],
   "ContextualGroups": [
     {
+      "Id": "contextualGroupDrawingTools",
       "Label": "Drawing Tools",
       "AccentColor": "#ff9d00",
       "GroupColor": "#fff8ed",
@@ -895,6 +896,7 @@
       ]
     },
     {
+      "Id": "contextualGroupTableTools",
       "Label": "Table Tools",
       "AccentColor": "#f2cb1d",
       "GroupColor": "#fffbe6",
@@ -912,6 +914,7 @@
       ]
     },
     {
+      "Id": "contextualGroupSmartTools",
       "Label": "Smart Tools",
       "AccentColor": "#935ed3",
       "GroupColor": "#f6f1fc",

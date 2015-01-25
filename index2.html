@@ -35,8 +35,10 @@
     <script src="/OfficeUI.Beta/Resources/Scripts/External/Angular-sanitize.min.js"></script>
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Modules/OfficeUI.Ribbon.Angular.Module.min.js"></script>
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Modules/OfficeUI.Angular.Module.min.js"></script>
-    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Controllers/OfficeUI.Angular.Controller.min.js"></script>
-    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Controllers/OfficeUI.Ribbon.Angular.Controller.min.js"></script>
+
+    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Controllers/OfficeUI.Controller.min.js"></script>
+    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Controllers/OfficeUI.Ribbon.Controller.min.js"></script>
+
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Angular.Directive.DynamicEventHandling.min.js"></script>
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Angular.Directive.Scrolling.min.js"></script>
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Angular.Directive.Collapsing.min.js"></script>
@@ -46,6 +48,8 @@
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Angular.Directive.ApplicationMenuContents.min.js"></script>
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Filters/OfficeUI.Angular.Filter.ActionLegend.js"></script>
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Filters/OfficeUI.Angular.Filter.ActionTooltip.js"></script>
+
+    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.OfficeActiveStyle.js"></script>
 </head>
 <body class="no-padding no-margin" ng-controller="OfficeUI as OfficeUI">
     <div id="OfficeUI" ng-controller="OfficeUIRibbon as OfficeUIRibbon">
@@ -61,6 +65,10 @@
             <!-- Provides the area in which the ribbon will be rendered. -->
             <div class="ribbon relative container full-width">
 
+                <!-- As explained above, a seperate Title needs to be placed here.
+                                This is because the whole ribbon sits over all the other elements. -->
+                <div class="title container full-width center absolute" ng-show="!isContextualGroupActive()">{{OfficeUI.Title}}</div>
+
                 <!-- Provides the UL element in which the tabs will be rendered. -->
                 <ul class="no-padding no-margin relative">
                     <li>
@@ -73,15 +81,15 @@
 
                             <!-- As explained above, a seperate Title needs to be placed here.
                                  This is because the whole ribbon sits over all the other elements. -->
-                            <div class="title container full-width center absolute">{{OfficeUI.Title}}</div>
+                            <div class="title container full-width center absolute" ng-show="isContextualGroupActive()">{{OfficeUI.Title}}</div>
 
                             <!-- Defines the area for all the normal tabs. -->
                             <ul class="no-padding no-margin relative container">
                                 <li class="tab tab-normal container center"
                                     ng-repeat="tab in OfficeUIRibbon.Tabs"
-                                    ng-click="!$first && OfficeUIRibbon.setActiveTab(tab.Id, false);"
+                                    ng-click="!$first && setActive(tab.Id);"
                                     ng-class="{application: $first,
-                                               active: OfficeUIRibbon.isTabActive(tab.Id)}">
+                                               active: isActive(tab.Id)}">
                                     {{tab.Label}}
                                 </li>
                             </ul>
@@ -94,6 +102,7 @@
                             <!-- Defines the area for all the contextual tabs. -->
                             <ul class="no-padding no-margin">
                                 <li class="tab contextual-group container"
+                                    ng-show="isActiveContextualGroup(contextual.Id)"
                                     ng-repeat="contextual in OfficeUIRibbon.ContextualGroups"
                                     ng-style="{'background-color': contextual.GroupColor}">
 
@@ -101,7 +110,7 @@
                                     <div class="accent" ng-style="{'background-color': contextual.AccentColor}">&nbsp;</div>
 
                                     <!-- Defines the area in which the title of the group is being displayed. -->
-                                    <div class="group-title relative" ng-click="OfficeUIRibbon.setActiveTab(contextual.Tabs[0].Id, false);">
+                                    <div class="group-title relative" ng-click="setActive(contextual.Tabs[0].Id, false);">
                                         <div ng-style="{'color': contextual.GroupTextColor}">
                                             <span>{{contextual.Label}}</span>
                                         </div>
@@ -112,9 +121,10 @@
                                         <ul>
                                             <li id="tab.Id" class="tab tab-contextual center"
                                                 ng-repeat="tab in contextual.Tabs"
-                                                ng-click="OfficeUIRibbon.setActiveTab(tab.Id, false);"
-                                                ng-class="{active: OfficeUIRibbon.isTabActive(tab.Id)}"
-                                                    stop-propagation="click">
+                                                ng-click="setActive(tab.Id)"
+                                                ng-class="{active: isActive(tab.Id)}"
+                                                office-active-style="{'background-color': 'green'}"
+                                                stop-propagation="click">
 
                                                 <span>{{tab.Label}}</span>
                                             </li>
@@ -132,6 +142,20 @@
                 <!--<div style="position: relative; height: 50px; z-index: 40; top:0px; background-color: rgb(250,250,250);">Demo</div>-->
             </div>
         </header>
+
+        <div style="padding-top: 150px; padding-left: 5px; padding-right: 5px;">
+            <h2>Functions</h2>
+            <h3>Contextual Tabs</h3>
+            <a href="#" ng-click="activateContextualGroup('contextualGroupDrawingTools')" style="padding-right: 40px;">Activate Drawing Tools</a>
+            <a href="#" ng-click="activateContextualGroup('contextualGroupTableTools')" style="padding-right: 40px;">Activate Table Tools</a>
+            <a href="#" ng-click="activateContextualGroup('contextualGroupSmartTools')" style="padding-right: 40px;">Activate Smart Tools</a>
+
+            <br/>
+
+            <a href="#" ng-click="deactivateContextualGroup('contextualGroupDrawingTools')" style="padding-right: 40px;">Deactivate Drawing Tools</a>
+            <a href="#" ng-click="deactivateContextualGroup('contextualGroupTableTools')" style="padding-right: 40px;">Deactivate Table Tools</a>
+            <a href="#" ng-click="deactivateContextualGroup('contextualGroupSmartTools')" style="padding-right: 40px;">Deactivate Smart Tools</a>
+        </div>
     </div>
 
 <!-- Provides some functions to configure the OfficeUI application. -->
