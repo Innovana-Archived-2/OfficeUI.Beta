@@ -58,14 +58,18 @@
             <!-- Defines the title of the application. This title it only visible when the ribbon isn't used.
                  However, a title must be visible also when using the ribbon. For that single purpose,
                  a title element is placed on the ribbon aswell. -->
-            <div class="title container full-width center relative">{{OfficeUI.Title}}</div>
+            <div class="title container full-width center relative">
+                <span>{{OfficeUI.Title}}</span>
+            </div>
 
             <!-- Provides the area in which the ribbon will be rendered. -->
             <div class="ribbon relative container full-width">
 
                 <!-- As explained above, a seperate Title needs to be placed here.
                                 This is because the whole ribbon sits over all the other elements. -->
-                <div class="title container full-width center absolute" ng-show="!isContextualGroupActive()">{{OfficeUI.Title}}</div>
+                <div class="title container full-width center absolute" ng-show="!isContextualGroupActive()">
+                    <span>{{OfficeUI.Title}}</span>
+                </div>
 
                 <!-- Provides the UL element in which the tabs will be rendered. -->
                 <ul class="no-padding no-margin relative">
@@ -79,7 +83,9 @@
 
                             <!-- As explained above, a seperate Title needs to be placed here.
                                  This is because the whole ribbon sits over all the other elements. -->
-                            <div class="title container full-width center absolute" ng-show="isContextualGroupActive()">{{OfficeUI.Title}}</div>
+                            <div class="title container full-width center absolute" ng-show="isContextualGroupActive()">
+                                <span>{{OfficeUI.Title}}</span>
+                            </div>
 
                             <!-- Defines the area for all the normal tabs. -->
                             <ul class="no-padding no-margin relative container">

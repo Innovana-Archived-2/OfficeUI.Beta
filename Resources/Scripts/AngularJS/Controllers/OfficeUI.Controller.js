@@ -43,6 +43,7 @@ OfficeUI.controller('OfficeUI', ['$scope', '$http', function($scope, $http) {
     $http.get($.fn.OfficeUI.applicationDataFile)
         .success(function(data) {
             controllerData.Title = data.Title;
+            controllerData.Icons = data.Icons;
         })
         .error(function(data) { console.error('An error occured while loading the file \'' + $.fn.OfficeUI.applicationDataFile + '\' file. '); });
 }]);
