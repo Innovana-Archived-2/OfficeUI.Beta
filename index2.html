@@ -101,7 +101,7 @@
                                     <!-- Defines the top, darker, accent area of a contextual group. -->
                                     <div style="height: 4px;" ng-style="{'background-color': contextual.AccentColor}">&nbsp;</div>
 
-                                    <div class="tab-title relative" style="height: 15px; top: 3px;" >
+                                    <div class="tab-title relative" style="height: 15px; top: 3px;" ng-click="OfficeUIRibbon.setActiveTab(contextual.Tabs[0].Id, false);">
 
                                         <div style=""
                                              ng-style="{'color': contextual.GroupTextColor}">
@@ -116,7 +116,8 @@
                                                 <li id="tab.Id" class="tab tab-contextual center" style="height: 23px; line-height: 23px; margin-right: 2px; display: table-cell;"
                                                     ng-repeat="tab in contextual.Tabs"
                                                     ng-click="OfficeUIRibbon.setActiveTab(tab.Id, false);"
-                                                    ng-class="{active: OfficeUIRibbon.isTabActive(tab.Id)}">
+                                                    ng-class="{active: OfficeUIRibbon.isTabActive(tab.Id)}"
+                                                        stop-propagation="click">
 
                                                     <span style="padding-left: 15px; padding-right: 16px;">{{tab.Label}}</span>
                                                 </li>
