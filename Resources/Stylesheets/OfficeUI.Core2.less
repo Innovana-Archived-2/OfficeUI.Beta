@@ -45,10 +45,28 @@ body, html { width: 100%; }
    *  - The UL element holding the tabs has a z-index of 70.
   */
   header {
+    /* Defines the application icons. */
+    .application-icons {
+      top: 0px; left: 0px;
+      margin: 3px 0 0 6px;
+
+      /* Default image. */
+      img {
+        margin: 0 5px 0 2px;
+      }
+
+      /* Small right margin on every image element, except the first. */
+      img:not(:first-child) {
+        margin-right: 6px;
+      }
+    }
+
     width: 100%; min-height: 52px;
 
     /* Styling of the title. */
-    .title { margin-left: -1px; margin-top: 6px; z-index: 60; }
+    .title { margin-left: -1px;  z-index: 60; margin-bottom: 6px;
+      span { margin-top: 6px; height: 18px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    }
 
     /* Ribbon styling. */
     .ribbon {
