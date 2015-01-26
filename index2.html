@@ -28,7 +28,10 @@
     <link rel="stylesheet" href="/OfficeUI.Beta/Resources/Stylesheets/External/Font-Awesome/font-awesome.min.css" />
 
     <!-- Internal stylesheets and scripts, required for the application to run. -->
-    <link rel="stylesheet" href="/OfficeUI.Beta/Resources/Stylesheets/OfficeUI.Core2.min.css" />
+    <!--<link rel="stylesheet" href="/OfficeUI.Beta/Resources/Stylesheets/OfficeUI.Core2.min.css" />-->
+
+    <link rel="stylesheet" href="/OfficeUI.Beta/Resources/Stylesheets/OfficeUI.min.css" />
+
     <!--<link rel="stylesheet" href="/OfficeUI.Beta/Resources/Stylesheets/OfficeUI.Ribbon2.min.css" />-->
     <!--<link rel="stylesheet" href="/OfficeUI.Beta/Resources/Stylesheets/OfficeUI.Ribbon.ApplicationMenu2.min.css" />-->
     <script src="/OfficeUI.Beta/Resources/Scripts/External/Angular-animate.min.js"></script>
@@ -49,111 +52,71 @@
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Filters/OfficeUI.Angular.Filter.ActionLegend.js"></script>
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Filters/OfficeUI.Angular.Filter.ActionTooltip.js"></script>
 </head>
-<body class="no-padding no-margin" ng-controller="OfficeUI as OfficeUI">
+<body class="noPadding noMargin" ng-controller="OfficeUI as OfficeUI">
     <div id="OfficeUI" ng-controller="OfficeUIRibbon as OfficeUIRibbon">
 
-        <!-- Defines the header of the appplication. -->
-        <header class="fixed noselect cursor-default">
+        <!-- /* ------------------------------------------------------ */
+             /* ----------  Header element on the website.  ---------- */
+             /* ------------------------------------------------------ */
 
-            <!-- Defines the title of the application. This title it only visible when the ribbon isn't used.
-                 However, a title must be visible also when using the ribbon. For that single purpose,
-                 a title element is placed on the ribbon aswell. -->
-            <div class="title container full-width center relative">
-                <!-- Provides the area in which the application icons are being showed. -->
-                <div class="absolute">
-                    <div class="container application-icons">
-                        <img id="{{icon.Id}}" alt="{{icon.Alt}}"
-                             dynamic-event-handling="icon.Id"
-                             ng-class="{'icon': !$first}"
-                             ng-repeat="icon in OfficeUI.Icons"
-                             ng-src="{{icon.Icon}}" />
-                    </div>
+            @Description:
+            Defines the header element of the AngularJS application. The header element does contain the following data:
+            - Title
+            - Ribbon
+
+            @Remarks:
+            The header does contain an element that shows the title. But this title is only visible when the OfficeUI ribbon is not used.
+            This is required because the ribbon itself is positioned on top of the page.
+            So therefore the ribbon does include a title element itself, which has a higher z-index than the title on the header.
+
+            The ribbon itself does also contains 2 title sections. This is because the title is displayed at a specific location when the ribbon is shown and
+            the title is displayed on another location when the ribbon has some contextual tabs which are showed.
+        -->
+        <header>
+            <div class="title">
+                <div>
+                    <img id="{{icon.Id}}" alt="{{icon.Alt}}" ng-class="{'icon': !$first}" ng-repeat="icon in OfficeUI.Icons" ng-src="{{icon.Icon}}" />
                 </div>
 
                 <span>{{OfficeUI.Title}}</span>
             </div>
 
-            <!-- Provides the area in which the ribbon will be rendered. -->
-            <div class="ribbon relative container full-width">
-
-                <!-- As explained above, a seperate Title needs to be placed here.
-                                This is because the whole ribbon sits over all the other elements. -->
-                <div class="title container full-width center absolute" ng-show="!isContextualGroupActive()">
-                    <!-- Provides the area in which the application icons are being showed. -->
-                    <div class="absolute">
-                        <div class="container application-icons">
-                            <img id="{{icon.Id}}" alt="{{icon.Alt}}"
-                                 dynamic-event-handling="icon.Id"
-                                 ng-class="{'icon': !$first}"
-                                 ng-repeat="icon in OfficeUI.Icons"
-                                 ng-src="{{icon.Icon}}" />
-                        </div>
+            <div class="ribbon">
+                <div class="title" ng-show="!isContextualGroupActive()">
+                    <div>
+                        <img id="{{icon.Id}}" alt="{{icon.Alt}}" ng-class="{'icon': !$first}" ng-repeat="icon in OfficeUI.Icons" ng-src="{{icon.Icon}}" />
                     </div>
 
-                    <span class="container">{{OfficeUI.Title}}</span>
+                    <span>{{OfficeUI.Title}}</span>
                 </div>
 
-                <!-- Provides the UL element in which the tabs will be rendered. -->
-                <ul class="no-padding no-margin relative">
+                <ul>
                     <li>
-
-                        <!-- We have 2 containers inside this LI element.
-                             In the first element, we do place all the normal tabs, in the second DIV element
-                             all the contextual tabs are placed. This is by design. Contextual tabs
-                             are always placed at the most right, after all the normal tabs. -->
-                        <div class="container relative">
-
-                            <!-- As explained above, a seperate Title needs to be placed here.
-                                 This is because the whole ribbon sits over all the other elements. -->
-                            <div class="title container full-width absolute" ng-show="isContextualGroupActive()" style="float: left;">
-                                <!-- Provides the area in which the application icons are being showed. -->
-                                <div class="relative container">
-                                    <div class="container application-icons">
-                                        <img id="{{icon.Id}}" alt="{{icon.Alt}}"
-                                             dynamic-event-handling="icon.Id"
-                                             ng-class="{'icon': !$first}"
-                                             ng-repeat="icon in OfficeUI.Icons"
-                                             ng-src="{{icon.Icon}}" />
-                                    </div>
-                                </div>
-
-                                <span class="container">{{OfficeUI.Title}}</span>
-                            </div>
-
-                            <!-- Defines the area for all the normal tabs. -->
-                            <ul class="no-padding no-margin relative container">
-                                <li class="tab tab-normal container center"
-                                    ng-repeat="tab in OfficeUIRibbon.Tabs"
-                                    ng-click="!$first && setActive(tab.Id);"
-                                    ng-class="{application: $first,
-                                               active: isActive(tab.Id)}">
+                        <div>
+                            <ul>
+                                <li class="tab tab-normal" ng-repeat="tab in OfficeUIRibbon.Tabs" ng-click="!$first && setActive(tab.Id);" ng-class="{application: $first, active: isActive(tab.Id)}">
                                     {{tab.Label}}
                                 </li>
                             </ul>
 
                         </div>
 
-                        <!-- Container for all the contextual tabs. -->
                         <div class="container">
 
-                            <!-- Defines the area for all the contextual tabs. -->
                             <ul class="no-padding no-margin">
                                 <li class="tab contextual-group container"
                                     ng-show="isActiveContextualGroup(contextual.Id)"
                                     ng-repeat="contextual in OfficeUIRibbon.ContextualGroups"
                                     ng-style="{'background-color': contextual.GroupColor}">
 
-                                    <!-- Defines the top, darker, accent area of a contextual group. -->
                                     <div class="accent" ng-style="{'background-color': contextual.AccentColor}">&nbsp;</div>
 
-                                    <!-- Defines the area in which the title of the group is being displayed. -->
                                     <div class="group-title relative" ng-click="setActive(contextual.Tabs[0].Id, false);">
                                         <div ng-style="{'color': contextual.GroupTextColor}">
                                             <span>{{contextual.Label}}</span>
                                         </div>
                                     </div>
 
-                                    <!-- Defines the actual tabs that belongs to this contextual group. -->
                                     <div class="tabs relative">
                                         <ul>
                                             <li id="tab.Id" class="tab tab-contextual center" ng-style="{color: setActiveTabColor(tab.Id, contextual.GroupTextColor)}"
