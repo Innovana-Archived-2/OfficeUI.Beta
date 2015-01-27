@@ -32,8 +32,11 @@
    * @remarks
    *
    * Below we explain the z-index which are used in the header.
-   * - The title in the header, thus, not on the ribbon, does have a z-index value set to 60.
-   * - The title in the ribbon itself, does have a z-indec value set to 70.
+   * - The title in the header, thus, not on the ribbon, does have a z-index value set to 70.
+   *   (This does mean that the ribbon element itself should have a higher z-index to make sure it's on top of the normal title).
+   * - The title in the ribbon itself, does have a z-index value set to 80.
+   * - The tabs of the ribbon does have a z-index value set to 70.
+   * ToDo: Update the information about the z-index here since it's not correct.
    */
 }
 #OfficeUI .alignCenter {
@@ -89,6 +92,9 @@
 #OfficeUI .width50 {
   width: 50%;
 }
+#OfficeUI .borderTransparent {
+  border: 1px solid transparent;
+}
 #OfficeUI * {
   padding: 0;
   margin: 0;
@@ -115,9 +121,10 @@
 }
 #OfficeUI header .title {
   display: inline-block;
+  position: absolute;
   width: 100%;
   text-align: center;
-  z-index: 60;
+  z-index: 70;
 }
 #OfficeUI header .title > div {
   position: absolute;
@@ -137,24 +144,58 @@
 #OfficeUI header .ribbon {
   position: relative;
   background: white;
-  top: -23px;
-  height: 200px;
 }
-@media (min-width: 497px) {
-  #OfficeUI header .ribbon {
-    background: url("/OfficeUI.Beta/Resources/Images/Application/Backgrounds/Circuit.png") no-repeat scroll right top white;
-  }
+#OfficeUI header .ribbon .title {
+  z-index: 80;
 }
 #OfficeUI header .ribbon ul {
   padding: 0;
   margin: 0;
   position: relative;
-}
-#OfficeUI header .ribbon > ul {
-  border-bottom: 1px solid #d4d4d4;
-  top: 12px;
+  width: 100%;
   z-index: 70;
 }
-#OfficeUI header .ribbon ul li.tab-normal {
+#OfficeUI header .ribbon > ul {
+  background-color: white;
+  border-bottom: 1px solid #d4d4d4;
+  height: 52px;
+}
+@media screen and (min-width: 497px) {
+  #OfficeUI header .ribbon > ul {
+    background: url("/OfficeUI.Beta/Resources/Images/Application/Backgrounds/Circuit.png") no-repeat scroll right top white;
+  }
+}
+#OfficeUI header .ribbon ul li {
   display: inline-block;
+}
+#OfficeUI header .ribbon ul li div {
+  display: inline-block;
+  vertical-align: top;
+}
+#OfficeUI header .ribbon ul li.tab {
+  text-align: center;
+  text-transform: uppercase;
+}
+#OfficeUI header .ribbon ul li.tab.application {
+  color: #fff;
+  margin-right: 4px;
+  min-width: 52px;
+  padding: 0 3px 0 2px;
+}
+#OfficeUI header .ribbon ul li.tab-normal {
+  border: 1px solid transparent;
+  display: inline-block;
+  position: relative;
+  line-height: 23px;
+  padding: 0 13px 0 12px;
+  margin: 28px 2px 0 0;
+}
+#OfficeUI header .ribbon ul li .tab-contextual {
+  border: 1px solid transparent;
+}
+#OfficeUI header .ribbon ul li.tab:not(.application).active {
+  border-color: #d4d4d4 #d4d4d4 #fff;
+  border-style: solid;
+  border-width: 1px;
+  background-color: #fff;
 }

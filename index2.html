@@ -101,31 +101,19 @@
 
                         </div>
 
-                        <div class="container">
-
-                            <ul class="no-padding no-margin">
-                                <li class="tab contextual-group container"
-                                    ng-show="isActiveContextualGroup(contextual.Id)"
-                                    ng-repeat="contextual in OfficeUIRibbon.ContextualGroups"
-                                    ng-style="{'background-color': contextual.GroupColor}">
-
-                                    <div class="accent" ng-style="{'background-color': contextual.AccentColor}">&nbsp;</div>
-
-                                    <div class="group-title relative" ng-click="setActive(contextual.Tabs[0].Id, false);">
-                                        <div ng-style="{'color': contextual.GroupTextColor}">
+                        <div style="height: 52px;">
+                            <ul style="height: 100%;">
+                                <li style="height: 100%;" ng-show="isActiveContextualGroup(contextual.Id)" ng-repeat="contextual in OfficeUIRibbon.ContextualGroups" ng-style="{'background-color': contextual.GroupColor}">
+                                    <div style="height: 4px; width: 100%; display: block;" ng-style="{'background-color': contextual.AccentColor}">&nbsp;</div>
+                                    <div style="height: 15px; display: block;" ng-click="setActive(contextual.Tabs[0].Id, false);" style="display: block;">
+                                        <div style="text-transform: uppercase; font-size: 0.90em; text-align: center; width: 100%; height: 15px; top: 3px;" ng-style="{'color': contextual.GroupTextColor}">
                                             <span>{{contextual.Label}}</span>
                                         </div>
                                     </div>
-
-                                    <div class="tabs relative">
-                                        <ul>
-                                            <li id="tab.Id" class="tab tab-contextual center" ng-style="{color: setActiveTabColor(tab.Id, contextual.GroupTextColor)}"
-                                                ng-repeat="tab in contextual.Tabs"
-                                                ng-click="setActive(tab.Id)"
-                                                ng-class="{active: isActive(tab.Id)}"
-                                                stop-propagation="click">
-
-                                                <span>{{tab.Label}}</span>
+                                    <div style="width: 100%; margin-top: 9px; height: 27px;">
+                                        <ul style=" display: table; height: 25px;">
+                                            <li style="display: table-cell;" class="tab tab-contextual" id="tab.Id" ng-style="{color: setActiveTabColor(tab.Id, contextual.GroupTextColor)}" ng-repeat="tab in contextual.Tabs" ng-click="setActive(tab.Id)" ng-class="{active: isActive(tab.Id)}" stop-propagation="click">
+                                                <span style="padding-top: 3px; display: block;">{{tab.Label}}</span>
                                             </li>
                                         </ul>
                                     </div>
@@ -138,7 +126,7 @@
 
                 </ul>
 
-                <!--<div style="position: relative; height: 50px; z-index: 40; top:0px; background-color: rgb(250,250,250);">Demo</div>-->
+                <!--<div style="position: relative; height: 50px; z-index: 40; top:0px; background-color: rgb(200,200,200);">Demo</div>-->
             </div>
         </header>
 

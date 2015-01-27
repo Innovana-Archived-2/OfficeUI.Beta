@@ -37,6 +37,7 @@
   .width100 { width: 100%; }
   .width75 { width: 75%; }
   .width50 { width: 50%; }
+  .borderTransparent { border: 1px solid transparent; }
 
   /* ----------------------------------------------------------*/
   /* ---------->>> Styling for general elements. <<<-----------*/
@@ -55,8 +56,11 @@
    * @remarks
    *
    * Below we explain the z-index which are used in the header.
-   * - The title in the header, thus, not on the ribbon, does have a z-index value set to 60.
-   * - The title in the ribbon itself, does have a z-indec value set to 70.
+   * - The title in the header, thus, not on the ribbon, does have a z-index value set to 70.
+   *   (This does mean that the ribbon element itself should have a higher z-index to make sure it's on top of the normal title).
+   * - The title in the ribbon itself, does have a z-index value set to 80.
+   * - The tabs of the ribbon does have a z-index value set to 70.
+   * ToDo: Update the information about the z-index here since it's not correct.
    */
   header {
     .cursorDefault; .positionFixed; .noSelect; .width100; background: white; height: 52px;
@@ -66,7 +70,7 @@
 
     /* Defines the styling of the title area. */
     .title {
-      .displayInlineBlock; .width100; .alignCenter; z-index: 60;
+      .displayInlineBlock; .positionAbsolute; .width100; .alignCenter; z-index: 70;
 
       > div { .positionAbsolute; margin: 3px 0 0 5px; }
       > div img { margin: 0 5px 0 2px; }
@@ -77,14 +81,24 @@
 
     /* Defines the styling of the ribbon. */
     .ribbon {
-      .positionRelative; background: white; top: -23px; height: 200px; // ToDo: Remove the height property here. Only present for testing purposes.
+      .positionRelative; background: white;
+      .title { z-index: 80; } // Overwrite the z-index of the title property here. This is to make sure that the title sits on top of the ribbon.
+
+      ul { .noPadding; .noMargin; .positionRelative; .width100; z-index: 70; }
+      > ul { background-color: white; border-bottom: 1px solid @grayBorderColor; height: 52px; }
 
       // Provides a media query that only shows a background on the header when the width of the window is at least 497 pixels.
-      @media (min-width: 497px) { background: url("/OfficeUI.Beta/Resources/Images/Application/Backgrounds/Circuit.png") no-repeat scroll right top white; }
+      @media screen and (min-width: 497px) { > ul { background: url("/OfficeUI.Beta/Resources/Images/Application/Backgrounds/Circuit.png") no-repeat scroll right top white; } }
 
-      ul { .noPadding; .noMargin; .positionRelative; }
-      > ul { border-bottom: 1px solid @grayBorderColor; top: 12px; z-index: 70; }
-      ul li.tab-normal { .displayInlineBlock; }
+      // Provides styling for the normal tabs.
+      ul li { .displayInlineBlock; }
+      ul li div { .displayInlineBlock; vertical-align: top; }
+      ul li.tab { .alignCenter; text-transform: uppercase; }
+      ul li.tab.application { color: #fff; margin-right: 4px; min-width: 52px; padding: 0 3px 0 2px; }
+      ul li.tab-normal { .borderTransparent; .displayInlineBlock; .positionRelative; line-height: 23px; padding: 0 13px 0 12px; margin: 28px 2px 0 0; }
+      ul li .tab-contextual { border: 1px solid transparent; }
+      ul li.tab:not(.application).active { border-color: #d4d4d4 #d4d4d4 #fff; border-style: solid; border-width: 1px; background-color: #fff; }
+
     }
   }
 }
