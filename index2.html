@@ -31,6 +31,7 @@
     <!--<link rel="stylesheet" href="/OfficeUI.Beta/Resources/Stylesheets/OfficeUI.Core2.min.css" />-->
 
     <link rel="stylesheet" href="/OfficeUI.Beta/Resources/Stylesheets/OfficeUI.min.css" />
+    <link rel="stylesheet" href="/OfficeUI.Beta/Resources/Stylesheets/OfficeUI.Ribbon.ApplicationMenu.min.css" />
 
     <!--<link rel="stylesheet" href="/OfficeUI.Beta/Resources/Stylesheets/OfficeUI.Ribbon2.min.css" />-->
     <!--<link rel="stylesheet" href="/OfficeUI.Beta/Resources/Stylesheets/OfficeUI.Ribbon.ApplicationMenu2.min.css" />-->
@@ -74,53 +75,50 @@
         -->
         <header>
             <div class="title">
-                <div>
-                    <img id="{{icon.Id}}" alt="{{icon.Alt}}" ng-class="{'icon': !$first}" ng-repeat="icon in OfficeUI.Icons" ng-src="{{icon.Icon}}" />
-                </div>
+                <div><img id="{{icon.Id}}" alt="{{icon.Alt}}" ng-class="{'icon': !$first}" ng-repeat="icon in OfficeUI.Icons" ng-src="{{icon.Icon}}" /></div>
 
                 <span>{{OfficeUI.Title}}</span>
             </div>
 
+            <!-- Defines the ribbon component itself. -->
             <div class="ribbon">
                 <div class="title" ng-show="!isContextualGroupActive()">
-                    <div>
-                        <img id="{{icon.Id}}" alt="{{icon.Alt}}" ng-class="{'icon': !$first}" ng-repeat="icon in OfficeUI.Icons" ng-src="{{icon.Icon}}" />
-                    </div>
+                    <div><img id="{{icon.Id}}" alt="{{icon.Alt}}" ng-class="{'icon': !$first}" ng-repeat="icon in OfficeUI.Icons" ng-src="{{icon.Icon}}" /></div>
 
                     <span>{{OfficeUI.Title}}</span>
                 </div>
 
                 <ul>
                     <li>
-                        <div style="position: relative;">
+                        <div>
                             <div class="title" ng-show="isContextualGroupActive()">
-                                <div>
-                                    <img id="{{icon.Id}}" alt="{{icon.Alt}}" ng-class="{'icon': !$first}" ng-repeat="icon in OfficeUI.Icons" ng-src="{{icon.Icon}}" />
-                                </div>
+                                <div><img id="{{icon.Id}}" alt="{{icon.Alt}}" ng-class="{'icon': !$first}" ng-repeat="icon in OfficeUI.Icons" ng-src="{{icon.Icon}}" /></div>
 
-                                <span style="text-align: center;">{{OfficeUI.Title}}</span>
+                                <span>{{OfficeUI.Title}}</span>
                             </div>
+
+                            <!-- Defines the normal tabs of the ribbon. -->
                             <ul>
                                 <li class="tab tab-normal" ng-repeat="tab in OfficeUIRibbon.Tabs" ng-click="!$first && setActive(tab.Id);" ng-class="{application: $first, active: isActive(tab.Id)}">
-                                    {{tab.Label}}
+                                    <span>{{tab.Label}}</span>
                                 </li>
                             </ul>
 
                         </div>
 
-                        <div style="height: 52px; margin-left: -1px;">
-                            <ul style="height: 100%;">
-                                <li style="margin-right: 4px; height: 100%;" ng-show="isActiveContextualGroup(contextual.Id)" ng-repeat="contextual in OfficeUIRibbon.ContextualGroups" ng-style="{'background-color': contextual.GroupColor}">
-                                    <div style="height: 4px; width: 100%; display: block;" ng-style="{'background-color': contextual.AccentColor}">&nbsp;</div>
-                                    <div style="height: 15px; display: block;" ng-click="setActive(contextual.Tabs[0].Id, false);" style="display: block;">
-                                        <div style="margin-top: 3px; text-transform: uppercase; font-size: 0.90em; text-align: center; width: 100%; height: 15px; top: 3px;" ng-style="{'color': contextual.GroupTextColor}">
-                                            <span style="padding: 0 6px 0 6px; ">{{contextual.Label}}</span>
+                        <div class="contextual">
+                            <ul>
+                                <li ng-show="isActiveContextualGroup(contextual.Id)" ng-repeat="contextual in OfficeUIRibbon.ContextualGroups" ng-style="{'background-color': contextual.GroupColor}">
+                                    <div class="accent" ng-style="{'background-color': contextual.AccentColor}">&nbsp;</div>
+                                    <div class="label" ng-click="setActive(contextual.Tabs[0].Id, false);">
+                                        <div ng-style="{'color': contextual.GroupTextColor}">
+                                            <span>{{contextual.Label}}</span>
                                         </div>
                                     </div>
-                                    <div style="width: 100%; margin-top: 9px; height: 27px;">
-                                        <ul style=" display: table; height: 25px;">
-                                            <li style="display: table-cell;" class="tab tab-contextual" id="tab.Id" ng-style="{color: setActiveTabColor(tab.Id, contextual.GroupTextColor)}" ng-repeat="tab in contextual.Tabs" ng-click="setActive(tab.Id)" ng-class="{active: isActive(tab.Id)}" stop-propagation="click">
-                                                <span style="padding-top: 3px; padding-right: 13px; padding-left: 12px; display: block;">{{tab.Label}}</span>
+                                    <div class="tabs-holder">
+                                        <ul>
+                                            <li class="tab tab-contextual" id="tab.Id" ng-style="{color: setActiveTabColor(tab.Id, contextual.GroupTextColor)}" ng-repeat="tab in contextual.Tabs" ng-click="setActive(tab.Id)" ng-class="{active: isActive(tab.Id)}" stop-propagation="click">
+                                                <span>{{tab.Label}}</span>
                                             </li>
                                         </ul>
                                     </div>
@@ -132,8 +130,6 @@
                     </li>
 
                 </ul>
-
-                <!--<div style="position: relative; height: 50px; z-index: 40; top:0px; background-color: rgb(200,200,200);">Demo</div>-->
             </div>
         </header>
 

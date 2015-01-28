@@ -34,9 +34,10 @@
    * Below we explain the z-index which are used in the header.
    * - The title in the header, thus, not on the ribbon, does have a z-index value set to 70.
    *   (This does mean that the ribbon element itself should have a higher z-index to make sure it's on top of the normal title).
+   *
+   * - The ribbon itself has a z-index of 75, meaning it's hiding the title which is shown normally.
    * - The title in the ribbon itself, does have a z-index value set to 80.
    * - The tabs of the ribbon does have a z-index value set to 70.
-   * ToDo: Update the information about the z-index here since it's not correct.
    */
 }
 #OfficeUI .alignCenter {
@@ -59,6 +60,12 @@
 }
 #OfficeUI .displayBlock {
   display: block;
+}
+#OfficeUI .displayTable {
+  display: table;
+}
+#OfficeUI .displayTableCell {
+  display: table-cell;
 }
 #OfficeUI .positionAbsolute {
   position: absolute;
@@ -146,7 +153,9 @@
 }
 #OfficeUI header .ribbon {
   position: relative;
-  background: white;
+  z-index: 75;
+  /* Defines the styles for the normal tabs. */
+  /* Defines the style for the contextual tabs and groups. */
 }
 #OfficeUI header .ribbon .title {
   z-index: 80;
@@ -156,17 +165,16 @@
   margin: 0;
   position: relative;
   width: 100%;
-  z-index: 70;
 }
 #OfficeUI header .ribbon > ul {
-  background-color: white;
   border-bottom: 1px solid #d4d4d4;
   height: 52px;
 }
-@media screen and (min-width: 497px) {
-  #OfficeUI header .ribbon > ul {
-    background: url("/OfficeUI.Beta/Resources/Images/Application/Backgrounds/Circuit.png") no-repeat scroll right top white;
-  }
+#OfficeUI header .ribbon > ul > li > div {
+  position: relative;
+}
+#OfficeUI header .ribbon > ul > li > div .title span {
+  text-align: center;
 }
 #OfficeUI header .ribbon ul li {
   display: inline-block;
@@ -190,15 +198,63 @@
   display: inline-block;
   position: relative;
   line-height: 23px;
-  padding: 0 13px 0 12px;
   margin: 28px 2px 0 0;
 }
-#OfficeUI header .ribbon ul li .tab-contextual {
-  border: 1px solid transparent;
+#OfficeUI header .ribbon ul li .tab span {
+  padding: 0 13px 0 12px;
 }
-#OfficeUI header .ribbon ul li.tab:not(.application).active {
+#OfficeUI header .ribbon .contextual {
+  height: 52px;
+  margin-left: -1px;
+}
+#OfficeUI header .ribbon .contextual ul li {
+  margin-right: 4px;
+  height: 100%;
+}
+#OfficeUI header .ribbon .contextual ul li .accent {
+  width: 100%;
+  display: block;
+  height: 4px;
+}
+#OfficeUI header .ribbon .contextual ul li .label {
+  display: block;
+  height: 24px;
+}
+#OfficeUI header .ribbon .contextual ul li .label div {
+  text-align: center;
+  font-size: 0.90em;
+  height: 15px;
+  text-transform: uppercase;
+  margin-top: 3px;
+  width: 100%;
+}
+#OfficeUI header .ribbon .contextual ul li .label div span {
+  padding: 0 6px 0 6px;
+}
+#OfficeUI header .ribbon .contextual ul li .tabs-holder {
+  width: 100%;
+  height: 24px;
+}
+#OfficeUI header .ribbon .contextual ul li .tabs-holder ul {
+  display: table;
+}
+#OfficeUI header .ribbon .contextual ul li .tabs-holder .tab-contextual {
+  display: table-cell;
+  border: 1px solid transparent;
+  height: 23px;
+}
+#OfficeUI header .ribbon .contextual ul li .tabs-holder .tab-contextual span {
+  display: block;
+  padding: 3px 13px 0 12px;
+}
+#OfficeUI header .ribbon .contextual ul li .tabs-holder .tab:not(.application).active {
   border-color: #d4d4d4 #d4d4d4 #fff;
   border-style: solid;
   border-width: 1px;
   background-color: #fff;
+}
+@media screen and (min-width: 497px) {
+  #OfficeUI header .ribbon > ul {
+    background: url("/OfficeUI.Beta/Resources/Images/Application/Backgrounds/Circuit.png") no-repeat scroll right top white;
+  }
 }
