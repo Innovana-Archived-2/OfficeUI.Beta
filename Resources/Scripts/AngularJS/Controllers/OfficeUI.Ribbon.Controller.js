@@ -19,12 +19,7 @@ var OfficeUIRibbon = angular.module('OfficeUIRibbon');
  *    </file>
  *  </example>
  */
-OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', function($scope, $http) {
-    var controllerData = this;
-
-    controllerData.activeContextualGroups = []; // Defines a collection of contextual groups which are being active.
-    controllerData.activeContextualTabs = null; // Defines the current active contextual tab.
-
+OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', 'OfficeUIRibbonService', function($scope, $http, OfficeUIRibbonService) {
     /* @ngdoc Function
      * @name Initialization
      *
@@ -46,9 +41,12 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', function($scope,
      */
     $http.get($.fn.OfficeUI.ribbonDataFile)
         .success(function(data) {
-            controllerData.Tabs = data.Tabs;
-            controllerData.ContextualGroups = data.ContextualGroups;
-            controllerData.activeTab = data.Tabs[1].Id;
+            //controllerData.Tabs = data.Tabs;
+            //controllerData.ContextualGroups = data.ContextualGroups;
+            //controllerData.activeTab = data.Tabs[1].Id;
+
+            OfficeUIRibbonService.setServiceInstance(data);
+            $scope.OfficeUIRibbon = OfficeUIRibbonService.getServiceInstance();
         })
         .error(function(data) { console.error('An error occured while loading the file \'' + $.fn.OfficeUI.ribbonDataFile + '\' file. '); })
 
@@ -74,7 +72,7 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', function($scope,
      *  </example>
      */
     $scope.setActive = function(tabId) {
-        controllerData.activeTab = tabId;
+        OfficeUIRibbonService.setActive(tabId);
     }
 
     /* @ngdoc Function
@@ -99,154 +97,6 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', function($scope,
      *  </example>
      */
     $scope.isActive = function(tabId) {
-        return controllerData.activeTab == tabId;
-    }
-
-    /* @ngdoc Function
-     * @name isContextualGroupActive
-     *
-     * @description
-     * Checks if any contextual group is active.
-     *
-     * @element ANY
-     *
-     * @example
-     *  <example module="isContextualGroupActiveExample" deps="OfficeUI.min.js">
-     *    <file name="index.html">
-     *      <body ng-controller="OfficeUIRibbon as OfficeUIRibbon">
-     *        <div ng-repeat="tab in OfficeUIRibbon.tabs" ng-show="isContextualTabActive()">
-     *        </div>
-     *      </body>
-     *    </file>
-     *  </example>
-     */
-    $scope.isContextualGroupActive = function() {
-        return controllerData.activeContextualGroups.length > 0;
-    }
-
-    /* @ngdoc Function
-     * @name activateContextualGroup
-     *
-     * @description
-     * Activate a contextual group.
-     *
-     * @remarks
-     * This method is only executed when the contextual group to active is not acivated yet.
-     *
-     * @parameters
-     * contextualGroupId        The id of the contextual group which should be activated.
-     *
-     * @element ANY
-     *
-     * @example
-     *  <example module="activateContextualGroupExample" deps="OfficeUI.min.js">
-     *    <file name="index.html">
-     *      <body ng-controller="OfficeUIRibbon as OfficeUIRibbon">
-     *        <div ng-repeat="tab in OfficeUIRibbon.tabs" ng-show="activateContextualGroup('contextualTabId')">
-     *        </div>
-     *      </body>
-     *    </file>
-     *  </example>
-     */
-    $scope.activateContextualGroup = function(contextualGroupId) {
-        if (!$scope.isActiveContextualGroup(contextualGroupId)) { controllerData.activeContextualGroups.push(contextualGroupId); }
-    }
-
-    /* @ngdoc Function
-     * @name deactivateContextualGroup
-     *
-     * @description
-     * Activate a contextual group.
-     *
-     * @parameters
-     * contextualGroupId        The id of the contextual group which should be deactivated.
-     *
-     * @element ANY
-     *
-     * @example
-     *  <example module="deactivateContextualGroupExample" deps="OfficeUI.min.js">
-     *    <file name="index.html">
-     *      <body ng-controller="OfficeUIRibbon as OfficeUIRibbon">
-     *        <div ng-repeat="tab in OfficeUIRibbon.tabs" ng-show="deactivateContextualGroup('contextualTabId')">
-     *        </div>
-     *      </body>
-     *    </file>
-     *  </example>
-     */
-    $scope.deactivateContextualGroup = function(contextualGroupId) {
-        // Gets the group that has been deactivated.
-        var deactivedContextualGroup = $(controllerData.ContextualGroups).filter(function(index,item) {
-            return item.Id == contextualGroupId;
-        });
-
-        // Checks if the contextual group which is being deactivated does hold a tab which is currently set active.
-        var holdsActiveTab = $(deactivedContextualGroup[0].Tabs).filter(function(index,item) {
-            return item.Id == controllerData.activeTab;
-        });
-
-        // If the contextual tab which is being hidden does have an active tab, change the active tab to the first tab on the ribbon.
-        // This is to make sure that a tab stays selected.
-        if (holdsActiveTab.length > 0) {
-            $scope.setActive(controllerData.Tabs[1].Id);
-        }
-
-        controllerData.activeContextualGroups = jQuery.grep(controllerData.activeContextualGroups, function(value) {
-            return value != contextualGroupId;
-        });
-    }
-
-    /* @ngdoc Function
-     * @name isActiveContextualGroup
-     *
-     * @description
-     * Checks if a contextual group is active.
-     *
-     * @parameters
-     * contextualGroupId        The id of the contextual group which should be checked against activation.
-     *
-     * @element ANY
-     *
-     * @example
-     *  <example module="isActiveContextualGroupExample" deps="OfficeUI.min.js">
-     *    <file name="index.html">
-     *      <body ng-controller="OfficeUIRibbon as OfficeUIRibbon">
-     *        <div ng-repeat="tab in OfficeUIRibbon.tabs" ng-show="isActiveContextualGroup('contextualTabId')">
-     *        </div>
-     *      </body>
-     *    </file>
-     *  </example>
-     */
-    $scope.isActiveContextualGroup = function(contextualGroupId) {
-        var items = $(controllerData.activeContextualGroups).filter(function(index,item) {
-            return item == contextualGroupId;
-        });
-
-        return items.length > 0;
-    }
-
-    /* @ngdoc Function
-     * @name setTabColor
-     *
-     * @description
-     * Sets the color of a given tab.
-     *
-     * @parameters
-     * tabId        The id of the tab for which to set the color.
-     * tabColor     The color that the tab should have.
-     *
-     * @element ANY
-     *
-     * @example
-     *  <example module="setActiveTabColorExample" deps="OfficeUI.min.js">
-     *    <file name="index.html">
-     *      <body ng-controller="OfficeUIRibbon as OfficeUIRibbon">
-     *        <div ng-repeat="tab in OfficeUIRibbon.tabs" ng-style="{color: setActiveTabColor('myTab', '#bebe32')}>
-     *        </div>
-     *      </body>
-     *    </file>
-     *  </example>
-     */
-    $scope.setActiveTabColor = function(tabId, tabColor) {
-        if (controllerData.activeTab == tabId) { return tabColor; }
+        return OfficeUIRibbonService.isActive(tabId);
     }
 }]);
