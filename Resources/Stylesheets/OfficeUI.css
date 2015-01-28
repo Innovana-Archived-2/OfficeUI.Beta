@@ -141,6 +141,9 @@
   margin-top: 6px;
   margin-right: 2px;
 }
+#OfficeUI header ul li .title {
+  text-align: left;
+}
 #OfficeUI header .ribbon {
   position: relative;
   background: white;
