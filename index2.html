@@ -108,7 +108,7 @@
 
                         <div class="contextual">
                             <ul>
-                                <li ng-show="isActiveContextualGroup(contextual.Id)" ng-repeat="contextual in OfficeUIRibbon.ContextualGroups" ng-style="{'background-color': contextual.GroupColor}">
+                                <li class="context-group" ng-show="isActiveContextualGroup(contextual.Id)" ng-repeat="contextual in OfficeUIRibbon.ContextualGroups" ng-style="{'background-color': contextual.GroupColor}">
                                     <div class="accent" ng-style="{'background-color': contextual.AccentColor}">&nbsp;</div>
                                     <div class="label" ng-click="setActive(contextual.Tabs[0].Id, false);">
                                         <div ng-style="{'color': contextual.GroupTextColor}">

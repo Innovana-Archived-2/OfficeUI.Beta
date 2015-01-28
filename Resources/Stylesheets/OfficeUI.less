@@ -123,3 +123,19 @@
     }
   }
 }
+
+/* ------------------------------------------------*/
+/* ---------->>> Animations styling. <<<-----------*/
+/* ------------------------------------------------*/
+/*
+ * @remarks
+ *
+ * Various sections of the website are animated. However, in the OfficeUI suite, not everything can be accomplished
+ * using plain CSS3 transitions. Therefore, aside from the animations which are stored here, we also include some
+ * jQuery animations.
+ */
+.context-group.ng-hide-add.ng-hide-add-active { -webkit-transition: 0.0s linear all; transition: 0.0s linear all; }
+.context-group.ng-hide-remove.ng-hide-remove-active { -webkit-transition: 0.2s linear all; transition: 0.2s linear all; }
+
+.context-group { opacity: 1; }
+.context-group.ng-hide { opacity: 0; }
