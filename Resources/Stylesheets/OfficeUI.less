@@ -100,6 +100,7 @@
       ul li.tab.application { color: #fff; margin-right: 4px; min-width: 52px; padding: 0 3px 0 2px; }
       ul li.tab-normal { .borderTransparent; .displayInlineBlock; .positionRelative; line-height: 23px; margin: 28px 2px 0 0; }
       ul li .tab span { padding: 0 13px 0 12px; }
+      ul li .tab:not(.application).active { border-color: #d4d4d4 #d4d4d4 #fff; border-style: solid; border-width: 1px; background-color: #fff; }
 
       /* Defines the style for the contextual tabs and groups. */
       .contextual {
@@ -114,7 +115,7 @@
         ul li .tabs-holder ul { .displayTable; }
         ul li .tabs-holder .tab-contextual { .displayTableCell; border: 1px solid transparent; height: 23px; }
         ul li .tabs-holder .tab-contextual span { .displayBlock; padding: 3px 13px 0 12px; }
-        ul li .tabs-holder .tab:not(.application).active { border-color: #d4d4d4 #d4d4d4 #fff; border-style: solid; border-width: 1px; background-color: #fff; }
+        ul li .tab:not(.application).active { border-color: #d4d4d4 #d4d4d4 #fff; border-style: solid; border-width: 1px; background-color: #fff; }
       }
 
       // Provides a media query that only shows a background on the header when the width of the window is at least 497 pixels.

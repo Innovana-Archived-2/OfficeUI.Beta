@@ -203,6 +203,12 @@
 #OfficeUI header .ribbon ul li .tab span {
   padding: 0 13px 0 12px;
 }
+#OfficeUI header .ribbon ul li .tab:not(.application).active {
+  border-color: #d4d4d4 #d4d4d4 #fff;
+  border-style: solid;
+  border-width: 1px;
+  background-color: #fff;
+}
 #OfficeUI header .ribbon .contextual {
   height: 52px;
   margin-left: -1px;
@@ -247,7 +253,7 @@
   display: block;
   padding: 3px 13px 0 12px;
 }
-#OfficeUI header .ribbon .contextual ul li .tabs-holder .tab:not(.application).active {
+#OfficeUI header .ribbon .contextual ul li .tab:not(.application).active {
   border-color: #d4d4d4 #d4d4d4 #fff;
   border-style: solid;
   border-width: 1px;
