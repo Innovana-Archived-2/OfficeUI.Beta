@@ -19,7 +19,7 @@ var OfficeUI = angular.module('OfficeUI');
  *    </file>
  *  </example>
  */
-OfficeUI.controller('OfficeUI', ['$scope', '$http', function($scope, $http) {
+OfficeUI.controller('OfficeUI', ['$scope', '$http', 'OfficeUIRibbonService', function($scope, $http, OfficeUIRibbonService) {
     var controllerData = this;
 
     /* @ngdoc Function
@@ -46,4 +46,8 @@ OfficeUI.controller('OfficeUI', ['$scope', '$http', function($scope, $http) {
             controllerData.Icons = data.Icons;
         })
         .error(function(data) { console.error('An error occured while loading the file \'' + $.fn.OfficeUI.applicationDataFile + '\' file. '); });
+
+    $scope.setActive = function(tabId) {
+        OfficeUIRibbonService.setActive(tabId);
+    }
 }]);
