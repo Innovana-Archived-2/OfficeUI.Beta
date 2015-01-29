@@ -891,7 +891,27 @@
       [
         {
           "Id": "tabDrawingTools_Format",
-          "Label": "Format"
+          "Label": "Format",
+          "Groups": [
+            {
+              "Legend": "Insert Shapes"
+            },
+            {
+              "Legend": "Shape Styles"
+            },
+            {
+              "Legend": "WordArt Styles"
+            },
+            {
+              "Legend": "Text"
+            },
+            {
+              "Legend": "Arrange"
+            },
+            {
+              "Legend": "Size"
+            }
+          ]
         }
       ]
     },
@@ -905,11 +925,45 @@
       [
         {
           "Id": "tabTableTools_Design",
-          "Label": "Design"
+          "Label": "Design",
+          "Groups": [
+            {
+              "Legend": "Table Style Options"
+            },
+            {
+              "Legend": "Table Styles"
+            },
+            {
+              "Legend": "Borders"
+            }
+          ]
         },
         {
           "Id": "tabTableTools_Layout",
-          "Label": "Layout"
+          "Label": "Layout",
+          "Groups": [
+            {
+              "Legend": "Table"
+            },
+            {
+              "Legend": "Draw"
+            },
+            {
+              "Legend": "Rows & Columns"
+            },
+            {
+              "Legend": "Merge"
+            },
+            {
+              "Legend": "Cell Size"
+            },
+            {
+              "Legend": "Alignment"
+            },
+            {
+              "Legend": "Data"
+            }
+          ]
         }
       ]
     },
@@ -923,11 +977,42 @@
       [
         {
           "Id": "tabSmartTools_Design",
-          "Label": "Design"
+          "Label": "Design",
+          "Groups": [
+            {
+              "Legend": "Create Graphic"
+            },
+            {
+              "Legend": "Layouts"
+            },
+            {
+              "Legend": "SmartArt Styles"
+            },
+            {
+              "Legend": "Reset"
+            }
+          ]
         },
         {
           "Id": "tabSmartTools_Format",
-          "Label": "Format"
+          "Label": "Format",
+          "Groups": [
+            {
+              "Legend": "Shapes"
+            },
+            {
+              "Legend": "Shape Styles"
+            },
+            {
+              "Legend": "WordArt Styles"
+            },
+            {
+              "Legend": "Arrange"
+            },
+            {
+              "Legend": "Size"
+            }
+          ]
         }
       ]
     }

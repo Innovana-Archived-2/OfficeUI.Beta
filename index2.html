@@ -136,6 +136,7 @@
                     <li>
                         <ul>
                             <li ng-repeat="tab in OfficeUIRibbon.Tabs" ng-show="isActive(tab.Id)" stop-propagation="click">
+                                <!-- Defines the contents of the ribbon. -->
                                 <div>
                                     <div class="group" ng-repeat-start="group in tab.Groups">
 
@@ -143,9 +144,7 @@
                                     </div>
 
                                     <!-- Defines the vertical 'pipe' sign. -->
-                                    <div class="pipe" ng-repeat-end>
-
-                                    </div>
+                                    <div class="pipe" ng-repeat-end></div>
                                 </div>
 
                                 <div class="icon collapse" ng-click="toggleRibbonState()">
@@ -157,7 +156,17 @@
                             <li ng-repeat="contextual in OfficeUIRibbon.ContextualGroups" ng-show="contextualGroupHasAnActiveTab(contextual)">
                                 <ul>
                                     <li ng-repeat="contextualTab in contextual.Tabs" ng-show="isActive(contextualTab.Id)">
-                                        {{contextualTab.Label}}
+                                        <!-- Defines the contents of the ribbon. -->
+                                        <div>
+                                            <div class="group" ng-repeat-start="group in contextualTab.Groups">
+
+                                                <div class="legend">{{group.Legend}}</div>
+                                            </div>
+
+                                            <!-- Defines the vertical 'pipe' sign. -->
+                                            <div class="pipe" ng-repeat-end></div>
+                                        </div>
+
                                         <div class="icon collapse" ng-click="toggleRibbonState()">
                                             <img src="/OfficeUI.Beta/Resources/Images/Ribbon/Built-In/Collapse.png" class="pin-icon" ng-if="isRibbonShowed()" alt="Toggle Ribbon State" />
                                             <img src="/OfficeUI.Beta/Resources/Images/Ribbon/Built-In/Pin.png" class="pin-icon" ng-if="isRibbonVisible()" alt="Toggle Ribbon State" />
