@@ -132,6 +132,10 @@ OfficeUI.controller('OfficeUI', ['$scope', '$http', 'OfficeUIRibbonService', fun
      * See the OfficeUIRibbonService source code for a more detailed explanation of this function.
      */
     $scope.setActiveTabColor = function(tabId, tabColor) {
-        return OfficeUIRibbonService.setActiveTabColor(tabId, tabColor);
+        var serviceInstance = OfficeUIRibbonService.getServiceInstance();
+
+        if (serviceInstance.state == serviceInstance.ribbonStates.Showed || serviceInstance.state == serviceInstance.ribbonStates.Visible) {
+            return OfficeUIRibbonService.setActiveTabColor(tabId, tabColor);
+        }
     }
 }]);

@@ -146,6 +146,7 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', 'OfficeUIRibbonS
      * element with the 'stop-propagation' directive.
      */
     $(window).on('click', function(e) {
+        console.log('clicked.');
         if ($scope.OfficeUIRibbon.state == $scope.OfficeUIRibbon.ribbonStates.Visible) {
             $scope.OfficeUIRibbon.state = $scope.OfficeUIRibbon.ribbonStates.Hidden;
 

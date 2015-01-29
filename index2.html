@@ -100,7 +100,7 @@
 
                             <!-- Defines the normal tabs of the ribbon. -->
                             <ul>
-                                <li class="tab tab-normal" ng-repeat="tab in OfficeUIRibbon.Tabs" ng-click="!$first && setActive(tab.Id);" ng-class="{application: $first, active: isActive(tab.Id), 'visible-border': isRibbonShowed() || isRibbonVisible(), 'invisible-border': isRibbonHidden()}" stop-propagation="click">
+                                <li class="tab tab-normal" ng-repeat="tab in OfficeUIRibbon.Tabs" ng-click="!$first && setActive(tab.Id);" ng-class="{application: $first, active: isActive(tab.Id) && (isRibbonShowed() || isRibbonVisible()), 'visible-border': isRibbonShowed() || isRibbonVisible(), 'invisible-border': isRibbonHidden()}" stop-propagation="click">
                                     <span>{{tab.Label}}</span>
                                 </li>
                             </ul>
@@ -118,7 +118,7 @@
                                     </div>
                                     <div class="tabs-holder">
                                         <ul>
-                                            <li class="tab tab-contextual" id="tab.Id" ng-style="{color: setActiveTabColor(tab.Id, contextual.GroupTextColor)}" ng-repeat="tab in contextual.Tabs" ng-click="setActive(tab.Id)" ng-class="{active: isActive(tab.Id), 'visible-border': isRibbonShowed() || isRibbonVisible(), 'invisible-border': isRibbonHidden()}" stop-propagation="click">
+                                            <li class="tab tab-contextual" id="tab.Id" ng-style="{color: setActiveTabColor(tab.Id, contextual.GroupTextColor)}" ng-repeat="tab in contextual.Tabs" ng-click="setActive(tab.Id)" ng-class="{active: isActive(tab.Id) && (isRibbonShowed() || isRibbonVisible()), 'visible-border': isRibbonShowed() || isRibbonVisible(), 'invisible-border': isRibbonHidden()}" stop-propagation="click">
                                                 <span>{{tab.Label}}</span>
                                             </li>
                                         </ul>
@@ -135,7 +135,7 @@
                 <ul class="tabs-content animate-hide-show-ribbon" ng-show="isRibbonShowed() || isRibbonVisible()" stop-propagation="click">
                     <li>
                         <ul>
-                            <li ng-repeat="tab in OfficeUIRibbon.Tabs" ng-show="isActive(tab.Id)">
+                            <li ng-repeat="tab in OfficeUIRibbon.Tabs" ng-show="isActive(tab.Id)" stop-propagation="click">
                                 {{tab.Label}}
                                 <div class="icon collapse" ng-click="toggleRibbonState()">
                                     <img src="/OfficeUI.Beta/Resources/Images/Ribbon/Built-In/Collapse.png" class="pin-icon" ng-if="isRibbonShowed()" alt="Toggle Ribbon State" />
@@ -145,9 +145,9 @@
 
                             <li ng-repeat="contextual in OfficeUIRibbon.ContextualGroups" ng-show="contextualGroupHasAnActiveTab(contextual)">
                                 <ul>
-                                    <li ng-repeat="contextualTab in contextual.Tabs" ng-show="isActive(contextualTab.Id)" ng-click="toggleRibbonState()">
+                                    <li ng-repeat="contextualTab in contextual.Tabs" ng-show="isActive(contextualTab.Id)">
                                         {{contextualTab.Label}}
-                                        <div class="icon collapse">
+                                        <div class="icon collapse" ng-click="toggleRibbonState()">
                                             <img src="/OfficeUI.Beta/Resources/Images/Ribbon/Built-In/Collapse.png" class="pin-icon" ng-if="isRibbonShowed()" alt="Toggle Ribbon State" />
                                             <img src="/OfficeUI.Beta/Resources/Images/Ribbon/Built-In/Pin.png" class="pin-icon" ng-if="isRibbonVisible()" alt="Toggle Ribbon State" />
                                         </div>
@@ -162,26 +162,26 @@
         </header>
     </div>
 
-    <div style="font-family: 'Segoe UI', serif; font-size: 0.75em; padding-top: 150px; padding-left: 5px; padding-right: 5px;" stop-propagation="click">
+    <div style="font-family: 'Segoe UI', serif; font-size: 0.75em; padding-top: 150px; padding-left: 5px; padding-right: 5px;">
         <h2>Functions</h2>
         <h3>Tabs</h3>
-        <a href="#" ng-click="setActive('tabHome')" style="padding-right: 40px;">Activate Tab 'Home'</a>
-        <a href="#" ng-click="setActive('tabSendReceive')" style="padding-right: 40px;">Activate Tab 'Send / Receive'</a>
-        <a href="#" ng-click="setActive('tabFolder')" style="padding-right: 40px;">Activate Tab 'Folder'</a>
-        <a href="#" ng-click="setActive('tabView')" style="padding-right: 40px;">Activate Tab 'View'</a>
+        <a href="#" ng-click="setActive('tabHome')" style="padding-right: 40px;" stop-propagation="click">Activate Tab 'Home'</a>
+        <a href="#" ng-click="setActive('tabSendReceive')" style="padding-right: 40px;" stop-propagation="click">Activate Tab 'Send / Receive'</a>
+        <a href="#" ng-click="setActive('tabFolder')" style="padding-right: 40px;" stop-propagation="click">Activate Tab 'Folder'</a>
+        <a href="#" ng-click="setActive('tabView')" style="padding-right: 40px;" stop-propagation="click">Activate Tab 'View'</a>
 
         <br/><br/>
 
         <h3>Contextual Tabs</h3>
-        <a href="#" ng-click="activateContextualGroup('contextualGroupDrawingTools')" style="padding-right: 40px;">Activate Drawing Tools</a>
-        <a href="#" ng-click="activateContextualGroup('contextualGroupTableTools')" style="padding-right: 40px;">Activate Table Tools</a>
-        <a href="#" ng-click="activateContextualGroup('contextualGroupSmartTools')" style="padding-right: 40px;">Activate Smart Tools</a>
+        <a href="#" ng-click="activateContextualGroup('contextualGroupDrawingTools')" style="padding-right: 40px;" stop-propagation="click">Activate Drawing Tools</a>
+        <a href="#" ng-click="activateContextualGroup('contextualGroupTableTools')" style="padding-right: 40px;" stop-propagation="click">Activate Table Tools</a>
+        <a href="#" ng-click="activateContextualGroup('contextualGroupSmartTools')" style="padding-right: 40px;" stop-propagation="click">Activate Smart Tools</a>
 
         <br/>
 
-        <a href="#" ng-click="deactivateContextualGroup('contextualGroupDrawingTools')" style="padding-right: 40px;">Deactivate Drawing Tools</a>
-        <a href="#" ng-click="deactivateContextualGroup('contextualGroupTableTools')" style="padding-right: 40px;">Deactivate Table Tools</a>
-        <a href="#" ng-click="deactivateContextualGroup('contextualGroupSmartTools')" style="padding-right: 40px;">Deactivate Smart Tools</a>
+        <a href="#" ng-click="deactivateContextualGroup('contextualGroupDrawingTools')" style="padding-right: 40px;" stop-propagation="click">Deactivate Drawing Tools</a>
+        <a href="#" ng-click="deactivateContextualGroup('contextualGroupTableTools')" style="padding-right: 40px;" stop-propagation="click">Deactivate Table Tools</a>
+        <a href="#" ng-click="deactivateContextualGroup('contextualGroupSmartTools')" style="padding-right: 40px;" stop-propagation="click">Deactivate Smart Tools</a>
     </div>
 
 <!-- Provides some functions to configure the OfficeUI application. -->
