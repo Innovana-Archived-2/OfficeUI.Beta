@@ -265,11 +265,17 @@
   display: block;
   padding: 3px 13px 0 12px;
 }
-#OfficeUI header .ribbon .contextual ul li .tab:not(.application).active {
+#OfficeUI header .ribbon .contextual ul li .tab:not(.application).visible-border.active {
   border-color: #d4d4d4 #d4d4d4 #fff;
   border-style: solid;
   border-width: 1px;
   background-color: #fff;
+}
+#OfficeUI header .ribbon .contextual ul li .tab:not(.application).invisible-border.active {
+  border-color: transparent transparent #fff;
+  border-style: solid;
+  border-width: 1px;
+  background-color: transparent;
 }
 @media screen and (min-width: 497px) {
   #OfficeUI header .ribbon > ul.tabs {
@@ -282,6 +288,11 @@
   border-bottom: 1px solid #d4d4d4;
   height: 92px;
   z-index: 70;
+}
+#OfficeUI header .ribbon ul.tabs-content ul,
+#OfficeUI header .ribbon ul.tabs-content li {
+  height: 100%;
+  position: relative;
 }
 #OfficeUI header .ribbon ul.tabs-content .collapse {
   text-align: center;

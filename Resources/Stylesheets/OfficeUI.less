@@ -120,7 +120,8 @@
         ul li .tabs-holder ul { .displayTable; }
         ul li .tabs-holder .tab-contextual { .displayTableCell; border: 1px solid transparent; height: 23px; }
         ul li .tabs-holder .tab-contextual span { .displayBlock; padding: 3px 13px 0 12px; }
-        ul li .tab:not(.application).active { border-color: #d4d4d4 #d4d4d4 #fff; border-style: solid; border-width: 1px; background-color: #fff; }
+        ul li .tab:not(.application).visible-border.active { border-color: #d4d4d4 #d4d4d4 #fff; border-style: solid; border-width: 1px; background-color: #fff; }
+        ul li .tab:not(.application).invisible-border.active { border-color: transparent transparent #fff; border-style: solid; border-width: 1px; background-color: transparent; }
       }
 
       // Provides a media query that only shows a background on the header when the width of the window is at least 497 pixels.
@@ -130,6 +131,7 @@
       ul.tabs-content {
         .positionRelative; background-color: white; border-bottom: 1px solid @grayBorderColor; height: 92px; z-index: 70;
 
+        ul, li { height: 100%; .positionRelative; }
         .collapse { .alignCenter; .positionAbsolute; bottom: 0; height: 17px; padding-bottom: 1px; right: 0; width: 29px; }
       }
     }

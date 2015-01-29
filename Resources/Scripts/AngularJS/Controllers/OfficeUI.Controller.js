@@ -93,6 +93,7 @@ OfficeUI.controller('OfficeUI', ['$scope', '$http', 'OfficeUIRibbonService', fun
     /**
      * @description
      * Check if a contextual group is being active.
+     * By active, we mean that that contextual group is being showed.
      *
      * @remarks
      * See the OfficeUIRibbonService source code for a more detailed explanation of this function.

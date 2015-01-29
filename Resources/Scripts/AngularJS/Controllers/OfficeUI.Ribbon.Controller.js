@@ -119,4 +119,27 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', 'OfficeUIRibbonS
         if ($scope.OfficeUIRibbon.state == ribbonStates.Showed) { $scope.OfficeUIRibbon.state = ribbonStates.Hidden; }
         else if ($scope.OfficeUIRibbon.state == ribbonStates.Visible) { $scope.OfficeUIRibbon.state = ribbonStates.Showed; }
     }
+
+    /**
+     * @ngdoc Function
+     * @name contextualGroupHasAnActiveTab
+     *
+     * @description
+     * Check if a given contextual group has any tab which has been set as active.
+     *
+     * @param contextualGroup
+     *        The contextual group that should be checked for an active tab.
+     *
+     * @returns {boolean} True if any active tab has been found, false otherwise.
+     */
+    $scope.contextualGroupHasAnActiveTab = function(contextualGroup) {
+        if ($scope.OfficeUIRibbon.activeContextualGroups.length == 0) { return false; }
+        else {
+            var activeTab = $.grep(contextualGroup.Tabs, function(tab) {
+                return tab.Id == $scope.OfficeUIRibbon.activeTab;
+            });
+
+            return activeTab.length > 0;
+        }
+    }
 }]);

@@ -118,7 +118,7 @@
                                     </div>
                                     <div class="tabs-holder">
                                         <ul>
-                                            <li class="tab tab-contextual" id="tab.Id" ng-style="{color: setActiveTabColor(tab.Id, contextual.GroupTextColor)}" ng-repeat="tab in contextual.Tabs" ng-click="setActive(tab.Id)" ng-class="{active: isActive(tab.Id)}" stop-propagation="click">
+                                            <li class="tab tab-contextual" id="tab.Id" ng-style="{color: setActiveTabColor(tab.Id, contextual.GroupTextColor)}" ng-repeat="tab in contextual.Tabs" ng-click="setActive(tab.Id)" ng-class="{active: isActive(tab.Id), 'visible-border': isRibbonShowed(), 'invisible-border': isRibbonHidden()}" stop-propagation="click">
                                                 <span>{{tab.Label}}</span>
                                             </li>
                                         </ul>
@@ -133,11 +133,29 @@
 
                 <!-- This UL element does shows the content of the tab which is currently opened. -->
                 <ul class="tabs-content animate-hide-ribbon" ng-show="isRibbonShowed()">
-                    <li class="absolute" ng-repeat="tabContents in OfficeUIRibbon.Tabs" ng-show="isActive(tabContents.Id)" ng-click="toggleRibbonState()">
-                        <div class="icon collapse">
-                            <img src="/OfficeUI.Beta/Resources/Images/Ribbon/Built-In/Collapse.png" class="pin-icon" ng-if="isRibbonShowed()" alt="Toggle Ribbon State" />
-                            <img src="/OfficeUI.Beta/Resources/Images/Ribbon/Built-In/Pin.png" class="pin-icon" ng-if="isRibbonVisible()" alt="Toggle Ribbon State" />
-                        </div>
+                    <li>
+                        <ul>
+                            <li ng-repeat="tab in OfficeUIRibbon.Tabs" ng-show="isActive(tab.Id)" ng-click="toggleRibbonState()">
+                                {{tab.Label}}
+                                <div class="icon collapse">
+                                    <img src="/OfficeUI.Beta/Resources/Images/Ribbon/Built-In/Collapse.png" class="pin-icon" ng-if="isRibbonShowed()" alt="Toggle Ribbon State" />
+                                    <img src="/OfficeUI.Beta/Resources/Images/Ribbon/Built-In/Pin.png" class="pin-icon" ng-if="isRibbonVisible()" alt="Toggle Ribbon State" />
+                                </div>
+                            </li>
+
+                            <li ng-repeat="contextual in OfficeUIRibbon.ContextualGroups" ng-show="contextualGroupHasAnActiveTab(contextual)">
+                                <ul>
+                                    <li ng-repeat="contextualTab in contextual.Tabs" ng-show="isActive(contextualTab.Id)" ng-click="toggleRibbonState()">
+                                        {{contextualTab.Label}}
+                                        <div class="icon collapse">
+                                            <img src="/OfficeUI.Beta/Resources/Images/Ribbon/Built-In/Collapse.png" class="pin-icon" ng-if="isRibbonShowed()" alt="Toggle Ribbon State" />
+                                            <img src="/OfficeUI.Beta/Resources/Images/Ribbon/Built-In/Pin.png" class="pin-icon" ng-if="isRibbonVisible()" alt="Toggle Ribbon State" />
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
                     </li>
                 </ul>
             </div>
