@@ -21,6 +21,24 @@ OfficeUIRibbon.factory('OfficeUIRibbonService', function() {
         activeContextualGroups: []
     };
 
+    /**
+     * @description
+     * Defines the various states that the ribbon can have.
+     * The ribbon can have 3 different states.
+     * See the information below to find out when the ribbon has which state.
+     *
+     * @type {{Hidden: number, Visible: number, Showed: number}}
+     *         Hidden:  The ribbon is hidden completely from view, however, it can be showed again when clicking on one of the tabs.
+     *         Visible: The ribbon is visible, but will not remain visible for the user. As soon as the user has lost focus on the ribbon, it
+     *                  will hide itself from view again.
+     *         Showed:  The ribbon is showed and stays at this state until it's instructed by the user to remove state.
+     */
+    var ribbonStates = {
+        Hidden: 1,      // The ribbon is not showed, in other words, it's collapsed.
+        Visible: 2,     // The ribbon is visible, but will not be visible anymore after a click somewhere on the screen.
+        Showed: 3       // The ribbon is showed and stays showed no matter where you click on the page.
+    }
+
     /* Provides the data and functions that this service does expose. */
     return {
         /**
@@ -35,9 +53,11 @@ OfficeUIRibbon.factory('OfficeUIRibbonService', function() {
          */
         setServiceInstance: function(data) {
             serviceInstance = data;
+            serviceInstance.ribbonStates = ribbonStates;
             serviceInstance.activeContextualGroups = [];
             serviceInstance.ContextualGroups = data.ContextualGroups;
             serviceInstance.activeTab = data.Tabs[1].Id;
+            serviceInstance.state = ribbonStates.Showed;
         },
 
         /**

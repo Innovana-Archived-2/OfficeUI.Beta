@@ -22,22 +22,14 @@ var OfficeUIRibbon = angular.module('OfficeUIRibbon');
  */
 OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', 'OfficeUIRibbonService', function($scope, $http, OfficeUIRibbonService) {
     /**
-     * @description
-     * Defines the various states that the ribbon can have.
-     * The ribbon can have 3 different states.
-     * See the information below to find out when the ribbon has which state.
+     * @ngdoc Initialization.
      *
-     * @type {{Hidden: number, Visible: number, Showed: number}}
-     *         Hidden:  The ribbon is hidden completely from view, however, it can be showed again when clicking on one of the tabs.
-     *         Visible: The ribbon is visible, but will not remain visible for the user. As soon as the user has lost focus on the ribbon, it
-     *                  will hide itself from view again.
-     *         Showed:  The ribbon is showed and stays at this state until it's instructed by the user to remove state.
+     * @description
+     * This property is set on the scope first because otherwise, AngularJS will cause some JavaScript issues.
+     * This is due to the fact that we're loading data from a Json file, but on the startup of the application, not all the data has been retrieved yet.
+     * Therefore we set some of the properties which relies on the application.
      */
-    var ribbonStates = {
-        Hidden: 1,      // The ribbon is not showed, in other words, it's collapsed.
-        Visible: 2,     // The ribbon is visible, but will not be visible anymore after a click somewhere on the screen.
-        Showed: 3       // The ribbon is showed and stays showed no matter where you click on the page.
-    }
+    $scope.OfficeUIRibbon.ribbonStates = {};
 
     /**
      * @ngdoc Function
@@ -63,7 +55,6 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', 'OfficeUIRibbonS
         .success(function(data) {
             OfficeUIRibbonService.setServiceInstance(data);
             $scope.OfficeUIRibbon = OfficeUIRibbonService.getServiceInstance();
-            $scope.OfficeUIRibbon.state = ribbonStates.Showed;
         })
         .error(function(data) { console.error('An error occured while loading the file \'' + $.fn.OfficeUI.ribbonDataFile + '\' file. '); })
 
@@ -77,7 +68,7 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', 'OfficeUIRibbonS
      * @returns {boolean} True if the ribbon's state is set to 'Showed', false otherwise.
      */
     $scope.isRibbonShowed = function() {
-        return $scope.OfficeUIRibbon.state == ribbonStates.Showed;
+        return $scope.OfficeUIRibbon.state == $scope.OfficeUIRibbon.ribbonStates.Showed;
     }
 
     /**
@@ -90,7 +81,7 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', 'OfficeUIRibbonS
      * @returns {boolean} True if the ribbon's state is set to 'Visible', false otherwise.
      */
     $scope.isRibbonVisible = function() {
-        return $scope.OfficeUIRibbon.state == ribbonStates.Visible;
+        return $scope.OfficeUIRibbon.state == $scope.OfficeUIRibbon.ribbonStates.Visible;
     }
 
     /**
@@ -103,7 +94,7 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', 'OfficeUIRibbonS
      * @returns {boolean} True if the ribbon's state is set to 'Hidden', false otherwise.
      */
     $scope.isRibbonHidden = function() {
-        return $scope.OfficeUIRibbon.state == ribbonStates.Hidden;
+        return $scope.OfficeUIRibbon.state == $scope.OfficeUIRibbon.ribbonStates.Hidden;
     }
 
     /**
@@ -116,8 +107,8 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', 'OfficeUIRibbonS
      * If the state of the ribbon is set to 'Visible', then the state will change to 'Showed'.
      */
     $scope.toggleRibbonState = function() {
-        if ($scope.OfficeUIRibbon.state == ribbonStates.Showed) { $scope.OfficeUIRibbon.state = ribbonStates.Hidden; }
-        else if ($scope.OfficeUIRibbon.state == ribbonStates.Visible) { $scope.OfficeUIRibbon.state = ribbonStates.Showed; }
+        if ($scope.OfficeUIRibbon.state == $scope.OfficeUIRibbon.ribbonStates.Showed) { $scope.OfficeUIRibbon.state = $scope.OfficeUIRibbon.ribbonStates.Hidden; }
+        else if ($scope.OfficeUIRibbon.state == $scope.OfficeUIRibbon.ribbonStates.Visible) { $scope.OfficeUIRibbon.state = $scope.OfficeUIRibbon.ribbonStates.Showed; }
     }
 
     /**
