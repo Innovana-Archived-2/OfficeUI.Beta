@@ -133,4 +133,23 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', 'OfficeUIRibbonS
             return activeTab.length > 0;
         }
     }
+
+    /**
+     * @ngdoc Method
+     *
+     * @description
+     * This method is executed when you click anywhere on the browser window.
+     *
+     * @remarks
+     * This method will hide the ribbon when it's state is set on 'Visible'.
+     * In order to avoid the execution of this function when you click on an element, mark that
+     * element with the 'stop-propagation' directive.
+     */
+    $(window).on('click', function(e) {
+        if ($scope.OfficeUIRibbon.state == $scope.OfficeUIRibbon.ribbonStates.Visible) {
+            $scope.OfficeUIRibbon.state = $scope.OfficeUIRibbon.ribbonStates.Hidden;
+
+            $scope.$apply();
+        }
+    });
 }]);
