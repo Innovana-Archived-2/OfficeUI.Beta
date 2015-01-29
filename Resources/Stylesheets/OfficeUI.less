@@ -130,9 +130,15 @@
       // Defines the styles that applies to the content of the tabs.
       ul.tabs-content {
         .positionRelative; background-color: white; border-bottom: 1px solid @grayBorderColor; height: 92px; z-index: 70;
-
-        ul, li { .positionAbsolute; .width100; height: 100%; }
         .collapse { .alignCenter; .positionAbsolute; bottom: 0; height: 17px; padding-bottom: 1px; right: 0; width: 29px; }
+
+        ul, li {
+          .positionAbsolute; .width100; height: 92px;
+
+          .group { .displayInlineBlock; .positionRelative; height: 90px; margin-left: 4px; margin-top: 3px; vertical-align: top; width: 150px; } // ToDo: Remove the width here. It's only for testing purposes.
+          .group .legend { .positionAbsolute; bottom: 2px; color: #666; font-size: 0.9em; margin-left: -1px; overflow: hidden; text-align: center; text-overflow: ellipsis; white-space: nowrap; width: 100%; }
+          .pipe { .displayInlineBlock; border-right: 1px solid #d4d4d4; height: 84px; margin-left: 1px; margin-top: 4px; vertical-align: top;  }
+        }
       }
     }
   }

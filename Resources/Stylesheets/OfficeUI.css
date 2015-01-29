@@ -289,12 +289,6 @@
   height: 92px;
   z-index: 70;
 }
-#OfficeUI header .ribbon ul.tabs-content ul,
-#OfficeUI header .ribbon ul.tabs-content li {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
 #OfficeUI header .ribbon ul.tabs-content .collapse {
   text-align: center;
   position: absolute;
@@ -303,6 +297,44 @@
   padding-bottom: 1px;
   right: 0;
   width: 29px;
+}
+#OfficeUI header .ribbon ul.tabs-content ul,
+#OfficeUI header .ribbon ul.tabs-content li {
+  position: absolute;
+  width: 100%;
+  height: 92px;
+}
+#OfficeUI header .ribbon ul.tabs-content ul .group,
+#OfficeUI header .ribbon ul.tabs-content li .group {
+  display: inline-block;
+  position: relative;
+  height: 90px;
+  margin-left: 4px;
+  margin-top: 3px;
+  vertical-align: top;
+  width: 150px;
+}
+#OfficeUI header .ribbon ul.tabs-content ul .group .legend,
+#OfficeUI header .ribbon ul.tabs-content li .group .legend {
+  position: absolute;
+  bottom: 2px;
+  color: #666;
+  font-size: 0.9em;
+  margin-left: -1px;
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+#OfficeUI header .ribbon ul.tabs-content ul .pipe,
+#OfficeUI header .ribbon ul.tabs-content li .pipe {
+  display: inline-block;
+  border-right: 1px solid #d4d4d4;
+  height: 84px;
+  margin-left: 1px;
+  margin-top: 4px;
+  vertical-align: top;
 }
 /* ------------------------------------------------*/
 /* ---------->>> Animations styling. <<<-----------*/

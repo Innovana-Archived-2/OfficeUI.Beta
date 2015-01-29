@@ -136,7 +136,18 @@
                     <li>
                         <ul>
                             <li ng-repeat="tab in OfficeUIRibbon.Tabs" ng-show="isActive(tab.Id)" stop-propagation="click">
-                                {{tab.Label}}
+                                <div>
+                                    <div class="group" ng-repeat-start="group in tab.Groups">
+
+                                        <div class="legend">{{group.Legend}}</div>
+                                    </div>
+
+                                    <!-- Defines the vertical 'pipe' sign. -->
+                                    <div class="pipe" ng-repeat-end>
+
+                                    </div>
+                                </div>
+
                                 <div class="icon collapse" ng-click="toggleRibbonState()">
                                     <img src="/OfficeUI.Beta/Resources/Images/Ribbon/Built-In/Collapse.png" class="pin-icon" ng-if="isRibbonShowed()" alt="Toggle Ribbon State" />
                                     <img src="/OfficeUI.Beta/Resources/Images/Ribbon/Built-In/Pin.png" class="pin-icon" ng-if="isRibbonVisible()" alt="Toggle Ribbon State" />
