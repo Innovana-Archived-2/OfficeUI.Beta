@@ -1,7 +1,8 @@
 /* Loads the module 'OfficeUIRibbon'. */
 var OfficeUIRibbon = angular.module('OfficeUIRibbon');
 
-/* @ngdoc Controller
+/**
+ * @ngdoc Controller
  * @name OfficeUIRibbon
  *
  * @description
@@ -20,7 +21,26 @@ var OfficeUIRibbon = angular.module('OfficeUIRibbon');
  *  </example>
  */
 OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', 'OfficeUIRibbonService', function($scope, $http, OfficeUIRibbonService) {
-    /* @ngdoc Function
+    /**
+     * @description
+     * Defines the various states that the ribbon can have.
+     * The ribbon can have 3 different states.
+     * See the information below to find out when the ribbon has which state.
+     *
+     * @type {{Hidden: number, Visible: number, Showed: number}}
+     *         Hidden:  The ribbon is hidden completely from view, however, it can be showed again when clicking on one of the tabs.
+     *         Visible: The ribbon is visible, but will not remain visible for the user. As soon as the user has lost focus on the ribbon, it
+     *                  will hide itself from view again.
+     *         Showed:  The ribbon is showed and stays at this state until it's instructed by the user to remove state.
+     */
+    var ribbonStates = {
+        Hidden: 1,      // The ribbon is not showed, in other words, it's collapsed.
+        Visible: 2,     // The ribbon is visible, but will not be visible anymore after a click somewhere on the screen.
+        Showed: 3       // The ribbon is showed and stays showed no matter where you click on the page.
+    }
+
+    /**
+     * @ngdoc Function
      * @name Initialization
      *
      * @description
@@ -41,62 +61,62 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', 'OfficeUIRibbonS
      */
     $http.get($.fn.OfficeUI.ribbonDataFile)
         .success(function(data) {
-            //controllerData.Tabs = data.Tabs;
-            //controllerData.ContextualGroups = data.ContextualGroups;
-            //controllerData.activeTab = data.Tabs[1].Id;
-
             OfficeUIRibbonService.setServiceInstance(data);
             $scope.OfficeUIRibbon = OfficeUIRibbonService.getServiceInstance();
+            $scope.OfficeUIRibbon.state = ribbonStates.Showed;
         })
         .error(function(data) { console.error('An error occured while loading the file \'' + $.fn.OfficeUI.ribbonDataFile + '\' file. '); })
 
-    /* @ngdoc Function
-     * @name setActive
+    /**
+     * @ndgoc Function
+     * @name isRibbonShowed
      *
      * @description
-     * Allows an object to set itself as active.
+     * Check if the current state of the ribbon is 'Showed'.
      *
-     * @parameters
-     * tabId        The id of the element which should be set as active.
-     *
-     * @element ANY
-     *
-     * @example
-     *  <example module="setActiveExample" deps="OfficeUI.min.js">
-     *    <file name="index.html">
-     *      <body ng-controller="OfficeUIRibbon as OfficeUIRibbon">
-     *        <div ng-repeat="tab in OfficeUIRibbon.tabs" ng-click="setActive(tab.Id)">
-     *        </div>
-     *      </body>
-     *    </file>
-     *  </example>
+     * @returns {boolean} True if the ribbon's state is set to 'Showed', false otherwise.
      */
-    $scope.setActive = function(tabId) {
-        OfficeUIRibbonService.setActive(tabId);
+    $scope.isRibbonShowed = function() {
+        return $scope.OfficeUIRibbon.state == ribbonStates.Showed;
     }
 
-    /* @ngdoc Function
-     * @name isActive
+    /**
+     * @ndgoc Function
+     * @name isRibbonVisible
      *
      * @description
-     * Checks if a given object is active.
+     * Check if the current state of the ribbon is 'Visible'.
      *
-     * @parameters
-     * tabId        The id of the element which should be checked.
-     *
-     * @element ANY
-     *
-     * @example
-     *  <example module="IsActiveExample" deps="OfficeUI.min.js">
-     *    <file name="index.html">
-     *      <body ng-controller="OfficeUIRibbon as OfficeUIRibbon">
-     *        <div ng-repeat="tab in OfficeUIRibbon.tabs" ng-click="isActive(tab.Id)">
-     *        </div>
-     *      </body>
-     *    </file>
-     *  </example>
+     * @returns {boolean} True if the ribbon's state is set to 'Visible', false otherwise.
      */
-    $scope.isActive = function(tabId) {
-        return OfficeUIRibbonService.isActive(tabId);
+    $scope.isRibbonVisible = function() {
+        return $scope.OfficeUIRibbon.state == ribbonStates.Visible;
+    }
+
+    /**
+     * @ndgoc Function
+     * @name isRibbonHidden
+     *
+     * @description
+     * Check if the current state of the ribbon is 'Hidden'.
+     *
+     * @returns {boolean} True if the ribbon's state is set to 'Hidden', false otherwise.
+     */
+    $scope.isRibbonHidden = function() {
+        return $scope.OfficeUIRibbon.state == ribbonStates.Hidden;
+    }
+
+    /**
+     * @ngdoc Function
+     * @name toggleRibbonState
+     *
+     * @description
+     * Toggle the state of the ribbon.
+     * If the state of the ribbon is set to 'Showed', then the state will change to 'Hidden'.
+     * If the state of the ribbon is set to 'Visible', then the state will change to 'Showed'.
+     */
+    $scope.toggleRibbonState = function() {
+        if ($scope.OfficeUIRibbon.state == ribbonStates.Showed) { $scope.OfficeUIRibbon.state = ribbonStates.Hidden; }
+        else if ($scope.OfficeUIRibbon.state == ribbonStates.Visible) { $scope.OfficeUIRibbon.state = ribbonStates.Showed; }
     }
 }]);

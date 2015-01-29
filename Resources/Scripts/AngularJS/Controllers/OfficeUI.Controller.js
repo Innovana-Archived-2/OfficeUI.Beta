@@ -1,14 +1,14 @@
 /* Loads the module 'OfficeUI'. */
 var OfficeUI = angular.module('OfficeUI');
 
-/* @ngdoc Controller
+/**
+ * @ngdoc Controller
  * @name OfficeUI
  *
  * @description
  * The 'OfficeUI' controller allows us to set-up the core functions for an OfficeUI application.
  *
- * @dependencies
- * $http
+ * @dependencies $http
  *
  * @element ANY
  *
@@ -22,7 +22,8 @@ var OfficeUI = angular.module('OfficeUI');
 OfficeUI.controller('OfficeUI', ['$scope', '$http', 'OfficeUIRibbonService', function($scope, $http, OfficeUIRibbonService) {
     var controllerData = this;
 
-    /* @ngdoc Function
+    /**
+     * @ngdoc Function
      * @name Initialization
      *
      * @description
@@ -47,7 +48,89 @@ OfficeUI.controller('OfficeUI', ['$scope', '$http', 'OfficeUIRibbonService', fun
         })
         .error(function(data) { console.error('An error occured while loading the file \'' + $.fn.OfficeUI.applicationDataFile + '\' file. '); });
 
+    /**
+     * @ngdoc Area
+     * @name Public API
+     *
+     * @description
+     * All the methods which can be found below does belong to an exposed API by all aspects of the OfficeUI application.
+     *
+     */
+
+    /**
+     * @description
+     * Set a specific tab as being active.
+     *
+     * @remarks
+     * See the OfficeUIRibbonService source code for a more detailed explanation of this function.
+     */
     $scope.setActive = function(tabId) {
         OfficeUIRibbonService.setActive(tabId);
+    }
+
+    /**
+     * @description
+     * Check if a specific tab is active.
+     *
+     * @remarks
+     * See the OfficeUIRibbonService source code for a more detailed explanation of this function.
+     */
+    $scope.isActive = function(tabId) {
+        return OfficeUIRibbonService.isActive(tabId);
+    }
+
+    /**
+     * @description
+     * Check if any contextual group is active.
+     *
+     * @remarks
+     * See the OfficeUIRibbonService source code for a more detailed explanation of this function.
+     */
+    $scope.isContextualGroupActive = function() {
+        return OfficeUIRibbonService.isContextualGroupActive();
+    }
+
+    /**
+     * @description
+     * Check if a contextual group is being active.
+     *
+     * @remarks
+     * See the OfficeUIRibbonService source code for a more detailed explanation of this function.
+     */
+    $scope.isActiveContextualGroup = function(contextualGroupId) {
+        return OfficeUIRibbonService.isActiveContextualGroup(contextualGroupId);
+    }
+
+    /**
+     * @description
+     * Set a specific contextual group as being active.
+     *
+     * @remarks
+     * See the OfficeUIRibbonService source code for a more detailed explanation of this function.
+     */
+    $scope.activateContextualGroup = function(contextualGroupId) {
+        OfficeUIRibbonService.activateContextualGroup(contextualGroupId);
+    }
+
+    /**
+     * @description
+     * Deactivate a specific contextual group.
+     *
+     * @remarks
+     * See the OfficeUIRibbonService source code for a more detailed explanation of this function.
+     */
+    $scope.deactivateContextualGroup = function(contextualGroupId) {
+        OfficeUIRibbonService.deactivateContextualGroup(contextualGroupId);
+    }
+
+    /**
+     * @description
+     * Set a tab it's color.
+     *
+     * @remarks
+     * See the OfficeUIRibbonService source code for a more detailed explanation of this function.
+     */
+    $scope.setActiveTabColor = function(tabId, tabColor) {
+        return OfficeUIRibbonService.setActiveTabColor(tabId, tabColor);
     }
 }]);
