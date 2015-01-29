@@ -291,8 +291,9 @@
 }
 #OfficeUI header .ribbon ul.tabs-content ul,
 #OfficeUI header .ribbon ul.tabs-content li {
+  position: absolute;
+  width: 100%;
   height: 100%;
-  position: relative;
 }
 #OfficeUI header .ribbon ul.tabs-content .collapse {
   text-align: center;
@@ -333,19 +334,19 @@
 /* Hide and show the contents of the ribbon (to allow us to collapse the ribbon).
  * When hiding the ribbon, it takes 0.15 seconds, showing the ribbon takes place immediately.
  */
-.animate-hide-ribbon.ng-hide-add.ng-hide-add-active {
+.animate-hide-show-ribbon.ng-hide-add.ng-hide-add-active {
   -webkit-transition: 0.15s linear all;
   transition: 0.15s linear all;
 }
-.animate-hide-ribbon.ng-hide-remove.ng-hide-remove-active {
-  -webkit-transition: 0.0s linear all;
-  transition: 0.0s linear all;
+.animate-hide-show-ribbon.ng-hide-remove.ng-hide-remove-active {
+  -webkit-transition: 0.15s linear all;
+  transition: 0.15s linear all;
 }
-.animate-hide-ribbon {
+.animate-hide-show-ribbon {
   opacity: 1;
   top: 0;
 }
-.animate-hide-ribbon.ng-hide {
+.animate-hide-show-ribbon.ng-hide {
   opacity: 0;
   top: -93px;
 }

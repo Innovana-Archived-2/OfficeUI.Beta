@@ -83,6 +83,7 @@ OfficeUIRibbon.factory('OfficeUIRibbonService', function() {
          *        The id of the tab that oyu want to mark as active.
          */
         setActive: function(tabId) {
+            serviceInstance.state = ribbonStates.Visible;
             serviceInstance.activeTab = tabId;
         },
 

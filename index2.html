@@ -89,7 +89,7 @@
                 </div>
 
                 <!-- This UL element does shows the tabs itself. -->
-                <ul class="tabs" ng-class="{'visible-border': isRibbonShowed(), 'invisible-border': isRibbonHidden()}">
+                <ul class="tabs" ng-class="{'visible-border': isRibbonShowed() || isRibbonVisible(), 'invisible-border': isRibbonHidden()}">
                     <li>
                         <div>
                             <div class="title" ng-show="isContextualGroupActive()">
@@ -100,7 +100,7 @@
 
                             <!-- Defines the normal tabs of the ribbon. -->
                             <ul>
-                                <li class="tab tab-normal" ng-repeat="tab in OfficeUIRibbon.Tabs" ng-click="!$first && setActive(tab.Id);" ng-class="{application: $first, active: isActive(tab.Id), 'visible-border': isRibbonShowed(), 'invisible-border': isRibbonHidden()}">
+                                <li class="tab tab-normal" ng-repeat="tab in OfficeUIRibbon.Tabs" ng-click="!$first && setActive(tab.Id);" ng-class="{application: $first, active: isActive(tab.Id), 'visible-border': isRibbonShowed() || isRibbonVisible(), 'invisible-border': isRibbonHidden()}">
                                     <span>{{tab.Label}}</span>
                                 </li>
                             </ul>
@@ -118,7 +118,7 @@
                                     </div>
                                     <div class="tabs-holder">
                                         <ul>
-                                            <li class="tab tab-contextual" id="tab.Id" ng-style="{color: setActiveTabColor(tab.Id, contextual.GroupTextColor)}" ng-repeat="tab in contextual.Tabs" ng-click="setActive(tab.Id)" ng-class="{active: isActive(tab.Id), 'visible-border': isRibbonShowed(), 'invisible-border': isRibbonHidden()}" stop-propagation="click">
+                                            <li class="tab tab-contextual" id="tab.Id" ng-style="{color: setActiveTabColor(tab.Id, contextual.GroupTextColor)}" ng-repeat="tab in contextual.Tabs" ng-click="setActive(tab.Id)" ng-class="{active: isActive(tab.Id), 'visible-border': isRibbonShowed() || isRibbonVisible(), 'invisible-border': isRibbonHidden()}" stop-propagation="click">
                                                 <span>{{tab.Label}}</span>
                                             </li>
                                         </ul>
@@ -132,7 +132,7 @@
                 </ul>
 
                 <!-- This UL element does shows the content of the tab which is currently opened. -->
-                <ul class="tabs-content animate-hide-ribbon" ng-show="isRibbonShowed()">
+                <ul class="tabs-content animate-hide-show-ribbon" ng-show="isRibbonShowed() || isRibbonVisible()">
                     <li>
                         <ul>
                             <li ng-repeat="tab in OfficeUIRibbon.Tabs" ng-show="isActive(tab.Id)" ng-click="toggleRibbonState()">
