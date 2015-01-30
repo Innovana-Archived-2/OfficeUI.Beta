@@ -397,7 +397,7 @@
 }
 #OfficeUI header .ribbon ul.tabs-content ul .group .area > div input[type=checkbox],
 #OfficeUI header .ribbon ul.tabs-content li .group .area > div input[type=checkbox] {
-  height: 13px;
+  height: 21px;
   margin-right: 5px;
   margin-left: 4px;
   vertical-align: middle;

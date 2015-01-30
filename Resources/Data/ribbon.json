@@ -1131,7 +1131,53 @@
           "Label": "Design",
           "Groups": [
             {
-              "Legend": "Table Style Options"
+              "Legend": "Table Style Options",
+              "Areas": [
+                {
+                  "Actions": [
+                    {
+                      "Id": "chkHeaderRow",
+                      "Legend": "Header Row",
+                      "Tooltip": "<strong>Header Row</strong><p>Display special formatting for the first row of the table.</p>",
+                      "Type": "Checkbox"
+                    },
+                    {
+                      "Id": "chkTotalRow",
+                      "Legend": "Total Row",
+                      "Tooltip": "<strong>Total Row</strong><p>Display special formatting for the last row of the table.</p>",
+                      "Type": "Checkbox"
+                    },
+                    {
+                      "Id": "chkBandedRows",
+                      "Legend": "Banded Rows",
+                      "Tooltip": "<strong>Banded Rows</strong><p>Display banded rows, in which even rows are formatted differently from odd rows.</p><p>This banding can make tables easier to read.</p>",
+                      "Type": "Checkbox"
+                    }
+                  ]
+                },
+                {
+                  "Actions": [
+                    {
+                      "Id": "chkFirstColumn",
+                      "Legend": "First Column",
+                      "Tooltip": "<strong>First Column</strong><p>Display special formatting for the first column of the table.</p>",
+                      "Type": "Checkbox"
+                    },
+                    {
+                      "Id": "chkLastColumn",
+                      "Legend": "Last Column",
+                      "Tooltip": "<strong>Last Column</strong><p>Display special formatting for the last column of the table.</p>",
+                      "Type": "Checkbox"
+                    },
+                    {
+                      "Id": "chkBandedColumns",
+                      "Legend": "Banded Columns",
+                      "Tooltip": "<strong>Banded Columns</strong><p>Display banded columns, in which even columns are formatted differently from odd columns.</p><p>This banding can make tables easier to read.</p>",
+                      "Type": "Checkbox"
+                    }
+                  ]
+                }
+              ]
             },
             {
               "Legend": "Table Styles"

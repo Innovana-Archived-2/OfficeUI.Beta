@@ -46,11 +46,11 @@
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Angular.Directive.StopPropagation.min.js"></script>
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Angular.Directive.Tooltip.min.js"></script>
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Angular.Directive.DynamicEventHandling.min.js"></script>
+    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Angular.Directive.Scrolling.min.js"></script>
 
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Filters/OfficeUI.Angular.Filter.ActionLegend.js"></script>
 
-    <!--<script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Angular.Directive.Scrolling.min.js"></script>
-    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Angular.Directive.Collapsing.min.js"></script>
+    <!--<script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Angular.Directive.Collapsing.min.js"></script>
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Angular.Directive.Tooltip.min.js"></script>
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Angular.Directive.Hover.min.js"></script>
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Angular.Directive.ApplicationMenuContents.min.js"></script>
@@ -85,7 +85,7 @@
             </div>
 
             <!-- Defines the ribbon component itself. -->
-            <div class="ribbon">
+            <div class="ribbon" scroll>
                 <div class="title" ng-show="!isContextualGroupActive()">
                     <div><img id="{{icon.Id}}" alt="{{icon.Alt}}" ng-class="{'icon': !$first}" ng-repeat="icon in OfficeUI.Icons" ng-src="{{icon.Icon}}" dynamic-event-handling="Icon.Id" /></div>
 
@@ -104,7 +104,7 @@
 
                             <!-- Defines the normal tabs of the ribbon. -->
                             <ul>
-                                <li class="tab tab-normal" ng-repeat="tab in OfficeUIRibbon.Tabs" dynamic-event-handling="tab.Id" ng-click="!$first && setActive(tab.Id);" ng-class="{application: $first, active: isActive(tab.Id) && (isRibbonShowed() || isRibbonVisible()), 'visible-border': isRibbonShowed() || isRibbonVisible(), 'invisible-border': isRibbonHidden()}" stop-propagation="click">
+                                <li id="{{tab.Id}}" class="tab tab-normal" ng-repeat="tab in OfficeUIRibbon.Tabs" dynamic-event-handling="tab.Id" ng-click="!$first && setActive(tab.Id);" ng-class="{application: $first, active: isActive(tab.Id) && (isRibbonShowed() || isRibbonVisible()), 'visible-border': isRibbonShowed() || isRibbonVisible(), 'invisible-border': isRibbonHidden()}" stop-propagation="click">
                                     <span>{{tab.Label}}</span>
                                 </li>
                             </ul>

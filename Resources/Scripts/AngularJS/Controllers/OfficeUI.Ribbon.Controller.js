@@ -134,6 +134,24 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', 'OfficeUIRibbonS
         }
     }
 
+    $scope.ribbonScroll = function(scrollEvent) {
+        if (scrollEvent.detail > 0 || scrollEvent.wheelDelta < 0) {
+            var nextTab = $('.ribbon .active').next();
+
+            if (nextTab.attr('id') != null) {
+                $scope.setActive(nextTab.attr('id'));
+            }
+        } else {
+            var previousTab = $('.ribbon .active').prev();
+
+            if (previousTab.attr('id') != null && !previousTab.hasClass('application')) {
+                $scope.setActive(previousTab.attr('id'));
+            }
+        }
+
+        $scope.$apply();
+    }
+
     /**
      * @ngdoc Method
      *
