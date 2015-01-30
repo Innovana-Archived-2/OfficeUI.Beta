@@ -42,6 +42,13 @@
   .borderTransparent { border: 1px solid transparent; }
 
   /* ----------------------------------------------------------*/
+  /* ---------->>> Styling for input elements. <<<-----------*/
+  /* ----------------------------------------------------------*/
+  input { border: 1px solid #ababab; color: black; font-family: "Segoe UI",serif; font-size: 1em; padding-left: 3px; padding-right: 3px; }
+  input:hover, input:focus { outline: none; border: 1px solid #ffffff; }
+  input:-ms-input-placeholder { color: #6d6d6d; }
+
+  /* ----------------------------------------------------------*/
   /* ---------->>> Styling for general elements. <<<-----------*/
   /* ----------------------------------------------------------*/
   * { .noPadding; .noMargin; }
@@ -146,6 +153,7 @@
           .group .area > div .small-icon img { padding: 0 0 0 3px; }
           .group .area > div .big-icon .label { line-height: 15px; padding: 0 3px 0 2px; text-align: center; top: -2px; }
           .group .area > div .icon .label i { font-size: 0.7em; padding-top: 4px; vertical-align: top; }
+          .group .area > div input { height: 22px; margin-bottom: 4px; margin-top: 0;}
           .group .legend { .positionAbsolute; bottom: 2px; color: #666; font-size: 0.9em; margin-left: -1px; overflow: hidden; text-align: center; text-overflow: ellipsis; white-space: nowrap; width: 100%; }
           .pipe { .displayInlineBlock; border-right: 1px solid #d4d4d4; height: 84px; margin-left: 1px; margin-top: 4px; vertical-align: top;  }
         }

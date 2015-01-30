@@ -17,6 +17,9 @@
   /* ---------->>> Helpful css classes. <<<-----------*/
   /* --------------------------------------------------*/
   /* ----------------------------------------------------------*/
+  /* ---------->>> Styling for input elements. <<<-----------*/
+  /* ----------------------------------------------------------*/
+  /* ----------------------------------------------------------*/
   /* ---------->>> Styling for general elements. <<<-----------*/
   /* ----------------------------------------------------------*/
   /* ---------------------------------------------*/
@@ -102,6 +105,22 @@
 }
 #OfficeUI .borderTransparent {
   border: 1px solid transparent;
+}
+#OfficeUI input {
+  border: 1px solid #ababab;
+  color: black;
+  font-family: "Segoe UI", serif;
+  font-size: 1em;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+#OfficeUI input:hover,
+#OfficeUI input:focus {
+  outline: none;
+  border: 1px solid #ffffff;
+}
+#OfficeUI input:-ms-input-placeholder {
+  color: #6d6d6d;
 }
 #OfficeUI * {
   padding: 0;
@@ -368,6 +387,12 @@
   font-size: 0.7em;
   padding-top: 4px;
   vertical-align: top;
+}
+#OfficeUI header .ribbon ul.tabs-content ul .group .area > div input,
+#OfficeUI header .ribbon ul.tabs-content li .group .area > div input {
+  height: 22px;
+  margin-bottom: 4px;
+  margin-top: 0;
 }
 #OfficeUI header .ribbon ul.tabs-content ul .group .legend,
 #OfficeUI header .ribbon ul.tabs-content li .group .legend {

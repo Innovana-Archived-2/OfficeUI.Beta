@@ -161,6 +161,11 @@
                                                         <div class="label" ng-bind-html="action |actionLegend"></div>
                                                     </div>
                                                 </div>
+
+                                                <!-- This is what is being rendered if it's an input element.. -->
+                                                <div ng-if="action.Type == 'Input'">
+                                                    <input type="text" id="{{action.Id}}" placeholder="{{action.Legend}}" ng-style="{width:'{{action.Width}}'}"/>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
