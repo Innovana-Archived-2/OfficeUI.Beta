@@ -45,8 +45,9 @@
 
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Angular.Directive.StopPropagation.min.js"></script>
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Filters/OfficeUI.Angular.Filter.ActionLegend.js"></script>
-    <!--<script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Angular.Directive.DynamicEventHandling.min.js"></script>
-    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Angular.Directive.Scrolling.min.js"></script>
+    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Angular.Directive.DynamicEventHandling.min.js"></script>
+
+    <!--<script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Angular.Directive.Scrolling.min.js"></script>
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Angular.Directive.Collapsing.min.js"></script>
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Angular.Directive.Tooltip.min.js"></script>
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Angular.Directive.Hover.min.js"></script>
@@ -101,7 +102,7 @@
 
                             <!-- Defines the normal tabs of the ribbon. -->
                             <ul>
-                                <li class="tab tab-normal" ng-repeat="tab in OfficeUIRibbon.Tabs" ng-click="!$first && setActive(tab.Id);" ng-class="{application: $first, active: isActive(tab.Id) && (isRibbonShowed() || isRibbonVisible()), 'visible-border': isRibbonShowed() || isRibbonVisible(), 'invisible-border': isRibbonHidden()}" stop-propagation="click">
+                                <li class="tab tab-normal" ng-repeat="tab in OfficeUIRibbon.Tabs" dynamic-event-handling="tab.Id" ng-click="!$first && setActive(tab.Id);" ng-class="{application: $first, active: isActive(tab.Id) && (isRibbonShowed() || isRibbonVisible()), 'visible-border': isRibbonShowed() || isRibbonVisible(), 'invisible-border': isRibbonHidden()}" stop-propagation="click">
                                     <span>{{tab.Label}}</span>
                                 </li>
                             </ul>
@@ -119,7 +120,7 @@
                                     </div>
                                     <div class="tabs-holder">
                                         <ul>
-                                            <li class="tab tab-contextual" id="tab.Id" ng-style="{color: setActiveTabColor(tab.Id, contextual.GroupTextColor)}" ng-repeat="tab in contextual.Tabs" ng-click="setActive(tab.Id)" ng-class="{active: isActive(tab.Id) && (isRibbonShowed() || isRibbonVisible()), 'visible-border': isRibbonShowed() || isRibbonVisible(), 'invisible-border': isRibbonHidden()}" stop-propagation="click">
+                                            <li class="tab tab-contextual" id="tab.Id" dynamic-event-handling="tab.Id" ng-style="{color: setActiveTabColor(tab.Id, contextual.GroupTextColor)}" ng-repeat="tab in contextual.Tabs" ng-click="setActive(tab.Id)" ng-class="{active: isActive(tab.Id) && (isRibbonShowed() || isRibbonVisible()), 'visible-border': isRibbonShowed() || isRibbonVisible(), 'invisible-border': isRibbonHidden()}" stop-propagation="click">
                                                 <span>{{tab.Label}}</span>
                                             </li>
                                         </ul>
@@ -146,7 +147,7 @@
                                             <div ng-repeat="action in area.Actions" ng-class="{'displayBlock': action.Type == 'sIcon', 'displayInlineBlock': action.Type == 'bIcon'}">
                                                 <!-- This is what is being rendered if it's a big icon. -->
                                                 <div ng-if="action.Type == 'bIcon'">
-                                                    <div id="{{action.Id}}" class="icon big-icon">
+                                                    <div id="{{action.Id}}" class="icon big-icon" dynamic-event-handling="action.Id">
                                                         <img ng-src="{{action.Resource}}" />
 
                                                         <div class="label" ng-bind-html="action |actionLegend"></div>
@@ -155,7 +156,7 @@
 
                                                 <!-- This is what is being rendered if it's a small icon. -->
                                                 <div ng-if="action.Type == 'sIcon'">
-                                                    <div id="{{action.Id}}" class="icon small-icon">
+                                                    <div id="{{action.Id}}" class="icon small-icon" dynamic-event-handling="action.Id">
                                                         <img ng-src="{{action.Resource}}" />
 
                                                         <div class="label" ng-bind-html="action |actionLegend"></div>
@@ -163,12 +164,12 @@
                                                 </div>
 
                                                 <!-- This is what is being rendered if it's an input element (Text). -->
-                                                <div ng-if="action.Type == 'Input'">
+                                                <div ng-if="action.Type == 'Input'" dynamic-event-handling="action.Id">
                                                     <input type="text" id="{{action.Id}}" placeholder="{{action.Legend}}" ng-style="{width:'{{action.Width}}'}"/>
                                                 </div>
 
                                                 <!-- This is what is being rendered if it's an input element (Checkbox). -->
-                                                <div ng-show="action.Type == 'Checkbox'">
+                                                <div ng-show="action.Type == 'Checkbox'" dynamic-event-handling="action.Id">
                                                     <input type="checkbox" id="{{action.Id}}" />
                                                     <div class="displayInlineBlock">{{action.Legend}}</div>
                                                 </div>
@@ -239,12 +240,20 @@
 
 <!-- Provides some functions to configure the OfficeUI application. -->
 <script type="text/javascript">
-    // Sets the ThemeManager and initialize it.
-    $.fn.OfficeUI.ThemeManager.SetTheme($.fn.OfficeUI.ThemeManager.Themes.Red);
+    // Provides a way to initialize the application with the correct theme.
+    // Those calls are required for the application to function.
+    $.fn.OfficeUI.ThemeManager.SetTheme($.fn.OfficeUI.ThemeManager.Themes.Turquoise);
 
-    // Sets some default OfficeUI properties in order to initialize everything property.
+    // Provides a way to load the application-, and ribbon- data file.
+    // Those calls are required for the application to function.
     $.fn.OfficeUI.applicationDataFile = '/OfficeUI.Beta/Resources/data/application.json'; // Specify the file in which the application data is stored.
     $.fn.OfficeUI.ribbonDataFile = '/OfficeUI.Beta/Resources/Data/ribbon.json'; // Specify the file in which the ribbon data is stored.
+
+    // Provides a way to bind an event to any given element.
+    // This method is optional.
+    $.fn.OfficeUI.bind('#tabFile', 'click', function(e) {
+        console.log('Clicked the tabFile element.');
+    });
 </script>
 </body>
 </html>

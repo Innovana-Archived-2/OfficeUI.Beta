@@ -39,7 +39,6 @@
     // Parameters:
     //      element:        The name of the element for which to search the event.
     $.fn.OfficeUI.searchEvent = function(element) {
-
         // Search if an event is registered by looping over the array that holds all are events.
         // If an event is found, return this.
         var foundElement = $.grep(eventCollection, function(item) {
