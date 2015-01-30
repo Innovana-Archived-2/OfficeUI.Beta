@@ -162,9 +162,15 @@
                                                     </div>
                                                 </div>
 
-                                                <!-- This is what is being rendered if it's an input element.. -->
+                                                <!-- This is what is being rendered if it's an input element (Text). -->
                                                 <div ng-if="action.Type == 'Input'">
                                                     <input type="text" id="{{action.Id}}" placeholder="{{action.Legend}}" ng-style="{width:'{{action.Width}}'}"/>
+                                                </div>
+
+                                                <!-- This is what is being rendered if it's an input element (Checkbox). -->
+                                                <div ng-show="action.Type == 'Checkbox'">
+                                                    <input type="checkbox" id="{{action.Id}}" />
+                                                    <div class="displayInlineBlock">{{action.Legend}}</div>
                                                 </div>
                                             </div>
                                         </div>
