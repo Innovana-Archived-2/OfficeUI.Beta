@@ -113,7 +113,7 @@
 
                         <div class="contextual" stop-propagation="click">
                             <ul>
-                                <li class="context-group" ng-show="isActiveContextualGroup(contextual.Id)" ng-repeat="contextual in OfficeUIRibbon.ContextualGroups" ng-style="{'background-color': contextual.GroupColor}">
+                                <li class="context-group" id="{{contextual.Id}}" ng-show="isActiveContextualGroup(contextual.Id)" ng-class="{'active-contextual-group': isActiveContextualGroup(contextual.Id)}" ng-repeat="contextual in OfficeUIRibbon.ContextualGroups" ng-style="{'background-color': contextual.GroupColor}">
                                     <div class="accent" ng-style="{'background-color': contextual.AccentColor}">&nbsp;</div>
                                     <div class="label" ng-click="setActive(contextual.Tabs[0].Id, false);">
                                         <div ng-style="{'color': contextual.GroupTextColor}">
@@ -122,7 +122,7 @@
                                     </div>
                                     <div class="tabs-holder">
                                         <ul>
-                                            <li class="tab tab-contextual" id="tab.Id" dynamic-event-handling="tab.Id" ng-style="{color: setActiveTabColor(tab.Id, contextual.GroupTextColor)}" ng-repeat="tab in contextual.Tabs" ng-click="setActive(tab.Id)" ng-class="{active: isActive(tab.Id) && (isRibbonShowed() || isRibbonVisible()), 'visible-border': isRibbonShowed() || isRibbonVisible(), 'invisible-border': isRibbonHidden()}" stop-propagation="click">
+                                            <li class="tab tab-contextual" id="{{tab.Id}}" dynamic-event-handling="tab.Id" ng-style="{color: setActiveTabColor(tab.Id, contextual.GroupTextColor)}" ng-repeat="tab in contextual.Tabs" ng-click="setActive(tab.Id)" ng-class="{active: isActive(tab.Id) && (isRibbonShowed() || isRibbonVisible()), 'visible-border': isRibbonShowed() || isRibbonVisible(), 'invisible-border': isRibbonHidden()}" stop-propagation="click">
                                                 <span>{{tab.Label}}</span>
                                             </li>
                                         </ul>

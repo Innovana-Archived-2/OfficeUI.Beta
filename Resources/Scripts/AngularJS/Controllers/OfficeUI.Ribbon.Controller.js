@@ -134,13 +134,39 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', 'OfficeUIRibbonS
         }
     }
 
+    /**
+     * @ngdoc Function
+     * @name ribbonScroll
+     *
+     * @description
+     * This method is executed automatically through a directive.
+     * This method is called when you scroll on the ribbon.
+     * The purpose of this method is to select the next or previous available tab, according to the scroll direction.
+     *
+     * @param scrollEvent
+     *        The event that defines the scrolling. Based on this event we can calculate if we're scrolling up or down.
+     */
     $scope.ribbonScroll = function(scrollEvent) {
-        if (scrollEvent.detail > 0 || scrollEvent.wheelDelta < 0) {
-            var nextTab = $('.ribbon .active').next();
+        var tabToActivate = null;
 
-            if (nextTab.attr('id') != null) {
-                $scope.setActive(nextTab.attr('id'));
+        if (scrollEvent.detail > 0 || scrollEvent.wheelDelta < 0) {
+            var activeTab = $('.ribbon .active');
+
+            if (activeTab.next().attr('id') != null) { tabToActivate = activeTab.next(); }
+            // When there's no contextual tab, then we should check if this is a normal tab.
+            else {
+                if (activeTab.parents('.context-group').length == 0) {
+                    // When there's a contextual tab, get the first tab element.
+                    if ($('.active-contextual-group').length > 0) { tabToActivate = $('.tab', '.active-contextual-group'); }
+                }
+                else {
+                    if (activeTab.parents('.active-contextual-group').next('.active-contextual-group').length > 0) {
+                        tabToActivate = $('.tab', activeTab.parents('.active-contextual-group').next('.active-contextual-group'));
+                    }
+                }
             }
+
+            if (tabToActivate != null) { $scope.setActive(tabToActivate.attr('id')); }
         } else {
             var previousTab = $('.ribbon .active').prev();
 
