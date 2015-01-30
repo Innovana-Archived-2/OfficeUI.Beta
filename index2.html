@@ -44,13 +44,14 @@
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Controllers/OfficeUI.Ribbon.Controller.min.js"></script>
 
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Angular.Directive.StopPropagation.min.js"></script>
+    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Filters/OfficeUI.Angular.Filter.ActionLegend.js"></script>
     <!--<script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Angular.Directive.DynamicEventHandling.min.js"></script>
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Angular.Directive.Scrolling.min.js"></script>
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Angular.Directive.Collapsing.min.js"></script>
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Angular.Directive.Tooltip.min.js"></script>
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Angular.Directive.Hover.min.js"></script>
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Angular.Directive.ApplicationMenuContents.min.js"></script>
-    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Filters/OfficeUI.Angular.Filter.ActionLegend.js"></script>
+
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Filters/OfficeUI.Angular.Filter.ActionTooltip.js"></script>-->
 </head>
 <body class="noPadding noMargin" ng-controller="OfficeUI as OfficeUI">
@@ -139,8 +140,19 @@
                                 <!-- Defines the contents of the ribbon. -->
                                 <div>
                                     <div class="group" ng-repeat-start="group in tab.Groups">
-
                                         <div class="legend">{{group.Legend}}</div>
+
+                                        <div class="area" ng-repeat="area in group.Areas">
+                                            <div ng-repeat="action in area.Actions">
+                                                <div ng-if="action.Type == 'bIcon'">
+                                                    <div id="{{action.Id}}" class="icon big-icon">
+                                                        <img ng-src="{{action.Resource}}" />
+
+                                                        <div class="label" ng-bind-html="action |actionLegend"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
 
                                     <!-- Defines the vertical 'pipe' sign. -->
