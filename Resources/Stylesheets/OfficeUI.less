@@ -137,11 +137,15 @@
 
           .group { .displayInlineBlock; .positionRelative; height: 90px; margin-left: 4px; margin-top: 3px; vertical-align: top; } // ToDo: Remove the width here. It's only for testing purposes.
           .group .area { .displayInlineBlock; vertical-align: top; }
-          .group .area > div { .displayInlineBlock; vertical-align: top; }
-          .group .area > div .icon { height: 66px; margin-right: 0; padding-top: 3px; vertical-align: top; }
+          .group .area > div { vertical-align: top; }
+          .group .area > div .icon { .displayInlineBlock; height: 66px; margin-right: 0; padding-top: 3px; vertical-align: top; }
           .group .area > div .icon img { padding: 0 5px 0 5px; }
           .group .area > div .big-icon { .alignCenter; }
+          .group .area > div .small-icon { .alignLeft; height: 100%; margin-right: 0; padding: 3px 7px 0 0; }
+          .group .area > div .small-icon .label { .alignCenter; .displayInlineBlock; vertical-align: top; }
+          .group .area > div .small-icon img { padding: 0 0 0 3px; }
           .group .area > div .big-icon .label { line-height: 15px; padding: 0 3px 0 2px; text-align: center; top: -2px; }
+          .group .area > div .icon .label i { font-size: 0.7em; padding-top: 4px; vertical-align: top; }
           .group .legend { .positionAbsolute; bottom: 2px; color: #666; font-size: 0.9em; margin-left: -1px; overflow: hidden; text-align: center; text-overflow: ellipsis; white-space: nowrap; width: 100%; }
           .pipe { .displayInlineBlock; border-right: 1px solid #d4d4d4; height: 84px; margin-left: 1px; margin-top: 4px; vertical-align: top;  }
         }

@@ -321,11 +321,11 @@
 }
 #OfficeUI header .ribbon ul.tabs-content ul .group .area > div,
 #OfficeUI header .ribbon ul.tabs-content li .group .area > div {
-  display: inline-block;
   vertical-align: top;
 }
 #OfficeUI header .ribbon ul.tabs-content ul .group .area > div .icon,
 #OfficeUI header .ribbon ul.tabs-content li .group .area > div .icon {
+  display: inline-block;
   height: 66px;
   margin-right: 0;
   padding-top: 3px;
@@ -339,12 +339,35 @@
 #OfficeUI header .ribbon ul.tabs-content li .group .area > div .big-icon {
   text-align: center;
 }
+#OfficeUI header .ribbon ul.tabs-content ul .group .area > div .small-icon,
+#OfficeUI header .ribbon ul.tabs-content li .group .area > div .small-icon {
+  text-align: left;
+  height: 100%;
+  margin-right: 0;
+  padding: 3px 7px 0 0;
+}
+#OfficeUI header .ribbon ul.tabs-content ul .group .area > div .small-icon .label,
+#OfficeUI header .ribbon ul.tabs-content li .group .area > div .small-icon .label {
+  text-align: center;
+  display: inline-block;
+  vertical-align: top;
+}
+#OfficeUI header .ribbon ul.tabs-content ul .group .area > div .small-icon img,
+#OfficeUI header .ribbon ul.tabs-content li .group .area > div .small-icon img {
+  padding: 0 0 0 3px;
+}
 #OfficeUI header .ribbon ul.tabs-content ul .group .area > div .big-icon .label,
 #OfficeUI header .ribbon ul.tabs-content li .group .area > div .big-icon .label {
   line-height: 15px;
   padding: 0 3px 0 2px;
   text-align: center;
   top: -2px;
+}
+#OfficeUI header .ribbon ul.tabs-content ul .group .area > div .icon .label i,
+#OfficeUI header .ribbon ul.tabs-content li .group .area > div .icon .label i {
+  font-size: 0.7em;
+  padding-top: 4px;
+  vertical-align: top;
 }
 #OfficeUI header .ribbon ul.tabs-content ul .group .legend,
 #OfficeUI header .ribbon ul.tabs-content li .group .legend {

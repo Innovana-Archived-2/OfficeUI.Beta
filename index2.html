@@ -143,9 +143,19 @@
                                         <div class="legend">{{group.Legend}}</div>
 
                                         <div class="area" ng-repeat="area in group.Areas">
-                                            <div ng-repeat="action in area.Actions">
+                                            <div ng-repeat="action in area.Actions" ng-class="{'displayBlock': action.Type == 'sIcon', 'displayInlineBlock': action.Type == 'bIcon'}">
+                                                <!-- This is what is being rendered if it's a big icon. -->
                                                 <div ng-if="action.Type == 'bIcon'">
                                                     <div id="{{action.Id}}" class="icon big-icon">
+                                                        <img ng-src="{{action.Resource}}" />
+
+                                                        <div class="label" ng-bind-html="action |actionLegend"></div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- This is what is being rendered if it's a small icon. -->
+                                                <div ng-if="action.Type == 'sIcon'">
+                                                    <div id="{{action.Id}}" class="icon small-icon">
                                                         <img ng-src="{{action.Resource}}" />
 
                                                         <div class="label" ng-bind-html="action |actionLegend"></div>
