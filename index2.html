@@ -213,6 +213,55 @@
                                             <div class="group" ng-repeat-start="group in contextualTab.Groups">
 
                                                 <div class="legend">{{group.Legend}}</div>
+
+                                                <div class="area" ng-repeat="area in group.Areas">
+                                                    <div ng-repeat="action in area.Actions" ng-class="{'displayBlock': action.Type == 'sIcon', 'displayInlineBlock': action.Type == 'bIcon'}">
+                                                        <!-- This is what is being rendered if it's a big icon. -->
+                                                        <div ng-if="action.Type == 'bIcon'" ngc-tooltip>
+                                                            <div id="{{action.Id}}" class="icon big-icon" dynamic-event-handling="action.Id">
+                                                                <img ng-src="{{action.Resource}}" />
+
+                                                                <div class="label" ng-bind-html="action |actionLegend"></div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="tooltip" ng-if="action.Tooltip">
+                                                            <div ng-bind-html="action.Tooltip"></div>
+                                                        </div>
+
+                                                        <!-- This is what is being rendered if it's a small icon. -->
+                                                        <div ng-if="action.Type == 'sIcon'" ngc-tooltip>
+                                                            <div id="{{action.Id}}" class="icon small-icon" dynamic-event-handling="action.Id">
+                                                                <img ng-src="{{action.Resource}}" />
+
+                                                                <div class="label" ng-bind-html="action |actionLegend"></div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="tooltip" ng-if="action.Tooltip">
+                                                            <div ng-bind-html="action.Tooltip"></div>
+                                                        </div>
+
+                                                        <!-- This is what is being rendered if it's an input element (Text). -->
+                                                        <div ng-if="action.Type == 'Input'" dynamic-event-handling="action.Id" ngc-tooltip>
+                                                            <input type="text" id="{{action.Id}}" placeholder="{{action.Legend}}" ng-style="{width:'{{action.Width}}'}"/>
+                                                        </div>
+
+                                                        <div class="tooltip" ng-if="action.Tooltip">
+                                                            <div ng-bind-html="action.Tooltip"></div>
+                                                        </div>
+
+                                                        <!-- This is what is being rendered if it's an input element (Checkbox). -->
+                                                        <div ng-show="action.Type == 'Checkbox'" dynamic-event-handling="action.Id" ngc-tooltip>
+                                                            <input type="checkbox" id="{{action.Id}}" />
+                                                            <div class="displayInlineBlock">{{action.Legend}}</div>
+                                                        </div>
+
+                                                        <div class="tooltip" ng-if="action.Tooltip">
+                                                            <div ng-bind-html="action.Tooltip"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
 
                                             <!-- Defines the vertical 'pipe' sign. -->

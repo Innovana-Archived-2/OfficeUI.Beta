@@ -894,22 +894,225 @@
           "Label": "Format",
           "Groups": [
             {
-              "Legend": "Insert Shapes"
+              "Legend": "Insert Shapes",
+              "Areas": [
+                {
+                  "Actions": [
+                    {
+                      "Id": "icoEditShape",
+                      "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/EditShape.png",
+                      "Legend": "Edit Shape",
+                      "Tooltip": "<strong>Edit Shape</strong><p>Change the shape of this drawing, convert it it a freeform shape, or edit the wrap points to determine how text wraps around the drawing.</p>",
+                      "Type": "sIcon",
+                      "MenuItems": []
+                    },
+                    {
+                      "Id": "icoDrawTextBox",
+                      "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/DrawTextBox.png",
+                      "Legend": "Draw Text Box",
+                      "Tooltip": "<strong>Draw Text Box</strong><p>Draw a text box anywhere in your document.</p>",
+                      "Type": "sIcon"
+                    }
+                  ]
+                }
+              ]
             },
             {
-              "Legend": "Shape Styles"
+              "Legend": "Shape Styles",
+              "Areas": [
+                {
+                  "Actions": [
+                    {
+                      "Id": "icoShapeFill",
+                      "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/ShapeFill.png",
+                      "Legend": "Shape Fill",
+                      "Tooltip": "<strong>Shape Fill</strong><p>Fill the selected shape with a solid color, gradient, picture, or texture.</p>",
+                      "Type": "sIcon",
+                      "MenuItems": []
+                    },
+                    {
+                      "Id": "icoShapeOutline",
+                      "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/ShapeOutline.png",
+                      "Legend": "Shape Outline",
+                      "Tooltip": "<strong>Shape Outline</strong><p>Pick the color, width, and line style for the outline of your shape.</p>",
+                      "Type": "sIcon",
+                      "MenuItems": []
+                    },
+                    {
+                      "Id": "icoShapeEffects",
+                      "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/ShapeEffects.png",
+                      "Legend": "Shape Effects",
+                      "Tooltip": "<strong>Shape Effects</strong><p>Apply a visual effect to the selected shape such as shadow, glow, reflection or 3-D rotation.</p>",
+                      "Type": "sIcon",
+                      "MenuItems": []
+                    }
+                  ]
+                }
+              ]
             },
             {
-              "Legend": "WordArt Styles"
+              "Legend": "WordArt Styles",
+              "Areas": [
+                {
+                  "Actions": [
+                    {
+                      "Id": "icoTextFill",
+                      "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/TextFill.png",
+                      "Legend": "Text Fill",
+                      "Tooltip": "<strong>Text Fill</strong><p>Fill the text with a solid color, gradient, picture, or texture.</p>",
+                      "Type": "sIcon",
+                      "MenuItems": []
+                    },
+                    {
+                      "Id": "icoTextOutline",
+                      "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/TextOutline.png",
+                      "Legend": "Text Outline",
+                      "Tooltip": "<strong>Text Outline</strong><p>Customize the outline of your text by choosing the color, width, and line style.</p>",
+                      "Type": "sIcon",
+                      "MenuItems": []
+                    },
+                    {
+                      "Id": "icoTextEffects",
+                      "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/TextEffects.png",
+                      "Legend": "Text Effects",
+                      "Tooltip": "<strong>Text Effects</strong><p>Turn your work into a work of art.</p><p>Add a visual effect such as shadow, glow or reflection to your text.</p>",
+                      "Type": "sIcon",
+                      "MenuItems": []
+                    }
+                  ]
+                }
+              ]
             },
             {
-              "Legend": "Text"
+              "Legend": "Text",
+              "Areas": [
+                {
+                  "Actions": [
+                    {
+                      "Id": "icoTextDirection",
+                      "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/TextDirection.png",
+                      "Legend": "Text<br/>Direction",
+                      "Tooltip": "<strong>Text Direction</strong><p>Change the orientation of the text to vertical, stacked or rotate it to the desired direction.</p>",
+                      "Type": "bIcon",
+                      "MenuItems": []
+                    },
+                    {
+                      "Id": "icoAlignText",
+                      "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/AlignText.png",
+                      "Legend": "Align<br/>Text",
+                      "Tooltip": "<strong>Align Text</strong><p>Change how your text is aligned within the text box.</p>",
+                      "Type": "bIcon",
+                      "MenuItems": []
+                    },
+                    {
+                      "Id": "icoCreateLine",
+                      "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/CreateLink.png",
+                      "Legend": "Create<br/>Link",
+                      "Tooltip": "<strong>Create Link</strong><p>Let your text flow from one textbox to another.</p><p>Click an empty text box to link it to the current one.</p>",
+                      "Type": "bIcon"
+                    }
+                  ]
+                }
+              ]
             },
             {
-              "Legend": "Arrange"
+              "Legend": "Arrange",
+              "Areas": [
+                {
+                  "Actions": [
+                    {
+                      "Id": "icoPosition",
+                      "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/Position.png",
+                      "Legend": "Position<br/>",
+                      "Tooltip": "<strong>Position</strong><p>Choose where the selected object will appear on the page.</p><p>Text will automatically wrap around the object so that it's still easy to read.</p>",
+                      "Type": "bIcon",
+                      "MenuItems": []
+                    },
+                    {
+                      "Id": "icoWrapText",
+                      "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/WrapText.png",
+                      "Legend": "Wrap<br/>Text",
+                      "Tooltip": "<strong>Wrap Text</strong><p>Choose how your text wraps around the selected object.</p><p>For example you can choose to have the text continue around the object or cross right over it.</p>",
+                      "Type": "bIcon",
+                      "MenuItems": []
+                    },
+                    {
+                      "Id": "icoBringForward",
+                      "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/BringForward.png",
+                      "Legend": "Bring<br/>Forward",
+                      "Tooltip": "<strong>Bring Forward</strong><p>Bring the selected object forward one level, or bring it front of all the other objects.</p>",
+                      "Type": "bIcon",
+                      "MenuItems": []
+                    },
+                    {
+                      "Id": "icoSendBackward",
+                      "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/SendBackward.png",
+                      "Legend": "Send<br/>Backward",
+                      "Tooltip": "<strong>Send Backward</strong><p>Send the selected object back one level, or send it behind all the other objects.</p>",
+                      "Type": "bIcon",
+                      "MenuItems": []
+                    },
+                    {
+                      "Id": "icoSelectionPane",
+                      "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/SelectionPane.png",
+                      "Legend": "Selection<br/>Pane",
+                      "Tooltip": "<strong>Selection Pane</strong><p>See a list of all your objects.</p><p>This makes it easier to select objects, change their order, or change their visibility.</p>",
+                      "Type": "bIcon"
+                    }
+                  ]
+                },
+                {
+                  "Actions": [
+                    {
+                      "Id": "icoAlign",
+                      "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/Align.png",
+                      "Legend": "Align",
+                      "Tooltip": "<strong>Align Objects</strong><p>Change the placement of your selected objects on the page.</p><p>This is great for aligning objects to the margins of the edge of the page. You can also align them relative to one another.</p>",
+                      "Type": "sIcon",
+                      "MenuItems": []
+                    },
+                    {
+                      "Id": "icoGroup",
+                      "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/Group.png",
+                      "Legend": "Group",
+                      "Tooltip": "<strong>Group Objects</strong><p>Join objects together to move and format them as if they were a single object.</p>",
+                      "Type": "sIcon",
+                      "MenuItems": []
+                    },
+                    {
+                      "Id": "icoRotate",
+                      "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/Rotate.png",
+                      "Legend": "Rotate",
+                      "Tooltip": "<strong>Rotate Objects</strong><p>Rotate or flip the selected object.</p>",
+                      "Type": "sIcon",
+                      "MenuItems": []
+                    }
+                  ]
+                }
+              ]
             },
             {
-              "Legend": "Size"
+              "Legend": "Size",
+              "Areas": [
+                {
+                   "Actions": [
+                    {
+                      "Id": "icoHeight",
+                      "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/Height.png",
+                      "Legend": "Height",
+                      "Tooltip": "<strong>Shape Height</strong><p>Change the height of the shape or picture.</p>",
+                      "Type": "sIcon"
+                    },
+                    {
+                      "Id": "icoWidth",
+                      "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/Width.png",
+                      "Legend": "Width",
+                      "Tooltip": "<strong>Shape Width</strong><p>Change the width of the shape or picture.</p>",
+                      "Type": "sIcon"
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }
