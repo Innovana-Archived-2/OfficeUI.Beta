@@ -59,6 +59,26 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', 'OfficeUIRibbonS
         .error(function(data) { console.error('An error occured while loading the file \'' + $.fn.OfficeUI.ribbonDataFile + '\' file. '); })
 
     /**
+     * @ngdoc Area
+     * @name Public API
+     *
+     * @description
+     * All the methods which can be found below does belong to an exposed API by all aspects of the OfficeUI application.
+     *
+     */
+
+    /**
+     * @description
+     * Set a specific tab as being active.
+     *
+     * @remarks
+     * See the OfficeUIRibbonService source code for a more detailed explanation of this function.
+     */
+    $scope.setActiveTabOnScrolling = function(tabId) {
+        if ($.fn.OfficeUI.Defaults.changeActiveTabOnHover) { OfficeUIRibbonService.setActive(tabId); }
+    }
+
+    /**
      * @ndgoc Function
      * @name isRibbonShowed
      *

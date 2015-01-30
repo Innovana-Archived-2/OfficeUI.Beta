@@ -47,11 +47,11 @@
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Angular.Directive.Tooltip.min.js"></script>
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Angular.Directive.DynamicEventHandling.min.js"></script>
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Angular.Directive.Scrolling.min.js"></script>
+    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Angular.Directive.Hover.min.js"></script>
 
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Filters/OfficeUI.Angular.Filter.ActionLegend.js"></script>
 
     <!--<script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Angular.Directive.Collapsing.min.js"></script>
-    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Angular.Directive.Tooltip.min.js"></script>
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Angular.Directive.Hover.min.js"></script>
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Angular.Directive.ApplicationMenuContents.min.js"></script>
 
@@ -104,7 +104,7 @@
 
                             <!-- Defines the normal tabs of the ribbon. -->
                             <ul>
-                                <li id="{{tab.Id}}" class="tab tab-normal" ng-repeat="tab in OfficeUIRibbon.Tabs" dynamic-event-handling="tab.Id" ng-click="!$first && setActive(tab.Id);" ng-class="{application: $first, active: isActive(tab.Id) && (isRibbonShowed() || isRibbonVisible()), 'visible-border': isRibbonShowed() || isRibbonVisible(), 'invisible-border': isRibbonHidden()}" stop-propagation="click">
+                                <li id="{{tab.Id}}" class="tab tab-normal" hover="!$first && setActiveTabOnScrolling(tab.Id);" ng-repeat="tab in OfficeUIRibbon.Tabs" dynamic-event-handling="tab.Id" ng-click="!$first && setActive(tab.Id);" ng-class="{application: $first, active: isActive(tab.Id) && (isRibbonShowed() || isRibbonVisible()), 'visible-border': isRibbonShowed() || isRibbonVisible(), 'invisible-border': isRibbonHidden()}" stop-propagation="click">
                                     <span>{{tab.Label}}</span>
                                 </li>
                             </ul>
@@ -122,7 +122,7 @@
                                     </div>
                                     <div class="tabs-holder">
                                         <ul>
-                                            <li class="tab tab-contextual" id="{{tab.Id}}" dynamic-event-handling="tab.Id" ng-style="{color: setActiveTabColor(tab.Id, contextual.GroupTextColor)}" ng-repeat="tab in contextual.Tabs" ng-click="setActive(tab.Id)" ng-class="{active: isActive(tab.Id) && (isRibbonShowed() || isRibbonVisible()), 'visible-border': isRibbonShowed() || isRibbonVisible(), 'invisible-border': isRibbonHidden()}" stop-propagation="click">
+                                            <li class="tab tab-contextual" id="{{tab.Id}}" hover="setActiveTabOnScrolling(tab.Id);" dynamic-event-handling="tab.Id" ng-style="{color: setActiveTabColor(tab.Id, contextual.GroupTextColor)}" ng-repeat="tab in contextual.Tabs" ng-click="setActive(tab.Id)" ng-class="{active: isActive(tab.Id) && (isRibbonShowed() || isRibbonVisible()), 'visible-border': isRibbonShowed() || isRibbonVisible(), 'invisible-border': isRibbonHidden()}" stop-propagation="click">
                                                 <span>{{tab.Label}}</span>
                                             </li>
                                         </ul>
@@ -315,6 +315,10 @@
     // Those calls are required for the application to function.
     $.fn.OfficeUI.applicationDataFile = '/OfficeUI.Beta/Resources/data/application.json'; // Specify the file in which the application data is stored.
     $.fn.OfficeUI.ribbonDataFile = '/OfficeUI.Beta/Resources/Data/ribbon.json'; // Specify the file in which the ribbon data is stored.
+
+    // Configuration of the application.
+    // This call is not required for the application. The default is false.
+    $.fn.OfficeUI.Defaults.changeActiveTabOnHover = false; // Tabs will not become active when you're hovering on the tab element. Change this to 'TRUE' to change this behaviour.
 
     // Provides a way to bind an event to any given element.
     // This method is optional.
