@@ -146,6 +146,7 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', 'OfficeUIRibbonS
      * @param scrollEvent
      *        The event that defines the scrolling. Based on this event we can calculate if we're scrolling up or down.
      */
+    // ToDo: This code should be optimized because it's unclear what it does for the moment.
     $scope.ribbonScroll = function(scrollEvent) {
         var tabToActivate = null;
 
@@ -153,10 +154,8 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', 'OfficeUIRibbonS
             var activeTab = $('.ribbon .active');
 
             if (activeTab.next().attr('id') != null) { tabToActivate = activeTab.next(); }
-            // When there's no contextual tab, then we should check if this is a normal tab.
             else {
                 if (activeTab.parents('.context-group').length == 0) {
-                    // When there's a contextual tab, get the first tab element.
                     if ($('.active-contextual-group').length > 0) { tabToActivate = $('.tab', '.active-contextual-group'); }
                 }
                 else {
@@ -165,15 +164,28 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', 'OfficeUIRibbonS
                     }
                 }
             }
-
-            if (tabToActivate != null) { $scope.setActive(tabToActivate.attr('id')); }
         } else {
-            var previousTab = $('.ribbon .active').prev();
+            var activeTab = $('.ribbon .active');
 
-            if (previousTab.attr('id') != null && !previousTab.hasClass('application')) {
-                $scope.setActive(previousTab.attr('id'));
+            if (activeTab.prev().attr('id') != null && !activeTab.prev().hasClass('application')) { tabToActivate = activeTab.prev(); }
+            else {
+                if (!activeTab.prev().hasClass('application')) {
+                    if (activeTab.parents('.context-group').length == 0) {
+                        if ($('.active-contextual-group').length > 0) { tabToActivate = $('.tab', '.active-contextual-group'); }
+                    }
+                    else {
+                        if (activeTab.parents('.active-contextual-group').prev('.active-contextual-group').length > 0) {
+                            tabToActivate = $('.tab', activeTab.parents('.active-contextual-group').prev('.active-contextual-group')).last();
+                        } else {
+                            tabToActivate = $('.ribbon .tab-normal').last();
+                        }
+                    }
+                }
+
             }
         }
+
+        if (tabToActivate != null) { $scope.setActive(tabToActivate.attr('id')); }
 
         $scope.$apply();
     }

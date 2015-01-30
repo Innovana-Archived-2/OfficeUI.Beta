@@ -95,7 +95,7 @@
                 <!-- This UL element does shows the tabs itself. -->
                 <ul class="tabs" ng-class="{'visible-border': isRibbonShowed() || isRibbonVisible(), 'invisible-border': isRibbonHidden()}">
                     <li>
-                        <div>
+                        <div class="normal-tabs">
                             <div class="title" ng-show="isContextualGroupActive()">
                                 <div><img id="{{icon.Id}}" alt="{{icon.Alt}}" ng-class="{'icon': !$first}" ng-repeat="icon in OfficeUI.Icons" ng-src="{{icon.Icon}}" dynamic-event-handling="Icon.Id"/></div>
 
