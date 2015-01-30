@@ -77,7 +77,7 @@
         -->
         <header>
             <div class="title">
-                <div><img id="{{icon.Id}}" alt="{{icon.Alt}}" ng-class="{'icon': !$first}" ng-repeat="icon in OfficeUI.Icons" ng-src="{{icon.Icon}}" /></div>
+                <div><img id="{{icon.Id}}" alt="{{icon.Alt}}" ng-class="{'icon': !$first}" ng-repeat="icon in OfficeUI.Icons" ng-src="{{icon.Icon}}" dynamic-event-handling="Icon.Id" /></div>
 
                 <span>{{OfficeUI.Title}}</span>
             </div>
@@ -85,7 +85,7 @@
             <!-- Defines the ribbon component itself. -->
             <div class="ribbon">
                 <div class="title" ng-show="!isContextualGroupActive()">
-                    <div><img id="{{icon.Id}}" alt="{{icon.Alt}}" ng-class="{'icon': !$first}" ng-repeat="icon in OfficeUI.Icons" ng-src="{{icon.Icon}}" /></div>
+                    <div><img id="{{icon.Id}}" alt="{{icon.Alt}}" ng-class="{'icon': !$first}" ng-repeat="icon in OfficeUI.Icons" ng-src="{{icon.Icon}}" dynamic-event-handling="Icon.Id" /></div>
 
                     <span>{{OfficeUI.Title}}</span>
                 </div>
@@ -95,7 +95,7 @@
                     <li>
                         <div>
                             <div class="title" ng-show="isContextualGroupActive()">
-                                <div><img id="{{icon.Id}}" alt="{{icon.Alt}}" ng-class="{'icon': !$first}" ng-repeat="icon in OfficeUI.Icons" ng-src="{{icon.Icon}}" /></div>
+                                <div><img id="{{icon.Id}}" alt="{{icon.Alt}}" ng-class="{'icon': !$first}" ng-repeat="icon in OfficeUI.Icons" ng-src="{{icon.Icon}}" dynamic-event-handling="Icon.Id"/></div>
 
                                 <span>{{OfficeUI.Title}}</span>
                             </div>
