@@ -1,5 +1,15 @@
+/* Loads the module 'OfficeUIRibbon'. */
 var OfficeUIRibbon = angular.module('OfficeUIRibbon');
 
+/**
+ * @ngdoc Directive
+ * @name ngcTooltip
+ *
+ * @description
+ * The ngcTooltip directive allows you to show tooltip elements.
+ *
+ * @element ANY
+ */
 OfficeUIRibbon.directive('ngcTooltip', function () {
     return {
         restrict: 'A',

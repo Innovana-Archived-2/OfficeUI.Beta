@@ -402,6 +402,31 @@
   margin-left: 4px;
   vertical-align: middle;
 }
+#OfficeUI header .ribbon ul.tabs-content ul .group .area > div .tooltip,
+#OfficeUI header .ribbon ul.tabs-content li .group .area > div .tooltip {
+  position: fixed;
+  display: none;
+  top: 146px;
+  background-color: #fff;
+  background-image: none, linear-gradient(#c6c6c6, #c6c6c6);
+  background-position: 0 0, 100% 0;
+  background-repeat: no-repeat;
+  background-size: 1px 100%;
+  border: 1px solid #d4d4d4;
+  box-shadow: 3px 3px 3px #e0e0e0;
+  padding: 5px 11px;
+  width: 191px;
+}
+#OfficeUI header .ribbon ul.tabs-content ul .group .area > div .tooltip strong,
+#OfficeUI header .ribbon ul.tabs-content li .group .area > div .tooltip strong {
+  color: #5d5d5d;
+}
+#OfficeUI header .ribbon ul.tabs-content ul .group .area > div .tooltip p,
+#OfficeUI header .ribbon ul.tabs-content li .group .area > div .tooltip p {
+  line-height: 15px;
+  margin: 0;
+  padding: 5px 0;
+}
 #OfficeUI header .ribbon ul.tabs-content ul .group .legend,
 #OfficeUI header .ribbon ul.tabs-content li .group .legend {
   position: absolute;
