@@ -225,10 +225,6 @@
                                                             </div>
                                                         </div>
 
-                                                        <div class="tooltip" ng-if="action.Tooltip">
-                                                            <div ng-bind-html="action.Tooltip"></div>
-                                                        </div>
-
                                                         <!-- This is what is being rendered if it's a small icon. -->
                                                         <div ng-if="action.Type == 'sIcon'" ngc-tooltip>
                                                             <div id="{{action.Id}}" class="icon small-icon" dynamic-event-handling="action.Id">
@@ -238,17 +234,9 @@
                                                             </div>
                                                         </div>
 
-                                                        <div class="tooltip" ng-if="action.Tooltip">
-                                                            <div ng-bind-html="action.Tooltip"></div>
-                                                        </div>
-
                                                         <!-- This is what is being rendered if it's an input element (Text). -->
                                                         <div ng-if="action.Type == 'Input'" dynamic-event-handling="action.Id" ngc-tooltip>
                                                             <input type="text" id="{{action.Id}}" placeholder="{{action.Legend}}" ng-style="{width:'{{action.Width}}'}"/>
-                                                        </div>
-
-                                                        <div class="tooltip" ng-if="action.Tooltip">
-                                                            <div ng-bind-html="action.Tooltip"></div>
                                                         </div>
 
                                                         <!-- This is what is being rendered if it's an input element (Checkbox). -->

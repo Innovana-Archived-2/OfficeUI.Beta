@@ -16,7 +16,7 @@ OfficeUIRibbon.directive('ngcTooltip', function () {
         scope: { method: '&ngcTooltip' },
         link: function (scope, element, attributes) {
             element.bind("mouseenter", function (e) {
-                var tooltipElement = element.next();
+                var tooltipElement = $('.tooltip', element.parent());
 
                 $.fn.OfficeUI.waitHandleShowTooltip = setTimeout(function() {
                     $(tooltipElement).show();
