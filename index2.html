@@ -136,7 +136,7 @@
                 </ul>
 
                 <!-- This UL element does shows the content of the tab which is currently opened. -->
-                <ul class="tabs-content animate-hide-show-ribbon" ng-show="isRibbonShowed() || isRibbonVisible()" stop-propagation="click">
+                <ul class="tabs-content" ng-class="{'animate-ribbon-hiding-directly': isRibbonVisible(), 'animate-ribbon-hiding': isRibbonShowed(), 'animate-ribbon-showing': isRibbonHidden()}"  stop-propagation="click">
                     <li>
                         <ul>
                             <li ng-repeat="tab in OfficeUIRibbon.Tabs" ng-show="isActive(tab.Id)" stop-propagation="click">
@@ -156,10 +156,6 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="tooltip" ng-if="action.Tooltip">
-                                                    <div ng-bind-html="action.Tooltip"></div>
-                                                </div>
-
                                                 <!-- This is what is being rendered if it's a small icon. -->
                                                 <div ng-if="action.Type == 'sIcon'" ngc-tooltip>
                                                     <div id="{{action.Id}}" class="icon small-icon" dynamic-event-handling="action.Id">
@@ -169,17 +165,9 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="tooltip" ng-if="action.Tooltip">
-                                                    <div ng-bind-html="action.Tooltip"></div>
-                                                </div>
-
                                                 <!-- This is what is being rendered if it's an input element (Text). -->
                                                 <div ng-if="action.Type == 'Input'" dynamic-event-handling="action.Id" ngc-tooltip>
                                                     <input type="text" id="{{action.Id}}" placeholder="{{action.Legend}}" ng-style="{width:'{{action.Width}}'}"/>
-                                                </div>
-
-                                                <div class="tooltip" ng-if="action.Tooltip">
-                                                    <div ng-bind-html="action.Tooltip"></div>
                                                 </div>
 
                                                 <!-- This is what is being rendered if it's an input element (Checkbox). -->
@@ -271,7 +259,7 @@
         </header>
     </div>
 
-    <div style="font-family: 'Segoe UI', serif; font-size: 0.75em; padding-top: 150px; padding-left: 5px; padding-right: 5px;">
+    <div class="content" style="font-family: 'Segoe UI', serif; font-size: 0.75em; padding-top: 150px; padding-left: 5px; padding-right: 5px;">
         <h2>Functions</h2>
         <h3>Tabs</h3>
         <a href="#" ng-click="setActive('tabHome')" style="padding-right: 40px;" stop-propagation="click">Activate Tab 'Home'</a>
