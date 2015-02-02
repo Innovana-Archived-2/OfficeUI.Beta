@@ -179,6 +179,10 @@
 #OfficeUI header .ribbon .title {
   z-index: 80;
 }
+#OfficeUI header .ribbon a {
+  cursor: default;
+  color: #444;
+}
 #OfficeUI header .ribbon ul {
   padding: 0;
   margin: 0;

@@ -149,20 +149,24 @@
                                             <div ng-repeat="action in area.Actions" ng-class="{'displayBlock': action.Type == 'sIcon', 'displayInlineBlock': action.Type == 'bIcon'}">
                                                 <!-- This is what is being rendered if it's a big icon. -->
                                                 <div ng-if="action.Type == 'bIcon'" ngc-tooltip>
-                                                    <div id="{{action.Id}}" class="icon big-icon" dynamic-event-handling="action.Id">
-                                                        <img ng-src="{{action.Resource}}" />
+                                                    <a ng-href="{{action.Uri}}">
+                                                        <div id="{{action.Id}}" class="icon big-icon" dynamic-event-handling="action.Id">
+                                                            <img ng-src="{{action.Resource}}" />
 
-                                                        <div class="label" ng-bind-html="action |actionLegend"></div>
-                                                    </div>
+                                                            <div class="label" ng-bind-html="action |actionLegend"></div>
+                                                        </div>
+                                                    </a>
                                                 </div>
 
                                                 <!-- This is what is being rendered if it's a small icon. -->
                                                 <div ng-if="action.Type == 'sIcon'" ngc-tooltip>
-                                                    <div id="{{action.Id}}" class="icon small-icon" dynamic-event-handling="action.Id">
-                                                        <img ng-src="{{action.Resource}}" />
+                                                    <a ng-href="{{action.Uri}}">
+                                                        <div id="{{action.Id}}" class="icon small-icon" dynamic-event-handling="action.Id">
+                                                            <img ng-src="{{action.Resource}}" />
 
-                                                        <div class="label" ng-bind-html="action |actionLegend"></div>
-                                                    </div>
+                                                            <div class="label" ng-bind-html="action |actionLegend"></div>
+                                                        </div>
+                                                    </a>
                                                 </div>
 
                                                 <!-- This is what is being rendered if it's an input element (Text). -->
