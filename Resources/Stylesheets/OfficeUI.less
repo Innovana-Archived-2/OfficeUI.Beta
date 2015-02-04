@@ -191,8 +191,6 @@
  * When hiding the ribbon, it takes 0.15 seconds, showing the ribbon takes place immediately.
  */
 .tabs-content { opacity: 1; top: 0; }
-.animate-ribbon-showing { -webkit-transition: 0.15s linear all; transition: 0.15s linear all; top: -93px; opacity: 0; }
-.animate-ribbon-hiding-directly { -webkit-transition: 0.15s linear all; transition: 0.15s linear all; top: 0; opacity: 1; }
-//.animate-ribbon-hiding-directly { -webkit-transition: 0.0s linear all; transition: 0.0s linear all; }
-//.tabs-content.animate-ribbon-hiding, .tabs-content.animate-ribbon-hiding-directly, .tabs-content.animate-ribbon-showing { opacity: 1; top: 0; }
-//.tabs-content { opacity: 0; top: -93px; }
+.animate-ribbon-hiding { -webkit-transition: 0.15s linear all; transition: 0.15s linear all; top: -93px; opacity: 0; }
+.no-animate-ribbon-hiding { -webkit-transition: 0.0s linear all; transition: 0.0s linear all; top: -93px; opacity: 0; }
+.animate-ribbon-showing { -webkit-transition: 0.15s linear all; transition: 0.15s linear all; top: 0; opacity: 1; }

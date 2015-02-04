@@ -30,6 +30,11 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', 'OfficeUIRibbonS
      * Therefore we set some of the properties which relies on the application.
      */
     $scope.OfficeUIRibbon.ribbonStates = {};
+    $scope.OfficeUIRibbon.initialized = false;
+
+    $scope.isRibbonInitialized = function() {
+        return $scope.OfficeUIRibbon.initialized;
+    }
 
     /**
      * @ngdoc Function
@@ -223,6 +228,7 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', 'OfficeUIRibbonS
      */
     $(window).on('click', function(e) {
         if ($scope.OfficeUIRibbon.state == $scope.OfficeUIRibbon.ribbonStates.Visible) {
+            $scope.OfficeUIRibbon.initialized = true;
             $scope.OfficeUIRibbon.state = $scope.OfficeUIRibbon.ribbonStates.Hidden;
 
             $scope.$apply();

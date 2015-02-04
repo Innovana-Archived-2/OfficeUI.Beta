@@ -489,13 +489,19 @@
   opacity: 1;
   top: 0;
 }
-.animate-ribbon-showing {
+.animate-ribbon-hiding {
   -webkit-transition: 0.15s linear all;
   transition: 0.15s linear all;
   top: -93px;
   opacity: 0;
 }
-.animate-ribbon-hiding-directly {
+.no-animate-ribbon-hiding {
+  -webkit-transition: 0.0s linear all;
+  transition: 0.0s linear all;
+  top: -93px;
+  opacity: 0;
+}
+.animate-ribbon-showing {
   -webkit-transition: 0.15s linear all;
   transition: 0.15s linear all;
   top: 0;

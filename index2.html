@@ -136,7 +136,7 @@
                 </ul>
 
                 <!-- This UL element does shows the content of the tab which is currently opened. -->
-                <ul class="tabs-content" ng-class="{'animate-ribbon-hiding-directly': isRibbonVisible(), 'animate-ribbon-hiding': isRibbonShowed(), 'animate-ribbon-showing': isRibbonHidden()}"  stop-propagation="click">
+                <ul class="tabs-content" ng-class="{'animate-ribbon-hiding': isRibbonHidden() && !isRibbonInitialized(), 'no-animate-ribbon-hiding': isRibbonHidden() && isRibbonInitialized(), 'animate-ribbon-showing': isRibbonVisible() }"  stop-propagation="click">
                     <li>
                         <ul>
                             <li ng-repeat="tab in OfficeUIRibbon.Tabs" ng-show="isActive(tab.Id)" stop-propagation="click">
