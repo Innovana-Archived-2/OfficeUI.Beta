@@ -467,44 +467,43 @@
 #OfficeUI header .application-contents .title {
   left: 0;
 }
-#OfficeUI header .application-contents .navigation {
+#OfficeUI header .application-contents #navigation {
   float: left;
   color: #fff;
   height: 100%;
   width: 135px;
 }
-#OfficeUI header .application-contents .navigation .back-arrow {
+#OfficeUI header .application-contents #navigation .back-arrow {
   background-repeat: no-repeat;
   height: 35px;
   margin-left: 23px;
   margin-top: 19px;
   width: 35px;
 }
-#OfficeUI header .application-contents .navigation ul {
+#OfficeUI header .application-contents #navigation ul {
   margin-top: 15px;
 }
-#OfficeUI header .application-contents .navigation ul li {
+#OfficeUI header .application-contents #navigation ul li {
   line-height: 16px;
   padding: 11px 10px 11px 26px;
   vertical-align: middle;
 }
-#OfficeUI header .application-contents .navigation ul li.seperator {
+#OfficeUI header .application-contents #navigation ul li.seperator {
   margin-bottom: -1px;
 }
-#OfficeUI header .application-contents .navigation ul li .seperator {
+#OfficeUI header .application-contents #navigation ul li .seperator {
   border-bottom: 1px solid #fff;
 }
-#OfficeUI header .application-contents .content {
+#OfficeUI header .application-contents #content {
   position: relative;
-  margin-left: 135px;
   top: 30px;
 }
-#OfficeUI header .application-contents .content h1 {
+#OfficeUI header .application-contents #content h1 {
   font-size: 3.2em;
   font-weight: 100;
   margin: 25px 0 25px 0;
 }
-#OfficeUI header .application-contents .content .content-area {
+#OfficeUI header .application-contents #content .content-area {
   position: absolute;
   margin-left: 40px;
   margin-top: 34px;
@@ -561,47 +560,39 @@ header .animate-ribbon-showing {
   top: 0;
   opacity: 1;
 }
-header .content-area.ng-hide-add-active {
+header .application-contents.ng-hide-add,
+header .application-contents.ng-hide-remove {
   -webkit-transition: 0.15s linear all;
   transition: 0.15s linear all;
 }
-header .content-area.ng-hide-remove.ng-hide-remove-active {
+header .application-contents.ng-hide-add {
+  transition-delay: 0.15s;
+}
+header .application-contents {
+  opacity: 1;
+}
+header .application-contents.ng-hide {
+  opacity: 0;
+}
+header .application-contents #navigation.ng-hide-add,
+header .application-contents #navigation.ng-hide-remove {
   -webkit-transition: 0.15s linear all;
   transition: 0.15s linear all;
 }
-header .content-area {
-  opacity: 1;
+header .application-contents #navigation {
+  margin-left: 0;
 }
-header .content-area.ng-hide {
-  opacity: 0;
+header .application-contents #navigation.ng-hide {
+  margin-left: -135px;
 }
-header .navigation.ng-hide-add-active {
-  -webkit-transition: 0.075s linear all;
-  transition: 0.075s linear all;
+header .application-contents #content.ng-hide-add,
+header .application-contents #navigation.ng-hide-remove {
+  -webkit-transition: 0.15s linear all;
+  transition: 0.15s linear all;
 }
-header .navigation.ng-hide-remove.ng-hide-remove-active {
-  -webkit-transition: 0.075s linear all;
-  transition: 0.075s linear all;
+header .application-contents #content {
+  margin-left: 135px;
 }
-header .navigation {
-  margin-left: 0 !important;
-}
-header .navigation.ng-hide {
-  margin-left: -135px !important;
-}
-header .content.ng-hide-add-active {
-  -webkit-transition: 0.075s linear all;
-  transition: 0.075s linear all;
-}
-header .content.ng-hide-remove.ng-hide-remove-active {
-  -webkit-transition: 0.075s linear all;
-  transition: 0.075s linear all;
-}
-header .content {
-  margin-left: 135px !important;
-  opacity: 1;
-}
-header .content.ng-hide {
-  margin-left: 0px !important;
-  opacity: 0;
+header .application-contents #content.ng-hide {
+  margin-left: 0;
 }

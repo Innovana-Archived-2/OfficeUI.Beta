@@ -271,7 +271,7 @@
                     <span>{{OfficeUI.Title}}</span>
                 </div>
 
-                <div class="navigation" ng-show="isApplicationMenuOpened()">
+                <div id="navigation" ng-show="isApplicationMenuOpened()">
                     <div class="back-arrow" ng-click="toggleApplicationMenu()">&nbsp;</div>
 
                     <ul ng-repeat="tab in OfficeUIRibbon.Tabs" ng-if="$first">
@@ -285,7 +285,7 @@
                     </ul>
                 </div>
 
-                <div class="content" ng-show="isApplicationMenuOpened()">
+                <div id="content" ng-show="isApplicationMenuOpened()">
                     <div ng-repeat="tab in OfficeUIRibbon.Tabs" ng-if="$first">
                         <div class="content-area" ng-repeat="menuItem in tab.MenuItems" ng-show="isApplicationMenuItemActive(menuItem)">
                             <h1>{{menuItem.Title}}</h1>

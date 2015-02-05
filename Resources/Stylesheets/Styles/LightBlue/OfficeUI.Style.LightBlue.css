@@ -41,22 +41,22 @@
 }
 /* Import statements. */
 /* General styling. */
-#OfficeUI .application-contents .navigation {
+#OfficeUI .application-contents #navigation {
   background-color: #0072c6;
 }
-#OfficeUI .application-contents .navigation ul li:not(.seperator).active {
+#OfficeUI .application-contents #navigation ul li:not(.seperator).active {
   background-color: #2a8dd4;
 }
-#OfficeUI .application-contents .navigation ul li:not(.seperator):hover {
+#OfficeUI .application-contents #navigation ul li:not(.seperator):hover {
   background-color: #0067b0;
 }
-#OfficeUI .application-contents .navigation ul li .seperator {
+#OfficeUI .application-contents #navigation ul li .seperator {
   border-color: #2a8dd4 !important;
 }
-#OfficeUI .application-contents .navigation .back-arrow {
+#OfficeUI .application-contents #navigation .back-arrow {
   background-image: url('/OfficeUI.Beta/Resources/Images/Ribbon/ApplicationMenu/NavigationArrow-LightBlue.png');
 }
-#OfficeUI .application-contents .navigation .back-arrow:hover {
+#OfficeUI .application-contents #navigation .back-arrow:hover {
   background-image: url('/OfficeUI.Beta/Resources/Images/Ribbon/ApplicationMenu/NavigationArrow-LightBlue_hover.png');
 }
 /* Section: Variables. */
