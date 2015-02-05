@@ -271,7 +271,7 @@
                     <span>{{OfficeUI.Title}}</span>
                 </div>
 
-                <div class="navigation">
+                <div class="navigation" ng-show="isApplicationMenuOpened()">
                     <div class="back-arrow" ng-click="toggleApplicationMenu()">&nbsp;</div>
 
                     <ul ng-repeat="tab in OfficeUIRibbon.Tabs" ng-if="$first">
@@ -285,7 +285,7 @@
                     </ul>
                 </div>
 
-                <div class="content">
+                <div class="content" ng-show="isApplicationMenuOpened()">
                     <div ng-repeat="tab in OfficeUIRibbon.Tabs" ng-if="$first">
                         <div class="content-area" ng-repeat="menuItem in tab.MenuItems" ng-show="isApplicationMenuItemActive(menuItem)">
                             <h1>{{menuItem.Title}}</h1>
@@ -323,7 +323,7 @@
 <script type="text/javascript">
     // Provides a way to initialize the application with the correct theme.
     // Those calls are required for the application to function.
-    $.fn.OfficeUI.ThemeManager.SetTheme($.fn.OfficeUI.ThemeManager.Themes.LightBlue);
+    $.fn.OfficeUI.ThemeManager.SetTheme($.fn.OfficeUI.ThemeManager.Themes.Purple);
 
     // Provides a way to load the application-, and ribbon- data file.
     // Those calls are required for the application to function.

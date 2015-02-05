@@ -505,6 +505,7 @@
   margin: 25px 0 25px 0;
 }
 #OfficeUI header .application-contents .content .content-area {
+  position: absolute;
   margin-left: 40px;
   margin-top: 34px;
 }
@@ -538,25 +539,69 @@
 /* Hide and show the contents of the ribbon (to allow us to collapse the ribbon).
  * When hiding the ribbon, it takes 0.15 seconds, showing the ribbon takes place immediately.
  */
-.tabs-content {
+header .tabs-content {
   opacity: 1;
   top: 0;
 }
-.animate-ribbon-hiding {
+header .animate-ribbon-hiding {
   -webkit-transition: 0.15s linear all;
   transition: 0.15s linear all;
   top: -93px;
   opacity: 0;
 }
-.no-animate-ribbon-hiding {
+header .no-animate-ribbon-hiding {
   -webkit-transition: 0.0s linear all;
   transition: 0.0s linear all;
   top: -93px;
   opacity: 0;
 }
-.animate-ribbon-showing {
+header .animate-ribbon-showing {
   -webkit-transition: 0.15s linear all;
   transition: 0.15s linear all;
   top: 0;
   opacity: 1;
+}
+header .content-area.ng-hide-add-active {
+  -webkit-transition: 0.15s linear all;
+  transition: 0.15s linear all;
+}
+header .content-area.ng-hide-remove.ng-hide-remove-active {
+  -webkit-transition: 0.15s linear all;
+  transition: 0.15s linear all;
+}
+header .content-area {
+  opacity: 1;
+}
+header .content-area.ng-hide {
+  opacity: 0;
+}
+header .navigation.ng-hide-add-active {
+  -webkit-transition: 0.075s linear all;
+  transition: 0.075s linear all;
+}
+header .navigation.ng-hide-remove.ng-hide-remove-active {
+  -webkit-transition: 0.075s linear all;
+  transition: 0.075s linear all;
+}
+header .navigation {
+  margin-left: 0 !important;
+}
+header .navigation.ng-hide {
+  margin-left: -135px !important;
+}
+header .content.ng-hide-add-active {
+  -webkit-transition: 0.075s linear all;
+  transition: 0.075s linear all;
+}
+header .content.ng-hide-remove.ng-hide-remove-active {
+  -webkit-transition: 0.075s linear all;
+  transition: 0.075s linear all;
+}
+header .content {
+  margin-left: 135px !important;
+  opacity: 1;
+}
+header .content.ng-hide {
+  margin-left: 0px !important;
+  opacity: 0;
 }
