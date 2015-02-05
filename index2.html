@@ -48,6 +48,7 @@
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Angular.Directive.DynamicEventHandling.min.js"></script>
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Angular.Directive.Scrolling.min.js"></script>
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Angular.Directive.Hover.min.js"></script>
+    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Angular.Directive.ApplicationMenuContents.min.js"></script>
 
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Filters/OfficeUI.Angular.Filter.ActionLegend.js"></script>
 
@@ -104,7 +105,7 @@
 
                             <!-- Defines the normal tabs of the ribbon. -->
                             <ul>
-                                <li id="{{tab.Id}}" class="tab tab-normal" hover="!$first && setActiveTabOnScrolling(tab.Id);" ng-repeat="tab in OfficeUIRibbon.Tabs" dynamic-event-handling="tab.Id" ng-click="!$first && setActive(tab.Id);" ng-class="{application: $first, active: isActive(tab.Id) && (isRibbonShowed() || isRibbonVisible()), 'visible-border': isRibbonShowed() || isRibbonVisible(), 'invisible-border': isRibbonHidden()}" stop-propagation="click">
+                                <li id="{{tab.Id}}" class="tab tab-normal" hover="!$first && setActiveTabOnScrolling(tab.Id);" ng-repeat="tab in OfficeUIRibbon.Tabs" dynamic-event-handling="tab.Id" ng-click="$first && toggleApplicationMenu() || !$first && setActive(tab.Id);" ng-class="{application: $first, active: isActive(tab.Id) && (isRibbonShowed() || isRibbonVisible()), 'visible-border': isRibbonShowed() || isRibbonVisible(), 'invisible-border': isRibbonHidden()}" stop-propagation="click">
                                     <span>{{tab.Label}}</span>
                                 </li>
                             </ul>
@@ -260,6 +261,39 @@
                     </li>
                 </ul>
             </div>
+
+            <!-- /* ------------------------------------------------------ */
+                 /* ----------  'Application Tab' contents.  ------------- */
+                 /* ------------------------------------------------------ */
+            -->
+            <div class="application-contents" ng-show="isApplicationMenuOpened()">
+                <div class="title">
+                    <span>{{OfficeUI.Title}}</span>
+                </div>
+
+                <div class="navigation">
+                    <div class="back-arrow" ng-click="toggleApplicationMenu()">&nbsp;</div>
+
+                    <ul ng-repeat="tab in OfficeUIRibbon.Tabs" ng-if="$first">
+
+                        <li ng-repeat="menuItem in tab.MenuItems" ng-class="{active: isApplicationMenuItemActive(menuItem), seperator: menuItem.Seperator == 'True'}" ng-click="setApplicationMenuItemAsActive(menuItem)">
+
+                            <div ng-if="menuItem.Seperator != 'True'">{{menuItem.Label}}</div>
+
+                            <div class="seperator" ng-if="menuItem.Seperator == 'True'"></div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="content">
+                    <div ng-repeat="tab in OfficeUIRibbon.Tabs" ng-if="$first">
+                        <div class="content-area" ng-repeat="menuItem in tab.MenuItems" ng-show="isApplicationMenuItemActive(menuItem)">
+                            <h1>{{menuItem.Title}}</h1>
+                            <application-menu-contents url="{{menuItem.Url}}" />
+                        </div>
+                    </div>
+                </div>
+            </div>
         </header>
     </div>
 
@@ -289,7 +323,7 @@
 <script type="text/javascript">
     // Provides a way to initialize the application with the correct theme.
     // Those calls are required for the application to function.
-    $.fn.OfficeUI.ThemeManager.SetTheme($.fn.OfficeUI.ThemeManager.Themes.Red);
+    $.fn.OfficeUI.ThemeManager.SetTheme($.fn.OfficeUI.ThemeManager.Themes.LightBlue);
 
     // Provides a way to load the application-, and ribbon- data file.
     // Those calls are required for the application to function.
@@ -299,12 +333,6 @@
     // Configuration of the application.
     // This call is not required for the application. The default is false.
     $.fn.OfficeUI.Defaults.changeActiveTabOnHover = false; // Tabs will not become active when you're hovering on the tab element. Change this to 'TRUE' to change this behaviour.
-
-    // Provides a way to bind an event to any given element.
-    // This method is optional.
-    $.fn.OfficeUI.bind('#tabFile', 'click', function(e) {
-        console.log('Clicked the tabFile element.');
-    });
 </script>
 </body>
 </html>

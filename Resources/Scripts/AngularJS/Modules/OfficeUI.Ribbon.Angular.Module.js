@@ -83,6 +83,8 @@ OfficeUIRibbon.factory('OfficeUIRibbonService', function() {
          *        The id of the tab that oyu want to mark as active.
          */
         setActive: function(tabId) {
+            serviceInstance.isApplicationMenuActive = false;
+
             if (serviceInstance.state == ribbonStates.Hidden) { serviceInstance.state = ribbonStates.Visible; }
             serviceInstance.activeTab = tabId;
         },
@@ -197,6 +199,18 @@ OfficeUIRibbon.factory('OfficeUIRibbonService', function() {
          */
         setActiveTabColor: function(tabId, tabColor) {
             if (serviceInstance.activeTab == tabId) { return tabColor; }
+        },
+
+        toggleApplicationMenu: function() {
+            if (!serviceInstance.isApplicationMenuActive) {
+                serviceInstance.isApplicationMenuActive = true;
+            } else {
+                serviceInstance.isApplicationMenuActive = false;
+            }
+        },
+
+        isApplicationMenuOpened: function() {
+            return serviceInstance.isApplicationMenuActive;
         }
     };
 });

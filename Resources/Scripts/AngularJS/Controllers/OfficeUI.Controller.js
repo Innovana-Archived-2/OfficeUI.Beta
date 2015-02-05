@@ -68,6 +68,14 @@ OfficeUI.controller('OfficeUI', ['$scope', '$http', 'OfficeUIRibbonService', fun
         OfficeUIRibbonService.setActive(tabId);
     }
 
+    $scope.toggleApplicationMenu = function() {
+        OfficeUIRibbonService.toggleApplicationMenu();
+    }
+
+    $scope.isApplicationMenuOpened = function() {
+        return OfficeUIRibbonService.isApplicationMenuOpened();
+    }
+
     /**
      * @description
      * Check if a specific tab is active.

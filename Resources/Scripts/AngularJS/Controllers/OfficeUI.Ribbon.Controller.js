@@ -60,6 +60,10 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', 'OfficeUIRibbonS
         .success(function(data) {
             OfficeUIRibbonService.setServiceInstance(data);
             $scope.OfficeUIRibbon = OfficeUIRibbonService.getServiceInstance();
+
+            // Get the first menu entry in the application menu, and make sure that that element is set as the active one.
+            var firstApplicationMenuEntryID = data.Tabs[0].MenuItems[0];
+            $scope.setApplicationMenuItemAsActive(firstApplicationMenuEntryID);
         })
         .error(function(data) { console.error('An error occured while loading the file \'' + $.fn.OfficeUI.ribbonDataFile + '\' file. '); })
 
@@ -171,7 +175,6 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', 'OfficeUIRibbonS
      * @param scrollEvent
      *        The event that defines the scrolling. Based on this event we can calculate if we're scrolling up or down.
      */
-    // ToDo: This code should be optimized because it's unclear what it does for the moment.
     $scope.ribbonScroll = function(scrollEvent) {
         var tabToActivate = null;
 
@@ -213,6 +216,16 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', 'OfficeUIRibbonS
         if (tabToActivate != null) { $scope.setActive(tabToActivate.attr('id')); }
 
         $scope.$apply();
+    }
+
+    $scope.isApplicationMenuItemActive = function(applicationMenuItem) {
+        return $scope.activeApplicationMenuItem == applicationMenuItem;
+    }
+
+    $scope.setApplicationMenuItemAsActive = function(applicationMenuItem) {
+        if (applicationMenuItem.Seperator != 'True') {
+            $scope.activeApplicationMenuItem = applicationMenuItem;
+        }
     }
 
     /**

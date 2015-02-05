@@ -2,10 +2,10 @@
 @import (reference) 'OfficeUI.Style.Purple.less';
 
 /* General styling. */
-#OfficeUI .applicationMenuHolder .container .navigation { background-color: @navigationDefaultColor; }
-#OfficeUI .applicationMenuHolder .container .navigation ul li:not(.seperator).active { background-color: @navigationActiveElement; }
-#OfficeUI .applicationMenuHolder .container .navigation ul li:not(.seperator):hover { background-color: @navigationElementHoverColor; }
-#OfficeUI .applicationMenuHolder .container .navigation ul li .seperator { border-color: @navigationActiveElement; }
+#OfficeUI .application-contents .navigation { background-color: @navigationDefaultColor; }
+#OfficeUI .application-contents .navigation ul li:not(.seperator).active { background-color: @navigationActiveElement; }
+#OfficeUI .application-contents .navigation ul li:not(.seperator):hover { background-color: @navigationElementHoverColor; }
+#OfficeUI .application-contents .navigation ul li .seperator { border-color: @navigationActiveElement !important; }
 
-#OfficeUI .applicationMenuHolder .navigation .back-arrow { background-image: url('/OfficeUI.Beta/Resources/Images/Ribbon/ApplicationMenu/NavigationArrow-Purple.png'); }
-#OfficeUI .applicationMenuHolder .navigation .back-arrow:hover { background-image: url('/OfficeUI.Beta/Resources/Images/Ribbon/ApplicationMenu/NavigationArrow-Purple_hover.png'); }
+#OfficeUI .application-contents .navigation .back-arrow { background-image: url('/OfficeUI.Beta/Resources/Images/Ribbon/ApplicationMenu/NavigationArrow-Purple.png'); }
+#OfficeUI .application-contents .navigation .back-arrow:hover { background-image: url('/OfficeUI.Beta/Resources/Images/Ribbon/ApplicationMenu/NavigationArrow-Purple_hover.png'); }

@@ -42,6 +42,7 @@
    * - The title in the ribbon itself, does have a z-index value set to 80.
    * - The tabs of the ribbon does have a z-index value set to 75.
    * - The contents of the tabs on the ribbon does have a z-index value set to 70.
+   * - The contents behind the 'application' tab does have a z-index of 999, meaning that they will always cover the entire website.
    */
 }
 #OfficeUI .alignCenter {
@@ -454,6 +455,58 @@
   margin-left: 1px;
   margin-top: 4px;
   vertical-align: top;
+}
+#OfficeUI header .application-contents {
+  position: fixed;
+  width: 100%;
+  background: url("/OfficeUI.Beta/Resources/Images/Application/Backgrounds/Circuit.png") no-repeat scroll right top white;
+  height: 100%;
+  top: 0;
+  z-index: 999;
+}
+#OfficeUI header .application-contents .title {
+  left: 0;
+}
+#OfficeUI header .application-contents .navigation {
+  float: left;
+  color: #fff;
+  height: 100%;
+  width: 135px;
+}
+#OfficeUI header .application-contents .navigation .back-arrow {
+  background-repeat: no-repeat;
+  height: 35px;
+  margin-left: 23px;
+  margin-top: 19px;
+  width: 35px;
+}
+#OfficeUI header .application-contents .navigation ul {
+  margin-top: 15px;
+}
+#OfficeUI header .application-contents .navigation ul li {
+  line-height: 16px;
+  padding: 11px 10px 11px 26px;
+  vertical-align: middle;
+}
+#OfficeUI header .application-contents .navigation ul li.seperator {
+  margin-bottom: -1px;
+}
+#OfficeUI header .application-contents .navigation ul li .seperator {
+  border-bottom: 1px solid #fff;
+}
+#OfficeUI header .application-contents .content {
+  position: relative;
+  margin-left: 135px;
+  top: 30px;
+}
+#OfficeUI header .application-contents .content h1 {
+  font-size: 3.2em;
+  font-weight: 100;
+  margin: 25px 0 25px 0;
+}
+#OfficeUI header .application-contents .content .content-area {
+  margin-left: 40px;
+  margin-top: 34px;
 }
 /* ------------------------------------------------*/
 /* ---------->>> Animations styling. <<<-----------*/

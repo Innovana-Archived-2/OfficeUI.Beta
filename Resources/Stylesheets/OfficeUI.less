@@ -72,6 +72,7 @@
    * - The title in the ribbon itself, does have a z-index value set to 80.
    * - The tabs of the ribbon does have a z-index value set to 75.
    * - The contents of the tabs on the ribbon does have a z-index value set to 70.
+   * - The contents behind the 'application' tab does have a z-index of 999, meaning that they will always cover the entire website.
    */
   header {
     .cursorDefault; .positionFixed; .noSelect; .width100; background: white; height: 146px;
@@ -163,6 +164,31 @@
           .group .legend { .positionAbsolute; bottom: 2px; color: #666; font-size: 0.9em; margin-left: -1px; overflow: hidden; text-align: center; text-overflow: ellipsis; white-space: nowrap; width: 100%; }
           .pipe { .displayInlineBlock; border-right: 1px solid #d4d4d4; height: 84px; margin-left: 1px; margin-top: 4px; vertical-align: top;  }
         }
+      }
+    }
+
+    // Defines the styling of the contents behind the 'application' tab.
+    .application-contents {
+      .positionFixed; .width100; background: url("/OfficeUI.Beta/Resources/Images/Application/Backgrounds/Circuit.png") no-repeat scroll right top white; height: 100%; top: 0; z-index: 999;
+
+      .title { left: 0; }
+      .navigation {
+        .floatLeft; color: #fff; height: 100%; width: 135px;
+
+        .back-arrow { background-repeat: no-repeat; height: 35px; margin-left: 23px; margin-top: 19px; width: 35px; }
+
+        ul { margin-top: 15px; }
+        ul li { line-height: 16px; padding: 11px 10px 11px 26px; vertical-align: middle; }
+        ul li.seperator { margin-bottom: -1px; }
+        ul li .seperator { border-bottom: 1px solid #fff; }
+      }
+
+      .content {
+        .positionRelative; margin-left: 135px; top: 30px;
+
+        h1 { font-size: 3.2em; font-weight: 100; margin: 25px 0 25px 0; }
+
+        .content-area { margin-left: 40px; margin-top: 34px; }
       }
     }
   }
