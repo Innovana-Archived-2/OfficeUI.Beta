@@ -562,11 +562,11 @@ header .animate-ribbon-showing {
 }
 header .application-contents.ng-hide-add,
 header .application-contents.ng-hide-remove {
-  -webkit-transition: 0.15s linear all;
-  transition: 0.15s linear all;
+  -webkit-transition: 0.05s linear all;
+  transition: 0.05s linear all;
 }
 header .application-contents.ng-hide-add {
-  transition-delay: 0.15s;
+  transition-delay: 0.05s;
 }
 header .application-contents {
   opacity: 1;
@@ -576,8 +576,8 @@ header .application-contents.ng-hide {
 }
 header .application-contents #navigation.ng-hide-add,
 header .application-contents #navigation.ng-hide-remove {
-  -webkit-transition: 0.15s linear all;
-  transition: 0.15s linear all;
+  -webkit-transition: 0.05s linear all;
+  transition: 0.05s linear all;
 }
 header .application-contents #navigation {
   margin-left: 0;
@@ -587,8 +587,8 @@ header .application-contents #navigation.ng-hide {
 }
 header .application-contents #content.ng-hide-add,
 header .application-contents #navigation.ng-hide-remove {
-  -webkit-transition: 0.15s linear all;
-  transition: 0.15s linear all;
+  -webkit-transition: 0.05s linear all;
+  transition: 0.05s linear all;
 }
 header .application-contents #content {
   margin-left: 135px;

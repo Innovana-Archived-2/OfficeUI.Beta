@@ -1,3 +1,18 @@
+<!--    Office User Interface (OfficeUI) version 1.0
+
+        This website aims to mimic the Office User Interface like it's defined in various Office applications
+        such as Microsoft Word, Microsoft Powerpoint, Microsoft Outlook.
+
+        The purpose of this application is to bring the rich User Interface as defined by Microsoft to the web.
+        In order to make sure that this application does work correctly it has been tested on the following browsers:
+
+        - Google Chrome
+        - Mozilla Firefox
+        - Internet Explorer
+
+        If you've tested the application in another browser and confirms that everything is working, please report it on
+        the official Github project page so that I can include it inside the list.
+-->
 <!DOCTYPE html>
 <html lang="en" ng-app="OfficeUI">
 <head>
@@ -13,222 +28,301 @@
     <link rel="stylesheet" href="/OfficeUI.Beta/Resources/Stylesheets/External/Font-Awesome/font-awesome.min.css" />
 
     <!-- Internal stylesheets and scripts, required for the application to run. -->
-    <link rel="stylesheet" href="/OfficeUI.Beta/Resources/Stylesheets/OfficeUI.Core.min.css" />
-    <link rel="stylesheet" href="/OfficeUI.Beta/Resources/Stylesheets/OfficeUI.Ribbon.min.css" />
+    <link rel="stylesheet" href="/OfficeUI.Beta/Resources/Stylesheets/OfficeUI.min.css" />
     <link rel="stylesheet" href="/OfficeUI.Beta/Resources/Stylesheets/OfficeUI.Ribbon.ApplicationMenu.min.css" />
+
     <script src="/OfficeUI.Beta/Resources/Scripts/External/Angular-animate.min.js"></script>
     <script src="/OfficeUI.Beta/Resources/Scripts/External/Angular-sanitize.min.js"></script>
-    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Modules/OfficeUI.Ribbon.Angular.Module.min.js"></script>
-    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Modules/OfficeUI.Angular.Module.min.js"></script>
-    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Controllers/OfficeUI.Angular.Controller.min.js"></script>
-    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Controllers/OfficeUI.Ribbon.Angular.Controller.min.js"></script>
-    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Angular.Directive.DynamicEventHandling.min.js"></script>
-    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Angular.Directive.Scrolling.min.js"></script>
-    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Angular.Directive.Collapsing.min.js"></script>
-    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Angular.Directive.StopPropagation.min.js"></script>
-    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Angular.Directive.Tooltip.min.js"></script>
-    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Angular.Directive.Hover.min.js"></script>
-    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Angular.Directive.ApplicationMenuContents.min.js"></script>
-    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Filters/OfficeUI.Angular.Filter.ActionLegend.js"></script>
-    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Filters/OfficeUI.Angular.Filter.ActionTooltip.js"></script>
+    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Modules/OfficeUI.Ribbon.Module.js"></script>
+    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Modules/OfficeUI.Module.js"></script>
+
+    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Controllers/OfficeUI.Controller.min.js"></script>
+    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Controllers/OfficeUI.Ribbon.Controller.min.js"></script>
+
+    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Directive.StopPropagation.min.js"></script>
+    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Directive.Tooltip.min.js"></script>
+    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Directive.DynamicEventHandling.min.js"></script>
+    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Directive.Scrolling.min.js"></script>
+    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Directive.Hover.min.js"></script>
+    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Directive.ApplicationMenuContents.min.js"></script>
+
+    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Filters/OfficeUI.Filter.ActionLegend.js"></script>
 </head>
-<body class="no-padding no-margin" ng-controller="OfficeUI as OfficeUI">
-<div id="OfficeUI" ng-controller="OfficeUIRibbon as OfficeUIRibbon">
+<body class="noPadding noMargin" ng-controller="OfficeUI as OfficeUI">
+    <div id="OfficeUI" ng-controller="OfficeUIRibbon as OfficeUIRibbon">
 
-    <div class="header fixed">
+        <!-- /* ------------------------------------------------------ */
+             /* ----------  Header element on the website.  ---------- */
+             /* ------------------------------------------------------ */
 
-        <!-- Provides the area in which the application icons are being showed. -->
-        <div class="absolute">
-            <div class="container application-icons">
-                <img id="{{icon.Id}}" alt="{{icon.Alt}}"
-                     dynamic-event-handling="icon.Id"
-                     ng-class="{'icon': !$first}"
-                     ng-repeat="icon in OfficeUI.Icons"
-                     ng-src="{{icon.Icon}}" />
+            @Description:
+            Defines the header element of the AngularJS application. The header element does contain the following data:
+            - Title
+            - Ribbon
+
+            @Remarks:
+            The header does contain an element that shows the title. But this title is only visible when the OfficeUI ribbon is not used.
+            This is required because the ribbon itself is positioned on top of the page.
+            So therefore the ribbon does include a title element itself, which has a higher z-index than the title on the header.
+
+            The ribbon itself does also contains 2 title sections. This is because the title is displayed at a specific location when the ribbon is shown and
+            the title is displayed on another location when the ribbon has some contextual tabs which are showed.
+        -->
+        <header>
+            <div class="title">
+                <div><img id="{{icon.Id}}" alt="{{icon.Alt}}" ng-class="{'icon': !$first}" ng-repeat="icon in OfficeUI.Icons" ng-src="{{icon.Icon}}" dynamic-event-handling="Icon.Id" /></div>
+
+                <span>{{OfficeUI.Title}}</span>
             </div>
-        </div>
 
-        <span class="container container-full-width center title">{{OfficeUI.Title}}</span>
-    </div>
+            <!-- Defines the ribbon component itself. -->
+            <div class="ribbon" scroll>
+                <div class="title" ng-show="!isContextualGroupActive()">
+                    <div><img id="{{icon.Id}}" alt="{{icon.Alt}}" ng-class="{'icon': !$first}" ng-repeat="icon in OfficeUI.Icons" ng-src="{{icon.Icon}}" dynamic-event-handling="Icon.Id" /></div>
 
-    <!-- Defines the main 'parent' element in which the ribbon is saved. -->
-    <div class="ribbon fixed"
-         scroll>
-        <!-- Provides an DIV element to hold the ribbon. This is needed because we have another element in which the application menu is being showed. -->
-        <div ng-show="!OfficeUIRibbon.isApplicationMenuOpened()">
-            <ul role="ribbonTabs" class="no-margin no-padding relative"
-                ng-class="{'no-border-bottom': OfficeUIRibbon.isHidden()}">
+                    <span>{{OfficeUI.Title}}</span>
+                </div>
 
-                <!-- Renders all the tab elements.
-                        The following options are possible due to the usage of directives:
+                <!-- This UL element does shows the tabs itself. -->
+                <ul class="tabs" ng-class="{'visible-border': isRibbonShowed() || isRibbonVisible(), 'invisible-border': isRibbonHidden()}">
+                    <li>
+                        <div class="normal-tabs">
+                            <div class="title" ng-show="isContextualGroupActive()">
+                                <div><img id="{{icon.Id}}" alt="{{icon.Alt}}" ng-class="{'icon': !$first}" ng-repeat="icon in OfficeUI.Icons" ng-src="{{icon.Icon}}" dynamic-event-handling="Icon.Id"/></div>
 
-                        - When you click on the first item, the application menu is opened.
-                        - When you click on any item except the first, than that tab is being marked as active.
-                        - When you hover on a tab element except the first, that tab is being marked as active. (Only when it's configured to do so).
-                -->
-                <li id="{{tab.Id}}" role="tab" class="container relative"
-                    stop-propagation="click"
-                    ng-repeat="tab in OfficeUIRibbon.Tabs"
-                    ng-click="$first && OfficeUIRibbon.toggleApplicationMenu() || !$first && OfficeUIRibbon.setActiveTab(tab.Id, false);"
-                    hover="!$first && OfficeUIRibbon.setActiveTab(tab.Id, true);"
-                    ng-class="{'application': $first,
-                               'active': !OfficeUIRibbon.isHidden() && OfficeUIRibbon.isTabActive(tab.Id),
-                               'no-border': !OfficeUIRibbon.isTabActive(tab.Id),
-                               'contextualTab': tab.ContextualTab == 'True'}">
+                                <span>{{OfficeUI.Title}}</span>
+                            </div>
 
-                    {{tab.Label}}
-                </li>
-            </ul>
+                            <!-- Defines the normal tabs of the ribbon. -->
+                            <ul>
+                                <li id="{{tab.Id}}" class="tab tab-normal" hover="!$first && setActiveTabOnScrolling(tab.Id);" ng-repeat="tab in OfficeUIRibbon.Tabs" dynamic-event-handling="tab.Id" ng-click="$first && toggleApplicationMenu() || !$first && setActive(tab.Id);" ng-class="{application: $first, active: isActive(tab.Id) && (isRibbonShowed() || isRibbonVisible()), 'visible-border': isRibbonShowed() || isRibbonVisible(), 'invisible-border': isRibbonHidden()}" stop-propagation="click">
+                                    <span>{{tab.Label}}</span>
+                                </li>
+                            </ul>
 
-            <!-- Defines the contents of the ribbon. -->
-            <ul role="ribbonContents" id="ribbonContents" class="no-margin no-padding animate-ribbon-contents relative"
-                ng-show="OfficeUIRibbon.isShowed() || OfficeUIRibbon.isVisible()">
+                        </div>
 
-                <li class="absolute"
-                    ng-repeat="tabContents in OfficeUIRibbon.Tabs"
-                    ng-show="OfficeUIRibbon.isTabActive(tabContents.Id)">
-
-                    <div class="container">
-                        <div class="container group relative"
-                             ng-repeat-start="group in tabContents.Groups">
-
-                            <div class="legend absolute">{{group.Legend}}</div>
-
-                            <div class="container area"
-                                 ng-repeat="area in group.Areas">
-
-                                <!-- Defines all the different type elements that can be showed in the ribbon. -->
-                                <div ng-repeat="action in area.Actions"
-                                     ng-class="{'container-block': action.Type == 'Input' || action.Type == 'Checkbox' || action.Type == 'sIcon',
-                                                'container': action.Type == 'bIcon'}">
-
-                                    <!-- Defines an input element. -->
-                                    <div ng-show="action.Type == 'Input'">
-                                        <input type="text" id="{{action.Id}}" placeholder="{{action.Legend}}"
-                                               ng-style="myStyle={width:'{{action.Width}}'}"/>
+                        <div class="contextual" stop-propagation="click">
+                            <ul>
+                                <li class="context-group" id="{{contextual.Id}}" ng-show="isActiveContextualGroup(contextual.Id)" ng-class="{'active-contextual-group': isActiveContextualGroup(contextual.Id)}" ng-repeat="contextual in OfficeUIRibbon.ContextualGroups" ng-style="{'background-color': contextual.GroupColor}">
+                                    <div class="accent" ng-style="{'background-color': contextual.AccentColor}">&nbsp;</div>
+                                    <div class="label" ng-click="setActive(contextual.Tabs[0].Id, false);">
+                                        <div ng-style="{'color': contextual.GroupTextColor}">
+                                            <span>{{contextual.Label}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="tabs-holder">
+                                        <ul>
+                                            <li class="tab tab-contextual" id="{{tab.Id}}" hover="setActiveTabOnScrolling(tab.Id);" dynamic-event-handling="tab.Id" ng-style="{color: setActiveTabColor(tab.Id, contextual.GroupTextColor)}" ng-repeat="tab in contextual.Tabs" ng-click="setActive(tab.Id)" ng-class="{active: isActive(tab.Id) && (isRibbonShowed() || isRibbonVisible()), 'visible-border': isRibbonShowed() || isRibbonVisible(), 'invisible-border': isRibbonHidden()}" stop-propagation="click">
+                                                <span>{{tab.Label}}</span>
+                                            </li>
+                                        </ul>
                                     </div>
 
-                                    <!-- Defines a checkbox element. -->
-                                    <div ng-show="action.Type == 'Checkbox'">
-                                        <input type="checkbox" id="{{action.Id}}" />
-                                        <div class="container">{{action.Legend}}</div>
-                                    </div>
+                                </li>
+                            </ul>
 
-                                    <!-- Defines an icon - There are 2 possible icons (Big and Small). -->
-                                    <div ng-show="action.Type == 'bIcon' || action.Type == 'sIcon'">
-                                        <a href="#"
-                                           ng-href="{{action.Uri}}"
-                                           ngc-tooltip>
-                                            <div id="{{action.Id}}" class="container icon relative"
-                                                 ngc-menu-holder="{menu: '#{{action.Id}}_menu'}"
-                                                 dynamic-event-handling="action.Id"
-                                                 ng-class="{'big-icon': action.Type == 'bIcon',
-                                                            'small-icon': action.Type == 'sIcon'}">
-                                                <img ng-src="{{action.Resource}}"/>
+                        </div>
+                    </li>
+                </ul>
 
-                                                <div class="label"
-                                                     ng-bind-html="action |actionLegend"
-                                                     ng-class="{'container': action.Type == 'sIcon'}"></div>
+                <!-- This UL element does shows the content of the tab which is currently opened. -->
+                <ul class="tabs-content" ng-class="{'animate-ribbon-hiding': isRibbonHidden() && !isRibbonInitialized(), 'no-animate-ribbon-hiding': isRibbonHidden() && isRibbonInitialized(), 'animate-ribbon-showing': isRibbonVisible() }"  stop-propagation="click">
+                    <li>
+                        <ul>
+                            <li ng-repeat="tab in OfficeUIRibbon.Tabs" ng-show="isActive(tab.Id)" stop-propagation="click">
+                                <!-- Defines the contents of the ribbon. -->
+                                <div>
+                                    <div class="group" ng-repeat-start="group in tab.Groups">
+                                        <div class="legend">{{group.Legend}}</div>
+
+                                        <div class="area" ng-repeat="area in group.Areas">
+                                            <div ng-repeat="action in area.Actions" ng-class="{'displayBlock': action.Type == 'sIcon', 'displayInlineBlock': action.Type == 'bIcon'}">
+                                                <!-- This is what is being rendered if it's a big icon. -->
+                                                <div ng-if="action.Type == 'bIcon'" ngc-tooltip>
+                                                    <a ng-href="{{action.Uri}}">
+                                                        <div id="{{action.Id}}" class="icon big-icon" dynamic-event-handling="action.Id">
+                                                            <img ng-src="{{action.Resource}}" />
+
+                                                            <div class="label" ng-bind-html="action |actionLegend"></div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+
+                                                <!-- This is what is being rendered if it's a small icon. -->
+                                                <div ng-if="action.Type == 'sIcon'" ngc-tooltip>
+                                                    <a ng-href="{{action.Uri}}">
+                                                        <div id="{{action.Id}}" class="icon small-icon" dynamic-event-handling="action.Id">
+                                                            <img ng-src="{{action.Resource}}" />
+
+                                                            <div class="label" ng-bind-html="action |actionLegend"></div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+
+                                                <!-- This is what is being rendered if it's an input element (Text). -->
+                                                <div ng-if="action.Type == 'Input'" dynamic-event-handling="action.Id" ngc-tooltip>
+                                                    <input type="text" id="{{action.Id}}" placeholder="{{action.Legend}}" ng-style="{width:'{{action.Width}}'}"/>
+                                                </div>
+
+                                                <!-- This is what is being rendered if it's an input element (Checkbox). -->
+                                                <div ng-show="action.Type == 'Checkbox'" dynamic-event-handling="action.Id" ngc-tooltip>
+                                                    <input type="checkbox" id="{{action.Id}}" />
+                                                    <div class="displayInlineBlock">{{action.Legend}}</div>
+                                                </div>
+
+                                                <div class="tooltip" ng-if="action.Tooltip">
+                                                    <div ng-bind-html="action.Tooltip"></div>
+                                                </div>
                                             </div>
-                                        </a>
-
-                                        <div class="tooltip absolute">
-                                            <div ng-bind-html="action.Tooltip |actionTooltip"></div>
                                         </div>
                                     </div>
 
-
+                                    <!-- Defines the vertical 'pipe' sign. -->
+                                    <div class="pipe" ng-repeat-end></div>
                                 </div>
-                            </div>
-                        </div>
 
-                        <!-- Defines the vertical 'pipe' sign. -->
-                        <div class="container pipe" ng-repeat-end>
+                                <div class="icon collapse" ng-click="toggleRibbonState()">
+                                    <img src="/OfficeUI.Beta/Resources/Images/Ribbon/Built-In/Collapse.png" class="pin-icon" ng-if="isRibbonShowed()" alt="Toggle Ribbon State" />
+                                    <img src="/OfficeUI.Beta/Resources/Images/Ribbon/Built-In/Pin.png" class="pin-icon" ng-if="isRibbonVisible()" alt="Toggle Ribbon State" />
+                                </div>
+                            </li>
 
-                        </div>
+                            <li ng-repeat="contextual in OfficeUIRibbon.ContextualGroups" ng-show="contextualGroupHasAnActiveTab(contextual)">
+                                <ul>
+                                    <li ng-repeat="contextualTab in contextual.Tabs" ng-show="isActive(contextualTab.Id)">
+                                        <!-- Defines the contents of the ribbon. -->
+                                        <div>
+                                            <div class="group" ng-repeat-start="group in contextualTab.Groups">
 
-                    </div>
-                    <div ng-click="OfficeUIRibbon.toggleRibbonState()" class="container absolute icon collapse">
-                        <img src="/OfficeUI.Beta/Resources/Images/Ribbon/Built-In/Collapse.png" class="pin-icon" ng-if="OfficeUIRibbon.isShowed()"/>
-                        <img src="/OfficeUI.Beta/Resources/Images/Ribbon/Built-In/Pin.png" class="pin-icon" ng-if="OfficeUIRibbon.isVisible()"/>
-                    </div>
-                </li>
-            </ul>
-        </div>
+                                                <div class="legend">{{group.Legend}}</div>
 
-        <!-- Defines the content behind the application tab. -->
-        <div class="applicationMenuHolder animate-move-to-the-left"
-             ng-show="OfficeUIRibbon.isApplicationMenuOpened()">
+                                                <div class="area" ng-repeat="area in group.Areas">
+                                                    <div ng-repeat="action in area.Actions" ng-class="{'displayBlock': action.Type == 'sIcon', 'displayInlineBlock': action.Type == 'bIcon'}">
+                                                        <!-- This is what is being rendered if it's a big icon. -->
+                                                        <div ng-if="action.Type == 'bIcon'" ngc-tooltip>
+                                                            <div id="{{action.Id}}" class="icon big-icon" dynamic-event-handling="action.Id">
+                                                                <img ng-src="{{action.Resource}}" />
 
-            <div class="container container-full-width container-full-height">
+                                                                <div class="label" ng-bind-html="action |actionLegend"></div>
+                                                            </div>
+                                                        </div>
 
-                <div class="container-left navigation animate-hide-blue-area" >
+                                                        <!-- This is what is being rendered if it's a small icon. -->
+                                                        <div ng-if="action.Type == 'sIcon'" ngc-tooltip>
+                                                            <div id="{{action.Id}}" class="icon small-icon" dynamic-event-handling="action.Id">
+                                                                <img ng-src="{{action.Resource}}" />
 
-                    <div class="back-arrow"
-                         ng-click="OfficeUIRibbon.toggleApplicationMenu()"></div>
+                                                                <div class="label" ng-bind-html="action |actionLegend"></div>
+                                                            </div>
+                                                        </div>
 
-                    <ul class="left no-padding no-margin"
-                        ng-repeat="tab in OfficeUIRibbon.Tabs"
-                        ng-if="$first">
+                                                        <!-- This is what is being rendered if it's an input element (Text). -->
+                                                        <div ng-if="action.Type == 'Input'" dynamic-event-handling="action.Id" ngc-tooltip>
+                                                            <input type="text" id="{{action.Id}}" placeholder="{{action.Legend}}" ng-style="{width:'{{action.Width}}'}"/>
+                                                        </div>
 
-                        <li ng-repeat="menuItem in tab.MenuItems"
-                            ng-class="{active: OfficeUIRibbon.isApplicationMenuItemActive(menuItem),
-                                       seperator: menuItem.Seperator == 'True'}"
-                            ng-click="setApplicationMenuItemAsActive(menuItem)">
+                                                        <!-- This is what is being rendered if it's an input element (Checkbox). -->
+                                                        <div ng-show="action.Type == 'Checkbox'" dynamic-event-handling="action.Id" ngc-tooltip>
+                                                            <input type="checkbox" id="{{action.Id}}" />
+                                                            <div class="displayInlineBlock">{{action.Legend}}</div>
+                                                        </div>
+
+                                                        <div class="tooltip" ng-if="action.Tooltip">
+                                                            <div ng-bind-html="action.Tooltip"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Defines the vertical 'pipe' sign. -->
+                                            <div class="pipe" ng-repeat-end></div>
+                                        </div>
+
+                                        <div class="icon collapse" ng-click="toggleRibbonState()">
+                                            <img src="/OfficeUI.Beta/Resources/Images/Ribbon/Built-In/Collapse.png" class="pin-icon" ng-if="isRibbonShowed()" alt="Toggle Ribbon State" />
+                                            <img src="/OfficeUI.Beta/Resources/Images/Ribbon/Built-In/Pin.png" class="pin-icon" ng-if="isRibbonVisible()" alt="Toggle Ribbon State" />
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    </li>
+                </ul>
+            </div>
+
+            <!-- /* ------------------------------------------------------ */
+                 /* ----------  'Application Tab' contents.  ------------- */
+                 /* ------------------------------------------------------ */
+            -->
+            <div class="application-contents" ng-show="isApplicationMenuOpened()">
+                <div class="title">
+                    <span>{{OfficeUI.Title}}</span>
+                </div>
+
+                <div id="navigation" ng-show="isApplicationMenuOpened()">
+                    <div class="back-arrow" ng-click="toggleApplicationMenu()">&nbsp;</div>
+
+                    <ul ng-repeat="tab in OfficeUIRibbon.Tabs" ng-if="$first">
+
+                        <li ng-repeat="menuItem in tab.MenuItems" ng-class="{active: isApplicationMenuItemActive(menuItem), seperator: menuItem.Seperator == 'True'}" ng-click="setApplicationMenuItemAsActive(menuItem)">
 
                             <div ng-if="menuItem.Seperator != 'True'">{{menuItem.Label}}</div>
 
-                            <div class="seperator"
-                                 ng-if="menuItem.Seperator == 'True'"></div>
+                            <div class="seperator" ng-if="menuItem.Seperator == 'True'"></div>
                         </li>
                     </ul>
                 </div>
-                <div class="container-right animate-menu-contents relative">
 
-                    <div ng-controller="OfficeUI as OfficeUI">
-
-                        <div class="application-contents">
-
-                            <div ng-repeat="tab in OfficeUIRibbon.Tabs"
-                                 ng-show="$first">
-
-                                <div class="animate-menu-contents relative"
-                                     ng-repeat="menuItem in tab.MenuItems"
-                                     ng-show="OfficeUIRibbon.isApplicationMenuItemActive(menuItem)">
-
-                                    <div class="contents_area absolute">
-                                        <h1>{{menuItem.Title}}</h1>
-                                        <application-menu-contents url="{{menuItem.Url}}" />
-                                    </div>
-                                </div>
-                            </div>
+                <div id="content" ng-show="isApplicationMenuOpened()">
+                    <div ng-repeat="tab in OfficeUIRibbon.Tabs" ng-if="$first">
+                        <div class="content-area" ng-repeat="menuItem in tab.MenuItems" ng-show="isApplicationMenuItemActive(menuItem)">
+                            <h1>{{menuItem.Title}}</h1>
+                            <application-menu-contents url="{{menuItem.Url}}" />
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </header>
     </div>
-    <!-- End: Defines the main 'parent' element in which the ribbon is saved. -->
-    <div class="container"
-         ng-show="!OfficeUIRibbon.isApplicationMenuOpened()"
-         ng-class="{'website-contents-showed': OfficeUIRibbon.isShowed() || OfficeUIRibbon.isVisible(),
-                    'website-contents-hidden': OfficeUIRibbon.isHidden(),
-                    'website-contents-collapsed': OfficeUIRibbon.isVisible()}">
-        The contents of the website is placed here 1.
+
+    <div class="content" style="font-family: 'Segoe UI', serif; font-size: 0.75em; padding-top: 150px; padding-left: 5px; padding-right: 5px;">
+        <h2>Functions</h2>
+        <h3>Tabs</h3>
+        <a href="#" ng-click="setActive('tabHome')" style="padding-right: 40px;" stop-propagation="click">Activate Tab 'Home'</a>
+        <a href="#" ng-click="setActive('tabSendReceive')" style="padding-right: 40px;" stop-propagation="click">Activate Tab 'Send / Receive'</a>
+        <a href="#" ng-click="setActive('tabFolder')" style="padding-right: 40px;" stop-propagation="click">Activate Tab 'Folder'</a>
+        <a href="#" ng-click="setActive('tabView')" style="padding-right: 40px;" stop-propagation="click">Activate Tab 'View'</a>
+
+        <br/><br/>
+
+        <h3>Contextual Tabs</h3>
+        <a href="#" ng-click="activateContextualGroup('contextualGroupDrawingTools')" style="padding-right: 40px;" stop-propagation="click">Activate Drawing Tools</a>
+        <a href="#" ng-click="activateContextualGroup('contextualGroupTableTools')" style="padding-right: 40px;" stop-propagation="click">Activate Table Tools</a>
+        <a href="#" ng-click="activateContextualGroup('contextualGroupSmartTools')" style="padding-right: 40px;" stop-propagation="click">Activate Smart Tools</a>
+
+        <br/>
+
+        <a href="#" ng-click="deactivateContextualGroup('contextualGroupDrawingTools')" style="padding-right: 40px;" stop-propagation="click">Deactivate Drawing Tools</a>
+        <a href="#" ng-click="deactivateContextualGroup('contextualGroupTableTools')" style="padding-right: 40px;" stop-propagation="click">Deactivate Table Tools</a>
+        <a href="#" ng-click="deactivateContextualGroup('contextualGroupSmartTools')" style="padding-right: 40px;" stop-propagation="click">Deactivate Smart Tools</a>
     </div>
-</div>
 
 <!-- Provides some functions to configure the OfficeUI application. -->
 <script type="text/javascript">
-    // Sets the ThemeManager and initialize it.
-    $.fn.OfficeUI.ThemeManager.SetTheme($.fn.OfficeUI.ThemeManager.Themes.Blue);
+    // Provides a way to initialize the application with the correct theme.
+    // Those calls are required for the application to function.
+    $.fn.OfficeUI.ThemeManager.SetTheme($.fn.OfficeUI.ThemeManager.Themes.Purple);
 
-    // Sets some default OfficeUI properties in order to initialize everything property.
+    // Provides a way to load the application-, and ribbon- data file.
+    // Those calls are required for the application to function.
     $.fn.OfficeUI.applicationDataFile = '/OfficeUI.Beta/Resources/data/application.json'; // Specify the file in which the application data is stored.
     $.fn.OfficeUI.ribbonDataFile = '/OfficeUI.Beta/Resources/Data/ribbon.json'; // Specify the file in which the ribbon data is stored.
 
     // Configuration of the application.
-    //$.fn.OfficeUI.Defaults.changeActiveTabOnHover = false; // Tabs will not become active when you're hovering on the tab element. Change this to 'TRUE' to change this behaviour.
+    // This call is not required for the application. The default is false.
+    $.fn.OfficeUI.Defaults.changeActiveTabOnHover = false; // Tabs will not become active when you're hovering on the tab element. Change this to 'TRUE' to change this behaviour.
 </script>
 </body>
 </html>
