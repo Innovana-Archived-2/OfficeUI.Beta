@@ -1,9 +1,9 @@
 /**
  * @ngdoc Module
- * @name OfficeUI
+ * @name OfficeUIRibbon
  *
  * @description
- * The OfficeUI module is the main module for applications that are running on the Office User Interface Suite.
+ * The OfficeUIRibbon module is the main module for implementing a ribbon in the OfficeUI style.
  *
  * @dependencies ngSanitize, ngAnimate
  */
@@ -14,12 +14,14 @@ var OfficeUIRibbon = angular.module('OfficeUIRibbon', ['ngSanitize', 'ngAnimate'
  * @name OfficeUIRibbonService
  *
  * @description
- * Provides a service which exposes common functionalities on the OfficeUI ribbon.
+ * Provides a service which exposes common functionality on the OfficeUI ribbon.
+ * Those methods, which are defined in the 'OfficeUIRibbonService' are equal to the API.
  */
 OfficeUIRibbon.factory('OfficeUIRibbonService', function() {
-    var serviceInstance = {
-        activeContextualGroups: []
-    };
+    // Defines the main object that contains the instance of the service.
+    // Various properties in this object will be changed.
+    var serviceInstance = {};
+    serviceInstance.activeContextualGroups = [];
 
     /**
      * @description
@@ -29,15 +31,11 @@ OfficeUIRibbon.factory('OfficeUIRibbonService', function() {
      *
      * @type {{Hidden: number, Visible: number, Showed: number}}
      *         Hidden:  The ribbon is hidden completely from view, however, it can be showed again when clicking on one of the tabs.
-     *         Visible: The ribbon is visible, but will not remain visible for the user. As soon as the user has lost focus on the ribbon, it
-     *                  will hide itself from view again.
+     *         Visible: The ribbon is visible, but will not remain visible for the user. As soon as the user has lost focus on the ribbon
+     *                  (by clicking somewhere on the page for example), it will hide itself from view again.
      *         Showed:  The ribbon is showed and stays at this state until it's instructed by the user to remove state.
      */
-    var ribbonStates = {
-        Hidden: 1,      // The ribbon is not showed, in other words, it's collapsed.
-        Visible: 2,     // The ribbon is visible, but will not be visible anymore after a click somewhere on the screen.
-        Showed: 3       // The ribbon is showed and stays showed no matter where you click on the page.
-    }
+    var ribbonStates = { Hidden: 1, Visible: 2, Showed: 3 }
 
     /* Provides the data and functions that this service does expose. */
     return {
@@ -49,7 +47,8 @@ OfficeUIRibbon.factory('OfficeUIRibbonService', function() {
          * Initializes the service with initial data.
          *
          * @param data
-         *        The data which is being used for initialization.
+         *        The data which is being used for initialization. Typically, this data is retrieved from a Json file
+         *        but the data can be stored at any location from which it's injected into this function.
          */
         setServiceInstance: function(data) {
             serviceInstance = data;
@@ -66,6 +65,7 @@ OfficeUIRibbon.factory('OfficeUIRibbonService', function() {
          *
          * @description
          * Gets the data that this service is currently holding.
+         * This is needed because the data that the service instance is holding might be retrieved from a controller.
          *
          * @returns {object}
          *          The data that this service is holding.

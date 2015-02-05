@@ -184,7 +184,7 @@
       }
 
       #content {
-        .positionRelative; top: 30px;
+        .positionRelative;
 
         h1 { font-size: 3.2em; font-weight: 100; margin: 25px 0 25px 0; }
 
@@ -233,3 +233,7 @@ header .application-contents #navigation.ng-hide { margin-left: -135px; }
 header .application-contents #content.ng-hide-add, header .application-contents #navigation.ng-hide-remove { -webkit-transition: 0.05s linear all; transition: 0.05s linear all; }
 header .application-contents #content { margin-left: 135px; }
 header .application-contents #content.ng-hide { margin-left: 0; }
+
+header .content-area.ng-hide-add, header .content-area.ng-hide-remove { -webkit-transition: 0.15s linear all; transition: 0.15s linear all; }
+header .content-area { opacity: 1; }
+header .content-area.ng-hide { opacity: 0; }

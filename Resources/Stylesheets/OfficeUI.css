@@ -496,7 +496,6 @@
 }
 #OfficeUI header .application-contents #content {
   position: relative;
-  top: 30px;
 }
 #OfficeUI header .application-contents #content h1 {
   font-size: 3.2em;
@@ -595,4 +594,15 @@ header .application-contents #content {
 }
 header .application-contents #content.ng-hide {
   margin-left: 0;
+}
+header .content-area.ng-hide-add,
+header .content-area.ng-hide-remove {
+  -webkit-transition: 0.15s linear all;
+  transition: 0.15s linear all;
+}
+header .content-area {
+  opacity: 1;
+}
+header .content-area.ng-hide {
+  opacity: 0;
 }
