@@ -35,15 +35,15 @@
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Modules/OfficeUI.Ribbon.Module.js"></script>
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Modules/OfficeUI.Module.js"></script>
 
-    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Controllers/OfficeUI.Controller.min.js"></script>
-    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Controllers/OfficeUI.Ribbon.Controller.min.js"></script>
+    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Controllers/OfficeUI.Controller.js"></script>
+    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Controllers/OfficeUI.Ribbon.Controller.js"></script>
 
-    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Directive.StopPropagation.min.js"></script>
-    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Directive.Tooltip.min.js"></script>
-    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Directive.DynamicEventHandling.min.js"></script>
-    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Directive.Scrolling.min.js"></script>
-    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Directive.Hover.min.js"></script>
-    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Directive.ApplicationMenuContents.min.js"></script>
+    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Directive.StopPropagation.js"></script>
+    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Directive.Tooltip.js"></script>
+    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Directive.DynamicEventHandling.js"></script>
+    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Directive.Scrolling.js"></script>
+    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Directive.Hover.js"></script>
+    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Directive.ApplicationMenuContents.js"></script>
 
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Filters/OfficeUI.Filter.ActionLegend.js"></script>
 </head>
@@ -94,7 +94,7 @@
 
                             <!-- Defines the normal tabs of the ribbon. -->
                             <ul>
-                                <li id="{{tab.Id}}" class="tab tab-normal" hover="!$first && setActiveTabOnScrolling(tab.Id);" ng-repeat="tab in OfficeUIRibbon.Tabs" dynamic-event-handling="tab.Id" ng-click="$first && toggleApplicationMenu() || !$first && setActive(tab.Id);" ng-class="{application: $first, active: isActive(tab.Id) && (isRibbonShowed() || isRibbonVisible()), 'visible-border': isRibbonShowed() || isRibbonVisible(), 'invisible-border': isRibbonHidden()}" stop-propagation="click">
+                                <li id="{{tab.Id}}" class="tab tab-normal" hover="!$first && setActiveTabOnScrolling(tab.Id);" ng-repeat="tab in OfficeUIRibbon.Tabs" dynamic-event-handling="tab.Id" ng-click="$first && toggleApplicationMenu() || !$first && setActiveTab(tab.Id);" ng-class="{application: $first, active: isActive(tab.Id) && (isRibbonShowed() || isRibbonVisible()), 'visible-border': isRibbonShowed() || isRibbonVisible(), 'invisible-border': isRibbonHidden()}" stop-propagation="click">
                                     <span>{{tab.Label}}</span>
                                 </li>
                             </ul>
@@ -105,14 +105,14 @@
                             <ul>
                                 <li class="context-group" id="{{contextual.Id}}" ng-show="isActiveContextualGroup(contextual.Id)" ng-class="{'active-contextual-group': isActiveContextualGroup(contextual.Id)}" ng-repeat="contextual in OfficeUIRibbon.ContextualGroups" ng-style="{'background-color': contextual.GroupColor}">
                                     <div class="accent" ng-style="{'background-color': contextual.AccentColor}">&nbsp;</div>
-                                    <div class="label" ng-click="setActive(contextual.Tabs[0].Id, false);">
+                                    <div class="label" ng-click="setActiveTab(contextual.Tabs[0].Id, false);">
                                         <div ng-style="{'color': contextual.GroupTextColor}">
                                             <span>{{contextual.Label}}</span>
                                         </div>
                                     </div>
                                     <div class="tabs-holder">
                                         <ul>
-                                            <li class="tab tab-contextual" id="{{tab.Id}}" hover="setActiveTabOnScrolling(tab.Id);" dynamic-event-handling="tab.Id" ng-style="{color: setActiveTabColor(tab.Id, contextual.GroupTextColor)}" ng-repeat="tab in contextual.Tabs" ng-click="setActive(tab.Id)" ng-class="{active: isActive(tab.Id) && (isRibbonShowed() || isRibbonVisible()), 'visible-border': isRibbonShowed() || isRibbonVisible(), 'invisible-border': isRibbonHidden()}" stop-propagation="click">
+                                            <li class="tab tab-contextual" id="{{tab.Id}}" hover="setActiveTabOnScrolling(tab.Id);" dynamic-event-handling="tab.Id" ng-style="{color: setActiveTabColor(tab.Id, contextual.GroupTextColor)}" ng-repeat="tab in contextual.Tabs" ng-click="setActiveTab(tab.Id)" ng-class="{active: isActive(tab.Id) && (isRibbonShowed() || isRibbonVisible()), 'visible-border': isRibbonShowed() || isRibbonVisible(), 'invisible-border': isRibbonHidden()}" stop-propagation="click">
                                                 <span>{{tab.Label}}</span>
                                             </li>
                                         </ul>
@@ -289,10 +289,10 @@
     <div class="content" style="font-family: 'Segoe UI', serif; font-size: 0.75em; padding-top: 150px; padding-left: 5px; padding-right: 5px;">
         <h2>Functions</h2>
         <h3>Tabs</h3>
-        <a href="#" ng-click="setActive('tabHome')" style="padding-right: 40px;" stop-propagation="click">Activate Tab 'Home'</a>
-        <a href="#" ng-click="setActive('tabSendReceive')" style="padding-right: 40px;" stop-propagation="click">Activate Tab 'Send / Receive'</a>
-        <a href="#" ng-click="setActive('tabFolder')" style="padding-right: 40px;" stop-propagation="click">Activate Tab 'Folder'</a>
-        <a href="#" ng-click="setActive('tabView')" style="padding-right: 40px;" stop-propagation="click">Activate Tab 'View'</a>
+        <a href="#" ng-click="setActiveTab('tabHome')" style="padding-right: 40px;" stop-propagation="click">Activate Tab 'Home'</a>
+        <a href="#" ng-click="setActiveTab('tabSendReceive')" style="padding-right: 40px;" stop-propagation="click">Activate Tab 'Send / Receive'</a>
+        <a href="#" ng-click="setActiveTab('tabFolder')" style="padding-right: 40px;" stop-propagation="click">Activate Tab 'Folder'</a>
+        <a href="#" ng-click="setActiveTab('tabView')" style="padding-right: 40px;" stop-propagation="click">Activate Tab 'View'</a>
 
         <br/><br/>
 

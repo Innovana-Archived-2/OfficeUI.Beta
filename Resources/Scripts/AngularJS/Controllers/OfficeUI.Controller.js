@@ -64,8 +64,8 @@ OfficeUI.controller('OfficeUI', ['$scope', '$http', 'OfficeUIRibbonService', fun
      * @remarks
      * See the OfficeUIRibbonService source code for a more detailed explanation of this function.
      */
-    $scope.setActive = function(tabId) {
-        OfficeUIRibbonService.setActive(tabId);
+    $scope.setActiveTab = function(tabId) {
+        OfficeUIRibbonService.setActiveTab(tabId);
     }
 
     $scope.toggleApplicationMenu = function() {

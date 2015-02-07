@@ -49,6 +49,11 @@ OfficeUIRibbon.factory('OfficeUIRibbonService', function() {
          * @param data
          *        The data which is being used for initialization. Typically, this data is retrieved from a Json file
          *        but the data can be stored at any location from which it's injected into this function.
+         *
+         * @remarks
+         * By default the 2nd tab which is defined in the Json file is set as the default one.
+         * Not the first one because this one is the application tab.
+         * Also, by default the state of the ribbon is set to 'Showed'.
          */
         setServiceInstance: function(data) {
             serviceInstance = data;
@@ -74,7 +79,7 @@ OfficeUIRibbon.factory('OfficeUIRibbonService', function() {
 
         /**
          * @ngdoc Function
-         * @name setActive
+         * @name setActiveTab
          *
          * @description
          * Change the active tab on the ribbon element itself.
@@ -82,7 +87,7 @@ OfficeUIRibbon.factory('OfficeUIRibbonService', function() {
          * @param tabId
          *        The id of the tab that oyu want to mark as active.
          */
-        setActive: function(tabId) {
+        setActiveTab: function(tabId) {
             serviceInstance.isApplicationMenuActive = false;
 
             if (serviceInstance.state == ribbonStates.Hidden) { serviceInstance.state = ribbonStates.Visible; }
@@ -175,7 +180,7 @@ OfficeUIRibbon.factory('OfficeUIRibbonService', function() {
             // If the contextual tab which is being hidden does have an active tab, change the active tab to the first tab on the ribbon.
             // This is to make sure that a tab stays selected.
             if (holdsActiveTab.length > 0) {
-                $scope.setActive(serviceInstance.Tabs[1].Id);
+                $scope.setActiveTab(serviceInstance.Tabs[1].Id);
             }
 
             serviceInstance.activeContextualGroups = jQuery.grep(serviceInstance.activeContextualGroups, function(value) {

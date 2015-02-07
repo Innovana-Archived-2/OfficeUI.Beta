@@ -84,7 +84,7 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', 'OfficeUIRibbonS
      * See the OfficeUIRibbonService source code for a more detailed explanation of this function.
      */
     $scope.setActiveTabOnScrolling = function(tabId) {
-        if ($.fn.OfficeUI.Defaults.changeActiveTabOnHover) { OfficeUIRibbonService.setActive(tabId); }
+        if ($.fn.OfficeUI.Defaults.changeActiveTabOnHover) { OfficeUIRibbonService.setActiveTab(tabId); }
     }
 
     /**
@@ -213,7 +213,7 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', 'OfficeUIRibbonS
             }
         }
 
-        if (tabToActivate != null) { $scope.setActive(tabToActivate.attr('id')); }
+        if (tabToActivate != null) { $scope.setActiveTab(tabToActivate.attr('id')); }
 
         $scope.$apply();
     }
