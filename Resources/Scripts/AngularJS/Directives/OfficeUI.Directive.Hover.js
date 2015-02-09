@@ -1,4 +1,4 @@
-/* Loads the module 'OfficeUIRibbon'. */
+// Loads up the module 'OfficeUIRibbon'.
 var OfficeUIRibbon = angular.module('OfficeUIRibbon');
 
 /**
@@ -8,14 +8,7 @@ var OfficeUIRibbon = angular.module('OfficeUIRibbon');
  * @description
  * The 'hover' directive allows a method to be executed when hovering on an element.
  *
- * @element ANY
- *
- * @example
- *  <example module="OfficeUIRibbon">
- *    <file name="index.html">
- *      <body ng-controller="OfficeUIRibbon as OfficeUIRibbon" hover="function()"></body>
- *    </file>
- *  </example>
+ * @element Attribute.
  */
 OfficeUIRibbon.directive('hover', function () {
     return {

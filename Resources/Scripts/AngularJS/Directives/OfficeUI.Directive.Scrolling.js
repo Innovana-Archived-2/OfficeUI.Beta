@@ -1,4 +1,4 @@
-/* Loads the module 'OfficeUIRibbon'. */
+// Loads up the module 'OfficeUIRibbon'.
 var OfficeUIRibbon = angular.module('OfficeUIRibbon');
 
 /**
@@ -9,14 +9,7 @@ var OfficeUIRibbon = angular.module('OfficeUIRibbon');
  * The 'scroll' directive allows a method to be executed when scrolling.
  * The method that's being executed is 'ribbonScroll'.
  *
- * @element ANY
- *
- * @example
- *  <example module="OfficeUIRibbon">
- *    <file name="index.html">
- *      <body ng-controller="OfficeUIRibbon as OfficeUIRibbon" scroll></body>
- *    </file>
- *  </example>
+ * @element Attribute.
  */
 OfficeUIRibbon.directive('scroll', function() {
     return {

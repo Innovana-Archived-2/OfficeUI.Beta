@@ -1,4 +1,4 @@
-/* Loads the module 'OfficeUI'. */
+// Loads up the module 'OfficeUI'.
 var OfficeUI = angular.module('OfficeUI');
 
 /**
@@ -8,7 +8,7 @@ var OfficeUI = angular.module('OfficeUI');
  * @description
  * The dynamicEventHandling directive allows you to attach an event to an element.
  *
- * @element ANY
+ * @element Attribue.
  */
 OfficeUI.directive('dynamicEventHandling', function() {
     return {

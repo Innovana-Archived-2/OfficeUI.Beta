@@ -1,4 +1,4 @@
-/* Loads the module 'OfficeUI'. */
+// Loads up the module 'OfficeUI'.
 var OfficeUI = angular.module('OfficeUI');
 
 /**
@@ -8,17 +8,10 @@ var OfficeUI = angular.module('OfficeUI');
  * @description
  * The 'stopPropagation' directive allows an event to stop propagating throughout the flow.
  *
- * @element ANY
+ * @element Attribute.
  *
  * @parameters {string}
  *              Defines the event that should stop propagating.
- *
- * @example
- *  <example module="OfficeUI">
- *    <file name="index.html">
- *      <body ng-controller="OfficeUIRibbon as OfficeUIRibbon" stop-propagation="click"></body>
- *    </file>
- *  </example>
  */
 OfficeUI.directive('stopPropagation', function () {
     return {

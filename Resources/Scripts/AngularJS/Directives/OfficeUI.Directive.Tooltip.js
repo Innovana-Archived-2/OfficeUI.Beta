@@ -1,4 +1,4 @@
-/* Loads the module 'OfficeUIRibbon'. */
+// Loads up the module 'OfficeUIRibbon'.
 var OfficeUIRibbon = angular.module('OfficeUIRibbon');
 
 /**
