@@ -1,4 +1,4 @@
-/* Loads the module 'OfficeUIRibbon'. */
+// Loads up the module 'OfficeUIRibbon'.
 var OfficeUIRibbon = angular.module('OfficeUIRibbon');
 
 /**
@@ -8,17 +8,10 @@ var OfficeUIRibbon = angular.module('OfficeUIRibbon');
  * @description
  * The 'OfficeUIRibbon' controller allows us to set-up the core functions for an OfficeUI application.
  *
- * @dependencies
- * $http
+ * @dependencies $scope, $http, OfficeUIRibbonService.
+ *               The $http dependency is required for loading up the json (ribbon) file dynamically.
  *
  * @element ANY
- *
- * @example
- *  <example module="OfficeUIRibbonExample">
- *    <file name="index.html">
- *      <body ng-controller="OfficeUIRibbon as OfficeUIRibbon"></body>
- *    </file>
- *  </example>
  */
 OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', 'OfficeUIRibbonService', function($scope, $http, OfficeUIRibbonService) {
     /**
@@ -32,6 +25,16 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', 'OfficeUIRibbonS
     $scope.OfficeUIRibbon.ribbonStates = {};
     $scope.OfficeUIRibbon.initialized = false;
 
+    /**
+     * @ngdoc Function
+     * @name isRibbonInitialized
+     *
+     * @description
+     * Checks if the ribbon is initialized.
+     *
+     * @returns {boolean|*}
+     *          True if the ribbon is already initialized, false otherwise.
+     */
     $scope.isRibbonInitialized = function() {
         return $scope.OfficeUIRibbon.initialized;
     }
@@ -48,13 +51,6 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', 'OfficeUIRibbonS
      * For this reason, this variable needs to be set in a JavaScript call on the HTML page itself.
      * The data which is retrieved from this file is stored in a variable called 'data' under the 'scope'.
      * The first tab will be set as the active one.
-     *
-     * @example
-     * <example module="OfficeUIRibbonInitializationExample" deps="OfficeUI.min.js">
-     *   <file name="index.html">
-     *     <body ng-controller="OfficeUIRibbon as OfficeUIRibbon"></body>
-     *   </file>
-     * </example>
      */
     $http.get($.fn.OfficeUI.ribbonDataFile)
         .success(function(data) {
@@ -68,20 +64,10 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', 'OfficeUIRibbonS
         .error(function(data) { console.error('An error occured while loading the file \'' + $.fn.OfficeUI.ribbonDataFile + '\' file. '); })
 
     /**
-     * @ngdoc Area
-     * @name Public API
-     *
      * @description
-     * All the methods which can be found below does belong to an exposed API by all aspects of the OfficeUI application.
+     * Set a tab as being active when scrolling is enabled.
      *
-     */
-
-    /**
-     * @description
-     * Set a specific tab as being active.
-     *
-     * @remarks
-     * See the OfficeUIRibbonService source code for a more detailed explanation of this function.
+     * @param tabId     The id of the tab to activate.
      */
     $scope.setActiveTabOnScrolling = function(tabId) {
         if ($.fn.OfficeUI.Defaults.changeActiveTabOnHover) { OfficeUIRibbonService.setActiveTab(tabId); }
@@ -218,10 +204,30 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', 'OfficeUIRibbonS
         $scope.$apply();
     }
 
+    /**
+     * @ngdoc Function
+     * @name isApplicationMenuItemActive
+     *
+     * @description
+     * Check's is an application menu item is being set as active.
+     *
+     * @param applicationMenuItem   The application menu item to check for being active.
+     *
+     * @returns {boolean} True if the application menu item has been set as active, false otherwise.
+     */
     $scope.isApplicationMenuItemActive = function(applicationMenuItem) {
         return $scope.activeApplicationMenuItem == applicationMenuItem;
     }
 
+    /**
+     * @ngdoc Function
+     * @name setApplicationMenuItemAsActive
+     *
+     * @description
+     * Set an application menu item as active.
+     *
+     * @param applicationMenuItem   The application menu item to set active.
+     */
     $scope.setApplicationMenuItemAsActive = function(applicationMenuItem) {
         if (applicationMenuItem.Seperator != 'True') {
             $scope.activeApplicationMenuItem = applicationMenuItem;
@@ -229,7 +235,7 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', 'OfficeUIRibbonS
     }
 
     /**
-     * @ngdoc Method
+     * @ngdoc Function
      *
      * @description
      * This method is executed when you click anywhere on the browser window.

@@ -1,4 +1,4 @@
-/* Loads the module 'OfficeUI'. */
+// Loads up the module 'OfficeUI'.
 var OfficeUI = angular.module('OfficeUI');
 
 /**
@@ -8,16 +8,10 @@ var OfficeUI = angular.module('OfficeUI');
  * @description
  * The 'OfficeUI' controller allows us to set-up the core functions for an OfficeUI application.
  *
- * @dependencies $http
+ * @dependencies $scope, $http, OfficeUIRibbonService.
+ *               The $http dependency is required for loading up the json (ribbon) file dynamically.
  *
  * @element ANY
- *
- * @example
- *  <example module="OfficeUIExample">
- *    <file name="index.html">
- *      <body ng-controller="OfficeUI as OfficeUI"></body>
- *    </file>
- *  </example>
  */
 OfficeUI.controller('OfficeUI', ['$scope', '$http', 'OfficeUIRibbonService', function($scope, $http, OfficeUIRibbonService) {
     var controllerData = this;
@@ -33,13 +27,6 @@ OfficeUI.controller('OfficeUI', ['$scope', '$http', 'OfficeUIRibbonService', fun
      * This function will load up the necessary data from a given file set in a JavaScript variable '$.fn.OfficeUI.applicationDataFile'.
      * For this reason, this variable needs to be set in a JavaScript call on the HTML page itself.
      * The data which is retrieved from this file is stored in a variable called 'data' under the 'scope'.
-     *
-     * @example
-     * <example module="OfficeUIInitializationExample" deps="OfficeUI.min.js">
-     *   <file name="index.html">
-     *     <body ng-controller="OfficeUI as OfficeUI"></body>
-     *   </file>
-     * </example>
      */
     $http.get($.fn.OfficeUI.applicationDataFile)
         .success(function(data) {
@@ -49,95 +36,104 @@ OfficeUI.controller('OfficeUI', ['$scope', '$http', 'OfficeUIRibbonService', fun
         .error(function(data) { console.error('An error occured while loading the file \'' + $.fn.OfficeUI.applicationDataFile + '\' file. '); });
 
     /**
-     * @ngdoc Area
-     * @name Public API
+     * @ngdoc Function
+     * @name setActiveTab
      *
      * @description
-     * All the methods which can be found below does belong to an exposed API by all aspects of the OfficeUI application.
+     * Change the active tab on the ribbon element itself.
      *
-     */
-
-    /**
-     * @description
-     * Set a specific tab as being active.
-     *
-     * @remarks
-     * See the OfficeUIRibbonService source code for a more detailed explanation of this function.
+     * @param tabId
+     *        The id of the tab that oyu want to mark as active.
      */
     $scope.setActiveTab = function(tabId) {
         OfficeUIRibbonService.setActiveTab(tabId);
     }
 
-    $scope.toggleApplicationMenu = function() {
-        OfficeUIRibbonService.toggleApplicationMenu();
-    }
-
-    $scope.isApplicationMenuOpened = function() {
-        return OfficeUIRibbonService.isApplicationMenuOpened();
-    }
-
     /**
-     * @description
-     * Check if a specific tab is active.
+     * @ngdoc Function
+     * @name isTabActive
      *
-     * @remarks
-     * See the OfficeUIRibbonService source code for a more detailed explanation of this function.
+     * @description
+     * Check if a given tab is active, based on it's id.
+     *
+     * @param tabId
+     *        The id of the element that identifies the tab to check.
+     *
+     * @returns {boolean} True is the given tab is active, false otherwise.
      */
     $scope.isTabActive = function(tabId) {
         return OfficeUIRibbonService.isTabActive(tabId);
     }
 
     /**
-     * @description
-     * Check if any contextual group is active.
+     * @ngdoc Function
+     * @name isContextualGroupActive
      *
-     * @remarks
-     * See the OfficeUIRibbonService source code for a more detailed explanation of this function.
+     * @description
+     * Checks if any contextual group is being active.
+     * By active, we do mean that an contextual group is showed.
+     *
+     * @returns {boolean} True if a given tab is active, false otherwise.
      */
     $scope.isContextualGroupActive = function() {
         return OfficeUIRibbonService.isContextualGroupActive();
     }
 
     /**
-     * @description
-     * Check if a contextual group is being active.
-     * By active, we mean that that contextual group is being showed.
+     * @ngdoc Function
+     * @name isActiveContextualGroup
      *
-     * @remarks
-     * See the OfficeUIRibbonService source code for a more detailed explanation of this function.
+     * @descrption Checks if a given contextual group is active.
+     *
+     * @param contextualGroupId
+     *        The id of the contextual group that should be checked for being active.
+     *
+     * @returns {boolean} True if the requested contextual group is active, false otherwise.
      */
     $scope.isActiveContextualGroup = function(contextualGroupId) {
         return OfficeUIRibbonService.isActiveContextualGroup(contextualGroupId);
     }
 
     /**
-     * @description
-     * Set a specific contextual group as being active.
+     * @ngdoc activateContextualGroup
+     * @name activateContextualGroup
      *
-     * @remarks
-     * See the OfficeUIRibbonService source code for a more detailed explanation of this function.
+     * @description
+     * Activate a contextual group based on it's id.
+     *
+     * @param contextualGroupId
+     *        The id of the contextual group to activate.
      */
     $scope.activateContextualGroup = function(contextualGroupId) {
         OfficeUIRibbonService.activateContextualGroup(contextualGroupId);
     }
 
     /**
-     * @description
-     * Deactivate a specific contextual group.
+     * @ngdoc Function
+     * @name deactivateContextualGroup
      *
-     * @remarks
-     * See the OfficeUIRibbonService source code for a more detailed explanation of this function.
+     * @description Deactivate a contextual group based on it's id.
+     *
+     * @param contextualGroupId
+     *        The id of the contextual group to deactivate.
      */
     $scope.deactivateContextualGroup = function(contextualGroupId) {
         OfficeUIRibbonService.deactivateContextualGroup(contextualGroupId);
     }
 
     /**
-     * @description
-     * Set a tab it's color.
+     * @ngdoc Function
+     * @name setActiveTabColor
      *
-     * @remarks
-     * See the OfficeUIRibbonService source code for a more detailed explanation of this function.
+     * @description
+     * Set the color of an active tab, based on the id of the tab.
+     *
+     * @param tabId
+     *        The id of the tab for which to set the color.
+     * @param tabColor
+     *        The color that the tab element should have.
+     *
+     * @returns {*} The color that the tab should have.
      */
     $scope.setActiveTabColor = function(tabId, tabColor) {
         var serviceInstance = OfficeUIRibbonService.getServiceInstance();
@@ -145,5 +141,31 @@ OfficeUI.controller('OfficeUI', ['$scope', '$http', 'OfficeUIRibbonService', fun
         if (serviceInstance.state == serviceInstance.ribbonStates.Showed || serviceInstance.state == serviceInstance.ribbonStates.Visible) {
             return OfficeUIRibbonService.setActiveTabColor(tabId, tabColor);
         }
+    }
+
+    /**
+     * @ngdoc Function
+     * @name toggleApplicationMenu
+     *
+     * @description
+     * Toggle the application menu. This means that the application menu is opened if it's closed,
+     * otherwise it's closed.
+     */
+    $scope.toggleApplicationMenu = function() {
+        OfficeUIRibbonService.toggleApplicationMenu();
+    }
+
+    /**
+     * @ngdoc Function
+     * @name isApplicationMenuOpened
+     *
+     * @description
+     * Checks if the application menu is opened or not.
+     *
+     * @returns {boolean|*}
+     *          True if the application menu is opened, false otherwise.
+     */
+    $scope.isApplicationMenuOpened = function() {
+        return OfficeUIRibbonService.isApplicationMenuOpened();
     }
 }]);
