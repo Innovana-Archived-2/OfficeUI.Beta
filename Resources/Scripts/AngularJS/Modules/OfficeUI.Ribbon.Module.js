@@ -15,7 +15,7 @@ var OfficeUIRibbon = angular.module('OfficeUIRibbon', ['ngSanitize', 'ngAnimate'
  *
  * @description
  * Provides a service which exposes common functionality on the OfficeUI ribbon.
- * Those methods, which are defined in the 'OfficeUIRibbonService' are equal to the API.
+ * Those methods, which are defined in the 'OfficeUIRibbonService' are in fact the API which can be access.
  */
 OfficeUIRibbon.factory('OfficeUIRibbonService', function() {
     // Defines the main object that contains the instance of the service.
@@ -96,7 +96,7 @@ OfficeUIRibbon.factory('OfficeUIRibbonService', function() {
 
         /**
          * @ngdoc Function
-         * @name isActive
+         * @name isTabActive
          *
          * @description
          * Check if a given tab is active, based on it's id.
@@ -106,7 +106,7 @@ OfficeUIRibbon.factory('OfficeUIRibbonService', function() {
          *
          * @returns {boolean} True is the given tab is active, false otherwise.
          */
-        isActive: function(tabId) {
+        isTabActive: function(tabId) {
             return serviceInstance.activeTab == tabId;
         },
 
@@ -206,6 +206,14 @@ OfficeUIRibbon.factory('OfficeUIRibbonService', function() {
             if (serviceInstance.activeTab == tabId) { return tabColor; }
         },
 
+        /**
+         * @ngdoc Function
+         * @name toggleApplicationMenu
+         *
+         * @description
+         * Toggle the application menu. This means that the application menu is opened if it's closed,
+         * otherwise it's closed.
+         */
         toggleApplicationMenu: function() {
             if (!serviceInstance.isApplicationMenuActive) {
                 serviceInstance.isApplicationMenuActive = true;
@@ -214,6 +222,16 @@ OfficeUIRibbon.factory('OfficeUIRibbonService', function() {
             }
         },
 
+        /**
+         * @ngdoc Function
+         * @name isApplicationMenuOpened
+         *
+         * @description
+         * Checks if the application menu is opened or not.
+         *
+         * @returns {boolean|*}
+         *          True if the application menu is opened, false otherwise.
+         */
         isApplicationMenuOpened: function() {
             return serviceInstance.isApplicationMenuActive;
         }

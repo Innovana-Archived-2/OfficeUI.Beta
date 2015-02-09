@@ -83,8 +83,8 @@ OfficeUI.controller('OfficeUI', ['$scope', '$http', 'OfficeUIRibbonService', fun
      * @remarks
      * See the OfficeUIRibbonService source code for a more detailed explanation of this function.
      */
-    $scope.isActive = function(tabId) {
-        return OfficeUIRibbonService.isActive(tabId);
+    $scope.isTabActive = function(tabId) {
+        return OfficeUIRibbonService.isTabActive(tabId);
     }
 
     /**
