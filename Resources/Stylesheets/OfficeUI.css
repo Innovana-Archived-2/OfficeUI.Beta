@@ -137,14 +137,13 @@
   -webkit-user-select: none;
   user-select: none;
   width: 100%;
-  background: white;
-  height: 146px;
+  top: 0;
   /* Defines the styling of the title area. */
   /* Defines the styling of the ribbon. */
 }
 @media (min-width: 497px) {
   #OfficeUI header {
-    background: url("/OfficeUI.Beta/Resources/Images/Application/Backgrounds/Circuit.png") no-repeat scroll right top white;
+    background: url("/OfficeUI.Beta/Resources/Images/Application/Backgrounds/Circuit.png") no-repeat scroll right top;
   }
 }
 #OfficeUI header .title {
@@ -614,4 +613,32 @@ header .content-area {
 }
 header .content-area.ng-hide {
   opacity: 0;
+}
+header {
+  z-index: 100;
+}
+body > .content {
+  -webkit-transition: 0.15s linear all;
+  transition: 0.15s linear all;
+  font-family: 'Segoe UI';
+  font-size: 0.75em;
+  padding-left: 5px;
+  position: relative;
+  top: 150px;
+  z-index: 1;
+}
+body > .content.animate-ribbon-hiding {
+  -webkit-transition: 0.15s linear all;
+  transition: 0.15s linear all;
+  top: 57px;
+}
+body > .content.no-animate-ribbon-hiding {
+  -webkit-transition: 0.15s linear all;
+  transition: 0.15s linear all;
+  top: 57px;
+}
+body > .content.animate-ribbon-showing {
+  -webkit-transition: 0.15s linear all;
+  transition: 0.15s linear all;
+  top: 57px;
 }

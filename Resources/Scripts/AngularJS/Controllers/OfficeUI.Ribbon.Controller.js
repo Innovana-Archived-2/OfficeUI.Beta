@@ -15,31 +15,6 @@ var OfficeUIRibbon = angular.module('OfficeUIRibbon');
  */
 OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', 'OfficeUIRibbonService', function($scope, $http, OfficeUIRibbonService) {
     /**
-     * @ngdoc Initialization.
-     *
-     * @description
-     * This property is set on the scope first because otherwise, AngularJS will cause some JavaScript issues.
-     * This is due to the fact that we're loading data from a Json file, but on the startup of the application, not all the data has been retrieved yet.
-     * Therefore we set some of the properties which relies on the application.
-     */
-    $scope.OfficeUIRibbon.ribbonStates = {};
-    $scope.OfficeUIRibbon.initialized = false;
-
-    /**
-     * @ngdoc Function
-     * @name isRibbonInitialized
-     *
-     * @description
-     * Checks if the ribbon is initialized.
-     *
-     * @returns {boolean|*}
-     *          True if the ribbon is already initialized, false otherwise.
-     */
-    $scope.isRibbonInitialized = function() {
-        return $scope.OfficeUIRibbon.initialized;
-    }
-
-    /**
      * @ngdoc Function
      * @name Initialization
      *
@@ -71,45 +46,6 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', 'OfficeUIRibbonS
      */
     $scope.setActiveTabOnScrolling = function(tabId) {
         if ($.fn.OfficeUI.Defaults.changeActiveTabOnHover) { OfficeUIRibbonService.setActiveTab(tabId); }
-    }
-
-    /**
-     * @ndgoc Function
-     * @name isRibbonShowed
-     *
-     * @description
-     * Check if the current state of the ribbon is 'Showed'.
-     *
-     * @returns {boolean} True if the ribbon's state is set to 'Showed', false otherwise.
-     */
-    $scope.isRibbonShowed = function() {
-        return $scope.OfficeUIRibbon.state == $scope.OfficeUIRibbon.ribbonStates.Showed;
-    }
-
-    /**
-     * @ndgoc Function
-     * @name isRibbonVisible
-     *
-     * @description
-     * Check if the current state of the ribbon is 'Visible'.
-     *
-     * @returns {boolean} True if the ribbon's state is set to 'Visible', false otherwise.
-     */
-    $scope.isRibbonVisible = function() {
-        return $scope.OfficeUIRibbon.state == $scope.OfficeUIRibbon.ribbonStates.Visible;
-    }
-
-    /**
-     * @ndgoc Function
-     * @name isRibbonHidden
-     *
-     * @description
-     * Check if the current state of the ribbon is 'Hidden'.
-     *
-     * @returns {boolean} True if the ribbon's state is set to 'Hidden', false otherwise.
-     */
-    $scope.isRibbonHidden = function() {
-        return $scope.OfficeUIRibbon.state == $scope.OfficeUIRibbon.ribbonStates.Hidden;
     }
 
     /**
@@ -246,8 +182,8 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', 'OfficeUIRibbonS
      * element with the 'stop-propagation' directive.
      */
     $(window).on('click', function(e) {
-        if ($scope.OfficeUIRibbon.state == $scope.OfficeUIRibbon.ribbonStates.Visible) {
-            $scope.OfficeUIRibbon.initialized = true;
+        if (OfficeUIRibbonService.isRibbonVisible()) {
+            OfficeUIRibbonService.setRibbonInitialized();
             $scope.OfficeUIRibbon.state = $scope.OfficeUIRibbon.ribbonStates.Hidden;
 
             $scope.$apply();

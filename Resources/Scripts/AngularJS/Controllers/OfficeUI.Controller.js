@@ -168,4 +168,57 @@ OfficeUI.controller('OfficeUI', ['$scope', '$http', 'OfficeUIRibbonService', fun
     $scope.isApplicationMenuOpened = function() {
         return OfficeUIRibbonService.isApplicationMenuOpened();
     }
+
+    /**
+     * @ngdoc Function
+     * @name isRibbonInitialized
+     *
+     * @description
+     * Checks if the ribbon is initialized.
+     *
+     * @returns {boolean|*}
+     *          True if the ribbon is already initialized, false otherwise.
+     */
+    $scope.isRibbonInitialized = function() {
+        return OfficeUIRibbonService.isRibbonInitialized();
+    }
+
+    /**
+     * @ndgoc Function
+     * @name isRibbonShowed
+     *
+     * @description
+     * Check if the current state of the ribbon is 'Showed'.
+     *
+     * @returns {boolean} True if the ribbon's state is set to 'Showed', false otherwise.
+     */
+    $scope.isRibbonShowed = function() {
+        return OfficeUIRibbonService.isRibbonShowed();
+    }
+
+    /**
+     * @ndgoc Function
+     * @name isRibbonVisible
+     *
+     * @description
+     * Check if the current state of the ribbon is 'Visible'.
+     *
+     * @returns {boolean} True if the ribbon's state is set to 'Visible', false otherwise.
+     */
+    $scope.isRibbonVisible = function() {
+        return OfficeUIRibbonService.isRibbonVisible();
+    }
+
+    /**
+     * @ndgoc Function
+     * @name isRibbonHidden
+     *
+     * @description
+     * Check if the current state of the ribbon is 'Hidden'.
+     *
+     * @returns {boolean} True if the ribbon's state is set to 'Hidden', false otherwise.
+     */
+    $scope.isRibbonHidden = function() {
+        return OfficeUIRibbonService.isRibbonHidden();
+    }
 }]);

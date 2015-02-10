@@ -37,6 +37,15 @@ OfficeUIRibbon.factory('OfficeUIRibbonService', function() {
      */
     var ribbonStates = { Hidden: 1, Visible: 2, Showed: 3 }
 
+    /**
+     * @description
+     * Defines a boolean that indicates if the ribbon is initialized.
+     *
+     * @type {boolean}
+     * True if the ribbon is initialized, false otherwise.
+     */
+    var initialized = false;
+
     /* Provides the data and functions that this service does expose. */
     return {
         /**
@@ -234,6 +243,70 @@ OfficeUIRibbon.factory('OfficeUIRibbonService', function() {
          */
         isApplicationMenuOpened: function() {
             return serviceInstance.isApplicationMenuActive;
+        },
+
+        /**
+         * @ngdoc Function
+         * @name setRibbonInitialized
+         *
+         * @description
+         * Sets the ribbon as being initialized.
+         */
+        setRibbonInitialized: function() {
+            initialized = true;
+        },
+
+        /**
+         * @ngdoc Function
+         * @name isRibbonInitialized
+         *
+         * @description
+         * Checks if the ribbon is initialized.
+         *
+         * @returns {boolean|*}
+         *          True if the ribbon is already initialized, false otherwise.
+         */
+        isRibbonInitialized: function() {
+            return initialized;
+        },
+
+        /**
+         * @ndgoc Function
+         * @name isRibbonShowed
+         *
+         * @description
+         * Check if the current state of the ribbon is 'Showed'.
+         *
+         * @returns {boolean} True if the ribbon's state is set to 'Showed', false otherwise.
+         */
+        isRibbonShowed: function() {
+            return serviceInstance.state == ribbonStates.Showed;
+        },
+
+        /**
+         * @ndgoc Function
+         * @name isRibbonVisible
+         *
+         * @description
+         * Check if the current state of the ribbon is 'Visible'.
+         *
+         * @returns {boolean} True if the ribbon's state is set to 'Visible', false otherwise.
+         */
+        isRibbonVisible: function() {
+            return serviceInstance.state == ribbonStates.Visible;
+        },
+
+        /**
+         * @ndgoc Function
+         * @name isRibbonHidden
+         *
+         * @description
+         * Check if the current state of the ribbon is 'Hidden'.
+         *
+         * @returns {boolean} True if the ribbon's state is set to 'Hidden', false otherwise.
+         */
+        isRibbonHidden: function() {
+            return serviceInstance.state == ribbonStates.Hidden;
         }
     };
 });
