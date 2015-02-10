@@ -274,9 +274,10 @@
                     </ul>
                 </div>
 
-                <div id="content" ng-show="isApplicationMenuOpened()">
+                <div id="content" ng-show="isApplicationMenuOpened()" style="background: url('/OfficeUI.Beta/Resources/Images/Application/Backgrounds/Circuit.png') no-repeat right top; overflow-y: scroll; height: 100%;">
+                    <div class="top">&nbsp;</div>
                     <div ng-repeat="tab in OfficeUIRibbon.Tabs" ng-if="$first">
-                        <div class="content-area" ng-repeat="menuItem in tab.MenuItems" ng-show="isApplicationMenuItemActive(menuItem)">
+                        <div class="content-area" style="z-index: -10" ng-repeat="menuItem in tab.MenuItems" ng-show="isApplicationMenuItemActive(menuItem)">
                             <h1>{{menuItem.Title}}</h1>
                             <application-menu-contents url="{{menuItem.Url}}" />
                         </div>

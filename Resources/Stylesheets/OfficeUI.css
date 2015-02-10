@@ -458,13 +458,16 @@
 #OfficeUI header .application-contents {
   position: fixed;
   width: 100%;
-  background: url("/OfficeUI.Beta/Resources/Images/Application/Backgrounds/Circuit.png") no-repeat scroll right top white;
+  background-color: white;
   height: 100%;
   top: 0;
   z-index: 999;
 }
 #OfficeUI header .application-contents .title {
+  position: fixed;
   left: 0;
+  width: 100%;
+  z-index: 200;
 }
 #OfficeUI header .application-contents #navigation {
   float: left;
@@ -495,6 +498,13 @@
 }
 #OfficeUI header .application-contents #content {
   position: relative;
+}
+#OfficeUI header .application-contents #content .top {
+  position: fixed;
+  background-color: white;
+  height: 50px;
+  width: 100%;
+  z-index: -1;
 }
 #OfficeUI header .application-contents #content h1 {
   font-size: 3.2em;
