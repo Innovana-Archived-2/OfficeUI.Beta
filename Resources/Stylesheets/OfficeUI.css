@@ -217,7 +217,6 @@
 }
 #OfficeUI header .ribbon ul.tabs li.tab {
   text-align: center;
-  text-transform: uppercase;
 }
 #OfficeUI header .ribbon ul.tabs li.tab.application {
   color: #fff;

@@ -45,7 +45,7 @@
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Directive.Hover.js"></script>
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Directive.ApplicationMenuContents.js"></script>
 
-    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Filters/OfficeUI.Filter.ActionLegend.js"></script>
+    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Filters/OfficeUI.Filter.ActionLegend.min.js"></script>
 </head>
 <body class="noPadding noMargin" ng-controller="OfficeUI as OfficeUI">
     <div id="OfficeUI" ng-controller="OfficeUIRibbon as OfficeUIRibbon">
@@ -95,7 +95,7 @@
                             <!-- Defines the normal tabs of the ribbon. -->
                             <ul>
                                 <li id="{{tab.Id}}" class="tab tab-normal" hover="!$first && setActiveTabOnScrolling(tab.Id);" ng-repeat="tab in OfficeUIRibbon.Tabs" dynamic-event-handling="tab.Id" ng-click="$first && toggleApplicationMenu() || !$first && setActiveTab(tab.Id);" ng-class="{application: $first, active: isTabActive(tab.Id) && (isRibbonShowed() || isRibbonVisible()), 'visible-border': isRibbonShowed() || isRibbonVisible(), 'invisible-border': isRibbonHidden()}" stop-propagation="click">
-                                    <span>{{tab.Label}}</span>
+                                    <span>{{tab.Label | uppercase}}</span>
                                 </li>
                             </ul>
 
@@ -107,13 +107,13 @@
                                     <div class="accent" ng-style="{'background-color': contextual.AccentColor}">&nbsp;</div>
                                     <div class="label" ng-click="setActiveTab(contextual.Tabs[0].Id, false);">
                                         <div ng-style="{'color': contextual.GroupTextColor}">
-                                            <span>{{contextual.Label}}</span>
+                                            <span>{{contextual.Label | uppercase}}</span>
                                         </div>
                                     </div>
                                     <div class="tabs-holder">
                                         <ul>
                                             <li class="tab tab-contextual" id="{{tab.Id}}" hover="setActiveTabOnScrolling(tab.Id);" dynamic-event-handling="tab.Id" ng-style="{color: setActiveTabColor(tab.Id, contextual.GroupTextColor)}" ng-repeat="tab in contextual.Tabs" ng-click="setActiveTab(tab.Id)" ng-class="{active: isTabActive(tab.Id) && (isRibbonShowed() || isRibbonVisible()), 'visible-border': isRibbonShowed() || isRibbonVisible(), 'invisible-border': isRibbonHidden()}" stop-propagation="click">
-                                                <span>{{tab.Label}}</span>
+                                                <span>{{tab.Label | uppercase}}</span>
                                             </li>
                                         </ul>
                                     </div>
