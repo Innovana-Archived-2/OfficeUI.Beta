@@ -1,1 +1,1 @@
-#OfficeUI .application-icons.icon img:hover:not(:first-child),#OfficeUI .icon:hover{background-color:#fce4dc}#OfficeUI .icon:active{background-color:#f5ba9d}#OfficeUI input:hover,#OfficeUI input:focus{border-color:#f5ba9d}
+#OfficeUI .application-icons.icon img:hover:not(.disabled):not(:first-child),#OfficeUI .icon:not(.disabled):hover{background-color:#fce4dc}#OfficeUI .icon:not(.disabled):active{background-color:#f5ba9d}#OfficeUI input:hover,#OfficeUI input:focus{border-color:#f5ba9d}

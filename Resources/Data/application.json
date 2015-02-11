@@ -14,7 +14,8 @@
     {
       "Id": "icoUndo",
       "Icon": "Resources/Images/Application/Undo.png",
-      "Alt": "Undo"
+      "Alt": "Undo",
+      "Disabled": "True"
     }
   ]
 }

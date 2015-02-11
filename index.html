@@ -69,7 +69,7 @@
         -->
         <header>
             <div class="title">
-                <div><img id="{{icon.Id}}" alt="{{icon.Alt}}" ng-class="{'icon': !$first}" ng-repeat="icon in OfficeUI.Icons" ng-src="{{icon.Icon}}" dynamic-event-handling="Icon.Id" /></div>
+                <div><img id="{{icon.Id}}" alt="{{icon.Alt}}" ng-class="{'icon': !$first, 'disabled': icon.Disabled == 'True'}" ng-repeat="icon in OfficeUI.Icons" ng-src="{{icon.Icon}}" dynamic-event-handling="Icon.Id" /></div>
 
                 <span>{{OfficeUI.Title}}</span>
             </div>
@@ -77,7 +77,7 @@
             <!-- Defines the ribbon component itself. -->
             <div class="ribbon" scroll>
                 <div class="title" ng-show="!isContextualGroupActive()">
-                    <div><img id="{{icon.Id}}" alt="{{icon.Alt}}" ng-class="{'icon': !$first}" ng-repeat="icon in OfficeUI.Icons" ng-src="{{icon.Icon}}" dynamic-event-handling="Icon.Id" /></div>
+                    <div><img id="{{icon.Id}}" alt="{{icon.Alt}}" ng-class="{'icon': !$first, 'disabled': icon.Disabled == 'True'}" ng-repeat="icon in OfficeUI.Icons" ng-src="{{icon.Icon}}" dynamic-event-handling="Icon.Id" /></div>
 
                     <span>{{OfficeUI.Title}}</span>
                 </div>
@@ -87,7 +87,7 @@
                     <li>
                         <div class="normal-tabs">
                             <div class="title" ng-show="isContextualGroupActive()">
-                                <div><img id="{{icon.Id}}" alt="{{icon.Alt}}" ng-class="{'icon': !$first}" ng-repeat="icon in OfficeUI.Icons" ng-src="{{icon.Icon}}" dynamic-event-handling="Icon.Id"/></div>
+                                <div><img id="{{icon.Id}}" alt="{{icon.Alt}}" ng-class="{'icon': !$first, 'disabled': icon.Disabled == 'True'}" ng-repeat="icon in OfficeUI.Icons" ng-src="{{icon.Icon}}" dynamic-event-handling="Icon.Id"/></div>
 
                                 <span>{{OfficeUI.Title}}</span>
                             </div>
@@ -138,9 +138,9 @@
                                         <div class="area" ng-repeat="area in group.Areas">
                                             <div ng-repeat="action in area.Actions" ng-class="{'displayBlock': action.Type == 'sIcon', 'displayInlineBlock': action.Type == 'bIcon'}">
                                                 <!-- This is what is being rendered if it's a big icon. -->
-                                                <div ng-if="action.Type == 'bIcon'" ngc-tooltip>
+                                                <div ng-if="action.Type == 'bIcon'" ngc-tooltip ng-class="{'disabled': action.Disabled == 'True'}">
                                                     <a ng-href="{{action.Uri}}">
-                                                        <div id="{{action.Id}}" class="icon big-icon" dynamic-event-handling="action.Id">
+                                                        <div id="{{action.Id}}" class="icon big-icon" dynamic-event-handling="action.Id" ng-class="{'disabled': action.Disabled == 'True'}">
                                                             <img ng-src="{{action.Resource}}" />
 
                                                             <div class="label" ng-bind-html="action |actionLegend"></div>
@@ -149,9 +149,9 @@
                                                 </div>
 
                                                 <!-- This is what is being rendered if it's a small icon. -->
-                                                <div ng-if="action.Type == 'sIcon'" ngc-tooltip>
+                                                <div ng-if="action.Type == 'sIcon'" ngc-tooltip ng-class="{'disabled': action.Disabled == 'True'}">
                                                     <a ng-href="{{action.Uri}}">
-                                                        <div id="{{action.Id}}" class="icon small-icon" dynamic-event-handling="action.Id">
+                                                        <div id="{{action.Id}}" class="icon small-icon" dynamic-event-handling="action.Id" ng-class="{'disabled': action.Disabled == 'True'}">
                                                             <img ng-src="{{action.Resource}}" />
 
                                                             <div class="label" ng-bind-html="action |actionLegend"></div>
@@ -160,12 +160,12 @@
                                                 </div>
 
                                                 <!-- This is what is being rendered if it's an input element (Text). -->
-                                                <div ng-if="action.Type == 'Input'" dynamic-event-handling="action.Id" ngc-tooltip>
+                                                <div ng-if="action.Type == 'Input'" dynamic-event-handling="action.Id" ngc-tooltip ng-class="{'disabled': action.Disabled == 'True'}">
                                                     <input type="text" id="{{action.Id}}" placeholder="{{action.Legend}}" ng-style="{width:'{{action.Width}}'}"/>
                                                 </div>
 
                                                 <!-- This is what is being rendered if it's an input element (Checkbox). -->
-                                                <div ng-show="action.Type == 'Checkbox'" dynamic-event-handling="action.Id" ngc-tooltip>
+                                                <div ng-show="action.Type == 'Checkbox'" dynamic-event-handling="action.Id" ngc-tooltip ng-class="{'disabled': action.Disabled == 'True'}">
                                                     <input type="checkbox" id="{{action.Id}}" />
                                                     <div class="displayInlineBlock">{{action.Legend}}</div>
                                                 </div>
@@ -199,30 +199,34 @@
                                                 <div class="area" ng-repeat="area in group.Areas">
                                                     <div ng-repeat="action in area.Actions" ng-class="{'displayBlock': action.Type == 'sIcon', 'displayInlineBlock': action.Type == 'bIcon'}">
                                                         <!-- This is what is being rendered if it's a big icon. -->
-                                                        <div ng-if="action.Type == 'bIcon'" ngc-tooltip>
-                                                            <div id="{{action.Id}}" class="icon big-icon" dynamic-event-handling="action.Id">
-                                                                <img ng-src="{{action.Resource}}" />
+                                                        <div ng-if="action.Type == 'bIcon'" ngc-tooltip ng-class="{'disabled': action.Disabled == 'True'}">
+                                                            <a ng-href="{{action.Uri}}">
+                                                                <div id="{{action.Id}}" class="icon big-icon" dynamic-event-handling="action.Id" ng-class="{'disabled': action.Disabled == 'True'}">
+                                                                    <img ng-src="{{action.Resource}}" />
 
-                                                                <div class="label" ng-bind-html="action |actionLegend"></div>
-                                                            </div>
+                                                                    <div class="label" ng-bind-html="action |actionLegend"></div>
+                                                                </div>
+                                                            </a>
                                                         </div>
 
                                                         <!-- This is what is being rendered if it's a small icon. -->
-                                                        <div ng-if="action.Type == 'sIcon'" ngc-tooltip>
-                                                            <div id="{{action.Id}}" class="icon small-icon" dynamic-event-handling="action.Id">
-                                                                <img ng-src="{{action.Resource}}" />
+                                                        <div ng-if="action.Type == 'sIcon'" ngc-tooltip ng-class="{'disabled': action.Disabled == 'True'}">
+                                                            <div id="{{action.Id}}" class="icon small-icon" dynamic-event-handling="action.Id" ng-class="{'disabled': action.Disabled == 'True'}">
+                                                                <a ng-href="{{action.Uri}}">
+                                                                    <img ng-src="{{action.Resource}}" />
 
-                                                                <div class="label" ng-bind-html="action |actionLegend"></div>
+                                                                    <div class="label" ng-bind-html="action |actionLegend"></div>
+                                                                </a>
                                                             </div>
                                                         </div>
 
                                                         <!-- This is what is being rendered if it's an input element (Text). -->
-                                                        <div ng-if="action.Type == 'Input'" dynamic-event-handling="action.Id" ngc-tooltip>
+                                                        <div ng-if="action.Type == 'Input'" dynamic-event-handling="action.Id" ngc-tooltip ng-class="{'disabled': action.Disabled == 'True'}">
                                                             <input type="text" id="{{action.Id}}" placeholder="{{action.Legend}}" ng-style="{width:'{{action.Width}}'}"/>
                                                         </div>
 
                                                         <!-- This is what is being rendered if it's an input element (Checkbox). -->
-                                                        <div ng-show="action.Type == 'Checkbox'" dynamic-event-handling="action.Id" ngc-tooltip>
+                                                        <div ng-show="action.Type == 'Checkbox'" dynamic-event-handling="action.Id" ngc-tooltip ng-class="{'disabled': action.Disabled == 'True'}">
                                                             <input type="checkbox" id="{{action.Id}}" />
                                                             <div class="displayInlineBlock">{{action.Legend}}</div>
                                                         </div>

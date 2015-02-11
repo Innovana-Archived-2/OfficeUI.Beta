@@ -1,20 +1,16 @@
 /* Import Statements. */
 /* Import statements. */
 /* General styling. */
-#OfficeUI .application-icons.icon img:hover:not(:first-child),
-#OfficeUI .icon:hover {
+#OfficeUI .application-icons.icon img:hover:not(.disabled):not(:first-child),
+#OfficeUI .icon:not(.disabled):hover {
   background-color: #d3f0e0;
 }
-#OfficeUI .icon:active {
+#OfficeUI .icon:not(.disabled):active {
   background-color: #86bfa0;
 }
 #OfficeUI input:hover,
 #OfficeUI input:focus {
   border-color: #86bfa0;
-}
-/* Ribbon styling. */
-.ribbon > ul li .tab.active {
-  color: #217346;
 }
 /* Import statements. */
 /* Ribbon styling. */

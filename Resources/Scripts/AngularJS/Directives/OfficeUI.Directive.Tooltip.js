@@ -16,19 +16,21 @@ OfficeUIRibbon.directive('ngcTooltip', function () {
         scope: { method: '&ngcTooltip' },
         link: function (scope, element, attributes) {
             element.bind("mouseenter", function (e) {
-                var tooltipElement = $('.tooltip', element.parent());
+                if (!element.hasClass('disabled')) {
+                    var tooltipElement = $('.tooltip', element.parent());
 
-                $.fn.OfficeUI.waitHandleShowTooltip = setTimeout(function() {
-                    $(tooltipElement).show();
-                }, 1000);
+                    $.fn.OfficeUI.waitHandleShowTooltip = setTimeout(function () {
+                        $(tooltipElement).show();
+                    }, 1000);
 
-                element.bind("mouseleave", function (e) {
-                    clearTimeout($.fn.OfficeUI.waitHandleShowTooltip);
+                    element.bind("mouseleave", function (e) {
+                        clearTimeout($.fn.OfficeUI.waitHandleShowTooltip);
 
-                    $.fn.OfficeUI.waitHandleHideTooltip = setTimeout(function() {
-                        $(tooltipElement).hide();
-                    }, 500);
-                });
+                        $.fn.OfficeUI.waitHandleHideTooltip = setTimeout(function () {
+                            $(tooltipElement).hide();
+                        }, 500);
+                    });
+                }
             });
         }
     };

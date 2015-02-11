@@ -110,6 +110,17 @@
 #OfficeUI .borderTransparent {
   border: 1px solid transparent;
 }
+#OfficeUI .disabled {
+  -moz-opacity: 0.50;
+  filter: alpha(opacity=50);
+  opacity: 0.5;
+  pointer-events: none;
+}
+#OfficeUI .disabled img {
+  filter: gray;
+  filter: grayscale(1);
+  -webkit-filter: grayscale(1);
+}
 #OfficeUI input {
   border: 1px solid #ababab;
   color: black;
