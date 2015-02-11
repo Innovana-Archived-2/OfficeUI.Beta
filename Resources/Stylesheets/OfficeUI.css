@@ -12,6 +12,9 @@
 .noMargin {
   margin: 0;
 }
+.no-overflow {
+  overflow: hidden;
+}
 #OfficeUI {
   /* --------------------------------------------------*/
   /* ---------->>> Helpful css classes. <<<-----------*/
