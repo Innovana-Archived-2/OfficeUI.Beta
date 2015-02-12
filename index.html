@@ -21,7 +21,8 @@
     <!-- External JavaScript files which are needed for the application to run. -->
     <script src="/OfficeUI.Beta/Resources/Scripts/External/Angular.js"></script>
     <script src="/OfficeUI.Beta/Resources/Scripts/External/jQuery-2.1.3.min.js"></script>
-    <script src="/OfficeUI.Beta/Resources/Scripts/OfficeUI.js"></script>
+    <script src="/OfficeUI.Beta/Resources/Scripts/External/defiant.min.js"></script>
+    <script src="/OfficeUI.Beta/Resources/Scripts/OfficeUI.min.js"></script>
     <script src="/OfficeUI.Beta/Resources/Scripts/OfficeUI.ThemeManager.min.js"></script>
 
     <!-- External Stylesheet files which are needed for the application to run. -->
@@ -32,18 +33,18 @@
 
     <script src="/OfficeUI.Beta/Resources/Scripts/External/Angular-animate.min.js"></script>
     <script src="/OfficeUI.Beta/Resources/Scripts/External/Angular-sanitize.min.js"></script>
-    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Modules/OfficeUI.Ribbon.Module.js"></script>
-    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Modules/OfficeUI.Module.js"></script>
+    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Modules/OfficeUI.Ribbon.Module.min.js"></script>
+    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Modules/OfficeUI.Module.min.js"></script>
 
-    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Controllers/OfficeUI.Controller.js"></script>
-    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Controllers/OfficeUI.Ribbon.Controller.js"></script>
+    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Controllers/OfficeUI.Controller.min.js"></script>
+    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Controllers/OfficeUI.Ribbon.Controller.min.js"></script>
 
-    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Directive.StopPropagation.js"></script>
-    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Directive.Tooltip.js"></script>
-    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Directive.DynamicEventHandling.js"></script>
-    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Directive.Scrolling.js"></script>
-    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Directive.Hover.js"></script>
-    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Directive.ApplicationMenuContents.js"></script>
+    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Directive.StopPropagation.min.js"></script>
+    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Directive.Tooltip.min.js"></script>
+    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Directive.DynamicEventHandling.min.js"></script>
+    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Directive.Scrolling.min.js"></script>
+    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Directive.Hover.min.js"></script>
+    <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Directives/OfficeUI.Directive.ApplicationMenuContents.min.js"></script>
 
     <script src="/OfficeUI.Beta/Resources/Scripts/AngularJS/Filters/OfficeUI.Filter.ActionLegend.min.js"></script>
 </head>
@@ -311,6 +312,13 @@
         <a href="#" ng-click="deactivateContextualGroup('contextualGroupDrawingTools')" style="padding-right: 40px;" stop-propagation="click">Deactivate Drawing Tools</a>
         <a href="#" ng-click="deactivateContextualGroup('contextualGroupTableTools')" style="padding-right: 40px;" stop-propagation="click">Deactivate Table Tools</a>
         <a href="#" ng-click="deactivateContextualGroup('contextualGroupSmartTools')" style="padding-right: 40px;" stop-propagation="click">Deactivate Smart Tools</a>
+
+        <br/><br/>
+
+        <h3>Actions</h3>
+        <a href="#" ng-click="disableAction('icoNewEmail')" style="padding-right: 40px;" stop-propagation="click">Disable action 'New Email'</a>
+        <a href="#" ng-click="enableAction('icoNewEmail')" style="padding-right: 40px;" stop-propagation="click">Enable action 'New Email'</a>
+        <br/><br/>
     </div>
 
 <!-- Provides some functions to configure the OfficeUI application. -->

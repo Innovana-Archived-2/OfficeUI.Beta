@@ -221,4 +221,31 @@ OfficeUI.controller('OfficeUI', ['$scope', '$http', 'OfficeUIRibbonService', fun
     $scope.isRibbonHidden = function() {
         return OfficeUIRibbonService.isRibbonHidden();
     }
+
+    /**
+     * @ngdoc Function
+     * @name disableAction
+     *
+     * @description
+     * Disable an action based on the id of the action.
+     *
+     * @param action    The id of the action to disable.
+     */
+    $scope.disableAction = function(action) {
+        OfficeUIRibbonService.disableAction(action);
+    }
+
+    /**
+     * @ngdoc Function
+     * @name enableAction
+     *
+     * @description
+     * Enable an action based on the id of the action.
+     *
+     * @param action    The id of the action to enable.
+     */
+    $scope.enableAction = function(action) {
+        OfficeUIRibbonService.enableAction(action);
+    }
+
 }]);

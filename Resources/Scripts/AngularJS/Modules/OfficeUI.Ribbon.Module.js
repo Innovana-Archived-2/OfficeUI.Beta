@@ -307,6 +307,42 @@ OfficeUIRibbon.factory('OfficeUIRibbonService', function() {
          */
         isRibbonHidden: function() {
             return serviceInstance.state == ribbonStates.Hidden;
+        },
+
+        /**
+         * @ngdoc Function
+         * @name disableAction
+         *
+         * @description
+         * Disable an action based on the id of the action.
+         *
+         * @param action    The id of the action to disable.
+         */
+        disableAction: function(action) {
+            var item = JSON.search(serviceInstance, '//Tabs//Groups//Areas//Actions[Id="' + action + '"]');
+
+            // If the item has been found, then we can disable it.
+            if (item.length == 1) {
+                item[0].Disabled = "True";
+            }
+        },
+
+        /**
+         * @ngdoc Function
+         * @name enableAction
+         *
+         * @description
+         * Enable an action based on the id of the action.
+         *
+         * @param action    The id of the action to enable.
+         */
+        enableAction: function(action) {
+            var item = JSON.search(serviceInstance, '//Tabs//Groups//Areas//Actions[Id="' + action + '"]');
+
+            // If the item has been found, then we can disable it.
+            if (item.length == 1) {
+                item[0].Disabled = "False";
+            }
         }
     };
 });
