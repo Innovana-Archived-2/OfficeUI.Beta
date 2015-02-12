@@ -319,7 +319,7 @@ OfficeUIRibbon.factory('OfficeUIRibbonService', function() {
          * @param action    The id of the action to disable.
          */
         disableAction: function(action) {
-            var item = JSON.search(serviceInstance, '//Tabs//Groups//Areas//Actions[Id="' + action + '"]');
+            var item =  JSPath.apply('.Tabs.Groups.Areas.Actions{.Id == "' + action + '"}', serviceInstance);
 
             // If the item has been found, then we can disable it.
             if (item.length == 1) {
@@ -337,7 +337,7 @@ OfficeUIRibbon.factory('OfficeUIRibbonService', function() {
          * @param action    The id of the action to enable.
          */
         enableAction: function(action) {
-            var item = JSON.search(serviceInstance, '//Tabs//Groups//Areas//Actions[Id="' + action + '"]');
+            var item =  JSPath.apply('.Tabs.Groups.Areas.Actions{.Id == "' + action + '"}', serviceInstance);
 
             // If the item has been found, then we can disable it.
             if (item.length == 1) {
