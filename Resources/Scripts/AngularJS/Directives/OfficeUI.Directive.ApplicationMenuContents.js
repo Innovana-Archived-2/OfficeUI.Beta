@@ -14,15 +14,11 @@ var OfficeUIRibbon = angular.module('OfficeUIRibbon');
  */
 OfficeUIRibbon.directive('applicationMenuContents', function() {
     return {
-        restrict: 'E',
+        restrict: 'AE',
         replace: false,
-        scope: {
-            url: '@'
-        },
         link: function(scope, element, attributes) {
-            scope.$watch('url', function(value) {
-                scope.contentUrl = value;
-            });
+            var value = scope.$eval(attributes['applicationMenuContents']);
+            scope.contentUrl = value.url;
         },
         template: function() {
             return '<div ng-include="contentUrl"></div>';

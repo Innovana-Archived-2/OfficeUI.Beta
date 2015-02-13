@@ -1,0 +1,7 @@
+<a data-ng-href="{{action.Uri}}">
+    <div id="{{action.Id}}" class="icon small-icon" data-dynamic-event-handling="action.Id" data-ng-class="{'disabled': action.Disabled == 'True'}">
+        <img data-ng-src="{{action.Resource}}" />
+
+        <div class="label" data-ng-bind-html="action |actionLegend"></div>
+    </div>
+</a>
