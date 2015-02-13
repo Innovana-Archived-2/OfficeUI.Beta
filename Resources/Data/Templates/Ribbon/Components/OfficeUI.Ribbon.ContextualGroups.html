@@ -1,0 +1,14 @@
+<ul>
+    <li class="context-group" id="{{contextual.Id}}" data-ng-show="isActiveContextualGroup(contextual.Id)" data-ng-class="{'active-contextual-group': isActiveContextualGroup(contextual.Id)}" data-ng-repeat="contextual in OfficeUIRibbon.ContextualGroups" data-ng-style="{'background-color': contextual.GroupColor}">
+        <div class="accent" data-ng-style="{'background-color': contextual.AccentColor}">&nbsp;</div>
+        <div class="label" data-ng-click="setActiveTab(contextual.Tabs[0].Id, false);">
+            <div data-ng-style="{'color': contextual.GroupTextColor}">
+                <span>{{contextual.Label | uppercase}}</span>
+            </div>
+        </div>
+        <div class="tabs-holder">
+            <div data-officeui-ribbon-contextual-tabs></div>
+        </div>
+
+    </li>
+</ul>

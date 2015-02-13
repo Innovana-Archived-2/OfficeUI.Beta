@@ -1,0 +1,5 @@
+<ul>
+    <li id="{{tab.Id}}" class="tab tab-normal" data-hover="!$first && setActiveTabOnScrolling(tab.Id);" data-ng-repeat="tab in OfficeUIRibbon.Tabs" data-dynamic-event-handling="tab.Id" data-ng-click="$first && toggleApplicationMenu() || !$first && setActiveTab(tab.Id);" data-ng-class="{application: $first, active: isTabActive(tab.Id) && (isRibbonShowed() || isRibbonVisible()), 'visible-border': isRibbonShowed() || isRibbonVisible(), 'invisible-border': isRibbonHidden()}" data-stop-propagation="click">
+        <span>{{tab.Label | uppercase}}</span>
+    </li>
+</ul>

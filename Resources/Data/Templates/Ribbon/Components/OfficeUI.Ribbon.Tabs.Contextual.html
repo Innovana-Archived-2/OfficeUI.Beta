@@ -1,0 +1,5 @@
+<ul>
+    <li class="tab tab-contextual" id="{{tab.Id}}" data-hover="setActiveTabOnScrolling(tab.Id);" data-dynamic-event-handling="tab.Id" data-ng-style="{color: setActiveTabColor(tab.Id, contextual.GroupTextColor)}" data-ng-repeat="tab in contextual.Tabs" ng-click="setActiveTab(tab.Id)" data-ng-class="{active: isTabActive(tab.Id) && (isRibbonShowed() || isRibbonVisible()), 'visible-border': isRibbonShowed() || isRibbonVisible(), 'invisible-border': isRibbonHidden()}" data-stop-propagation="click">
+        <span>{{tab.Label | uppercase}}</span>
+    </li>
+</ul>
