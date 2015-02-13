@@ -28,30 +28,48 @@
                                 <div class="legend">{{group.Legend}}</div>
 
                                 <div class="area" data-ng-repeat="area in group.Areas">
-                                    <div data-ng-repeat="action in area.Actions" data-ng-class="{'displayBlock': action.Type == 'sIcon', 'displayInlineBlock': action.Type == 'bIcon'}">
+                                    <div data-ng-repeat="action in area.Actions" class="actions-holder" data-ng-class="{'displayBlock': action.Type == 'sIcon', 'displayInlineBlock': action.Type == 'bIcon'}">
                                         <!-- This is what is being rendered if it's a big icon. -->
-                                        <div data-ng-if="action.Type == 'bIcon'" data-ngc-tooltip ng-class="{'disabled': action.Disabled == 'True'}">
+                                        <div data-ng-if="action.Type == 'bIcon'" data-ngc-tooltip="{'action': action.Id}" ng-class="{'disabled': action.Disabled == 'True'}">
                                             <div data-officeui-ribbon-action-big-icon></div>
                                         </div>
 
                                         <!-- This is what is being rendered if it's a small icon. -->
-                                        <div data-ng-if="action.Type == 'sIcon'" data-ngc-tooltip data-ng-class="{'disabled': action.Disabled == 'True'}">
+                                        <div data-ng-if="action.Type == 'sIcon'" data-ngc-tooltip="{'action': action.Id}" data-ng-class="{'disabled': action.Disabled == 'True'}">
                                             <div data-officeui-ribbon-action-small-icon></div>
                                         </div>
 
                                         <!-- This is what is being rendered if it's an input element (Text). -->
-                                        <div data-ng-if="action.Type == 'Input'" data-dynamic-event-handling="action.Id" data-ngc-tooltip ng-class="{'disabled': action.Disabled == 'True'}">
+                                        <div data-ng-if="action.Type == 'Input'" data-dynamic-event-handling="action.Id" data-ngc-tooltip="{'action': action.Id}" ng-class="{'disabled': action.Disabled == 'True'}">
                                             <div data-officeui-ribbon-action-input></div>
                                         </div>
 
                                         <!-- This is what is being rendered if it's an input element (Checkbox). -->
-                                        <div data-ng-show="action.Type == 'Checkbox'" data-dynamic-event-handling="action.Id" data-ngc-tooltip data-ng-class="{'disabled': action.Disabled == 'True'}">
+                                        <div data-ng-show="action.Type == 'Checkbox'" data-dynamic-event-handling="action.Id" data-ngc-tooltip="{'action': action.Id}" data-ng-class="{'disabled': action.Disabled == 'True'}">
                                             <div data-officeui-ribbon-action-checkbox></div>
                                         </div>
 
                                         <div class="tooltip" data-ng-if="action.Tooltip">
                                             <div data-ng-bind-html="action.Tooltip"></div>
                                         </div>
+
+                                        <!-- ToDo: This is the menu and should be cleaned up. Also, it should be placed in the contextual tabs. However, rendering is now being done through a Controller, where this should be a directive because I'm manipulating the DOM here (don's show the tooltip anymore when clicked on it). -->
+                                        <!--
+                                            <div class="menucontents" style="background-color: #ffffff; background-image: linear-gradient(#c6c6c6, #c6c6c6), linear-gradient(#c6c6c6, #c6c6c6); background-position: 0 0px, 100% 0; background-repeat: no-repeat; background-size: 1px 100%; border-bottom: 1px solid #c6c6c6; border-top: 1px solid #c6c6c6; box-shadow: 3px 3px 3px #e0e0e0; padding: 1px 2px;">
+                                                <ul style="position: static; height: auto; list-style: none; white-space: nowrap;">
+                                                    <li data-ng-repeat="menuItem in action.MenuItems" style="position: static; height: auto; padding-right: 20px; height: 23px; line-height: 23px; list-style: outside none none; padding-left: 5px; text-align: left; vertical-align: middle;">
+                                                        <div>
+                                                            <div class="imageHolder" style="height: 16px; padding-top: 4px; text-align: center; width: 16px; display: inline-block;">
+                                                                <img data-ng-if="menuItem.Resource" data-ng-src="{{menuItem.Resource}}" alt="{{menuItem.Label}}"/>
+                                                            </div>
+                                                            <div style="height: 23px; line-height: 23px; vertical-align: top; display: inline-block;">
+                                                                {{menuItem.Label}}
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>-->
                                     </div>
                                 </div>
                             </div>
@@ -78,22 +96,22 @@
                                         <div class="area" data-ng-repeat="area in group.Areas">
                                             <div data-ng-repeat="action in area.Actions" data-ng-class="{'displayBlock': action.Type == 'sIcon', 'displayInlineBlock': action.Type == 'bIcon'}">
                                                 <!-- This is what is being rendered if it's a big icon. -->
-                                                <div data-ng-if="action.Type == 'bIcon'" data-ngc-tooltip ng-class="{'disabled': action.Disabled == 'True'}">
+                                                <div data-ng-if="action.Type == 'bIcon'" data-ngc-tooltip="{'action': action.Id}" ng-class="{'disabled': action.Disabled == 'True'}">
                                                     <div data-officeui-ribbon-action-big-icon></div>
                                                 </div>
 
                                                 <!-- This is what is being rendered if it's a small icon. -->
-                                                <div data-ng-if="action.Type == 'sIcon'" data-ngc-tooltip data-ng-class="{'disabled': action.Disabled == 'True'}">
+                                                <div data-ng-if="action.Type == 'sIcon'" data-ngc-tooltip="{'action': action.Id}" data-ng-class="{'disabled': action.Disabled == 'True'}">
                                                     <div data-officeui-ribbon-action-small-icon></div>
                                                 </div>
 
                                                 <!-- This is what is being rendered if it's an input element (Text). -->
-                                                <div data-ng-if="action.Type == 'Input'" data-dynamic-event-handling="action.Id" data-ngc-tooltip ng-class="{'disabled': action.Disabled == 'True'}">
+                                                <div data-ng-if="action.Type == 'Input'" data-dynamic-event-handling="action.Id" data-ngc-tooltip="{'action': action.Id}" ng-class="{'disabled': action.Disabled == 'True'}">
                                                     <div data-officeui-ribbon-action-input></div>
                                                 </div>
 
                                                 <!-- This is what is being rendered if it's an input element (Checkbox). -->
-                                                <div data-ng-show="action.Type == 'Checkbox'" data-dynamic-event-handling="action.Id" data-ngc-tooltip data-ng-class="{'disabled': action.Disabled == 'True'}">
+                                                <div data-ng-show="action.Type == 'Checkbox'" data-dynamic-event-handling="action.Id" data-ngc-tooltip="{'action': action.Id}" data-ng-class="{'disabled': action.Disabled == 'True'}">
                                                     <div data-officeui-ribbon-action-checkbox></div>
                                                 </div>
 

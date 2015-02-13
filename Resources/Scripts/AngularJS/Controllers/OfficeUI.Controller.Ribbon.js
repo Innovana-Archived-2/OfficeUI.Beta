@@ -172,6 +172,39 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', 'OfficeUIRibbonS
 
     /**
      * @ngdoc Function
+     * @name isMenuActive
+     *
+     * @description
+     * Check if a menu is active. This can be checked by looking at the action.
+     * If the id of the action matched the 'activeMenu' parameter defined in the service, than the menu is active, false otherwise.
+     *
+     * @param action        The id of the action for which we want to check if the menu is active.
+     * @returns {boolean}   True if the menu is active, false otherwise.
+     */
+    $scope.isMenuActive = function(action) {
+        if ($scope.OfficeUIRibbon.activeMenu == action) { return true; }
+        return false;
+    }
+
+    /**
+     * @ngdoc function
+     * @name defaultActionClick
+     *
+     * @description
+     * This function is the default action which is executed when you click on an action.
+     *
+     * @param action        The id of the action for which this method is being called.
+     */
+    $scope.defaultActionClick = function(action) {
+        // Make sure that the tooltip doesn't show anymore when you've clicked on an item.
+        clearTimeout($.fn.OfficeUI.waitHandleShowTooltip);
+
+        if ($scope.OfficeUIRibbon.activeMenu == action) { $scope.OfficeUIRibbon.activeMenu = null; }
+        else { $scope.OfficeUIRibbon.activeMenu = action; }
+    }
+
+    /**
+     * @ngdoc Function
      *
      * @description
      * This method is executed when you click anywhere on the browser window.
@@ -182,11 +215,13 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', 'OfficeUIRibbonS
      * element with the 'stop-propagation' directive.
      */
     $(window).on('click', function(e) {
+        $scope.OfficeUIRibbon.activeMenu = null;
+
         if (OfficeUIRibbonService.isRibbonVisible()) {
             OfficeUIRibbonService.setRibbonInitialized();
             $scope.OfficeUIRibbon.state = $scope.OfficeUIRibbon.ribbonStates.Hidden;
-
-            $scope.$apply();
         }
+
+        $scope.$apply();
     });
 }]);

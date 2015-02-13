@@ -264,7 +264,14 @@
                   "Legend": "IM",
                   "Tooltip": "<strong>IM</strong><p>Reply to this message with an instant item.</p>",
                   "Type": "sIcon",
-                  "MenuItems": [{}]
+                  "MenuItems": [
+                    {
+                      "Label": "Reply with IM"
+                    },
+                    {
+                      "Label": "Reply all with IM"
+                    }
+                  ]
                 }
               ,
                 {
@@ -273,7 +280,22 @@
                   "Legend": "More",
                   "Tooltip": "<strong>More Respond Actions</strong><p>Use other response actions that can include forwarding this item as an attachment or text message (SMS) or calling the sender of this item.</p>",
                   "Type": "sIcon",
-                  "MenuItems": [{}]
+                  "MenuItems": [
+                    {
+                      "Label": "Forward as Attachment"
+                    },
+                    {
+                      "Label": "Call",
+                      "MenuItems": [
+                        {
+                          "Label": "Call anybody@github.com"
+                        },
+                        {
+                          "Label": "Call all"
+                        }
+                      ]
+                    }
+                  ]
                 }
               ]
             }
@@ -290,7 +312,17 @@
                   "Legend": "Move<br/>",
                   "Tooltip": "<strong>Move</strong><p>Move or copy the selected items to another folder.</p><p>For e-mail messages, you can create a rule to always move messages in the selected conversation to another folder.</p>",
                   "Type": "bIcon",
-                  "MenuItems": [{}]
+                  "MenuItems": [
+                    {
+                      "Label": "Other Folder..."
+                    },
+                    {
+                      "Label": "Copy to Folder..."
+                    },
+                    {
+                      "Label": "Always Move Messages in This Conversation..."
+                    }
+                  ]
                 },
                 {
                   "Id": "icoRules",
@@ -298,7 +330,20 @@
                   "Legend": "Rules<br/>",
                   "Tooltip": "<strong>Rules</strong><p>Create a rule based on the sender, recipients or conversation topic of this message to always move mail to a different folder.</p>",
                   "Type": "bIcon",
-                  "MenuItems": [{}]
+                  "MenuItems": [
+                    {
+                      "Label": "Always move messages from: anybody@github.com"
+                    },
+                    {
+                      "Label": "Always move messages to: Github"
+                    },
+                    {
+                      "Label": "Create Rule..."
+                    },
+                    {
+                      "Label": "Manage Rules & Alerts..."
+                    }
+                  ]
                 }
               ]
             }
@@ -315,7 +360,38 @@
                   "Legend": "Assign<br/>Policy",
                   "Tooltip": "<strong>Assign Policy</strong><p>Assign an archive or retention policy to automatticly archive or delete the selected items.</p>",
                   "Type": "bIcon",
-                  "MenuItems": [{}]
+                  "MenuItems": [
+                    {
+                      "Label": "1 Month Delete (30 days)"
+                    },
+                    {
+                      "Label": "1 Week Delete (1 week)"
+                    },
+                    {
+                      "Label": "1 Year Delete (1 year)"
+                    },
+                    {
+                      "Label": "5 Year Delete (5 years)"
+                    },
+                    {
+                      "Label": "6 Month Delete (6 months)"
+                    },
+                    {
+                      "Label": "Never Delete (never)"
+                    },
+                    {
+                      "Label": "Use Folder Policy"
+                    },
+                    {
+                      "Label": "More Retention Policies..."
+                    },
+                    {
+                      "Label": "Set Folder Policy..."
+                    },
+                    {
+                      "Label": "View Items Expiring Soon"
+                    }
+                  ]
                 }
               ]
             },
@@ -334,7 +410,35 @@
                   "Legend": "Categorize",
                   "Tooltip": "<strong>Categorize</strong><p>Categorize this item.</p><p>Categories applied to a conversation will be applied to all current and future items in the conversation.</p>",
                   "Type": "sIcon",
-                  "MenuItems": [{}]
+                  "MenuItems": [
+                    {
+                      "Label": "Clear All Categories"
+                    },
+                    {
+                      "Label": "Blue Category"
+                    },
+                    {
+                      "Label": "Green Category"
+                    },
+                    {
+                      "Label": "Orange Category"
+                    },
+                    {
+                      "Label": "Purple Category"
+                    },
+                    {
+                      "Label": "Red Category"
+                    },
+                    {
+                      "Label": "Yellow Category"
+                    },
+                    {
+                      "Label": "All Categories..."
+                    },
+                    {
+                      "Label": "Set Quick Click..."
+                    }
+                  ]
                 },
                 {
                   "Id": "icoFollowUp",
@@ -342,7 +446,38 @@
                   "Legend": "Follow Up",
                   "Tooltip": "<strong>Follow Up</strong><p>Set a flag to remind you to follow up this item later. Flagged items appear in the To-Do Bar, Daily Task List and Tasks.</p>",
                   "Type": "sIcon",
-                  "MenuItems": [{}]
+                  "MenuItems": [
+                    {
+                      "Label": "Today"
+                    },
+                    {
+                      "Label": "Tomorrow"
+                    },
+                    {
+                      "Label": "This Week"
+                    },
+                    {
+                      "Label": "Next Week"
+                    },
+                    {
+                      "Label": "No Date"
+                    },
+                    {
+                      "Label": "Custom..."
+                    },
+                    {
+                      "Label": "Add Reminder..."
+                    },
+                    {
+                      "Label": "Mark Complete"
+                    },
+                    {
+                      "Label": "Clear Flag"
+                    },
+                    {
+                      "Label": "Set Quick Click"
+                    }
+                  ]
                 }
               ]
             }
@@ -372,7 +507,87 @@
                   "Legend": "Filter Email",
                   "Tooltip": "<strong>Filter Email</strong><p>Filter email messages to only show certain items such as unread or flagged items.</p>",
                   "Type": "sIcon",
-                  "MenuItems": [{}]
+                  "MenuItems": [
+                    {
+                      "Label": "Unread"
+                    },
+                    {
+                      "Label": "Has Attachments"
+                    },
+                    {
+                      "Label": "This Week",
+                      "MenuItems": [
+                        {
+                          "Label": "Today"
+                        },
+                        {
+                          "Label": "Yesterday"
+                        },
+                        {
+                          "Label": "This Week"
+                        },
+                        {
+                          "Label": "Last Week"
+                        },
+                        {
+                          "Label": "This Month"
+                        },
+                        {
+                          "Label": "Last Month"
+                        },
+                        {
+                          "Label": "This Year"
+                        },
+                        {
+                          "Label": "Last Year"
+                        }
+                      ]
+                    },
+                    {
+                      "Label": "Categorized",
+                      "MenuItems": [
+                        {
+                          "Label": "Blue Category"
+                        },
+                        {
+                          "Label": "Green Category"
+                        },
+                        {
+                          "Label": "Orange Category"
+                        },
+                        {
+                          "Label": "Purple Category"
+                        },
+                        {
+                          "Label": "Red Category"
+                        },
+                        {
+                          "Label": "Yellow Category"
+                        },
+                        {
+                          "Label": "Any Category"
+                        },
+                        {
+                          "Label": "No Category"
+                        }
+                      ]
+                    },
+                    {
+                      "Label": "Flagged"
+                    },
+                    {
+                      "Label": "Important"
+                    },
+                    {
+                      "Label": "Sent To: Me or CC: Me"
+                    },
+                    {
+                      "Label": "View Items Expiring Soon"
+                    },
+                    {
+                      "Label": "More Filters..."
+                    }
+                  ]
                 }
               ]
             }
@@ -420,7 +635,23 @@
                   "Legend": "Send/Receive Groups",
                   "Tooltip": "<strong>Send/Receive Groups</strong><p>Send and receive items in a particular send/receive group.</p><p>Send/Receive groups can have different behaviors such at the frequence with which Oulook connects to the server.</p>",
                   "Type": "sIcon",
-                  "MenuItems": [{}]
+                  "MenuItems": [
+                    {
+                      "Label": "0 \"All Accounts\" Group"
+                    },
+                    {
+                      "Label": "Inbox"
+                    },
+                    {
+                      "Label": "Download Address Book..."
+                    },
+                    {
+                      "Label": "Define Send/Receive Groups"
+                    },
+                    {
+                      "Label": "Disable Scheduled Send/Receive"
+                    }
+                  ]
                 }
               ]
             }
@@ -471,7 +702,14 @@
                   "Legend": "Mark to Download",
                   "Tooltip": "<strong>Mark to Download(Ctrl+Alt+M)</strong><p>Mark this message to be downloaded the next time marked headers are processed.</p>",
                   "Type": "sIcon",
-                  "MenuItems": [{}]
+                  "MenuItems": [
+                    {
+                      "Label": "Mark to Download"
+                    },
+                    {
+                      "Label": "Mark to Download Message Copy"
+                    }
+                  ]
                 },
                 {
                   "Id": "icoUnmarkToDownload",
@@ -479,7 +717,14 @@
                   "Legend": "Unmark to Download",
                   "Tooltip": "<strong>Unmark to Download(Ctrl+Alt+U)</strong><p>Unmark this message header so that it is not downloaded.</p>",
                   "Type": "sIcon",
-                  "MenuItems": [{}]
+                  "MenuItems": [
+                    {
+                      "Label": "Unmark to Download"
+                    },
+                    {
+                      "Label": "Unmark All to Download"
+                    }
+                  ]
                 },
                 {
                   "Id": "icoProcessMarkedHeaders",
@@ -487,7 +732,14 @@
                   "Legend": "Process Marked Headers",
                   "Tooltip": "<strong>Process Marked Headers</strong><p>Download the content of all marked headers in this folder.</p>",
                   "Type": "sIcon",
-                  "MenuItems": [{}]
+                  "MenuItems": [
+                    {
+                      "Label": "Process Marked Headers"
+                    },
+                    {
+                      "Label": "Process Marked Headers In All Folders"
+                    }
+                  ]
                 }
               ]
             }
@@ -504,7 +756,20 @@
                   "Legend": "Download<br/>Preferences",
                   "Tooltip": "<strong>Download Preferences</strong><p>Change the preferences for downloading message headers.</p>",
                   "Type": "bIcon",
-                  "MenuItems": [{}]
+                  "MenuItems": [
+                    {
+                      "Label": "Download Full Items"
+                    },
+                    {
+                      "Label": "Download Headers and Then Full Items"
+                    },
+                    {
+                      "Label": "Download Headers"
+                    },
+                    {
+                      "Label": "On Slow Connection Download Only Headers"
+                    }
+                  ]
                 },
                 {
                   "Id": "icoWorkOffline",
@@ -623,7 +888,14 @@
                   "Legend": "Clean Up Folder",
                   "Tooltip": "<strong>Clean Up Folder</strong><p>Remove redundant messages from every conversation in the selected folder.</p>",
                   "Type": "sIcon",
-                  "MenuItems": [{}]
+                  "MenuItems": [
+                    {
+                      "Label": "Clean Up Folder"
+                    },
+                    {
+                      "Label": "Clean Up Folder & Subfolders"
+                    }
+                  ]
                 },
                 {
                   "Id": "icoDeleteAll",
@@ -706,7 +978,17 @@
                   "Legend": "Change<br/>View",
                   "Tooltip": "<strong>Change View</strong><p>Change the current view to another view.</p>",
                   "Type": "bIcon",
-                  "MenuItem": [{}]
+                  "MenuItem": [
+                    {
+                      "Label": "Manage Views..."
+                    },
+                    {
+                      "Label": "Save Current View As a New View..."
+                    },
+                    {
+                      "Label": "Apply Current View to Other Mail Folders..."
+                    }
+                  ]
                 },
                 {
                   "Id": "icoViewSettings",
@@ -738,12 +1020,11 @@
                   "Type": "Checkbox"
                 },
                 {
-                  "Id": "icoResetView",
+                  "Id": "icoConversationSettings",
                   "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/View/ConversationSettings.png",
                   "Legend": "Conversation Settings",
                   "Tooltip": "<strong>Conversation Options</strong><p>Change the way conversations are displayed in the message list.</p>",
-                  "Type": "sIcon",
-                  "MenuItems": [{}]
+                  "Type": "sIcon"
                 }
               ]
             }
@@ -760,7 +1041,20 @@
                   "Legend": "Message<br/>Preview",
                   "Tooltip": "<strong>Message Preview</strong><p>Use AutoPreview to quickly scan items.</p>",
                   "Type": "bIcon",
-                  "MenuItems": [{}]
+                  "MenuItems": [
+                    {
+                      "Legend": "Off"
+                    },
+                    {
+                      "Legend": "1 Line"
+                    },
+                    {
+                      "Legend": "2 Lines"
+                    },
+                    {
+                      "Legend": "3 Lines"
+                    }
+                  ]
                 }
               ]
             }
@@ -791,7 +1085,20 @@
                   "Legend": "Expand/Collapse",
                   "Tooltip": "<strong>Expand/Collapse</strong><p>Expand or collapse groups in the list.</p>",
                   "Type": "sIcon",
-                  "MenuItems": [{}]
+                  "MenuItems": [
+                    {
+                      "Legend": "Collapse This Group"
+                    },
+                    {
+                      "Legend": "Expand This Group"
+                    },
+                    {
+                      "Legend": "Collapse All Groups"
+                    },
+                    {
+                      "Legend": "Expand All Groups"
+                    }
+                  ]
                 }
               ]
             }
@@ -808,7 +1115,23 @@
                   "Legend": "Folder<br/>Pane",
                   "Tooltip": "<strong>Folder Pane</strong><p>Show, Hide, or minimize the Folder Pane and show or hide Favorites.</p>",
                   "Type": "bIcon",
-                  "MenuItems": [{}]
+                  "MenuItems": [
+                    {
+                      "Legend": "Normal"
+                    },
+                    {
+                      "Legend": "Minimized"
+                    },
+                    {
+                      "Legend": "Off"
+                    },
+                    {
+                      "Legend": "Favorites"
+                    },
+                    {
+                      "Legend": "Options..."
+                    }
+                  ]
                 },
                 {
                   "Id": "icoReadingPane",
@@ -816,7 +1139,20 @@
                   "Legend": "Reading<br/>Pane",
                   "Tooltip": "<strong>Reading Properties</strong><p>Show, Hide, or change the layout Reading Pane.</p>",
                   "Type": "bIcon",
-                  "MenuItems": [{}]
+                  "MenuItems": [
+                    {
+                      "Legend": "Right"
+                    },
+                    {
+                      "Legend": "Bottom"
+                    },
+                    {
+                      "Legend": "Off"
+                    },
+                    {
+                      "Legend": "Options..."
+                    }
+                  ]
                 },
                 {
                   "Id": "icoToDoBar",
@@ -824,7 +1160,20 @@
                   "Legend": "To-Do<br/>Bar",
                   "Tooltip": "<strong>To-Do Bar</strong><p>Show, Hide, or minimize the To-Do Bar and choose what is shown.</p>",
                   "Type": "bIcon",
-                  "MenuItems": [{}]
+                  "MenuItems": [
+                    {
+                      "Legend": "Calendar"
+                    },
+                    {
+                      "Legend": "People"
+                    },
+                    {
+                      "Legend": "Tasks"
+                    },
+                    {
+                      "Legend": "Off"
+                    }
+                  ]
                 }
               ]
             }
@@ -841,7 +1190,20 @@
                   "Legend": "People<br/>Pane",
                   "Tooltip": "<strong>People Pane</strong><p>Show, Hide, or minimize the People Pane and configure social network accounts.</p>",
                   "Type": "bIcon",
-                  "MenuItems": [{}]
+                  "MenuItems": [
+                    {
+                      "Legend": "Normal"
+                    },
+                    {
+                      "Legend": "Minimized"
+                    },
+                    {
+                      "Legend": "Off"
+                    },
+                    {
+                      "Legend": "Account Settings..."
+                    }
+                  ]
                 }
               ]
             }
@@ -903,8 +1265,7 @@
                       "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/EditShape.png",
                       "Legend": "Edit Shape",
                       "Tooltip": "<strong>Edit Shape</strong><p>Change the shape of this drawing, convert it it a freeform shape, or edit the wrap points to determine how text wraps around the drawing.</p>",
-                      "Type": "sIcon",
-                      "MenuItems": []
+                      "Type": "sIcon"
                     },
                     {
                       "Id": "icoDrawTextBox",
@@ -927,24 +1288,21 @@
                       "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/ShapeFill.png",
                       "Legend": "Shape Fill",
                       "Tooltip": "<strong>Shape Fill</strong><p>Fill the selected shape with a solid color, gradient, picture, or texture.</p>",
-                      "Type": "sIcon",
-                      "MenuItems": []
+                      "Type": "sIcon"
                     },
                     {
                       "Id": "icoShapeOutline",
                       "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/ShapeOutline.png",
                       "Legend": "Shape Outline",
                       "Tooltip": "<strong>Shape Outline</strong><p>Pick the color, width, and line style for the outline of your shape.</p>",
-                      "Type": "sIcon",
-                      "MenuItems": []
+                      "Type": "sIcon"
                     },
                     {
                       "Id": "icoShapeEffects",
                       "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/ShapeEffects.png",
                       "Legend": "Shape Effects",
                       "Tooltip": "<strong>Shape Effects</strong><p>Apply a visual effect to the selected shape such as shadow, glow, reflection or 3-D rotation.</p>",
-                      "Type": "sIcon",
-                      "MenuItems": []
+                      "Type": "sIcon"
                     }
                   ]
                 }
@@ -960,24 +1318,21 @@
                       "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/TextFill.png",
                       "Legend": "Text Fill",
                       "Tooltip": "<strong>Text Fill</strong><p>Fill the text with a solid color, gradient, picture, or texture.</p>",
-                      "Type": "sIcon",
-                      "MenuItems": []
+                      "Type": "sIcon"
                     },
                     {
                       "Id": "icoTextOutline",
                       "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/TextOutline.png",
                       "Legend": "Text Outline",
                       "Tooltip": "<strong>Text Outline</strong><p>Customize the outline of your text by choosing the color, width, and line style.</p>",
-                      "Type": "sIcon",
-                      "MenuItems": []
+                      "Type": "sIcon"
                     },
                     {
                       "Id": "icoTextEffects",
                       "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/TextEffects.png",
                       "Legend": "Text Effects",
                       "Tooltip": "<strong>Text Effects</strong><p>Turn your work into a work of art.</p><p>Add a visual effect such as shadow, glow or reflection to your text.</p>",
-                      "Type": "sIcon",
-                      "MenuItems": []
+                      "Type": "sIcon"
                     }
                   ]
                 }
@@ -993,16 +1348,14 @@
                       "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/TextDirection.png",
                       "Legend": "Text<br/>Direction",
                       "Tooltip": "<strong>Text Direction</strong><p>Change the orientation of the text to vertical, stacked or rotate it to the desired direction.</p>",
-                      "Type": "bIcon",
-                      "MenuItems": []
+                      "Type": "bIcon"
                     },
                     {
                       "Id": "icoAlignText",
                       "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/AlignText.png",
                       "Legend": "Align<br/>Text",
                       "Tooltip": "<strong>Align Text</strong><p>Change how your text is aligned within the text box.</p>",
-                      "Type": "bIcon",
-                      "MenuItems": []
+                      "Type": "bIcon"
                     },
                     {
                       "Id": "icoCreateLine",
@@ -1025,32 +1378,28 @@
                       "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/Position.png",
                       "Legend": "Position<br/>",
                       "Tooltip": "<strong>Position</strong><p>Choose where the selected object will appear on the page.</p><p>Text will automatically wrap around the object so that it's still easy to read.</p>",
-                      "Type": "bIcon",
-                      "MenuItems": []
+                      "Type": "bIcon"
                     },
                     {
                       "Id": "icoWrapText",
                       "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/WrapText.png",
                       "Legend": "Wrap<br/>Text",
                       "Tooltip": "<strong>Wrap Text</strong><p>Choose how your text wraps around the selected object.</p><p>For example you can choose to have the text continue around the object or cross right over it.</p>",
-                      "Type": "bIcon",
-                      "MenuItems": []
+                      "Type": "bIcon"
                     },
                     {
                       "Id": "icoBringForward",
                       "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/BringForward.png",
                       "Legend": "Bring<br/>Forward",
                       "Tooltip": "<strong>Bring Forward</strong><p>Bring the selected object forward one level, or bring it front of all the other objects.</p>",
-                      "Type": "bIcon",
-                      "MenuItems": []
+                      "Type": "bIcon"
                     },
                     {
                       "Id": "icoSendBackward",
                       "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/SendBackward.png",
                       "Legend": "Send<br/>Backward",
                       "Tooltip": "<strong>Send Backward</strong><p>Send the selected object back one level, or send it behind all the other objects.</p>",
-                      "Type": "bIcon",
-                      "MenuItems": []
+                      "Type": "bIcon"
                     },
                     {
                       "Id": "icoSelectionPane",
@@ -1068,24 +1417,21 @@
                       "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/Align.png",
                       "Legend": "Align",
                       "Tooltip": "<strong>Align Objects</strong><p>Change the placement of your selected objects on the page.</p><p>This is great for aligning objects to the margins of the edge of the page. You can also align them relative to one another.</p>",
-                      "Type": "sIcon",
-                      "MenuItems": []
+                      "Type": "sIcon"
                     },
                     {
                       "Id": "icoGroup",
                       "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/Group.png",
                       "Legend": "Group",
                       "Tooltip": "<strong>Group Objects</strong><p>Join objects together to move and format them as if they were a single object.</p>",
-                      "Type": "sIcon",
-                      "MenuItems": []
+                      "Type": "sIcon"
                     },
                     {
                       "Id": "icoRotate",
                       "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/Rotate.png",
                       "Legend": "Rotate",
                       "Tooltip": "<strong>Rotate Objects</strong><p>Rotate or flip the selected object.</p>",
-                      "Type": "sIcon",
-                      "MenuItems": []
+                      "Type": "sIcon"
                     }
                   ]
                 }

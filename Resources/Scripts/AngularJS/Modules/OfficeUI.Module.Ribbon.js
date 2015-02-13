@@ -70,6 +70,7 @@ OfficeUIRibbon.factory('OfficeUIRibbonService', function() {
             serviceInstance.activeContextualGroups = [];
             serviceInstance.ContextualGroups = data.ContextualGroups;
             serviceInstance.activeTab = data.Tabs[1].Id;
+            serviceInstance.activeMenu = null;
             serviceInstance.state = ribbonStates.Showed;
         },
 

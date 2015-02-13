@@ -341,7 +341,6 @@
   position: absolute;
   width: 100%;
   height: 92px;
-  overflow: hidden;
   top: 0;
 }
 #OfficeUI header .ribbon ul.tabs-content ul .group,
@@ -357,6 +356,10 @@
 #OfficeUI header .ribbon ul.tabs-content li .group .area {
   display: inline-block;
   vertical-align: top;
+}
+#OfficeUI header .ribbon ul.tabs-content ul .group .area .actions-holder,
+#OfficeUI header .ribbon ul.tabs-content li .group .area .actions-holder {
+  position: relative;
 }
 #OfficeUI header .ribbon ul.tabs-content ul .group .area > div,
 #OfficeUI header .ribbon ul.tabs-content li .group .area > div {
