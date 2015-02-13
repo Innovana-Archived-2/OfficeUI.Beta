@@ -511,6 +511,9 @@
 }
 #OfficeUI header .application-contents #content {
   position: relative;
+  background: url('/OfficeUI.Beta/Resources/Images/Application/Backgrounds/Circuit.png') no-repeat right top;
+  overflow-y: scroll;
+  height: 100%;
 }
 #OfficeUI header .application-contents #content .top {
   position: fixed;
@@ -528,6 +531,7 @@
   position: absolute;
   margin-left: 40px;
   margin-top: 34px;
+  z-index: -10;
 }
 /* ------------------------------------------------*/
 /* ---------->>> Animations styling. <<<-----------*/
