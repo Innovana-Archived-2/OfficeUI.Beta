@@ -73,20 +73,20 @@
         <br/><br/>
     </div>
 
-<!-- Provides some functions to configure the OfficeUI application. -->
-<script type="text/javascript">
-    // Provides a way to initialize the application with the correct theme.
-    // Those calls are required for the application to function.
-    $.fn.OfficeUI.ThemeManager.SetTheme($.fn.OfficeUI.ThemeManager.Themes.LightBlue);
+    <!-- Provides some functions to configure the OfficeUI application. -->
+    <script type="text/javascript">
+        // Provides a way to initialize the application with the correct theme.
+        // Those calls are required for the application to function.
+        $.fn.OfficeUI.ThemeManager.SetTheme($.fn.OfficeUI.ThemeManager.Themes.LightBlue);
 
-    // Provides a way to load the application-, and ribbon- data file.
-    // Those calls are required for the application to function.
-    $.fn.OfficeUI.applicationDataFile = '/OfficeUI.Beta/Resources/data/application.json'; // Specify the file in which the application data is stored.
-    $.fn.OfficeUI.ribbonDataFile = '/OfficeUI.Beta/Resources/Data/ribbon.json'; // Specify the file in which the ribbon data is stored.
+        // Provides a way to load the application-, and ribbon- data file.
+        // Those calls are required for the application to function.
+        $.fn.OfficeUI.applicationDataFile = '/OfficeUI.Beta/Resources/data/application.json'; // Specify the file in which the application data is stored.
+        $.fn.OfficeUI.ribbonDataFile = '/OfficeUI.Beta/Resources/Data/ribbon.json'; // Specify the file in which the ribbon data is stored.
 
-    // Configuration of the application.
-    // This call is not required for the application. The default is false.
-    $.fn.OfficeUI.Defaults.changeActiveTabOnHover = false; // Tabs will not become active when you're hovering on the tab element. Change this to 'TRUE' to change this behaviour.
-</script>
+        // Configuration of the application.
+        // This call is not required for the application. The default is false.
+        $.fn.OfficeUI.Defaults.changeActiveTabOnHover = false; // Tabs will not become active when you're hovering on the tab element. Change this to 'TRUE' to change this behaviour.
+    </script>
 </body>
 </html>
