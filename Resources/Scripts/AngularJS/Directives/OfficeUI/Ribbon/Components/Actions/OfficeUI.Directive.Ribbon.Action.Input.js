@@ -8,10 +8,10 @@ var OfficeUI = angular.module('OfficeUIRibbon');
  * @description
  * Renders the OfficeUI input action on the place where this directive is being placed.
  */
-OfficeUI.directive('officeuiRibbonActionInput', function() {
+OfficeUI.directive('officeuiRibbonActionInput', function () {
     return {
         restrict: 'AE',
         replace: true,
-        templateUrl: '/OfficeUI.Beta/Resources/Data/Templates/Ribbon/Components/Actions/OfficeUI.Ribbon.Action.Input.html'
+        templateUrl: '/Resources/Data/Templates/Ribbon/Components/Actions/OfficeUI.Ribbon.Action.Input.html'
     }
 })

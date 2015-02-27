@@ -8,10 +8,10 @@ var OfficeUI = angular.module('OfficeUIRibbon');
  * @description
  * Renders the OfficeUI ribbon contextual groups on the place where this directive is being placed.
  */
-OfficeUI.directive('officeuiRibbonContextualGroups', function() {
+OfficeUI.directive('officeuiRibbonContextualGroups', function () {
     return {
         restrict: 'AE',
         replace: true,
-        templateUrl: '/OfficeUI.Beta/Resources/Data/Templates/Ribbon/Components/OfficeUI.Ribbon.ContextualGroups.html'
+        templateUrl: '/Resources/Data/Templates/Ribbon/Components/OfficeUI.Ribbon.ContextualGroups.html'
     }
 })

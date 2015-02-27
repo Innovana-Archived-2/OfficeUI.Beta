@@ -8,10 +8,10 @@ var OfficeUI = angular.module('OfficeUIRibbon');
  * @description
  * Renders the OfficeUI big icon action on the place where this directive is being placed.
  */
-OfficeUI.directive('officeuiRibbonActionBigIcon', function() {
+OfficeUI.directive('officeuiRibbonActionBigIcon', function () {
     return {
         restrict: 'AE',
         replace: true,
-        templateUrl: '/OfficeUI.Beta/Resources/Data/Templates/Ribbon/Components/Actions/OfficeUI.Ribbon.Action.BigIcon.html'
+        templateUrl: '/Resources/Data/Templates/Ribbon/Components/Actions/OfficeUI.Ribbon.Action.BigIcon.html'
     }
 })

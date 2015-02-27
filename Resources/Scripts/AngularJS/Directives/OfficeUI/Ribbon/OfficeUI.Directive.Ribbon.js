@@ -8,10 +8,10 @@ var OfficeUI = angular.module('OfficeUIRibbon');
  * @description
  * Renders the OfficeUI ribbon on the place where this directive is being placed.
  */
-OfficeUI.directive('officeuiRibbon', function() {
+OfficeUI.directive('officeuiRibbon', function () {
     return {
         restrict: 'AE',
         replace: true,
-        templateUrl: '/OfficeUI.Beta/Resources/Data/Templates/Ribbon/OfficeUI.Ribbon.html'
+        templateUrl: '/Resources/Data/Templates/Ribbon/OfficeUI.Ribbon.html'
     }
 })

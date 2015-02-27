@@ -3,68 +3,147 @@
  * Version 1.0
  * Kevin De Coninck
  */
-@import (reference) 'OfficeUI.Reset.less';
 
+@import (reference) 'OfficeUI.Reset.less';
 // Variables that can be used throughout this stylesheet.
 @defaultTextColor: #444; // The default text color.
 @emphasizedTextColor: #5d5d5d; // The default emphasis color.
 @grayBorderColor: #d4d4d4; // The gray color for a border element.
-
 /* -----------------------------------------------------------------------------------------------*/
 /* ---------->>> Helpful css classes that can be applied without a border element. <<<-----------*/
 /* -----------------------------------------------------------------------------------------------*/
-.noPadding { padding: 0; }
-.noMargin { margin: 0; }
-.no-overflow { overflow: hidden; }
+
+.noPadding {
+    padding: 0;
+}
+
+.noMargin {
+    margin: 0;
+}
+
+.no-overflow {
+    overflow: hidden;
+}
 
 // Provides the main Office User Interface styling.
 #OfficeUI {
-  /* --------------------------------------------------*/
-  /* ---------->>> Helpful css classes. <<<-----------*/
-  /* --------------------------------------------------*/
-  .alignCenter { text-align: center; }
-  .alignLeft { text-align: left; }
-  .alignRight { text-align: right; }
-  .cursorDefault { cursor: default; }
-  .displayInline { display: inline; }
-  .displayInlineBlock { display: inline-block; }
-  .displayBlock { display: block; }
-  .displayTable { display: table; }
-  .displayTableCell { display: table-cell; }
-  .positionAbsolute { position: absolute; }
-  .positionFixed { position: fixed; }
-  .positionRelative { position: relative; }
-  .floatLeft { float: left; }
-  .floatRight { float: right; }
-  .noSelect { -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; } // When an object implement this class, it means that selecting of objects isn't permitted.
-  .width100 { width: 100%; }
-  .width75 { width: 75%; }
-  .width50 { width: 50%; }
-  .borderTransparent { border: 1px solid transparent; }
-  .disabled { -moz-opacity:0.50; filter:alpha(opacity=50); opacity: 0.5; pointer-events: none; }
-  .disabled img { filter: gray; filter: grayscale(1); -webkit-filter: grayscale(1); }
+    /* --------------------------------------------------*/
+    /* ---------->>> Helpful css classes. <<<-----------*/
+    /* --------------------------------------------------*/
 
-  /* ----------------------------------------------------------*/
-  /* ---------->>> Styling for input elements. <<<-----------*/
-  /* ----------------------------------------------------------*/
-  input { border: 1px solid #ababab; color: black; font-family: "Segoe UI",serif; font-size: 1em; padding-left: 3px; padding-right: 3px; }
-  input:hover, input:focus { outline: none; border: 1px solid #ffffff; }
-  input:-ms-input-placeholder { color: #6d6d6d; }
+    .alignCenter {
+        text-align: center;
+    }
+    .alignLeft {
+        text-align: left;
+    }
+    .alignRight {
+        text-align: right;
+    }
+    .cursorDefault {
+        cursor: default;
+    }
+    .displayInline {
+        display: inline;
+    }
+    .displayInlineBlock {
+        display: inline-block;
+    }
+    .displayBlock {
+        display: block;
+    }
+    .displayTable {
+        display: table;
+    }
+    .displayTableCell {
+        display: table-cell;
+    }
+    .positionAbsolute {
+        position: absolute;
+    }
+    .positionFixed {
+        position: fixed;
+    }
+    .positionRelative {
+        position: relative;
+    }
+    .floatLeft {
+        float: left;
+    }
+    .floatRight {
+        float: right;
+    }
+    .noSelect {
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        user-select: none;
+    } // When an object implement this class, it means that selecting of objects isn't permitted.
+    .width100 {
+        width: 100%;
+    }
+    .width75 {
+        width: 75%;
+    }
+    .width50 {
+        width: 50%;
+    }
+    .borderTransparent {
+        border: 1px solid transparent;
+    }
+    .disabled {
+        -moz-opacity: 0.50;
+        filter: alpha(opacity=50);
+        opacity: 0.5;
+        pointer-events: none;
+    }
+    .disabled img {
+        filter: gray;
+        filter: grayscale(1);
+        -webkit-filter: grayscale(1);
+    }
+    /* ----------------------------------------------------------*/
+    /* ---------->>> Styling for input elements. <<<-----------*/
+    /* ----------------------------------------------------------*/
 
-  /* ----------------------------------------------------------*/
-  /* ---------->>> Styling for general elements. <<<-----------*/
-  /* ----------------------------------------------------------*/
-  * { .noPadding; .noMargin; }
+    input {
+        border: 1px solid #ababab;
+        color: black;
+        font-family: "Segoe UI", serif;
+        font-size: 1em;
+        padding-left: 3px;
+        padding-right: 3px;
+    }
+    input:hover,
+    input:focus {
+        outline: none;
+        border: 1px solid #ffffff;
+    }
+    input:-ms-input-placeholder {
+        color: #6d6d6d;
+    }
+    /* ----------------------------------------------------------*/
+    /* ---------->>> Styling for general elements. <<<-----------*/
+    /* ----------------------------------------------------------*/
 
-  /* ---------------------------------------------*/
-  /* ---------->>> General styling. <<<-----------*/
-  /* ---------------------------------------------*/
-  color: @defaultTextColor; font-family: 'Segoe UI', serif; font-size: 0.75em;
+    * {
+        .noPadding;
+        .noMargin;
+    }
+    /* ---------------------------------------------*/
+    /* ---------->>> General styling. <<<-----------*/
+    /* ---------------------------------------------*/
 
-  /* --------------------------------------------*/
-  /* ---------->>> Header styling. <<<-----------*/
-  /* --------------------------------------------*/
-  /*
+    color: @defaultTextColor;
+    font-family: 'Segoe UI',
+    serif;
+    font-size: 0.75em;
+    /* --------------------------------------------*/
+    /* ---------->>> Header styling. <<<-----------*/
+    /* --------------------------------------------*/
+    /*
    * @remarks
    *
    * Below we explain the z-index which are used in the header.
@@ -77,127 +156,385 @@
    * - The contents of the tabs on the ribbon does have a z-index value set to 70.
    * - The contents behind the 'application' tab does have a z-index of 999, meaning that they will always cover the entire website.
    */
-  header {
-    .cursorDefault; .positionFixed; .noSelect; .width100; top: 0;
 
-    // Provides a media query that only shows a background on the header when the width of the window is at least 497 pixels.
-    @media (min-width: 497px) { background: url("/OfficeUI.Beta/Resources/Images/Application/Backgrounds/Circuit.png") no-repeat scroll right top; }
-
-    /* Defines the styling of the title area. */
-    .title {
-      .displayInlineBlock; .positionAbsolute; .width100; .alignCenter; z-index: 70;
-
-      > div { .positionAbsolute; margin: 3px 0 0 5px; }
-      > div img { margin: 0 5px 0 2px; }
-      > div img:not(:first-child) { margin-right: 6px; }
-      span { .displayBlock; margin-top: 6px; margin-right: 2px; }
-    }
-
-    ul li .title { .alignLeft; }
-
-    /* Defines the styling of the ribbon. */
-    .ribbon {
-      .positionRelative;
-      .title { z-index: 80; } // Overwrite the z-index of the title property here. This is to make sure that the title sits on top of the ribbon.
-
-      a, a:hover, a:active { .cursorDefault; color: #444; }
-
-      ul { .noPadding; .noMargin; .positionRelative; .width100; z-index: 75; }
-      ul.tabs { height: 52px; }
-      ul.tabs.visible-border { border-bottom: 1px solid @grayBorderColor; }
-      ul.tabs.invisible-border { border-bottom: 1px solid transparent; }
-
-      ul.tabs > li > div { .positionRelative; }
-      ul.tabs > li > div .title span { .alignCenter; }
-
-      /* Defines the styles for the normal tabs. */
-      ul.tabs li { .displayInlineBlock; }
-      ul.tabs li div { .displayInlineBlock; vertical-align: top; }
-      ul.tabs li.tab { .alignCenter; }
-      ul.tabs li.tab.application { color: #fff; margin-right: 4px; min-width: 52px; padding: 0 3px 0 2px; }
-      ul.tabs li.tab-normal { .borderTransparent; .displayInlineBlock; .positionRelative; line-height: 23px; margin: 28px 2px 0 0; }
-      ul.tabs li .tab span { padding: 0 13px 0 12px; }
-      ul.tabs li .tab:not(.application).visible-border.active { border-color: #d4d4d4 #d4d4d4 #fff; border-style: solid; border-width: 1px; background-color: #fff; }
-      ul.tabs li .tab:not(.application).invisible-border.active { border-color: transparent transparent #fff; border-style: solid; border-width: 1px; background-color: #fff; }
-
-      /* Defines the style for the contextual tabs and groups. */
-      .contextual {
-        height: 52px; margin-left: -1px;
-
-        ul li { margin-right: 4px; height: 100%; }
-        ul li .accent { .width100; display: block; height: 4px; }
-        ul li .label { .displayBlock; height: 24px; }
-        ul li .label div { .alignCenter; font-size: 0.90em; height: 15px; text-transform: uppercase; margin-top: 3px; width: 100%;   }
-        ul li .label div span { padding: 0 6px 0 6px; }
-        ul li .tabs-holder { .width100; height: 24px; }
-        ul li .tabs-holder ul { .displayTable; }
-        ul li .tabs-holder .tab-contextual { .displayTableCell; border: 1px solid transparent; height: 23px; }
-        ul li .tabs-holder .tab-contextual span { .displayBlock; padding: 3px 13px 0 12px; }
-        ul li .tab:not(.application).visible-border.active { border-color: #d4d4d4 #d4d4d4 #fff; border-style: solid; border-width: 1px; background-color: #fff; }
-        ul li .tab:not(.application).invisible-border.active { border-color: transparent transparent #fff; border-style: solid; border-width: 1px; background-color: transparent; }
-      }
-
-      // Provides a media query that only shows a background on the header when the width of the window is at least 497 pixels.
-      @media screen and (min-width: 497px) { > ul.tabs { background: url("/OfficeUI.Beta/Resources/Images/Application/Backgrounds/Circuit.png") no-repeat scroll right top white; } }
-
-      // Defines the styles that applies to the content of the tabs.
-      ul.tabs-content {
-        .positionRelative; background-color: white; border-bottom: 1px solid @grayBorderColor; height: 92px; z-index: 70;
-        .collapse { .alignCenter; .positionAbsolute; bottom: 0; height: 17px; padding-bottom: 2px; right: 0; width: 29px; }
-
-        ul, li {
-          .positionAbsolute; .width100; height: 92px; top: 0;
-
-          .group { .displayInlineBlock; .positionRelative; height: 90px; margin-left: 4px; margin-top: 3px; vertical-align: top; }
-          .group .area { .displayInlineBlock; vertical-align: top; }
-          .group .area .actions-holder { .positionRelative; }
-          .group .area > div { vertical-align: top; }
-          .group .area > div .icon { .displayInlineBlock; height: 66px; margin-right: 0; padding-top: 3px; vertical-align: top; }
-          .group .area > div .icon img { padding: 0 5px 0 5px; }
-          .group .area > div .big-icon { .alignCenter; }
-          .group .area > div .small-icon { .alignLeft; height: 100%; margin-right: 0; padding: 3px 7px 0 0; }
-          .group .area > div .small-icon .label { .alignCenter; .displayInlineBlock; vertical-align: top; }
-          .group .area > div .small-icon img { padding: 0 0 0 3px; }
-          .group .area > div .big-icon .label { line-height: 15px; padding: 0 3px 0 2px; text-align: center; top: -2px; }
-          .group .area > div .icon .label i { font-size: 0.7em; padding-top: 4px; vertical-align: top; }
-          .group .area > div input { height: 22px; margin-bottom: 4px; margin-top: 0;}
-          .group .area > div input[type=checkbox] { height: 21px; margin-right: 5px; margin-left: 4px; vertical-align: middle;}
-          .group .area > div .tooltip { .positionFixed; display: none; top: 146px; background-color: #fff; background-image: none, linear-gradient(#c6c6c6, #c6c6c6); background-position: 0 0, 100% 0; background-repeat: no-repeat; background-size: 1px 100%; border: 1px solid #d4d4d4; box-shadow: 3px 3px 3px #e0e0e0; padding: 5px 11px; width: 191px; }
-          .group .area > div .tooltip strong { color: #5d5d5d; }
-          .group .area > div .tooltip p { line-height: 15px; margin: 0; padding: 5px 0; }
-          .group .legend { .positionAbsolute; bottom: 2px; color: #666; font-size: 0.9em; margin-left: -1px; overflow: hidden; text-align: center; text-overflow: ellipsis; white-space: nowrap; width: 100%; }
-          .pipe { .displayInlineBlock; border-right: 1px solid #d4d4d4; height: 84px; margin-left: 1px; margin-top: 4px; vertical-align: top;  }
+    header {
+        .cursorDefault;
+        .positionFixed;
+        .noSelect;
+        .width100;
+        top: 0;
+        // Provides a media query that only shows a background on the header when the width of the window is at least 497 pixels.
+        @media (min-width: 497px) {
+            background: url("/Resources/Images/Application/Backgrounds/Circuit.png") no-repeat scroll right top;
         }
-      }
+        /* Defines the styling of the title area. */
+
+        .title {
+            .displayInlineBlock;
+            .positionAbsolute;
+            .width100;
+            .alignCenter;
+            z-index: 70;
+            > div {
+                .positionAbsolute;
+                margin: 3px 0 0 5px;
+            }
+            > div img {
+                margin: 0 5px 0 2px;
+            }
+            > div img:not(:first-child) {
+                margin-right: 6px;
+            }
+            span {
+                .displayBlock;
+                margin-top: 6px;
+                margin-right: 2px;
+            }
+        }
+        ul li .title {
+            .alignLeft;
+        }
+        /* Defines the styling of the ribbon. */
+
+        .ribbon {
+            .positionRelative;
+            .title {
+                z-index: 80;
+            } // Overwrite the z-index of the title property here. This is to make sure that the title sits on top of the ribbon.
+            a,
+            a:hover,
+            a:active {
+                .cursorDefault;
+                color: #444;
+            }
+            ul {
+                .noPadding;
+                .noMargin;
+                .positionRelative;
+                .width100;
+                z-index: 75;
+            }
+            ul.tabs {
+                height: 52px;
+            }
+            ul.tabs.visible-border {
+                border-bottom: 1px solid @grayBorderColor;
+            }
+            ul.tabs.invisible-border {
+                border-bottom: 1px solid transparent;
+            }
+            ul.tabs > li > div {
+                .positionRelative;
+            }
+            ul.tabs > li > div .title span {
+                .alignCenter;
+            }
+            /* Defines the styles for the normal tabs. */
+
+            ul.tabs li {
+                .displayInlineBlock;
+            }
+            ul.tabs li div {
+                .displayInlineBlock;
+                vertical-align: top;
+            }
+            ul.tabs li.tab {
+                .alignCenter;
+            }
+            ul.tabs li.tab.application {
+                color: #fff;
+                margin-right: 4px;
+                min-width: 52px;
+                padding: 0 3px 0 2px;
+            }
+            ul.tabs li.tab-normal {
+                .borderTransparent;
+                .displayInlineBlock;
+                .positionRelative;
+                line-height: 23px;
+                margin: 28px 2px 0 0;
+            }
+            ul.tabs li .tab span {
+                padding: 0 13px 0 12px;
+            }
+            ul.tabs li .tab:not(.application).visible-border.active {
+                border-color: #d4d4d4 #d4d4d4 #fff;
+                border-style: solid;
+                border-width: 1px;
+                background-color: #fff;
+            }
+            ul.tabs li .tab:not(.application).invisible-border.active {
+                border-color: transparent transparent #fff;
+                border-style: solid;
+                border-width: 1px;
+                background-color: #fff;
+            }
+            /* Defines the style for the contextual tabs and groups. */
+
+            .contextual {
+                height: 52px;
+                margin-left: -1px;
+                ul li {
+                    margin-right: 4px;
+                    height: 100%;
+                }
+                ul li .accent {
+                    .width100;
+                    display: block;
+                    height: 4px;
+                }
+                ul li .label {
+                    .displayBlock;
+                    height: 24px;
+                }
+                ul li .label div {
+                    .alignCenter;
+                    font-size: 0.90em;
+                    height: 15px;
+                    text-transform: uppercase;
+                    margin-top: 3px;
+                    width: 100%;
+                }
+                ul li .label div span {
+                    padding: 0 6px 0 6px;
+                }
+                ul li .tabs-holder {
+                    .width100;
+                    height: 24px;
+                }
+                ul li .tabs-holder ul {
+                    .displayTable;
+                }
+                ul li .tabs-holder .tab-contextual {
+                    .displayTableCell;
+                    border: 1px solid transparent;
+                    height: 23px;
+                }
+                ul li .tabs-holder .tab-contextual span {
+                    .displayBlock;
+                    padding: 3px 13px 0 12px;
+                }
+                ul li .tab:not(.application).visible-border.active {
+                    border-color: #d4d4d4 #d4d4d4 #fff;
+                    border-style: solid;
+                    border-width: 1px;
+                    background-color: #fff;
+                }
+                ul li .tab:not(.application).invisible-border.active {
+                    border-color: transparent transparent #fff;
+                    border-style: solid;
+                    border-width: 1px;
+                    background-color: transparent;
+                }
+            }
+            // Provides a media query that only shows a background on the header when the width of the window is at least 497 pixels.
+            @media screen and (min-width: 497px) {
+                > ul.tabs {
+                    background: url("/Resources/Images/Application/Backgrounds/Circuit.png") no-repeat scroll right top white;
+                }
+            }
+            // Defines the styles that applies to the content of the tabs.
+            ul.tabs-content {
+                .positionRelative;
+                background-color: white;
+                border-bottom: 1px solid @grayBorderColor;
+                height: 92px;
+                z-index: 70;
+                .collapse {
+                    .alignCenter;
+                    .positionAbsolute;
+                    bottom: 0;
+                    height: 17px;
+                    padding-bottom: 2px;
+                    right: 0;
+                    width: 29px;
+                }
+                ul,
+                li {
+                    .positionAbsolute;
+                    .width100;
+                    height: 92px;
+                    top: 0;
+                    .group {
+                        .displayInlineBlock;
+                        .positionRelative;
+                        height: 90px;
+                        margin-left: 4px;
+                        margin-top: 3px;
+                        vertical-align: top;
+                    }
+                    .group .area {
+                        .displayInlineBlock;
+                        vertical-align: top;
+                    }
+                    .group .area .actions-holder {
+                        .positionRelative;
+                    }
+                    .group .area > div {
+                        vertical-align: top;
+                    }
+                    .group .area > div .icon {
+                        .displayInlineBlock;
+                        height: 66px;
+                        margin-right: 0;
+                        padding-top: 3px;
+                        vertical-align: top;
+                    }
+                    .group .area > div .icon img {
+                        padding: 0 5px 0 5px;
+                    }
+                    .group .area > div .big-icon {
+                        .alignCenter;
+                    }
+                    .group .area > div .small-icon {
+                        .alignLeft;
+                        height: 100%;
+                        margin-right: 0;
+                        padding: 3px 7px 0 0;
+                    }
+                    .group .area > div .small-icon .label {
+                        .alignCenter;
+                        .displayInlineBlock;
+                        vertical-align: top;
+                    }
+                    .group .area > div .small-icon img {
+                        padding: 0 0 0 3px;
+                    }
+                    .group .area > div .big-icon .label {
+                        line-height: 15px;
+                        padding: 0 3px 0 2px;
+                        text-align: center;
+                        top: -2px;
+                    }
+                    .group .area > div .icon .label i {
+                        font-size: 0.7em;
+                        padding-top: 4px;
+                        vertical-align: top;
+                    }
+                    .group .area > div input {
+                        height: 22px;
+                        margin-bottom: 4px;
+                        margin-top: 0;
+                    }
+                    .group .area > div input[type=checkbox] {
+                        height: 21px;
+                        margin-right: 5px;
+                        margin-left: 4px;
+                        vertical-align: middle;
+                    }
+                    .group .area > div .tooltip {
+                        .positionFixed;
+                        display: none;
+                        top: 146px;
+                        background-color: #fff;
+                        background-image: none, linear-gradient(#c6c6c6, #c6c6c6);
+                        background-position: 0 0, 100% 0;
+                        background-repeat: no-repeat;
+                        background-size: 1px 100%;
+                        border: 1px solid #d4d4d4;
+                        box-shadow: 3px 3px 3px #e0e0e0;
+                        padding: 5px 11px;
+                        width: 191px;
+                    }
+                    .group .area > div .tooltip strong {
+                        color: #5d5d5d;
+                    }
+                    .group .area > div .tooltip p {
+                        line-height: 15px;
+                        margin: 0;
+                        padding: 5px 0;
+                    }
+                    .group .legend {
+                        .positionAbsolute;
+                        bottom: 2px;
+                        color: #666;
+                        font-size: 0.9em;
+                        margin-left: -1px;
+                        overflow: hidden;
+                        text-align: center;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        width: 100%;
+                    }
+                    .pipe {
+                        .displayInlineBlock;
+                        border-right: 1px solid #d4d4d4;
+                        height: 84px;
+                        margin-left: 1px;
+                        margin-top: 4px;
+                        vertical-align: top;
+                    }
+                }
+            }
+        }
+        // Defines the styling of the contents behind the 'application' tab.
+        .application-contents {
+            .positionFixed;
+            .width100;
+            background-color: white;
+            height: 100%;
+            top: 0;
+            z-index: 999;
+            .title {
+                .positionFixed;
+                left: 0;
+                width: 100%;
+                z-index: 200;
+            }
+            #navigation {
+                .floatLeft;
+                color: #fff;
+                height: 100%;
+                width: 135px;
+                .back-arrow {
+                    background-repeat: no-repeat;
+                    height: 35px;
+                    margin-left: 23px;
+                    margin-top: 19px;
+                    width: 35px;
+                }
+                ul {
+                    margin-top: 15px;
+                }
+                ul li {
+                    line-height: 16px;
+                    padding: 11px 10px 11px 26px;
+                    vertical-align: middle;
+                }
+                ul li.seperator {
+                    margin-bottom: -1px;
+                }
+                ul li .seperator {
+                    border-bottom: 1px solid #fff;
+                }
+            }
+            #content {
+                .positionRelative;
+                background: url('/Resources/Images/Application/Backgrounds/Circuit.png') no-repeat right top;
+                overflow-y: scroll;
+                height: 100%;
+                .top {
+                    .positionFixed;
+                    background-color: white;
+                    height: 50px;
+                    width: 100%;
+                    z-index: -1;
+                }
+                h1 {
+                    font-size: 3.2em;
+                    font-weight: 100;
+                    margin: 25px 0 25px 0;
+                }
+                .content-area {
+                    .positionAbsolute;
+                    margin-left: 40px;
+                    margin-top: 34px;
+                    z-index: -10;
+                }
+            }
+        }
     }
-
-    // Defines the styling of the contents behind the 'application' tab.
-    .application-contents {
-      .positionFixed; .width100; background-color: white; height: 100%; top: 0; z-index: 999;
-
-      .title { .positionFixed; left: 0; width: 100%; z-index: 200;}
-      #navigation {
-        .floatLeft; color: #fff; height: 100%; width: 135px;
-
-        .back-arrow { background-repeat: no-repeat; height: 35px; margin-left: 23px; margin-top: 19px; width: 35px; }
-
-        ul { margin-top: 15px; }
-        ul li { line-height: 16px; padding: 11px 10px 11px 26px; vertical-align: middle; }
-        ul li.seperator { margin-bottom: -1px; }
-        ul li .seperator { border-bottom: 1px solid #fff; }
-      }
-
-      #content {
-        .positionRelative; background: url('/OfficeUI.Beta/Resources/Images/Application/Backgrounds/Circuit.png') no-repeat right top; overflow-y: scroll; height: 100%;
-        .top { .positionFixed; background-color: white; height: 50px; width: 100%; z-index: -1; }
-        h1 { font-size: 3.2em; font-weight: 100; margin: 25px 0 25px 0; }
-
-        .content-area { .positionAbsolute; margin-left: 40px; margin-top: 34px; z-index: -10; }
-      }
-    }
-  }
 }
-
 /* ------------------------------------------------*/
 /* ---------->>> Animations styling. <<<-----------*/
 /* ------------------------------------------------*/
@@ -208,42 +545,146 @@
  * using plain CSS3 transitions. Therefore, aside from the animations which are stored here, we also include some
  * jQuery animations.
  */
-
 /* Hide and show animation for a contextual tab.
  * When a contextual tab element is shown, it takes 0.2 seconds. Hiding takes place immediately.
  */
-.context-group.ng-hide-add.ng-hide-add-active { -webkit-transition: 0.0s linear all; transition: 0.0s linear all; }
-.context-group.ng-hide-remove.ng-hide-remove-active { -webkit-transition: 0.2s linear all; transition: 0.2s linear all; }
-.context-group { opacity: 1; }
-.context-group.ng-hide { opacity: 0; }
 
+.context-group.ng-hide-add.ng-hide-add-active {
+    -webkit-transition: 0.0s linear all;
+    transition: 0.0s linear all;
+}
+
+.context-group.ng-hide-remove.ng-hide-remove-active {
+    -webkit-transition: 0.2s linear all;
+    transition: 0.2s linear all;
+}
+
+.context-group {
+    opacity: 1;
+}
+
+.context-group.ng-hide {
+    opacity: 0;
+}
 /* Hide and show the contents of the ribbon (to allow us to collapse the ribbon).
  * When hiding the ribbon, it takes 0.15 seconds, showing the ribbon takes place immediately.
  */
-header .tabs-content { opacity: 1; top: 0; }
-header .animate-ribbon-hiding { -webkit-transition: 0.15s linear all; transition: 0.15s linear all; top: -93px; opacity: 0; }
-header .no-animate-ribbon-hiding { -webkit-transition: 0.0s linear all; transition: 0.0s linear all; top: -93px; opacity: 0; }
-header .animate-ribbon-showing { -webkit-transition: 0.15s linear all; transition: 0.15s linear all; top: 0; opacity: 1; }
 
-header .application-contents.ng-hide-add, header .application-contents.ng-hide-remove { -webkit-transition: 0.05s linear all; transition: 0.05s linear all; }
-header .application-contents.ng-hide-add { transition-delay: 0.05s; }
-header .application-contents { opacity: 1; }
-header .application-contents.ng-hide { opacity: 0; }
+header .tabs-content {
+    opacity: 1;
+    top: 0;
+}
 
-header .application-contents #navigation.ng-hide-add, header .application-contents #navigation.ng-hide-remove { -webkit-transition: 0.05s linear all; transition: 0.05s linear all; }
-header .application-contents #navigation { margin-left: 0; }
-header .application-contents #navigation.ng-hide { margin-left: -135px; }
+header .animate-ribbon-hiding {
+    -webkit-transition: 0.15s linear all;
+    transition: 0.15s linear all;
+    top: -93px;
+    opacity: 0;
+}
 
-header .application-contents #content.ng-hide-add, header .application-contents #navigation.ng-hide-remove { -webkit-transition: 0.05s linear all; transition: 0.05s linear all; }
-header .application-contents #content { margin-left: 135px; }
-header .application-contents #content.ng-hide { margin-left: 0; }
+header .no-animate-ribbon-hiding {
+    -webkit-transition: 0.0s linear all;
+    transition: 0.0s linear all;
+    top: -93px;
+    opacity: 0;
+}
 
-header .content-area.ng-hide-add, header .content-area.ng-hide-remove { -webkit-transition: 0.15s linear all; transition: 0.15s linear all; }
-header .content-area { opacity: 1; }
-header .content-area.ng-hide { opacity: 0; }
+header .animate-ribbon-showing {
+    -webkit-transition: 0.15s linear all;
+    transition: 0.15s linear all;
+    top: 0;
+    opacity: 1;
+}
 
-header { z-index: 100; }
-body > .content { -webkit-transition: 0.15s linear all; transition: 0.15s linear all; font-family: 'Segoe UI', ; font-size: 0.75em; padding-left: 5px; position: relative; top: 150px; z-index: 1; }
-body > .content.animate-ribbon-hiding { -webkit-transition: 0.15s linear all; transition: 0.15s linear all; top: 57px; }
-body > .content.no-animate-ribbon-hiding { -webkit-transition: 0.15s linear all; transition: 0.15s linear all; top: 57px; }
-body > .content.animate-ribbon-showing { -webkit-transition: 0.15s linear all; transition: 0.15s linear all; top: 57px; }
+header .application-contents.ng-hide-add,
+header .application-contents.ng-hide-remove {
+    -webkit-transition: 0.05s linear all;
+    transition: 0.05s linear all;
+}
+
+header .application-contents.ng-hide-add {
+    transition-delay: 0.05s;
+}
+
+header .application-contents {
+    opacity: 1;
+}
+
+header .application-contents.ng-hide {
+    opacity: 0;
+}
+
+header .application-contents #navigation.ng-hide-add,
+header .application-contents #navigation.ng-hide-remove {
+    -webkit-transition: 0.05s linear all;
+    transition: 0.05s linear all;
+}
+
+header .application-contents #navigation {
+    margin-left: 0;
+}
+
+header .application-contents #navigation.ng-hide {
+    margin-left: -135px;
+}
+
+header .application-contents #content.ng-hide-add,
+header .application-contents #navigation.ng-hide-remove {
+    -webkit-transition: 0.05s linear all;
+    transition: 0.05s linear all;
+}
+
+header .application-contents #content {
+    margin-left: 135px;
+}
+
+header .application-contents #content.ng-hide {
+    margin-left: 0;
+}
+
+header .content-area.ng-hide-add,
+header .content-area.ng-hide-remove {
+    -webkit-transition: 0.15s linear all;
+    transition: 0.15s linear all;
+}
+
+header .content-area {
+    opacity: 1;
+}
+
+header .content-area.ng-hide {
+    opacity: 0;
+}
+
+header {
+    z-index: 100;
+}
+
+body > .content {
+    -webkit-transition: 0.15s linear all;
+    transition: 0.15s linear all;
+    font-family: 'Segoe UI', ;
+    font-size: 0.75em;
+    padding-left: 5px;
+    position: relative;
+    top: 150px;
+    z-index: 1;
+}
+
+body > .content.animate-ribbon-hiding {
+    -webkit-transition: 0.15s linear all;
+    transition: 0.15s linear all;
+    top: 57px;
+}
+
+body > .content.no-animate-ribbon-hiding {
+    -webkit-transition: 0.15s linear all;
+    transition: 0.15s linear all;
+    top: 57px;
+}
+
+body > .content.animate-ribbon-showing {
+    -webkit-transition: 0.15s linear all;
+    transition: 0.15s linear all;
+    top: 57px;
+}

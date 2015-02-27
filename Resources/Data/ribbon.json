@@ -9,31 +9,31 @@
           "Id": "applicationMenuInfo",
           "Label": "Info",
           "Title": "Account Information",
-          "Url": "/OfficeUI.Beta/Resources/Data/Ribbon/ApplicationMenu/Info.html"
+          "Url": "/Resources/Data/Ribbon/ApplicationMenu/Info.html"
         },
         {
           "Id": "applicationMenuOpenAndExport",
           "Label": "Open & Export",
           "Title": "Open",
-          "Url": "/OfficeUI.Beta/Resources/Data/Ribbon/ApplicationMenu/OpenAndExport.html"
+          "Url": "/Resources/Data/Ribbon/ApplicationMenu/OpenAndExport.html"
         },
         {
           "Id": "applicationMenuSaveAs",
           "Label": "Save As",
           "Title": "Save As",
-          "Url": "/OfficeUI.Beta/Resources/Data/Ribbon/ApplicationMenu/SaveAs.html"
+          "Url": "/Resources/Data/Ribbon/ApplicationMenu/SaveAs.html"
         },
         {
           "Id": "applicationMenuSaveAttachments",
           "Label": "Save Attachments",
           "Title": "Save Attachments",
-          "Url": "/OfficeUI.Beta/Resources/Data/Ribbon/ApplicationMenu/SaveAttachments.html"
+          "Url": "/Resources/Data/Ribbon/ApplicationMenu/SaveAttachments.html"
         },
         {
           "Id": "applicationMenuPrint",
           "Label": "Print",
           "Title": "Print",
-          "Url": "/OfficeUI.Beta/Resources/Data/Ribbon/ApplicationMenu/Print.html"
+          "Url": "/Resources/Data/Ribbon/ApplicationMenu/Print.html"
         },
         {
           "Seperator": "True"
@@ -42,13 +42,13 @@
           "Id": "applicationMenuOfficeAccount",
           "Label": "Office Account",
           "Title": "Account",
-          "Url": "/OfficeUI.Beta/Resources/Data/Ribbon/ApplicationMenu/OfficeAccount.html"
+          "Url": "/Resources/Data/Ribbon/ApplicationMenu/OfficeAccount.html"
         },
         {
           "Id": "applicationMenuOptions",
           "Label": "Options",
           "Title": "Options",
-          "Url": "/OfficeUI.Beta/Resources/Data/Ribbon/ApplicationMenu/Options.html"
+          "Url": "/Resources/Data/Ribbon/ApplicationMenu/Options.html"
         }
       ]
     },
@@ -63,37 +63,37 @@
               "Actions": [
                 {
                   "Id": "icoNewEmail",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/NewMailMessage.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/Home/NewMailMessage.png",
                   "Legend": "New<br/> Email",
                   "Tooltip": "<strong>New Item (Ctrl+N)</strong><p>Create a new item.</p>",
                   "Type": "bIcon"
                 },
                 {
                   "Id": "icoNewItems",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/NewItemMenu.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/Home/NewItemMenu.png",
                   "Legend": "New<br/>Items",
                   "Tooltip": "<strong>New Items</strong><p>Create a new item, such as a new Meeting or Contact.</p>",
                   "Type": "bIcon",
                   "MenuItems": [
                     {
                       "Label": "E-mail Message",
-                      "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Menu/EmailMessage.png"
+                      "Resource": "/Resources/Images/Ribbon/Tabs/Home/Menu/EmailMessage.png"
                     },
                     {
                       "Label": "Appointment",
-                      "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Menu/Appointment.png"
+                      "Resource": "/Resources/Images/Ribbon/Tabs/Home/Menu/Appointment.png"
                     },
                     {
                       "Label": "Meeting",
-                      "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Menu/Meeting.png"
+                      "Resource": "/Resources/Images/Ribbon/Tabs/Home/Menu/Meeting.png"
                     },
                     {
                       "Label": "Contact",
-                      "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Menu/Contact.png"
+                      "Resource": "/Resources/Images/Ribbon/Tabs/Home/Menu/Contact.png"
                     },
                     {
                       "Label": "Task",
-                      "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Menu/Task.png"
+                      "Resource": "/Resources/Images/Ribbon/Tabs/Home/Menu/Task.png"
                     },
                     {
                       "Label": "E-mail message using",
@@ -140,7 +140,7 @@
                     },
                     {
                       "Label": "Lync Meeting",
-                      "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Menu/Lync.png"
+                      "Resource": "/Resources/Images/Ribbon/Tabs/Home/Menu/Lync.png"
                     }
                   ]
                 }
@@ -155,21 +155,21 @@
               "Actions": [
                 {
                   "Id": "icoIgnore",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Ignore.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/Home/Ignore.png",
                   "Legend": "Ignore",
                   "Tooltip": "<strong>Ignore Conversation (Ctrl+Del)</strong><p>Move current and future messages in the selected conversation to the Deleted Items folder.</p>",
                   "Type": "sIcon"
                 },
                 {
                   "Id": "icoCleanUp",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/CleanUp.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/Home/CleanUp.png",
                   "Legend": "Clean Up",
                   "Type": "sIcon",
                   "Tooltip": "<strong>Clean Up</strong><p>Remove redundant messages in the selected conversation.</p>",
                   "MenuItems": [
                     {
                       "Label": "Clean Up Converation",
-                      "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Menu/CleanUpMenu.png"
+                      "Resource": "/Resources/Images/Ribbon/Tabs/Home/Menu/CleanUpMenu.png"
                     },
                     {
                       "Label": "Clean Up Folder"
@@ -181,7 +181,7 @@
                 },
                 {
                   "Id": "icoJunk",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Junk.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/Home/Junk.png",
                   "Legend": "Junk",
                   "Tooltip": "<strong>Junk</strong><p>Mark the selected items as junk or prevent items sent by this sender, this sender's domain, or this group or mailing list from being marked as junk.</p>",
                   "Type": "sIcon",
@@ -212,7 +212,7 @@
               "Actions": [
                 {
                   "Id": "icoDelete",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Delete.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/Home/Delete.png",
                   "Legend": "Delete",
                   "Tooltip": "<strong>Delete (Ctrl+D)</strong><p>Delete this item.</p>",
                   "Type": "bIcon"
@@ -228,21 +228,21 @@
               "Actions": [
                 {
                   "Id": "icoReply",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Reply.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/Home/Reply.png",
                   "Legend": "Reply",
                   "Tooltip": "<strong>Reply (Ctrl+R)</strong><p>Reply to the sender of this message.</p>",
                   "Type": "bIcon"
                 },
                 {
                   "Id": "icoBigIcon",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/ReplyAll.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/Home/ReplyAll.png",
                   "Legend": "Reply<br/>All",
                   "Tooltip": "<strong>Reply All (Ctrl+Shift+R)</strong><p>Reply to the sender and all other recipients of this message.</p>",
                   "Type": "bIcon"
                 },
                 {
                   "Id": "icoForward",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Forward.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/Home/Forward.png",
                   "Legend": "Forward",
                   "Tooltip": "<strong>Forward (Ctrl+F)</strong><p>Forward this item to someone else.</p>",
                   "Type": "bIcon"
@@ -253,14 +253,14 @@
               "Actions": [
                 {
                   "Id": "icoMeeting",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Meetings.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/Home/Meetings.png",
                   "Legend": "Meeting",
                   "Tooltip": "<strong>Reply with Meeting(Ctrl+Alt+R)</strong><p>Create a meeting request from this item.</p>",
                   "Type": "sIcon"
                 },
                 {
                   "Id": "icoInstantMessage",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/InstantMessage.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/Home/InstantMessage.png",
                   "Legend": "IM",
                   "Tooltip": "<strong>IM</strong><p>Reply to this message with an instant item.</p>",
                   "Type": "sIcon",
@@ -276,7 +276,7 @@
               ,
                 {
                   "Id": "icoRespondMoreActions",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/RespondMore.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/Home/RespondMore.png",
                   "Legend": "More",
                   "Tooltip": "<strong>More Respond Actions</strong><p>Use other response actions that can include forwarding this item as an attachment or text message (SMS) or calling the sender of this item.</p>",
                   "Type": "sIcon",
@@ -308,7 +308,7 @@
               "Actions": [
                 {
                   "Id": "icoMove",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Move.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/Home/Move.png",
                   "Legend": "Move<br/>",
                   "Tooltip": "<strong>Move</strong><p>Move or copy the selected items to another folder.</p><p>For e-mail messages, you can create a rule to always move messages in the selected conversation to another folder.</p>",
                   "Type": "bIcon",
@@ -326,7 +326,7 @@
                 },
                 {
                   "Id": "icoRules",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Rules.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/Home/Rules.png",
                   "Legend": "Rules<br/>",
                   "Tooltip": "<strong>Rules</strong><p>Create a rule based on the sender, recipients or conversation topic of this message to always move mail to a different folder.</p>",
                   "Type": "bIcon",
@@ -356,7 +356,7 @@
               "Actions": [
                 {
                   "Id": "icoAssignPolicy",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Policy.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/Home/Policy.png",
                   "Legend": "Assign<br/>Policy",
                   "Tooltip": "<strong>Assign Policy</strong><p>Assign an archive or retention policy to automatticly archive or delete the selected items.</p>",
                   "Type": "bIcon",
@@ -399,14 +399,14 @@
               "Actions": [
                 {
                   "Id": "icoReadUnread",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/MarkAsRead.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/Home/MarkAsRead.png",
                   "Legend": "Unread/ Read",
                   "Tooltip": "<strong>Unread/ Read (Ctrl+U/Ctrl+Q)</strong><p>Mark this item as read or unread.</p>",
                   "Type": "sIcon"
                 },
                 {
                   "Id": "icoCategorize",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Categorize.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/Home/Categorize.png",
                   "Legend": "Categorize",
                   "Tooltip": "<strong>Categorize</strong><p>Categorize this item.</p><p>Categories applied to a conversation will be applied to all current and future items in the conversation.</p>",
                   "Type": "sIcon",
@@ -442,7 +442,7 @@
                 },
                 {
                   "Id": "icoFollowUp",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/FollowUp.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/Home/FollowUp.png",
                   "Legend": "Follow Up",
                   "Tooltip": "<strong>Follow Up</strong><p>Set a flag to remind you to follow up this item later. Flagged items appear in the To-Do Bar, Daily Task List and Tasks.</p>",
                   "Type": "sIcon",
@@ -496,14 +496,14 @@
                 },
                 {
                   "Id": "icoAddressBook",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/AddressBook.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/Home/AddressBook.png",
                   "Legend": "Address Book",
                   "Tooltip": "<strong>Address Book (Ctrl+Shift+B)</strong><p>Open the Address Book to look for names, phone numbers and e-mail addresses</p>",
                   "Type": "sIcon"
                 },
                 {
                   "Id": "icoFilterEmail",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Home/Filter.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/Home/Filter.png",
                   "Legend": "Filter Email",
                   "Tooltip": "<strong>Filter Email</strong><p>Filter email messages to only show certain items such as unread or flagged items.</p>",
                   "Type": "sIcon",
@@ -606,7 +606,7 @@
               "Actions": [
                 {
                   "Id": "icoSendReceiveAll",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/SendReceive/SendReceiveAllFolders.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/SendReceive/SendReceiveAllFolders.png",
                   "Legend": "Send/Receive<br/>All Folders",
                   "Tooltip": "<strong>Send/Receive All Folders (F9)</strong><p>Send and receive items such as mail messages, calendar appointments and tasks in all folders.</p>",
                   "Type": "bIcon"
@@ -617,21 +617,21 @@
               "Actions": [
                 {
                   "Id": "icoUpdateFolder",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/SendReceive/UpdateFolder.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/SendReceive/UpdateFolder.png",
                   "Legend": "Update Folder",
                   "Tooltip": "<strong>Update Folder (Shift+F9)</strong><p>Send and receive items in this folder.</p>",
                   "Type": "sIcon"
                 },
                 {
                   "Id": "icoSendAll",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/SendReceive/SendAll.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/SendReceive/SendAll.png",
                   "Legend": "Send All",
                   "Tooltip": "<strong>Send All</strong><p>Sent all unset mail.</p>",
                   "Type": "sIcon"
                 },
                 {
                   "Id": "icoSendReceiveGroups",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/SendReceive/SendReceiveGroups.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/SendReceive/SendReceiveGroups.png",
                   "Legend": "Send/Receive Groups",
                   "Tooltip": "<strong>Send/Receive Groups</strong><p>Send and receive items in a particular send/receive group.</p><p>Send/Receive groups can have different behaviors such at the frequence with which Oulook connects to the server.</p>",
                   "Type": "sIcon",
@@ -664,14 +664,14 @@
               "Actions": [
                 {
                   "Id": "icoShowProgress",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/SendReceive/ShowProgress.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/SendReceive/ShowProgress.png",
                   "Legend": "Show<br/>Progress",
                   "Tooltip": "<strong>Show Progress</strong><p>Shows the current send/receive status.</p>",
                   "Type": "bIcon"
                 },
                 {
                   "Id": "icoCancellAll",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/SendReceive/CancelAll.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/SendReceive/CancelAll.png",
                   "Legend": "Cancel<br/>All",
                   "Tooltip": "<strong>Cancel All</strong><p>Cancel all pending send/receive requests.</p>",
                   "Type": "bIcon"
@@ -687,7 +687,7 @@
               "Actions": [
                 {
                   "Id": "icoDownloadHeaders",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/SendReceive/DownloadHeaders.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/SendReceive/DownloadHeaders.png",
                   "Legend": "Download<br/>Headers",
                   "Tooltip": "<strong>Download Headers</strong><p>Download all mail headers in this folder.</p><p>A mail header contains some message fields such as the e-mail address of the sender, subject and date.</p>",
                   "Type": "bIcon"
@@ -698,7 +698,7 @@
               "Actions": [
                 {
                   "Id": "icoMarkToDownload",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/SendReceive/MarkToDownload.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/SendReceive/MarkToDownload.png",
                   "Legend": "Mark to Download",
                   "Tooltip": "<strong>Mark to Download(Ctrl+Alt+M)</strong><p>Mark this message to be downloaded the next time marked headers are processed.</p>",
                   "Type": "sIcon",
@@ -713,7 +713,7 @@
                 },
                 {
                   "Id": "icoUnmarkToDownload",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/SendReceive/UnmarkToDownload.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/SendReceive/UnmarkToDownload.png",
                   "Legend": "Unmark to Download",
                   "Tooltip": "<strong>Unmark to Download(Ctrl+Alt+U)</strong><p>Unmark this message header so that it is not downloaded.</p>",
                   "Type": "sIcon",
@@ -728,7 +728,7 @@
                 },
                 {
                   "Id": "icoProcessMarkedHeaders",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/SendReceive/ProcessMarkedHeaders.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/SendReceive/ProcessMarkedHeaders.png",
                   "Legend": "Process Marked Headers",
                   "Tooltip": "<strong>Process Marked Headers</strong><p>Download the content of all marked headers in this folder.</p>",
                   "Type": "sIcon",
@@ -752,7 +752,7 @@
               "Actions": [
                 {
                   "Id": "icoDownloadPreferences",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/SendReceive/DownloadPreferences.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/SendReceive/DownloadPreferences.png",
                   "Legend": "Download<br/>Preferences",
                   "Tooltip": "<strong>Download Preferences</strong><p>Change the preferences for downloading message headers.</p>",
                   "Type": "bIcon",
@@ -773,7 +773,7 @@
                 },
                 {
                   "Id": "icoWorkOffline",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/SendReceive/WorkOffline.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/SendReceive/WorkOffline.png",
                   "Legend": "Work<br/>Offline",
                   "Tooltip": "<strong>Work Offline</strong><p>Work offline if you do not want to receive new mail.</p>",
                   "Type": "bIcon"
@@ -795,14 +795,14 @@
               "Actions": [
                 {
                   "Id": "icoFolder",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Folder/Folder.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/Folder/Folder.png",
                   "Legend": "New<br/>Folder",
                   "Tooltip": "<strong>Work Folder (Ctrl+Shift+E)</strong><p>Create a new folder in the navigation pane.</p>",
                   "Type": "bIcon"
                 },
                 {
                   "Id": "icoSearchFolder",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Folder/NewSearchFolder.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/Folder/NewSearchFolder.png",
                   "Legend": "New Search<br/>Folder",
                   "Tooltip": "<strong>New Search Folder (Ctrl+Shift+P)</strong><p>Create a new search folder.</p><p>A search folder displays messages based on specified criteria. Some example search folders include all messages flagged for follow up and unread mail.</p>",
                   "Type": "bIcon"
@@ -818,7 +818,7 @@
               "Actions": [
                 {
                   "Id": "icoRenameFolder",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Folder/RenameFolder.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/Folder/RenameFolder.png",
                   "Legend": "Rename<br/>Folder",
                   "Tooltip": "<strong>Rename This Folder</strong><p>Rename the selected folder.</p>",
                   "Type": "bIcon"
@@ -829,21 +829,21 @@
               "Actions": [
                 {
                   "Id": "icoCopyFolder",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Folder/CopyFolder.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/Folder/CopyFolder.png",
                   "Legend": "Copy Folder",
                   "Tooltip": "<strong>Copy This Folder</strong><p>Copy this folder to a new location.</p>",
                   "Type": "sIcon"
                 },
                 {
                   "Id": "icoMoveFolder",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Folder/MoveFolder.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/Folder/MoveFolder.png",
                   "Legend": "Move Folder",
                   "Tooltip": "<strong>Move This Folder</strong><p>Move the selected folder to a new location.</p>",
                   "Type": "sIcon"
                 },
                 {
                   "Id": "icoDeleteFolder",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Folder/DeleteFolder.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/Folder/DeleteFolder.png",
                   "Legend": "Delete Folder",
                   "Tooltip": "<strong>Delete This Folder</strong><p>Delete the selected folder.</p>",
                   "Type": "sIcon"
@@ -859,21 +859,21 @@
               "Actions": [
                 {
                   "Id": "icoMarkAllAsRead",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Folder/MarkAllAsRead.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/Folder/MarkAllAsRead.png",
                   "Legend": "Mark All<br/>as Read",
                   "Tooltip": "<strong>Mark All as Read</strong><p>Mark all messages in this folder as read.</p>",
                   "Type": "bIcon"
                 },
                 {
                   "Id": "icoRunRulesNow",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Folder/RunRulesNow.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/Folder/RunRulesNow.png",
                   "Legend": "Run Rules<br/>Now",
                   "Tooltip": "<strong>Run Rules Now</strong><p>Apply all rules to the items currently in your mailbox.</p>",
                   "Type": "bIcon"
                 },
                 {
                   "Id": "icoShowAllFoldersAToZ",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Folder/ShowAllFoldersAToZ.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/Folder/ShowAllFoldersAToZ.png",
                   "Legend": "Show All<br/>Folder A to Z",
                   "Tooltip": "<strong>Show all Folders A to Z</strong><p>Always shows folders in alphabetical order.</p>",
                   "Type": "bIcon"
@@ -884,7 +884,7 @@
               "Actions": [
                 {
                   "Id": "icoCleanUpFolder",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Folder/CleanUpFolder.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/Folder/CleanUpFolder.png",
                   "Legend": "Clean Up Folder",
                   "Tooltip": "<strong>Clean Up Folder</strong><p>Remove redundant messages from every conversation in the selected folder.</p>",
                   "Type": "sIcon",
@@ -899,14 +899,14 @@
                 },
                 {
                   "Id": "icoDeleteAll",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Folder/DeleteAll.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/Folder/DeleteAll.png",
                   "Legend": "Delete All",
                   "Tooltip": "<strong>Delete All</strong><p>Delete all of the items in this folder.</p>",
                   "Type": "sIcon"
                 },
                 {
                   "Id": "icoRecoverDeletedItem",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Folder/DeleteFolder.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/Folder/DeleteFolder.png",
                   "Legend": "Recover Deleted Items",
                   "Tooltip": "<strong>Recover Deleted Items</strong><p>Recover items deleted from this folder.</p>",
                   "Type": "sIcon"
@@ -922,7 +922,7 @@
               "Actions": [
                 {
                   "Id": "icoShowInFavorites",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Folder/ShowInFavorites.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/Folder/ShowInFavorites.png",
                   "Legend": "Show in<br/>Favorites",
                   "Tooltip": "<strong>Show in Favorites</strong><p>Show this folder in the Favorites section at the top of the Folder Pane.</p>",
                   "Type": "bIcon"
@@ -938,21 +938,21 @@
               "Actions": [
                 {
                   "Id": "icoAutoArchiveSettings",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Folder/AutoArchiveSettings.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/Folder/AutoArchiveSettings.png",
                   "Legend": "AutoArchive<br/>Settings",
                   "Tooltip": "<strong>AutoArchive Settings</strong><p>Specify when items in this folder are archived, and where they are stored.</p>",
                   "Type": "bIcon"
                 },
                 {
                   "Id": "icoFolderPermissions",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Folder/FolderPermissions.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/Folder/FolderPermissions.png",
                   "Legend": "Folder<br/>Permissions",
                   "Tooltip": "<strong>Share</strong><p>View and edit the sharing permissions for this folder.</p>",
                   "Type": "bIcon"
                 },
                 {
                   "Id": "icoFolderProperties",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Folder/FolderProperties.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/Folder/FolderProperties.png",
                   "Legend": "Folder<br/>Properties",
                   "Tooltip": "<strong>Folder Properties</strong><p>View the properties for this folder.</p>",
                   "Type": "bIcon"
@@ -974,7 +974,7 @@
               "Actions": [
                 {
                   "Id": "icoChangeView",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/View/ChangeView.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/View/ChangeView.png",
                   "Legend": "Change<br/>View",
                   "Tooltip": "<strong>Change View</strong><p>Change the current view to another view.</p>",
                   "Type": "bIcon",
@@ -992,14 +992,14 @@
                 },
                 {
                   "Id": "icoViewSettings",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/View/ViewSettings.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/View/ViewSettings.png",
                   "Legend": "View<br/>Settings",
                   "Tooltip": "<strong>View Settings</strong><p>Customize the current view using advanced view settings.</p><p>Advanced view settings include adding and removing fields, grouping, sorting, filtering, column formatting and other settings.</p>",
                   "Type": "bIcon"
                 },
                 {
                   "Id": "icoResetView",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/View/ResetCurrentView.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/View/ResetCurrentView.png",
                   "Legend": "Reset<br/>View",
                   "Tooltip": "<strong>Reset View</strong><p>Reset all current view settings to the default settings for this folder.</p>",
                   "Type": "bIcon"
@@ -1021,7 +1021,7 @@
                 },
                 {
                   "Id": "icoConversationSettings",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/View/ConversationSettings.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/View/ConversationSettings.png",
                   "Legend": "Conversation Settings",
                   "Tooltip": "<strong>Conversation Options</strong><p>Change the way conversations are displayed in the message list.</p>",
                   "Type": "sIcon"
@@ -1037,7 +1037,7 @@
               "Actions": [
                 {
                   "Id": "icoMessagePreview",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/View/MessagePreview.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/View/MessagePreview.png",
                   "Legend": "Message<br/>Preview",
                   "Tooltip": "<strong>Message Preview</strong><p>Use AutoPreview to quickly scan items.</p>",
                   "Type": "bIcon",
@@ -1067,21 +1067,21 @@
               "Actions": [
                 {
                   "Id": "icoReverseSort",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/View/ReverseSort.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/View/ReverseSort.png",
                   "Legend": "Reverse Sort",
                   "Tooltip": "<strong>Reverse Sort</strong><p>Reverse the sort order of the current view.</p><p>For example, reverse the sort order of the message list from newest to oldest.</p>",
                   "Type": "sIcon"
                 },
                 {
                   "Id": "icoAddColumns",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/View/AddColumns.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/View/AddColumns.png",
                   "Legend": "Add Columns",
                   "Tooltip": "<strong>Add Columns</strong><p>Choose which fields are showed in the view.</p>",
                   "Type": "sIcon"
                 },
                 {
                   "Id": "icoExpandCollapse",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/View/ExpandCollapse.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/View/ExpandCollapse.png",
                   "Legend": "Expand/Collapse",
                   "Tooltip": "<strong>Expand/Collapse</strong><p>Expand or collapse groups in the list.</p>",
                   "Type": "sIcon",
@@ -1111,7 +1111,7 @@
               "Actions": [
                 {
                   "Id": "icoFolderPane",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/View/FolderPane.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/View/FolderPane.png",
                   "Legend": "Folder<br/>Pane",
                   "Tooltip": "<strong>Folder Pane</strong><p>Show, Hide, or minimize the Folder Pane and show or hide Favorites.</p>",
                   "Type": "bIcon",
@@ -1135,7 +1135,7 @@
                 },
                 {
                   "Id": "icoReadingPane",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/View/ReadingPane.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/View/ReadingPane.png",
                   "Legend": "Reading<br/>Pane",
                   "Tooltip": "<strong>Reading Properties</strong><p>Show, Hide, or change the layout Reading Pane.</p>",
                   "Type": "bIcon",
@@ -1156,7 +1156,7 @@
                 },
                 {
                   "Id": "icoToDoBar",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/View/ToDoBar.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/View/ToDoBar.png",
                   "Legend": "To-Do<br/>Bar",
                   "Tooltip": "<strong>To-Do Bar</strong><p>Show, Hide, or minimize the To-Do Bar and choose what is shown.</p>",
                   "Type": "bIcon",
@@ -1186,7 +1186,7 @@
               "Actions": [
                 {
                   "Id": "icoPeoplePane",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/View/PeoplePane.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/View/PeoplePane.png",
                   "Legend": "People<br/>Pane",
                   "Tooltip": "<strong>People Pane</strong><p>Show, Hide, or minimize the People Pane and configure social network accounts.</p>",
                   "Type": "bIcon",
@@ -1216,21 +1216,21 @@
               "Actions": [
                 {
                   "Id": "icoRemindersWindow",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/View/RemindersWindow.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/View/RemindersWindow.png",
                   "Legend": "Reminders<br/>Window",
                   "Tooltip": "<strong>Reminders Window</strong><p>Show the reminders window.</p>",
                   "Type": "bIcon"
                 },
                 {
                   "Id": "icoOpenInNewWindow",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/View/OpenInNewWindow.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/View/OpenInNewWindow.png",
                   "Legend": "Open in New<br/>Window",
                   "Tooltip": "<strong>Open in New Window</strong><p>Opens this folder is a new window.</p>",
                   "Type": "bIcon"
                 },
                 {
                   "Id": "icoCloseAllItems",
-                  "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/View/CloseAllItems.png",
+                  "Resource": "/Resources/Images/Ribbon/Tabs/View/CloseAllItems.png",
                   "Legend": "Close<br/>All Items",
                   "Tooltip": "<strong>Folder Properties</strong><p>Close all additional windows.</p>",
                   "Type": "bIcon"
@@ -1262,14 +1262,14 @@
                   "Actions": [
                     {
                       "Id": "icoEditShape",
-                      "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/EditShape.png",
+                      "Resource": "/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/EditShape.png",
                       "Legend": "Edit Shape",
                       "Tooltip": "<strong>Edit Shape</strong><p>Change the shape of this drawing, convert it it a freeform shape, or edit the wrap points to determine how text wraps around the drawing.</p>",
                       "Type": "sIcon"
                     },
                     {
                       "Id": "icoDrawTextBox",
-                      "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/DrawTextBox.png",
+                      "Resource": "/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/DrawTextBox.png",
                       "Legend": "Draw Text Box",
                       "Tooltip": "<strong>Draw Text Box</strong><p>Draw a text box anywhere in your document.</p>",
                       "Type": "sIcon"
@@ -1285,21 +1285,21 @@
                   "Actions": [
                     {
                       "Id": "icoShapeFill",
-                      "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/ShapeFill.png",
+                      "Resource": "/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/ShapeFill.png",
                       "Legend": "Shape Fill",
                       "Tooltip": "<strong>Shape Fill</strong><p>Fill the selected shape with a solid color, gradient, picture, or texture.</p>",
                       "Type": "sIcon"
                     },
                     {
                       "Id": "icoShapeOutline",
-                      "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/ShapeOutline.png",
+                      "Resource": "/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/ShapeOutline.png",
                       "Legend": "Shape Outline",
                       "Tooltip": "<strong>Shape Outline</strong><p>Pick the color, width, and line style for the outline of your shape.</p>",
                       "Type": "sIcon"
                     },
                     {
                       "Id": "icoShapeEffects",
-                      "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/ShapeEffects.png",
+                      "Resource": "/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/ShapeEffects.png",
                       "Legend": "Shape Effects",
                       "Tooltip": "<strong>Shape Effects</strong><p>Apply a visual effect to the selected shape such as shadow, glow, reflection or 3-D rotation.</p>",
                       "Type": "sIcon"
@@ -1315,21 +1315,21 @@
                   "Actions": [
                     {
                       "Id": "icoTextFill",
-                      "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/TextFill.png",
+                      "Resource": "/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/TextFill.png",
                       "Legend": "Text Fill",
                       "Tooltip": "<strong>Text Fill</strong><p>Fill the text with a solid color, gradient, picture, or texture.</p>",
                       "Type": "sIcon"
                     },
                     {
                       "Id": "icoTextOutline",
-                      "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/TextOutline.png",
+                      "Resource": "/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/TextOutline.png",
                       "Legend": "Text Outline",
                       "Tooltip": "<strong>Text Outline</strong><p>Customize the outline of your text by choosing the color, width, and line style.</p>",
                       "Type": "sIcon"
                     },
                     {
                       "Id": "icoTextEffects",
-                      "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/TextEffects.png",
+                      "Resource": "/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/TextEffects.png",
                       "Legend": "Text Effects",
                       "Tooltip": "<strong>Text Effects</strong><p>Turn your work into a work of art.</p><p>Add a visual effect such as shadow, glow or reflection to your text.</p>",
                       "Type": "sIcon"
@@ -1345,21 +1345,21 @@
                   "Actions": [
                     {
                       "Id": "icoTextDirection",
-                      "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/TextDirection.png",
+                      "Resource": "/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/TextDirection.png",
                       "Legend": "Text<br/>Direction",
                       "Tooltip": "<strong>Text Direction</strong><p>Change the orientation of the text to vertical, stacked or rotate it to the desired direction.</p>",
                       "Type": "bIcon"
                     },
                     {
                       "Id": "icoAlignText",
-                      "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/AlignText.png",
+                      "Resource": "/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/AlignText.png",
                       "Legend": "Align<br/>Text",
                       "Tooltip": "<strong>Align Text</strong><p>Change how your text is aligned within the text box.</p>",
                       "Type": "bIcon"
                     },
                     {
                       "Id": "icoCreateLine",
-                      "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/CreateLink.png",
+                      "Resource": "/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/CreateLink.png",
                       "Legend": "Create<br/>Link",
                       "Tooltip": "<strong>Create Link</strong><p>Let your text flow from one textbox to another.</p><p>Click an empty text box to link it to the current one.</p>",
                       "Type": "bIcon"
@@ -1375,35 +1375,35 @@
                   "Actions": [
                     {
                       "Id": "icoPosition",
-                      "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/Position.png",
+                      "Resource": "/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/Position.png",
                       "Legend": "Position<br/>",
                       "Tooltip": "<strong>Position</strong><p>Choose where the selected object will appear on the page.</p><p>Text will automatically wrap around the object so that it's still easy to read.</p>",
                       "Type": "bIcon"
                     },
                     {
                       "Id": "icoWrapText",
-                      "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/WrapText.png",
+                      "Resource": "/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/WrapText.png",
                       "Legend": "Wrap<br/>Text",
                       "Tooltip": "<strong>Wrap Text</strong><p>Choose how your text wraps around the selected object.</p><p>For example you can choose to have the text continue around the object or cross right over it.</p>",
                       "Type": "bIcon"
                     },
                     {
                       "Id": "icoBringForward",
-                      "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/BringForward.png",
+                      "Resource": "/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/BringForward.png",
                       "Legend": "Bring<br/>Forward",
                       "Tooltip": "<strong>Bring Forward</strong><p>Bring the selected object forward one level, or bring it front of all the other objects.</p>",
                       "Type": "bIcon"
                     },
                     {
                       "Id": "icoSendBackward",
-                      "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/SendBackward.png",
+                      "Resource": "/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/SendBackward.png",
                       "Legend": "Send<br/>Backward",
                       "Tooltip": "<strong>Send Backward</strong><p>Send the selected object back one level, or send it behind all the other objects.</p>",
                       "Type": "bIcon"
                     },
                     {
                       "Id": "icoSelectionPane",
-                      "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/SelectionPane.png",
+                      "Resource": "/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/SelectionPane.png",
                       "Legend": "Selection<br/>Pane",
                       "Tooltip": "<strong>Selection Pane</strong><p>See a list of all your objects.</p><p>This makes it easier to select objects, change their order, or change their visibility.</p>",
                       "Type": "bIcon"
@@ -1414,21 +1414,21 @@
                   "Actions": [
                     {
                       "Id": "icoAlign",
-                      "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/Align.png",
+                      "Resource": "/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/Align.png",
                       "Legend": "Align",
                       "Tooltip": "<strong>Align Objects</strong><p>Change the placement of your selected objects on the page.</p><p>This is great for aligning objects to the margins of the edge of the page. You can also align them relative to one another.</p>",
                       "Type": "sIcon"
                     },
                     {
                       "Id": "icoGroup",
-                      "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/Group.png",
+                      "Resource": "/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/Group.png",
                       "Legend": "Group",
                       "Tooltip": "<strong>Group Objects</strong><p>Join objects together to move and format them as if they were a single object.</p>",
                       "Type": "sIcon"
                     },
                     {
                       "Id": "icoRotate",
-                      "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/Rotate.png",
+                      "Resource": "/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/Rotate.png",
                       "Legend": "Rotate",
                       "Tooltip": "<strong>Rotate Objects</strong><p>Rotate or flip the selected object.</p>",
                       "Type": "sIcon"
@@ -1444,14 +1444,14 @@
                    "Actions": [
                     {
                       "Id": "icoHeight",
-                      "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/Height.png",
+                      "Resource": "/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/Height.png",
                       "Legend": "Height",
                       "Tooltip": "<strong>Shape Height</strong><p>Change the height of the shape or picture.</p>",
                       "Type": "sIcon"
                     },
                     {
                       "Id": "icoWidth",
-                      "Resource": "/OfficeUI.Beta/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/Width.png",
+                      "Resource": "/Resources/Images/Ribbon/Tabs/Contextual/Drawing Tools/Format/Width.png",
                       "Legend": "Width",
                       "Tooltip": "<strong>Shape Width</strong><p>Change the width of the shape or picture.</p>",
                       "Type": "sIcon"

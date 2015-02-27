@@ -18,7 +18,7 @@
         </ul>
 
         <!-- This UL element does shows the content of the tab which is currently opened. -->
-        <ul class="tabs-content" data-ng-class="{'animate-ribbon-hiding': isRibbonHidden() && !isRibbonInitialized(), 'no-animate-ribbon-hiding': isRibbonHidden() && isRibbonInitialized(), 'animate-ribbon-showing': isRibbonVisible() }"  data-stop-propagation="click">
+        <ul class="tabs-content" data-ng-class="{'animate-ribbon-hiding': isRibbonHidden() && !isRibbonInitialized(), 'no-animate-ribbon-hiding': isRibbonHidden() && isRibbonInitialized(), 'animate-ribbon-showing': isRibbonVisible() }" data-stop-propagation="click">
             <li>
                 <ul>
                     <li data-ng-repeat="tab in OfficeUIRibbon.Tabs" data-ng-show="isTabActive(tab.Id)" data-stop-propagation="click">
@@ -54,7 +54,7 @@
                                         </div>
 
                                         <!-- ToDo: This is the menu and should be cleaned up. Also, it should be placed in the contextual tabs. However, rendering is now being done through a Controller, where this should be a directive because I'm manipulating the DOM here (don's show the tooltip anymore when clicked on it). -->
-                                            <!--<div class="menucontents" style="background-color: #ffffff; background-image: linear-gradient(#c6c6c6, #c6c6c6), linear-gradient(#c6c6c6, #c6c6c6); background-position: 0 0px, 100% 0; background-repeat: no-repeat; background-size: 1px 100%; border-bottom: 1px solid #c6c6c6; border-top: 1px solid #c6c6c6; box-shadow: 3px 3px 3px #e0e0e0; padding: 1px 2px; position: absolute; z-index: 100;">
+                                        <!--<div class="menucontents" style="background-color: #ffffff; background-image: linear-gradient(#c6c6c6, #c6c6c6), linear-gradient(#c6c6c6, #c6c6c6); background-position: 0 0px, 100% 0; background-repeat: no-repeat; background-size: 1px 100%; border-bottom: 1px solid #c6c6c6; border-top: 1px solid #c6c6c6; box-shadow: 3px 3px 3px #e0e0e0; padding: 1px 2px; position: absolute; z-index: 100;">
                                                 <ul style="position: static; height: auto; list-style: none; white-space: nowrap;">
                                                     <li data-ng-repeat="menuItem in action.MenuItems" style="position: static; height: auto; padding-right: 20px; height: 23px; line-height: 23px; list-style: outside none none; padding-left: 5px; text-align: left; vertical-align: middle;">
                                                         <div>
@@ -78,8 +78,8 @@
                         </div>
 
                         <div class="icon collapse" data-ng-click="toggleRibbonState()">
-                            <img src="/OfficeUI.Beta/Resources/Images/Ribbon/Built-In/Collapse.png" class="pin-icon" data-ng-if="isRibbonShowed()" alt="Toggle Ribbon State" />
-                            <img src="/OfficeUI.Beta/Resources/Images/Ribbon/Built-In/Pin.png" class="pin-icon" data-ng-if="isRibbonVisible()" alt="Toggle Ribbon State" />
+                            <img src="/Resources/Images/Ribbon/Built-In/Collapse.png" class="pin-icon" data-ng-if="isRibbonShowed()" alt="Toggle Ribbon State" />
+                            <img src="/Resources/Images/Ribbon/Built-In/Pin.png" class="pin-icon" data-ng-if="isRibbonVisible()" alt="Toggle Ribbon State" />
                         </div>
                     </li>
 
@@ -126,8 +126,8 @@
                                 </div>
 
                                 <div class="icon collapse" data-ng-click="toggleRibbonState()">
-                                    <img src="/OfficeUI.Beta/Resources/Images/Ribbon/Built-In/Collapse.png" class="pin-icon" data-ng-if="isRibbonShowed()" alt="Toggle Ribbon State" />
-                                    <img src="/OfficeUI.Beta/Resources/Images/Ribbon/Built-In/Pin.png" class="pin-icon" data-ng-if="isRibbonVisible()" alt="Toggle Ribbon State" />
+                                    <img src="/Resources/Images/Ribbon/Built-In/Collapse.png" class="pin-icon" data-ng-if="isRibbonShowed()" alt="Toggle Ribbon State" />
+                                    <img src="/Resources/Images/Ribbon/Built-In/Pin.png" class="pin-icon" data-ng-if="isRibbonVisible()" alt="Toggle Ribbon State" />
                                 </div>
                             </li>
                         </ul>
@@ -160,7 +160,7 @@
         <div id="content" data-ng-show="isApplicationMenuOpened()">
             <div class="top">&nbsp;</div>
             <div data-ng-repeat="tab in OfficeUIRibbon.Tabs" ng-if="$first">
-                <div class="content-area"  data-ng-repeat="menuItem in tab.MenuItems" data-ng-show="isApplicationMenuItemActive(menuItem)">
+                <div class="content-area" data-ng-repeat="menuItem in tab.MenuItems" data-ng-show="isApplicationMenuItemActive(menuItem)">
                     <h1>{{menuItem.Title}}</h1>
                     <div data-application-menu-contents="{'url': menuItem.Url}"></div>
                 </div>

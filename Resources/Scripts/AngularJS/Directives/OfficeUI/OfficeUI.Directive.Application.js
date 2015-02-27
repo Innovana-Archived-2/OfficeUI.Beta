@@ -8,10 +8,10 @@ var OfficeUI = angular.module('OfficeUI');
  * @description
  * Renders the OfficeUI application on the place where this directive is being placed.
  */
-OfficeUI.directive('officeuiApplicationTitle', function() {
+OfficeUI.directive('officeuiApplicationTitle', function () {
     return {
         restrict: 'AE',
         replace: true,
-        templateUrl: '/OfficeUI.Beta/Resources/Data/Templates/OfficeUI.application.html'
+        templateUrl: '/Resources/Data/Templates/OfficeUI.application.html'
     }
 })

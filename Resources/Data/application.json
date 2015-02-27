@@ -3,17 +3,17 @@
   "Icons": [
     {
       "Id": "icoApplication",
-      "Icon": "Resources/Images/Application/Application.png",
+      "Icon": "/Resources/Images/Application/Application.png",
       "Alt": "Outlook"
     },
     {
       "Id": "icoSendReceive",
-      "Icon": "Resources/Images/Application/Send-Receive.png",
+      "Icon": "/Resources/Images/Application/Send-Receive.png",
       "Alt": "Send / Receive"
     },
     {
       "Id": "icoUndo",
-      "Icon": "Resources/Images/Application/Undo.png",
+      "Icon": "/Resources/Images/Application/Undo.png",
       "Alt": "Undo",
       "Disabled": "True"
     }
