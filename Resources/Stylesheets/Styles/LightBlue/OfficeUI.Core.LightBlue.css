@@ -1,7 +1,7 @@
 /* Import statements. */
 /* General styling. */
 #OfficeUI .application-icons.icon img:hover:not(.disabled):not(:first-child),
-#OfficeUI .icon:not(.disabled):hover {
+#OfficeUI .icon:not(.disabled):not(.active):hover {
   background-color: #cde6f7;
 }
 #OfficeUI .icon:not(.disabled):active {

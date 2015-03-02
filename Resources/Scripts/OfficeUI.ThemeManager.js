@@ -18,9 +18,9 @@
         Red: 'Red',
         Turquoise: 'Turquoise'
     }
-
+    
     $.fn.OfficeUI.ThemeManager.SetTheme = function(theme) {
-        var themeFile = '/Resources/Stylesheets/Styles/' + theme + '/OfficeUI.Style.' + theme + '.min.css';
+        var themeFile = '/OfficeUI.Beta/Resources/Stylesheets/Styles/' + theme + '/OfficeUI.Style.' + theme + '.min.css';
         $('head').append('<link rel="stylesheet" href="' + themeFile + '" type="text/css" />');
     }
 }(jQuery));

@@ -12,6 +12,6 @@ OfficeUI.directive('officeuiRibbonActionBigIcon', function () {
     return {
         restrict: 'AE',
         replace: true,
-        templateUrl: '/Resources/Data/Templates/Ribbon/Components/Actions/OfficeUI.Ribbon.Action.BigIcon.html'
+        templateUrl: '/OfficeUI.Beta/Resources/Data/Templates/Ribbon/Components/Actions/OfficeUI.Ribbon.Action.BigIcon.html'
     }
 })

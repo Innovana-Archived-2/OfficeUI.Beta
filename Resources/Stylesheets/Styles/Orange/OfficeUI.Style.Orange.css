@@ -2,7 +2,7 @@
 /* Import statements. */
 /* General styling. */
 #OfficeUI .application-icons.icon img:hover:not(.disabled):not(:first-child),
-#OfficeUI .icon:not(.disabled):hover {
+#OfficeUI .icon:not(.disabled):not(.active):hover {
   background-color: #fce4dc;
 }
 #OfficeUI .icon:not(.disabled):active {
@@ -22,6 +22,9 @@
 }
 .ribbon > ul li .tab.application {
   border-color: #d24726;
+}
+#OfficeUI .icon.active {
+  background-color: #f5ba9d;
 }
 #OfficeUI ul[role="ribbonTabs"] li:not(.application):hover,
 #OfficeUI ul[role="ribbonTabs"] li.active {

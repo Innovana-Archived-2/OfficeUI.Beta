@@ -12,6 +12,6 @@ OfficeUI.directive('officeuiRibbonActionInput', function () {
     return {
         restrict: 'AE',
         replace: true,
-        templateUrl: '/Resources/Data/Templates/Ribbon/Components/Actions/OfficeUI.Ribbon.Action.Input.html'
+        templateUrl: '/OfficeUI.Beta/Resources/Data/Templates/Ribbon/Components/Actions/OfficeUI.Ribbon.Action.Input.html'
     }
 })

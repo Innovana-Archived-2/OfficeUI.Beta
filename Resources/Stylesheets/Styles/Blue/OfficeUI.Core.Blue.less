@@ -1,18 +1,7 @@
 /* Import statements. */
-
 @import (reference) 'OfficeUI.Style.Blue.less';
+
 /* General styling. */
-
-#OfficeUI .application-icons.icon img:hover:not(.disabled):not(:first-child),
-#OfficeUI .icon:not(.disabled):hover {
-    background-color: @iconHoverColor;
-}
-
-#OfficeUI .icon:not(.disabled):active {
-    background-color: @activeIconColor;
-}
-
-#OfficeUI input:hover,
-#OfficeUI input:focus {
-    border-color: @activeIconColor;
-}
+#OfficeUI .application-icons.icon img:hover:not(.disabled):not(:first-child), #OfficeUI .icon:not(.disabled):not(.active):hover  { background-color: @iconHoverColor; }
+#OfficeUI .icon:not(.disabled):active { background-color: @activeIconColor; }
+#OfficeUI input:hover, #OfficeUI input:focus { border-color: @activeIconColor; }

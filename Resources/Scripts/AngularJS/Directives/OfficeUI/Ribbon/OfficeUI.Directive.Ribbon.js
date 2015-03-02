@@ -12,6 +12,6 @@ OfficeUI.directive('officeuiRibbon', function () {
     return {
         restrict: 'AE',
         replace: true,
-        templateUrl: '/Resources/Data/Templates/Ribbon/OfficeUI.Ribbon.html'
+        templateUrl: '/OfficeUI.Beta/Resources/Data/Templates/Ribbon/OfficeUI.Ribbon.html'
     }
 })

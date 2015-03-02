@@ -157,7 +157,7 @@
 }
 @media (min-width: 497px) {
   #OfficeUI header {
-    background: url("/Resources/Images/Application/Backgrounds/Circuit.png") no-repeat scroll right top;
+    background: url("/OfficeUI.Beta/Resources/Images/Application/Backgrounds/Circuit.png") no-repeat scroll right top;
   }
 }
 #OfficeUI header .title {
@@ -317,7 +317,7 @@
 }
 @media screen and (min-width: 497px) {
   #OfficeUI header .ribbon > ul.tabs {
-    background: url("/Resources/Images/Application/Backgrounds/Circuit.png") no-repeat scroll right top white;
+    background: url("/OfficeUI.Beta/Resources/Images/Application/Backgrounds/Circuit.png") no-repeat scroll right top white;
   }
 }
 #OfficeUI header .ribbon ul.tabs-content {
