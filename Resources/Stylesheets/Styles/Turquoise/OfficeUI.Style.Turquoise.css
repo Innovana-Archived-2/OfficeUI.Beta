@@ -1,0 +1,110 @@
+/* Import Statements. */
+/* Import statements. */
+/* General styling. */
+#OfficeUI .application-icons.icon img:hover:not(.disabled):not(:first-child),
+#OfficeUI .icon:not(.disabled):not(.active):not(.no-hover):hover {
+  background-color: #d3f0ec;
+}
+#OfficeUI .icon:not(.disabled):not(.active):active {
+  background-color: #7cbab2;
+}
+#OfficeUI input:not(.no-hover):hover,
+#OfficeUI input:focus {
+  border-color: #7cbab2;
+}
+/* Import statements. */
+/* Ribbon styling. */
+.ribbon > ul li .tab.active {
+  color: #077568;
+}
+.ribbon > ul li .tab.application {
+  background-color: #077568;
+}
+.ribbon > ul li .tab.application {
+  border-color: #077568;
+}
+#OfficeUI .icon.active {
+  background-color: #7cbab2;
+}
+#OfficeUI ul[role="ribbonTabs"] li:not(.application):hover,
+#OfficeUI ul[role="ribbonTabs"] li.active {
+  color: #077568;
+}
+#OfficeUI ul[role="ribbonTabs"] li.application {
+  background-color: #077568;
+  border-color: #077568;
+}
+#OfficeUI ul[role="ribbonTabs"] li.application:hover {
+  background-color: #3e948a;
+  border-color: #3e948a;
+}
+/* Import statements. */
+/* General styling. */
+#OfficeUI .application-contents #navigation {
+  background-color: #077568;
+}
+#OfficeUI .application-contents #navigation ul li:not(.seperator).active {
+  background-color: #3e948a;
+}
+#OfficeUI .application-contents #navigation ul li:not(.seperator):hover {
+  background-color: #23645c;
+}
+#OfficeUI .application-contents #navigation ul li .seperator {
+  border-color: #3e948a !important;
+}
+#OfficeUI .application-contents #navigation .back-arrow {
+  background-image: url('/Resources/Images/Ribbon/ApplicationMenu/NavigationArrow-Turquoise.png');
+}
+#OfficeUI .application-contents #navigation .back-arrow:hover {
+  background-image: url('/Resources/Images/Ribbon/ApplicationMenu/NavigationArrow-Turquoise_hover.png');
+}
+/* Import statements. */
+/* Menu styling. */
+#OfficeUI header .ribbon ul.tabs-content ul .menu {
+  background-color: #ffffff;
+  background-image: linear-gradient(#c6c6c6, #c6c6c6), linear-gradient(#c6c6c6, #c6c6c6);
+  background-position: 0 0px, 100% 0;
+  background-repeat: no-repeat;
+  background-size: 1px 100%;
+  border-bottom: 1px solid #c6c6c6;
+  border-top: 1px solid #c6c6c6;
+  box-shadow: 3px 3px 3px #e0e0e0;
+  padding: 1px 2px;
+  position: absolute;
+  z-index: 100;
+}
+#OfficeUI header .ribbon ul.tabs-content ul .menu ul {
+  position: static;
+  height: auto;
+  list-style: none;
+  white-space: nowrap;
+}
+#OfficeUI header .ribbon ul.tabs-content ul .menu ul li {
+  position: static;
+  height: auto;
+  padding-right: 20px;
+  height: 23px;
+  line-height: 23px;
+  list-style: outside none none;
+  padding-left: 5px;
+  text-align: left;
+  vertical-align: middle;
+  width: auto;
+}
+#OfficeUI header .ribbon ul.tabs-content ul .menu ul li:hover {
+  background-color: #d3f0ec;
+}
+#OfficeUI header .ribbon ul.tabs-content ul .menu ul li .imageHolder {
+  height: 16px;
+  padding-top: 4px;
+  text-align: center;
+  width: 16px;
+  display: inline-block;
+}
+#OfficeUI header .ribbon ul.tabs-content ul .menu ul li .label {
+  height: 23px;
+  line-height: 23px;
+  vertical-align: top;
+  display: inline-block;
+}
+/* Section: Variables. */

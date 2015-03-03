@@ -1,0 +1,20 @@
+/* Import statements. */
+/* General styling. */
+#OfficeUI .application-contents #navigation {
+  background-color: #2b579a;
+}
+#OfficeUI .application-contents #navigation ul li:not(.seperator).active {
+  background-color: #3e6db5;
+}
+#OfficeUI .application-contents #navigation ul li:not(.seperator):hover {
+  background-color: #19478a;
+}
+#OfficeUI .application-contents #navigation ul li .seperator {
+  border-color: #3e6db5 !important;
+}
+#OfficeUI .application-contents #navigation .back-arrow {
+  background-image: url('/Resources/Images/Ribbon/ApplicationMenu/NavigationArrow-Blue.png');
+}
+#OfficeUI .application-contents #navigation .back-arrow:hover {
+  background-image: url('/Resources/Images/Ribbon/ApplicationMenu/NavigationArrow-Blue_hover.png');
+}

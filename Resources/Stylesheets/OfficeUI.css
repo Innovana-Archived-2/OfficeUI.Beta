@@ -1,0 +1,660 @@
+/* General OfficeUI styling.
+*
+* Version 1.0
+* Kevin De Coninck
+*/
+/* -----------------------------------------------------------------------------------------------*/
+/* ---------->>> Helpful css classes that can be applied without a border element. <<<-----------*/
+/* -----------------------------------------------------------------------------------------------*/
+.noPadding {
+  padding: 0;
+}
+.noMargin {
+  margin: 0;
+}
+.no-overflow {
+  overflow: hidden;
+}
+.alignCenter {
+  text-align: center;
+}
+.alignLeft {
+  text-align: left;
+}
+.alignRight {
+  text-align: right;
+}
+.cursorDefault {
+  cursor: default;
+}
+.displayInline {
+  display: inline;
+}
+.displayInlineBlock {
+  display: inline-block;
+}
+.displayBlock {
+  display: block;
+}
+.displayTable {
+  display: table;
+}
+.displayTableCell {
+  display: table-cell;
+}
+.positionAbsolute {
+  position: absolute;
+}
+.positionFixed {
+  position: fixed;
+}
+.positionRelative {
+  position: relative;
+}
+.floatLeft {
+  float: left;
+}
+.floatRight {
+  float: right;
+}
+.noSelect {
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.width100 {
+  width: 100%;
+}
+.width75 {
+  width: 75%;
+}
+.width50 {
+  width: 50%;
+}
+.borderTransparent {
+  border: 1px solid transparent;
+}
+.disabled {
+  -moz-opacity: 0.50;
+  filter: alpha(opacity=50);
+  opacity: 0.5;
+  pointer-events: none;
+}
+.disabled img {
+  filter: grayscale(1);
+}
+#OfficeUI {
+  /* ---------------------------------------------*/
+  /* ---------->>> General styling. <<<-----------*/
+  /* ---------------------------------------------*/
+  color: #444444;
+  font-family: 'Segoe UI', serif;
+  font-size: 0.75em;
+  /* ----------------------------------------------------------*/
+  /* ---------->>> Styling for input elements. <<<-----------*/
+  /* ----------------------------------------------------------*/
+  /* ----------------------------------------------------------*/
+  /* ---------->>> Styling for general elements. <<<-----------*/
+  /* ----------------------------------------------------------*/
+  /* --------------------------------------------*/
+  /* ---------->>> Header styling. <<<-----------*/
+  /* --------------------------------------------*/
+  /*
+  * @remarks
+  *
+  * Below we explain the z-index which are used in the header.
+  * - The title in the header, thus, not on the ribbon, does have a z-index value set to 70.
+  *   (This does mean that the ribbon element itself should have a higher z-index to make sure it's on top of the normal title).
+  *
+  * - The ribbon itself has a z-index of 75, meaning it's hiding the title which is shown normally.
+  * - The title in the ribbon itself, does have a z-index value set to 80.
+  * - The tabs of the ribbon does have a z-index value set to 75.
+  * - The contents of the tabs on the ribbon does have a z-index value set to 70.
+  * - The contents behind the 'application' tab does have a z-index of 999, meaning that they will always cover the entire website.
+  */
+}
+#OfficeUI input {
+  border: 1px solid #ababab;
+  color: black;
+  font-family: "Segoe UI", serif;
+  font-size: 1em;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+#OfficeUI input:hover,
+#OfficeUI input:focus {
+  outline: none;
+  border: 1px solid #ffffff;
+}
+#OfficeUI input:-ms-input-placeholder {
+  color: #6d6d6d;
+}
+#OfficeUI * {
+  padding: 0;
+  margin: 0;
+}
+#OfficeUI header {
+  cursor: default;
+  position: fixed;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  width: 100%;
+  top: 0;
+  /* Defines the styling of the title area. */
+  /* Defines the title when we're displaying contextual tabs. */
+  /* Defines the styling of the ribbon. */
+}
+@media (min-width: 497px) {
+  #OfficeUI header {
+    background: url("/Resources/Images/Application/Backgrounds/Circuit.png") no-repeat scroll right top;
+  }
+}
+#OfficeUI header .title {
+  display: inline-block;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  height: 28px;
+  z-index: 70;
+}
+#OfficeUI header .title div {
+  position: absolute;
+  margin: 3px 0 0 5px;
+}
+#OfficeUI header .title div img {
+  margin: 0 5px 0 2px;
+}
+#OfficeUI header .title div img:not(:first-child) {
+  margin-right: 6px;
+}
+#OfficeUI header .title span {
+  display: block;
+  margin-top: 6px;
+  margin-right: 2px;
+}
+#OfficeUI header ul.tabs li .title {
+  text-align: left;
+}
+#OfficeUI header .ribbon {
+  position: relative;
+  /* Defines the styles for the normal tabs. */
+  /* Defines the style for the contextual tabs and groups. */
+}
+#OfficeUI header .ribbon .title {
+  z-index: 80;
+}
+#OfficeUI header .ribbon a,
+#OfficeUI header .ribbon a:hover,
+#OfficeUI header .ribbon a:active {
+  cursor: default;
+  color: #444;
+}
+#OfficeUI header .ribbon ul {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  width: 100%;
+  z-index: 75;
+}
+#OfficeUI header .ribbon ul.tabs {
+  height: 52px;
+}
+#OfficeUI header .ribbon ul.tabs.visible-border {
+  border-bottom: 1px solid #d4d4d4;
+}
+#OfficeUI header .ribbon ul.tabs.invisible-border {
+  border-bottom: 1px solid transparent;
+}
+#OfficeUI header .ribbon ul.tabs > li > div {
+  position: relative;
+}
+#OfficeUI header .ribbon ul.tabs > li > div .title span {
+  text-align: center;
+}
+#OfficeUI header .ribbon ul.tabs li {
+  display: inline-block;
+}
+#OfficeUI header .ribbon ul.tabs li div {
+  display: inline-block;
+  vertical-align: top;
+}
+#OfficeUI header .ribbon ul.tabs li.tab {
+  text-align: center;
+}
+#OfficeUI header .ribbon ul.tabs li.tab.application {
+  color: #fff;
+  margin-right: 4px;
+  min-width: 52px;
+  padding: 0 3px 0 2px;
+}
+#OfficeUI header .ribbon ul.tabs li.tab-normal {
+  border: 1px solid transparent;
+  display: inline-block;
+  position: relative;
+  line-height: 23px;
+  margin: 28px 2px 0 0;
+}
+#OfficeUI header .ribbon ul.tabs li .tab span {
+  padding: 0 13px 0 12px;
+}
+#OfficeUI header .ribbon ul.tabs li .tab:not(.application).visible-border.active {
+  border-color: #d4d4d4 #d4d4d4 #fff;
+  border-style: solid;
+  border-width: 1px;
+  background-color: #fff;
+}
+#OfficeUI header .ribbon ul.tabs li .tab:not(.application).invisible-border.active {
+  border-color: transparent transparent #fff;
+  border-style: solid;
+  border-width: 1px;
+  background-color: #fff;
+}
+#OfficeUI header .ribbon .contextual {
+  height: 52px;
+  margin-left: -1px;
+}
+#OfficeUI header .ribbon .contextual a ul li {
+  margin-right: 4px;
+  height: 100%;
+}
+#OfficeUI header .ribbon .contextual ul li .accent {
+  width: 100%;
+  display: block;
+  height: 4px;
+}
+#OfficeUI header .ribbon .contextual ul li .label {
+  display: block;
+  height: 24px;
+}
+#OfficeUI header .ribbon .contextual ul li .label div {
+  text-align: center;
+  font-size: 0.90em;
+  height: 15px;
+  text-transform: uppercase;
+  margin-top: 3px;
+  width: 100%;
+}
+#OfficeUI header .ribbon .contextual ul li .label div span {
+  padding: 0 6px 0 6px;
+}
+#OfficeUI header .ribbon .contextual ul li .tabs-holder {
+  width: 100%;
+  height: 24px;
+}
+#OfficeUI header .ribbon .contextual ul li .tabs-holder ul {
+  display: table;
+}
+#OfficeUI header .ribbon .contextual ul li .tabs-holder .tab-contextual {
+  display: table-cell;
+  border: 1px solid transparent;
+  height: 23px;
+}
+#OfficeUI header .ribbon .contextual ul li .tabs-holder .tab-contextual span {
+  display: block;
+  padding: 3px 13px 0 12px;
+}
+#OfficeUI header .ribbon .contextual ul li .tab:not(.application).visible-border.active {
+  border-color: #d4d4d4 #d4d4d4 #fff;
+  border-style: solid;
+  border-width: 1px;
+  background-color: #fff;
+}
+#OfficeUI header .ribbon .contextual ul li .tab:not(.application).invisible-border.active {
+  border-color: transparent transparent #fff;
+  border-style: solid;
+  border-width: 1px;
+  background-color: transparent;
+}
+@media screen and (min-width: 497px) {
+  #OfficeUI header .ribbon > ul.tabs {
+    background: url("/Resources/Images/Application/Backgrounds/Circuit.png") no-repeat scroll right top white;
+  }
+}
+#OfficeUI header .ribbon ul.tabs-content {
+  position: relative;
+  background-color: white;
+  border-bottom: 1px solid #d4d4d4;
+  height: 92px;
+  z-index: 70;
+}
+#OfficeUI header .ribbon ul.tabs-content .collapse {
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  height: 17px;
+  padding-bottom: 2px;
+  right: 0;
+  width: 29px;
+}
+#OfficeUI header .ribbon ul.tabs-content ul,
+#OfficeUI header .ribbon ul.tabs-content li {
+  position: absolute;
+  width: 100%;
+  height: 92px;
+  top: 0;
+}
+#OfficeUI header .ribbon ul.tabs-content ul .group,
+#OfficeUI header .ribbon ul.tabs-content li .group {
+  display: inline-block;
+  position: relative;
+  height: 90px;
+  margin-left: 4px;
+  margin-top: 3px;
+  vertical-align: top;
+}
+#OfficeUI header .ribbon ul.tabs-content ul .group .area,
+#OfficeUI header .ribbon ul.tabs-content li .group .area {
+  display: inline-block;
+  vertical-align: top;
+}
+#OfficeUI header .ribbon ul.tabs-content ul .group .area .actions-holder,
+#OfficeUI header .ribbon ul.tabs-content li .group .area .actions-holder {
+  position: relative;
+}
+#OfficeUI header .ribbon ul.tabs-content ul .group .area > div,
+#OfficeUI header .ribbon ul.tabs-content li .group .area > div {
+  vertical-align: top;
+}
+#OfficeUI header .ribbon ul.tabs-content ul .group .area > div .icon,
+#OfficeUI header .ribbon ul.tabs-content li .group .area > div .icon {
+  display: inline-block;
+  height: 66px;
+  margin-right: 0;
+  padding-top: 3px;
+  vertical-align: top;
+}
+#OfficeUI header .ribbon ul.tabs-content ul .group .area > div .icon img,
+#OfficeUI header .ribbon ul.tabs-content li .group .area > div .icon img {
+  padding: 0 5px 0 5px;
+}
+#OfficeUI header .ribbon ul.tabs-content ul .group .area > div .big-icon,
+#OfficeUI header .ribbon ul.tabs-content li .group .area > div .big-icon {
+  text-align: center;
+}
+#OfficeUI header .ribbon ul.tabs-content ul .group .area > div .small-icon,
+#OfficeUI header .ribbon ul.tabs-content li .group .area > div .small-icon {
+  text-align: left;
+  height: 100%;
+  margin-right: 0;
+  padding: 3px 7px 0 0;
+}
+#OfficeUI header .ribbon ul.tabs-content ul .group .area > div .small-icon .label,
+#OfficeUI header .ribbon ul.tabs-content li .group .area > div .small-icon .label {
+  text-align: center;
+  display: inline-block;
+  vertical-align: top;
+}
+#OfficeUI header .ribbon ul.tabs-content ul .group .area > div .small-icon img,
+#OfficeUI header .ribbon ul.tabs-content li .group .area > div .small-icon img {
+  padding: 0 0 0 3px;
+}
+#OfficeUI header .ribbon ul.tabs-content ul .group .area > div .big-icon .label,
+#OfficeUI header .ribbon ul.tabs-content li .group .area > div .big-icon .label {
+  line-height: 15px;
+  padding: 0 3px 0 2px;
+  text-align: center;
+  top: -2px;
+}
+#OfficeUI header .ribbon ul.tabs-content ul .group .area > div .icon .label i,
+#OfficeUI header .ribbon ul.tabs-content li .group .area > div .icon .label i {
+  font-size: 0.7em;
+  padding-top: 4px;
+  vertical-align: top;
+}
+#OfficeUI header .ribbon ul.tabs-content ul .group .area > div input,
+#OfficeUI header .ribbon ul.tabs-content li .group .area > div input {
+  height: 22px;
+  margin-bottom: 4px;
+  margin-top: 0;
+}
+#OfficeUI header .ribbon ul.tabs-content ul .group .area > div input[type=checkbox],
+#OfficeUI header .ribbon ul.tabs-content li .group .area > div input[type=checkbox] {
+  height: 21px;
+  margin-right: 5px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+#OfficeUI header .ribbon ul.tabs-content ul .group .area > div .tooltip,
+#OfficeUI header .ribbon ul.tabs-content li .group .area > div .tooltip {
+  position: fixed;
+  display: none;
+  top: 146px;
+  background-color: #fff;
+  background-image: none, linear-gradient(#c6c6c6, #c6c6c6);
+  background-position: 0 0, 100% 0;
+  background-repeat: no-repeat;
+  background-size: 1px 100%;
+  border: 1px solid #d4d4d4;
+  box-shadow: 3px 3px 3px #e0e0e0;
+  padding: 5px 11px;
+  width: 191px;
+}
+#OfficeUI header .ribbon ul.tabs-content ul .group .area > div .tooltip strong,
+#OfficeUI header .ribbon ul.tabs-content li .group .area > div .tooltip strong {
+  color: #5d5d5d;
+}
+#OfficeUI header .ribbon ul.tabs-content ul .group .area > div .tooltip p,
+#OfficeUI header .ribbon ul.tabs-content li .group .area > div .tooltip p {
+  line-height: 15px;
+  margin: 0;
+  padding: 5px 0;
+}
+#OfficeUI header .ribbon ul.tabs-content ul .group .legend,
+#OfficeUI header .ribbon ul.tabs-content li .group .legend {
+  position: absolute;
+  bottom: 2px;
+  color: #666;
+  font-size: 0.9em;
+  margin-left: -1px;
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+#OfficeUI header .ribbon ul.tabs-content ul .pipe,
+#OfficeUI header .ribbon ul.tabs-content li .pipe {
+  display: inline-block;
+  border-right: 1px solid #d4d4d4;
+  height: 84px;
+  margin-left: 1px;
+  margin-top: 4px;
+  vertical-align: top;
+}
+#OfficeUI header .application-contents {
+  position: fixed;
+  width: 100%;
+  background-color: white;
+  height: 100%;
+  top: 0;
+  z-index: 999;
+}
+#OfficeUI header .application-contents .title {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  z-index: 200;
+}
+#OfficeUI header .application-contents #navigation {
+  float: left;
+  color: #fff;
+  height: 100%;
+  width: 135px;
+}
+#OfficeUI header .application-contents #navigation .back-arrow {
+  background-repeat: no-repeat;
+  height: 35px;
+  margin-left: 23px;
+  margin-top: 19px;
+  width: 35px;
+}
+#OfficeUI header .application-contents #navigation ul {
+  margin-top: 15px;
+}
+#OfficeUI header .application-contents #navigation ul li {
+  line-height: 16px;
+  padding: 11px 10px 11px 26px;
+  vertical-align: middle;
+}
+#OfficeUI header .application-contents #navigation ul li.seperator {
+  margin-bottom: -1px;
+}
+#OfficeUI header .application-contents #navigation ul li .seperator {
+  border-bottom: 1px solid #fff;
+}
+#OfficeUI header .application-contents #content {
+  position: relative;
+  background: url('/Resources/Images/Application/Backgrounds/Circuit.png') no-repeat right top;
+  overflow-y: scroll;
+  height: 100%;
+}
+#OfficeUI header .application-contents #content .top {
+  position: fixed;
+  background-color: white;
+  height: 50px;
+  width: 100%;
+  z-index: -1;
+}
+#OfficeUI header .application-contents #content h1 {
+  font-size: 3.2em;
+  font-weight: 100;
+  margin: 25px 0 25px 0;
+}
+#OfficeUI header .application-contents #content .content-area {
+  position: absolute;
+  margin-left: 40px;
+  margin-top: 34px;
+  z-index: -10;
+}
+/* ------------------------------------------------*/
+/* ---------->>> Animations styling. <<<-----------*/
+/* ------------------------------------------------*/
+/*
+* @remarks
+*
+* Various sections of the website are animated. However, in the OfficeUI suite, not everything can be accomplished
+* using plain CSS3 transitions. Therefore, aside from the animations which are stored here, we also include some
+* jQuery animations.
+*/
+/* Hide and show animation for a contextual tab.
+* When a contextual tab element is shown, it takes 0.2 seconds. Hiding takes place immediately.
+*/
+.context-group.ng-hide-add.ng-hide-add-active {
+  -webkit-transition: 0.0s linear all;
+  transition: 0.0s linear all;
+}
+.context-group.ng-hide-remove.ng-hide-remove-active {
+  -webkit-transition: 0.2s linear all;
+  transition: 0.2s linear all;
+}
+.context-group {
+  opacity: 1;
+}
+.context-group.ng-hide {
+  opacity: 0;
+}
+/* Hide and show the contents of the ribbon (to allow us to collapse the ribbon).
+* When hiding the ribbon, it takes 0.15 seconds, showing the ribbon takes place immediately.
+*/
+header .tabs-content {
+  opacity: 1;
+  top: 0;
+}
+header .animate-ribbon-hiding {
+  -webkit-transition: 0.15s linear all;
+  transition: 0.15s linear all;
+  top: -93px;
+  opacity: 0;
+}
+header .no-animate-ribbon-hiding {
+  -webkit-transition: 0.0s linear all;
+  transition: 0.0s linear all;
+  top: -93px;
+  opacity: 0;
+}
+header .animate-ribbon-showing {
+  -webkit-transition: 0.15s linear all;
+  transition: 0.15s linear all;
+  top: 0;
+  opacity: 1;
+}
+header .application-contents.ng-hide-add,
+header .application-contents.ng-hide-remove {
+  -webkit-transition: 0.05s linear all;
+  transition: 0.05s linear all;
+}
+header .application-contents.ng-hide-add {
+  transition-delay: 0.05s;
+}
+header .application-contents {
+  opacity: 1;
+}
+header .application-contents.ng-hide {
+  opacity: 0;
+}
+header .application-contents #navigation.ng-hide-add,
+header .application-contents #navigation.ng-hide-remove {
+  -webkit-transition: 0.05s linear all;
+  transition: 0.05s linear all;
+}
+header .application-contents #navigation {
+  margin-left: 0;
+}
+header .application-contents #navigation.ng-hide {
+  margin-left: -135px;
+}
+header .application-contents #content.ng-hide-add,
+header .application-contents #navigation.ng-hide-remove {
+  -webkit-transition: 0.05s linear all;
+  transition: 0.05s linear all;
+}
+header .application-contents #content {
+  margin-left: 135px;
+}
+header .application-contents #content.ng-hide {
+  margin-left: 0;
+}
+header .content-area.ng-hide-add,
+header .content-area.ng-hide-remove {
+  -webkit-transition: 0.15s linear all;
+  transition: 0.15s linear all;
+}
+header .content-area {
+  opacity: 1;
+}
+header .content-area.ng-hide {
+  opacity: 0;
+}
+header {
+  z-index: 100;
+}
+body > .content {
+  -webkit-transition: 0.15s linear all;
+  transition: 0.15s linear all;
+  font-family: 'Segoe UI';
+  font-size: 0.75em;
+  padding-left: 5px;
+  position: relative;
+  top: 150px;
+  z-index: 1;
+}
+body > .content.animate-ribbon-hiding {
+  -webkit-transition: 0.15s linear all;
+  transition: 0.15s linear all;
+  top: 57px;
+}
+body > .content.no-animate-ribbon-hiding {
+  -webkit-transition: 0.15s linear all;
+  transition: 0.15s linear all;
+  top: 57px;
+}
+body > .content.animate-ribbon-showing {
+  -webkit-transition: 0.15s linear all;
+  transition: 0.15s linear all;
+  top: 57px;
+}

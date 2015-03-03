@@ -1,0 +1,13 @@
+/* Import statements. */
+/* General styling. */
+#OfficeUI .application-icons.icon img:hover:not(.disabled):not(:first-child),
+#OfficeUI .icon:not(.disabled):not(.active):not(.no-hover):hover {
+  background-color: #fadcdd;
+}
+#OfficeUI .icon:not(.disabled):not(.active):active {
+  background-color: #f7a8ab;
+}
+#OfficeUI input:not(.no-hover):hover,
+#OfficeUI input:focus {
+  border-color: #f7a8ab;
+}
