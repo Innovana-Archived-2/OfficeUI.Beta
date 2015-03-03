@@ -94,7 +94,7 @@
                     {
                       "Label": "Task",
                       "Resource": "/Resources/Images/Ribbon/Tabs/Home/Menu/Task.png"
-                    }
+                    },
                     {
                       "Label": "E-mail message using",
                       "MenuItems": [
