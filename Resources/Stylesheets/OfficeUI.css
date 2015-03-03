@@ -194,7 +194,7 @@
   cursor: default;
   color: #444;
 }
-#OfficeUI header .ribbon ul {
+#OfficeUI header .ribbon ul.tabs {
   padding: 0;
   margin: 0;
   position: relative;
@@ -258,9 +258,10 @@
   height: 52px;
   margin-left: -1px;
 }
-#OfficeUI header .ribbon .contextual a ul li {
+#OfficeUI header .ribbon .contextual ul li {
   margin-right: 4px;
   height: 100%;
+  margin-right: 5px;
 }
 #OfficeUI header .ribbon .contextual ul li .accent {
   width: 100%;
@@ -288,6 +289,7 @@
 }
 #OfficeUI header .ribbon .contextual ul li .tabs-holder ul {
   display: table;
+  width: 100%;
 }
 #OfficeUI header .ribbon .contextual ul li .tabs-holder .tab-contextual {
   display: table-cell;
@@ -331,15 +333,15 @@
   right: 0;
   width: 29px;
 }
-#OfficeUI header .ribbon ul.tabs-content ul,
-#OfficeUI header .ribbon ul.tabs-content li {
+#OfficeUI header .ribbon ul.tabs-content > ul,
+#OfficeUI header .ribbon ul.tabs-content > li {
   position: absolute;
   width: 100%;
   height: 92px;
   top: 0;
 }
-#OfficeUI header .ribbon ul.tabs-content ul .group,
-#OfficeUI header .ribbon ul.tabs-content li .group {
+#OfficeUI header .ribbon ul.tabs-content > ul .group,
+#OfficeUI header .ribbon ul.tabs-content > li .group {
   display: inline-block;
   position: relative;
   height: 90px;
@@ -347,80 +349,80 @@
   margin-top: 3px;
   vertical-align: top;
 }
-#OfficeUI header .ribbon ul.tabs-content ul .group .area,
-#OfficeUI header .ribbon ul.tabs-content li .group .area {
+#OfficeUI header .ribbon ul.tabs-content > ul .group .area,
+#OfficeUI header .ribbon ul.tabs-content > li .group .area {
   display: inline-block;
   vertical-align: top;
 }
-#OfficeUI header .ribbon ul.tabs-content ul .group .area .actions-holder,
-#OfficeUI header .ribbon ul.tabs-content li .group .area .actions-holder {
+#OfficeUI header .ribbon ul.tabs-content > ul .group .area .actions-holder,
+#OfficeUI header .ribbon ul.tabs-content > li .group .area .actions-holder {
   position: relative;
 }
-#OfficeUI header .ribbon ul.tabs-content ul .group .area > div,
-#OfficeUI header .ribbon ul.tabs-content li .group .area > div {
+#OfficeUI header .ribbon ul.tabs-content > ul .group .area > div,
+#OfficeUI header .ribbon ul.tabs-content > li .group .area > div {
   vertical-align: top;
 }
-#OfficeUI header .ribbon ul.tabs-content ul .group .area > div .icon,
-#OfficeUI header .ribbon ul.tabs-content li .group .area > div .icon {
+#OfficeUI header .ribbon ul.tabs-content > ul .group .area > div .icon,
+#OfficeUI header .ribbon ul.tabs-content > li .group .area > div .icon {
   display: inline-block;
   height: 66px;
   margin-right: 0;
   padding-top: 3px;
   vertical-align: top;
 }
-#OfficeUI header .ribbon ul.tabs-content ul .group .area > div .icon img,
-#OfficeUI header .ribbon ul.tabs-content li .group .area > div .icon img {
+#OfficeUI header .ribbon ul.tabs-content > ul .group .area > div .icon img,
+#OfficeUI header .ribbon ul.tabs-content > li .group .area > div .icon img {
   padding: 0 5px 0 5px;
 }
-#OfficeUI header .ribbon ul.tabs-content ul .group .area > div .big-icon,
-#OfficeUI header .ribbon ul.tabs-content li .group .area > div .big-icon {
+#OfficeUI header .ribbon ul.tabs-content > ul .group .area > div .big-icon,
+#OfficeUI header .ribbon ul.tabs-content > li .group .area > div .big-icon {
   text-align: center;
 }
-#OfficeUI header .ribbon ul.tabs-content ul .group .area > div .small-icon,
-#OfficeUI header .ribbon ul.tabs-content li .group .area > div .small-icon {
+#OfficeUI header .ribbon ul.tabs-content > ul .group .area > div .small-icon,
+#OfficeUI header .ribbon ul.tabs-content > li .group .area > div .small-icon {
   text-align: left;
   height: 100%;
   margin-right: 0;
   padding: 3px 7px 0 0;
 }
-#OfficeUI header .ribbon ul.tabs-content ul .group .area > div .small-icon .label,
-#OfficeUI header .ribbon ul.tabs-content li .group .area > div .small-icon .label {
+#OfficeUI header .ribbon ul.tabs-content > ul .group .area > div .small-icon .label,
+#OfficeUI header .ribbon ul.tabs-content > li .group .area > div .small-icon .label {
   text-align: center;
   display: inline-block;
   vertical-align: top;
 }
-#OfficeUI header .ribbon ul.tabs-content ul .group .area > div .small-icon img,
-#OfficeUI header .ribbon ul.tabs-content li .group .area > div .small-icon img {
+#OfficeUI header .ribbon ul.tabs-content > ul .group .area > div .small-icon img,
+#OfficeUI header .ribbon ul.tabs-content > li .group .area > div .small-icon img {
   padding: 0 0 0 3px;
 }
-#OfficeUI header .ribbon ul.tabs-content ul .group .area > div .big-icon .label,
-#OfficeUI header .ribbon ul.tabs-content li .group .area > div .big-icon .label {
+#OfficeUI header .ribbon ul.tabs-content > ul .group .area > div .big-icon .label,
+#OfficeUI header .ribbon ul.tabs-content > li .group .area > div .big-icon .label {
   line-height: 15px;
   padding: 0 3px 0 2px;
   text-align: center;
   top: -2px;
 }
-#OfficeUI header .ribbon ul.tabs-content ul .group .area > div .icon .label i,
-#OfficeUI header .ribbon ul.tabs-content li .group .area > div .icon .label i {
+#OfficeUI header .ribbon ul.tabs-content > ul .group .area > div .icon .label i,
+#OfficeUI header .ribbon ul.tabs-content > li .group .area > div .icon .label i {
   font-size: 0.7em;
   padding-top: 4px;
   vertical-align: top;
 }
-#OfficeUI header .ribbon ul.tabs-content ul .group .area > div input,
-#OfficeUI header .ribbon ul.tabs-content li .group .area > div input {
+#OfficeUI header .ribbon ul.tabs-content > ul .group .area > div input,
+#OfficeUI header .ribbon ul.tabs-content > li .group .area > div input {
   height: 22px;
   margin-bottom: 4px;
   margin-top: 0;
 }
-#OfficeUI header .ribbon ul.tabs-content ul .group .area > div input[type=checkbox],
-#OfficeUI header .ribbon ul.tabs-content li .group .area > div input[type=checkbox] {
+#OfficeUI header .ribbon ul.tabs-content > ul .group .area > div input[type=checkbox],
+#OfficeUI header .ribbon ul.tabs-content > li .group .area > div input[type=checkbox] {
   height: 21px;
   margin-right: 5px;
   margin-left: 4px;
   vertical-align: middle;
 }
-#OfficeUI header .ribbon ul.tabs-content ul .group .area > div .tooltip,
-#OfficeUI header .ribbon ul.tabs-content li .group .area > div .tooltip {
+#OfficeUI header .ribbon ul.tabs-content > ul .group .area > div .tooltip,
+#OfficeUI header .ribbon ul.tabs-content > li .group .area > div .tooltip {
   position: fixed;
   display: none;
   top: 146px;
@@ -434,18 +436,18 @@
   padding: 5px 11px;
   width: 191px;
 }
-#OfficeUI header .ribbon ul.tabs-content ul .group .area > div .tooltip strong,
-#OfficeUI header .ribbon ul.tabs-content li .group .area > div .tooltip strong {
+#OfficeUI header .ribbon ul.tabs-content > ul .group .area > div .tooltip strong,
+#OfficeUI header .ribbon ul.tabs-content > li .group .area > div .tooltip strong {
   color: #5d5d5d;
 }
-#OfficeUI header .ribbon ul.tabs-content ul .group .area > div .tooltip p,
-#OfficeUI header .ribbon ul.tabs-content li .group .area > div .tooltip p {
+#OfficeUI header .ribbon ul.tabs-content > ul .group .area > div .tooltip p,
+#OfficeUI header .ribbon ul.tabs-content > li .group .area > div .tooltip p {
   line-height: 15px;
   margin: 0;
   padding: 5px 0;
 }
-#OfficeUI header .ribbon ul.tabs-content ul .group .legend,
-#OfficeUI header .ribbon ul.tabs-content li .group .legend {
+#OfficeUI header .ribbon ul.tabs-content > ul .group .legend,
+#OfficeUI header .ribbon ul.tabs-content > li .group .legend {
   position: absolute;
   bottom: 2px;
   color: #666;
@@ -457,8 +459,8 @@
   white-space: nowrap;
   width: 100%;
 }
-#OfficeUI header .ribbon ul.tabs-content ul .pipe,
-#OfficeUI header .ribbon ul.tabs-content li .pipe {
+#OfficeUI header .ribbon ul.tabs-content > ul .pipe,
+#OfficeUI header .ribbon ul.tabs-content > li .pipe {
   display: inline-block;
   border-right: 1px solid #d4d4d4;
   height: 84px;
@@ -530,6 +532,56 @@
   margin-left: 40px;
   margin-top: 34px;
   z-index: -10;
+}
+/* Menu styling. */
+#OfficeUI header .ribbon ul.tabs-content ul .menu {
+  position: absolute;
+  border-bottom: 1px solid #c6c6c6;
+  background-color: #ffffff;
+  background-image: linear-gradient(#c6c6c6, #c6c6c6), linear-gradient(#c6c6c6, #c6c6c6);
+  background-position: 0 0px, 100% 0;
+  background-repeat: no-repeat;
+  background-size: 1px 100%;
+  border-top: 1px solid #c6c6c6;
+  box-shadow: 3px 3px 3px #e0e0e0;
+  display: none;
+  padding: 1px 2px;
+  z-index: 100;
+}
+#OfficeUI header .ribbon ul.tabs-content ul .menu ul {
+  position: relative;
+  height: 100%;
+  list-style: none;
+  white-space: nowrap;
+}
+#OfficeUI header .ribbon ul.tabs-content ul .menu ul li {
+  position: relative;
+  height: 23px;
+  line-height: 23px;
+  list-style: outside none none;
+  padding-right: 20px;
+  padding-left: 5px;
+  text-align: left;
+  vertical-align: middle;
+  width: auto;
+}
+#OfficeUI header .ribbon ul.tabs-content ul .menu ul li .imageHolder {
+  display: inline-block;
+  height: 16px;
+  padding-top: 4px;
+  text-align: center;
+  width: 16px;
+}
+#OfficeUI header .ribbon ul.tabs-content ul .menu ul li .label {
+  display: inline;
+  height: 23px;
+  line-height: 23px;
+  vertical-align: top;
+}
+#OfficeUI header .ribbon ul.tabs-content ul .menu.showing {
+  -webkit-transition: 3.0s linear all;
+  transition: 3.0s linear all;
+  max-height: 200px;
 }
 /* ------------------------------------------------*/
 /* ---------->>> Animations styling. <<<-----------*/

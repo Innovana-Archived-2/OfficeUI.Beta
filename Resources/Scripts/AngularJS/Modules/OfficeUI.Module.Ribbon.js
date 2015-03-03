@@ -344,7 +344,43 @@ OfficeUIRibbon.factory('OfficeUIRibbonService', function() {
             if (item.length == 1) {
                 item[0].Disabled = "False";
             }
-        }
+        },
+
+        /**
+         * @ngdoc Function
+         * @name disableMenuEntry
+         *
+         * @description
+         * Disable a menu entry based on the id of the action.
+         *
+         * @param action    The id of the menu entry to disable.
+         */
+        disableMenuEntry: function(action) {
+            var item =  JSPath.apply('.Tabs.Groups.Areas.Actions.MenuItems{.Id == "' + action + '"}', serviceInstance);
+
+            // If the item has been found, then we can disable it.
+            if (item.length == 1) {
+                item[0].Disabled = "True";
+            }
+        },
+
+        /**
+         * @ngdoc Function
+         * @name disableMenuEntry
+         *
+         * @description
+         * Enable a menu entry based on the id of the action.
+         *
+         * @param action    The id of the menu entry to disable.
+         */
+        enableMenuEntry: function(action) {
+            var item =  JSPath.apply('.Tabs.Groups.Areas.Actions.MenuItems{.Id == "' + action + '"}', serviceInstance);
+
+            // If the item has been found, then we can disable it.
+            if (item.length == 1) {
+                item[0].Disabled = "False";
+            }
+        },
     };
 });
 

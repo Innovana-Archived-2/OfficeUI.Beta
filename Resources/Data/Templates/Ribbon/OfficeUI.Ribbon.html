@@ -53,22 +53,19 @@
                                             <div data-ng-bind-html="action.Tooltip"></div>
                                         </div>
 
-                                        <!-- ToDo: This is the menu and should be cleaned up. Also, it should be placed in the contextual tabs. However, rendering is now being done through a Controller, where this should be a directive because I'm manipulating the DOM here (don's show the tooltip anymore when clicked on it). -->
+                                        <!-- Defines the menu. -->
                                         <div class="menu" data-ng-show="isMenuActive(action.Id)" data-ng-if="action.MenuItems">
                                             <ul>
-                                                <li data-ng-repeat="menuItem in action.MenuItems">
-                                                    <div data-ng-show="!menuItem.Seperator">
-                                                        <div class="imageHolder">
-                                                            <img data-ng-if="menuItem.Resource" data-ng-src="{{menuItem.Resource}}" alt="{{menuItem.Label}}"/>
-                                                        </div>
-                                                        <div class="label">
-                                                            {{menuItem.Label}}
-                                                        </div>
+                                                <li data-ng-repeat="menuItem in action.MenuItems" id="{{menuItem.Id}}" data-ng-class="{'disabled': menuItem.Disabled == 'True'}" data-dynamic-event-handling="menuItem.Id">
+                                                    <div class="imageHolder">
+                                                        <img data-ng-if="menuItem.Resource" data-ng-src="{{menuItem.Resource}}" alt="{{menuItem.Label}}"/>
+                                                    </div>
+                                                    <div class="label">
+                                                        {{menuItem.Label}}
                                                     </div>
                                                 </li>
                                             </ul>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
@@ -116,6 +113,20 @@
 
                                                 <div class="tooltip" data-ng-if="action.Tooltip" data-ng-show="!isMenuActive(action.Id)">
                                                     <div data-ng-bind-html="action.Tooltip"></div>
+                                                </div>
+
+                                                <!-- Defines the menu. -->
+                                                <div class="menu" data-ng-show="isMenuActive(action.Id)" data-ng-if="action.MenuItems">
+                                                    <ul>
+                                                        <li data-ng-repeat="menuItem in action.MenuItems" id="{{menuItem.Id}}" data-ng-class="{'disabled': menuItem.Disabled == 'True'}" data-dynamic-event-handling="menuItem.Id">
+                                                            <div class="imageHolder">
+                                                                <img data-ng-if="menuItem.Resource" data-ng-src="{{menuItem.Resource}}" alt="{{menuItem.Label}}"/>
+                                                            </div>
+                                                            <div class="label">
+                                                                {{menuItem.Label}}
+                                                            </div>
+                                                        </li>
+                                                    </ul>
                                                 </div>
                                             </div>
                                         </div>

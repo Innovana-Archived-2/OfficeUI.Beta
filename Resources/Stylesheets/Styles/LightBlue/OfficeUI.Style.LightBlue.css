@@ -60,51 +60,7 @@
 }
 /* Import statements. */
 /* Menu styling. */
-#OfficeUI header .ribbon ul.tabs-content ul .menu {
-  background-color: #ffffff;
-  background-image: linear-gradient(#c6c6c6, #c6c6c6), linear-gradient(#c6c6c6, #c6c6c6);
-  background-position: 0 0px, 100% 0;
-  background-repeat: no-repeat;
-  background-size: 1px 100%;
-  border-bottom: 1px solid #c6c6c6;
-  border-top: 1px solid #c6c6c6;
-  box-shadow: 3px 3px 3px #e0e0e0;
-  padding: 1px 2px;
-  position: absolute;
-  z-index: 100;
-}
-#OfficeUI header .ribbon ul.tabs-content ul .menu ul {
-  position: static;
-  height: auto;
-  list-style: none;
-  white-space: nowrap;
-}
-#OfficeUI header .ribbon ul.tabs-content ul .menu ul li {
-  position: static;
-  height: auto;
-  padding-right: 20px;
-  height: 23px;
-  line-height: 23px;
-  list-style: outside none none;
-  padding-left: 5px;
-  text-align: left;
-  vertical-align: middle;
-  width: auto;
-}
 #OfficeUI header .ribbon ul.tabs-content ul .menu ul li:hover {
   background-color: #cde6f7;
-}
-#OfficeUI header .ribbon ul.tabs-content ul .menu ul li .imageHolder {
-  height: 16px;
-  padding-top: 4px;
-  text-align: center;
-  width: 16px;
-  display: inline-block;
-}
-#OfficeUI header .ribbon ul.tabs-content ul .menu ul li .label {
-  height: 23px;
-  line-height: 23px;
-  vertical-align: top;
-  display: inline-block;
 }
 /* Section: Variables. */

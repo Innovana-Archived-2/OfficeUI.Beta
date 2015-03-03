@@ -237,6 +237,32 @@ OfficeUI.controller('OfficeUI', ['$scope', '$http', 'OfficeUIRibbonService', fun
 
     /**
      * @ngdoc Function
+     * @name disableMenuEntry
+     *
+     * @description
+     * Disable a menu entry based on the id of the action.
+     *
+     * @param action    The id of the menu entry to disable.
+     */
+    $scope.disableMenuEntry = function(action) {
+        OfficeUIRibbonService.disableMenuEntry(action);
+    }
+
+    /**
+     * @ngdoc Function
+     * @name enableMenuEntry
+     *
+     * @description
+     * Enable a menu entry based on the id of the action.
+     *
+     * @param action    The id of the menu entry to disable.
+     */
+    $scope.enableMenuEntry = function(action) {
+        OfficeUIRibbonService.enableMenuEntry(action);
+    }
+
+    /**
+     * @ngdoc Function
      * @name enableAction
      *
      * @description

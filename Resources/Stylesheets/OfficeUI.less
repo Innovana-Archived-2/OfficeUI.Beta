@@ -95,7 +95,7 @@
     .ribbon { .positionRelative;
       .title { z-index: 80; } // Overwrite the z-index of the title property here. This is to make sure that the title sits on top of the ribbon.
       a, a:hover, a:active { .cursorDefault; color: #444; }
-      ul { .noPadding; .noMargin; .positionRelative; .width100; z-index: 75; }
+      ul.tabs { .noPadding; .noMargin; .positionRelative; .width100; z-index: 75; }
       ul.tabs { height: 52px; }
       ul.tabs.visible-border { border-bottom: 1px solid @grayBorderColor; }
       ul.tabs.invisible-border { border-bottom: 1px solid transparent; }
@@ -113,15 +113,15 @@
       ul.tabs li .tab:not(.application).invisible-border.active { border-color: transparent transparent #fff; border-style: solid; border-width: 1px; background-color: #fff; }
 
       /* Defines the style for the contextual tabs and groups. */
-      .contextual { height: 52px; margin-left: -1px; a
+      .contextual { height: 52px; margin-left: -1px;
 
-        ul li { margin-right: 4px; height: 100%; }
+        ul li { margin-right: 4px; height: 100%; margin-right: 5px; }
         ul li .accent { .width100; display: block; height: 4px; }
         ul li .label { .displayBlock; height: 24px; }
         ul li .label div { .alignCenter; font-size: 0.90em; height: 15px; text-transform: uppercase; margin-top: 3px; width: 100%; }
         ul li .label div span { padding: 0 6px 0 6px; }
         ul li .tabs-holder { .width100; height: 24px; }
-        ul li .tabs-holder ul { .displayTable; }
+        ul li .tabs-holder ul { .displayTable; width: 100%; }
         ul li .tabs-holder .tab-contextual { .displayTableCell; border: 1px solid transparent; height: 23px; }
         ul li .tabs-holder .tab-contextual span { .displayBlock; padding: 3px 13px 0 12px; }
         ul li .tab:not(.application).visible-border.active { border-color: #d4d4d4 #d4d4d4 #fff; border-style: solid; border-width: 1px; background-color: #fff; }
@@ -137,7 +137,7 @@
       ul.tabs-content { .positionRelative; background-color: white; border-bottom: 1px solid @grayBorderColor; height: 92px; z-index: 70;
 
         .collapse { .alignCenter; .positionAbsolute; bottom: 0; height: 17px; padding-bottom: 2px; right: 0; width: 29px; }
-        ul, li { .positionAbsolute; .width100; height: 92px; top: 0;
+        > ul, > li { .positionAbsolute; .width100; height: 92px; top: 0;
 
           .group { .displayInlineBlock; .positionRelative; height: 90px; margin-left: 4px; margin-top: 3px; vertical-align: top; }
           .group .area { .displayInlineBlock; vertical-align: top; }
@@ -185,7 +185,14 @@
   }
 }
 
+/* Menu styling. */
+#OfficeUI header .ribbon ul.tabs-content ul .menu { .positionAbsolute; border-bottom: 1px solid #c6c6c6; background-color: #ffffff; background-image: linear-gradient(#c6c6c6, #c6c6c6), linear-gradient(#c6c6c6, #c6c6c6); background-position: 0 0px, 100% 0; background-repeat: no-repeat; background-size: 1px 100%; border-top: 1px solid #c6c6c6; box-shadow: 3px 3px 3px #e0e0e0; display: none; padding: 1px 2px; z-index: 100; }
+#OfficeUI header .ribbon ul.tabs-content ul .menu ul { .positionRelative; height: 100%; list-style: none; white-space: nowrap; }
+#OfficeUI header .ribbon ul.tabs-content ul .menu ul li { .positionRelative; height: 23px; line-height: 23px; list-style: outside none none; padding-right: 20px; padding-left: 5px; text-align: left; vertical-align: middle; width: auto; }
+#OfficeUI header .ribbon ul.tabs-content ul .menu ul li .imageHolder { .displayInlineBlock; height: 16px; padding-top: 4px; text-align: center; width: 16px; }
+#OfficeUI header .ribbon ul.tabs-content ul .menu ul li .label { .displayInline; height: 23px; line-height: 23px; vertical-align: top; }
 
+#OfficeUI header .ribbon ul.tabs-content ul .menu.showing { -webkit-transition: 3.0s linear all; transition: 3.0s linear all; max-height: 200px; }
 /* ------------------------------------------------*/
 /* ---------->>> Animations styling. <<<-----------*/
 /* ------------------------------------------------*/

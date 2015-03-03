@@ -76,6 +76,7 @@
                   "Type": "bIcon",
                   "MenuItems": [
                     {
+                      "Id": "menuEmailMessage",
                       "Label": "E-mail Message",
                       "Resource": "/Resources/Images/Ribbon/Tabs/Home/Menu/EmailMessage.png"
                     },

@@ -16,7 +16,6 @@ OfficeUI.directive('dynamicEventHandling', function() {
         replace: 'true',
         link: function(scope, element, attributes) {
             var parameter = scope.$eval(attributes['dynamicEventHandling']);
-
             var registeredEvent = $(this).OfficeUI.searchEvent(parameter);
 
             if (registeredEvent != null) {

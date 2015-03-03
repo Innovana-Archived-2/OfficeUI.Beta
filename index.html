@@ -10,6 +10,7 @@
     <script src="/Resources/Scripts/External/angular-animate.min.js"></script>
     <script src="/Resources/Scripts/External/angular-sanitize.min.js"></script>
     <script src="/Resources/Scripts/External/jQuery-2.1.3.min.js"></script>
+    <script src="/Resources/Scripts/External/jQueryUI.min.js"></script>
     <script src="/Resources/Scripts/External/JSPath.min.js"></script>
     <script src="/Resources/Scripts/OfficeUI.min.js"></script>
     <script src="/Resources/Scripts/OfficeUI.ThemeManager.min.js"></script>
@@ -30,6 +31,7 @@
     <script src="/Resources/Scripts/AngularJS/Filters/OfficeUI.Filter.ActionLegend.min.js"></script>
     <script src="/Resources/Scripts/AngularJS/Directives/OfficeUI/OfficeUI.Directive.Application.min.js"></script>
     <script src="/Resources/Scripts/AngularJS/Directives/OfficeUI/Ribbon/OfficeUI.Directive.Ribbon.min.js"></script>
+    <script src="/Resources/Scripts/AngularJS/Directives/OfficeUI/Ribbon/OfficeUI.Directive.Ribbon.Menu.js"></script>
     <script src="/Resources/Scripts/AngularJS/Directives/OfficeUI/Ribbon/Components/OfficeUI.Directive.Ribbon.Tabs.min.js"></script>
     <script src="/Resources/Scripts/AngularJS/Directives/OfficeUI/Ribbon/Components/OfficeUI.Directive.Ribbon.Contextual.Groups.min.js"></script>
     <script src="/Resources/Scripts/AngularJS/Directives/OfficeUI/Ribbon/Components/OfficeUI.Directive.Ribbon.Contextual.Tabs.min.js"></script>
@@ -77,6 +79,9 @@
         <a href="#" data-ng-click="disableAction('icoNewItems')" style="padding-right: 40px;" data-stop-propagation="click">Disable action 'New Items'</a>
         <a href="#" data-ng-click="enableAction('icoNewItems')" style="padding-right: 40px;" data-stop-propagation="click">Enable action 'New Items'</a>
         <br/><br/>
+        <h4>Menu items</h4>
+        <a href="#" data-ng-click="disableMenuEntry('menuEmailMessage')" style="padding-right: 40px;" data-stop-propagation="click">Disable action 'Menu (Email Message)'</a>
+        <a href="#" data-ng-click="enableMenuEntry('menuEmailMessage')" style="padding-right: 40px;" data-stop-propagation="click">Enable action 'Menu (Email Message)'</a>
     </div>
 
     <!-- Provides some functions to configure the OfficeUI application. -->
