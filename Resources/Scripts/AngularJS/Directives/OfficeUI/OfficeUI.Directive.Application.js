@@ -12,6 +12,6 @@ OfficeUI.directive('officeuiApplicationTitle', function () {
     return {
         restrict: 'AE',
         replace: true,
-        templateUrl: '/OfficeUI.Beta/Resources/Data/Templates/OfficeUI.application.html'
+        templateUrl: '/Resources/Data/Templates/OfficeUI.application.html'
     }
 })

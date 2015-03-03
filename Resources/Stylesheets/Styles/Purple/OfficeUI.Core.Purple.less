@@ -2,6 +2,6 @@
 @import (reference) 'OfficeUI.Style.Purple.less';
 
 /* General styling. */
-#OfficeUI .application-icons.icon img:hover:not(.disabled):not(:first-child), #OfficeUI .icon:not(.disabled):not(.active):hover  { background-color: @iconHoverColor; }
-#OfficeUI .icon:not(.disabled):active { background-color: @activeIconColor; }
-#OfficeUI input:hover, #OfficeUI input:focus { border-color: @activeIconColor; }
+#OfficeUI .application-icons.icon img:hover:not(.disabled):not(:first-child), #OfficeUI .icon:not(.disabled):not(.active):not(.no-hover):hover { background-color: @iconHoverColor; }
+#OfficeUI .icon:not(.disabled):not(.active):active { background-color: @activeIconColor; }
+#OfficeUI input:not(.no-hover):hover, #OfficeUI input:focus { border-color: @activeIconColor; }

@@ -187,20 +187,35 @@ OfficeUIRibbon.controller('OfficeUIRibbon', ['$scope', '$http', 'OfficeUIRibbonS
     }
 
     /**
+     * @ngdoc Function
+     * @name isMenuOpened
+     *
+     * @description
+     * Checks if any menu item is being opened.
+     *
+     * @returns {boolean}   True if any menu is active, false otherwise.
+     */
+    $scope.isMenuOpened = function() {
+        return $scope.OfficeUIRibbon.activeMenu != null;
+    }
+
+    /**
      * @ngdoc function
      * @name defaultActionClick
      *
      * @description
      * This function is the default action which is executed when you click on an action.
      *
-     * @param action        The id of the action for which this method is being called.
+     * @param action        The action for which this method is being called.
      */
     $scope.defaultActionClick = function(action) {
         // Make sure that the tooltip doesn't show anymore when you've clicked on an item.
         clearTimeout($.fn.OfficeUI.waitHandleShowTooltip);
 
-        if ($scope.OfficeUIRibbon.activeMenu == action) { $scope.OfficeUIRibbon.activeMenu = null; }
-        else { $scope.OfficeUIRibbon.activeMenu = action; }
+        if (action.MenuItems) {
+            if ($scope.OfficeUIRibbon.activeMenu == action.Id) { $scope.OfficeUIRibbon.activeMenu = null; }
+            else { $scope.OfficeUIRibbon.activeMenu = action.Id; }
+        } else { $scope.OfficeUIRibbon.activeMenu = null; }
     }
 
     /**
