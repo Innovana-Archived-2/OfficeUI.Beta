@@ -1,10 +1,13 @@
 /* Import statements. */
 @import (reference) 'OfficeUI.Style.Green.less';
 
-/* General styling. */
-#OfficeUI .application-contents #navigation { background-color: @navigationDefaultColor; }
-#OfficeUI .application-contents #navigation ul li:not(.seperator).active { background-color: @navigationActiveElement; }
-#OfficeUI .application-contents #navigation ul li:not(.seperator):hover { background-color: @navigationElementHoverColor; }
-#OfficeUI .application-contents #navigation ul li .seperator { border-color: @navigationActiveElement !important; }
-#OfficeUI .application-contents #navigation .back-arrow { background-image: url('/Resources/Images/Ribbon/ApplicationMenu/NavigationArrow-Green.png'); }
-#OfficeUI .application-contents #navigation .back-arrow:hover { background-image: url('/Resources/Images/Ribbon/ApplicationMenu/NavigationArrow-Green_hover.png'); }
+/* General styling for the OfficeUI Ribbon Application Menu.
+ * Remarks: All the elements which are being styled are wrapped inside an #OfficeUI key selector.
+ * This is because we don't want to affect elements which are on the page, which aren't being placed in our #OfficeUI container.
+ */
+#OfficeUI #navigation-application-menu { background-color: @navigationDefaultColor; }
+#OfficeUI #navigation-application-menu li:not(.seperator).active { background-color: @navigationActiveElement; }
+#OfficeUI #navigation-application-menu li:not(.seperator):hover { background-color: @navigationElementHoverColor; }
+#OfficeUI #navigation-application-menu li .seperator { background-color: @navigationActiveElement; }
+#OfficeUI #navigation-application-menu .back-arrow { background-image: url(@applicationMenuBackImage); }
+#OfficeUI #navigation-application-menu .back-arrow:hover { background-image: url(@applicationMenuBackImageHover); }

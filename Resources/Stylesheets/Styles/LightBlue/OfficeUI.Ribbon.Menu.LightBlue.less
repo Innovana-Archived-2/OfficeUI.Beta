@@ -1,5 +1,8 @@
 /* Import statements. */
 @import (reference) 'OfficeUI.Style.LightBlue.less';
 
-/* Menu styling. */
-#OfficeUI header .ribbon ul.tabs-content ul .menu ul li:hover { background-color: @iconHoverColor; }
+/* General styling for the OfficeUI menu.
+ * Remarks: All the elements which are being styled are wrapped inside an #OfficeUI key selector.
+ * This is because we don't want to affect elements which are on the page, which aren't being placed in our #OfficeUI container.
+ */
+#OfficeUI .ribbon .menu li:hover { background-color: @iconHoverColor; }

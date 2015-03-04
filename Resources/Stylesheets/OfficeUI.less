@@ -164,16 +164,16 @@
     }
 
     // Defines the styling of the contents behind the 'application' tab.
-    .application-contents { .positionFixed; .width100; background-color: white; height: 100%; top: 0; z-index: 999;
+    .application-tab-contents { .positionFixed; .width100; background-color: white; height: 100%; top: 0; z-index: 999;
 
       .title { .positionFixed; left: 0; width: 100%; z-index: 200; }
-      #navigation { .floatLeft; color: #fff; height: 100%; width: 135px;
+      #navigation-application-menu { .floatLeft; color: #fff; height: 100%; width: 135px;
 
         .back-arrow { background-repeat: no-repeat; height: 35px; margin-left: 23px; margin-top: 19px; width: 35px; }
         ul { margin-top: 15px; }
         ul li { line-height: 16px; padding: 11px 10px 11px 26px; vertical-align: middle; }
-        ul li.seperator { margin-bottom: -1px; }
-        ul li .seperator { border-bottom: 1px solid #fff; }
+        ul li.seperator { margin-bottom: -1px; display: block; }
+        ul li .seperator { height: 1px; }
       }
 
       #content { .positionRelative; background: url('/Resources/Images/Application/Backgrounds/Circuit.png') no-repeat right top; overflow-y: scroll; height: 100%;

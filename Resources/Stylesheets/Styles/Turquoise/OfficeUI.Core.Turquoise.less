@@ -1,7 +1,10 @@
 /* Import statements. */
 @import (reference) 'OfficeUI.Style.Turquoise.less';
 
-/* General styling. */
-#OfficeUI .icon:active { background-color: @activeIconColor !important; }
-#OfficeUI .application-icons.icon img:hover:not(.disabled):not(:first-child), #OfficeUI .icon:not(.disabled):not(.active):not(.no-hover):hover { background-color: @iconHoverColor; }
+/* General styling for the OfficeUI application.
+ * Remarks: All the elements which are being styled are wrapped inside an #OfficeUI key selector.
+ * This is because we don't want to affect elements which are on the page, which aren't being placed in our #OfficeUI container.
+ */
+#OfficeUI .icon:active, #OfficeUI .icon.active { background-color: @activeIconColor !important; }
+#OfficeUI .icon:not(.disabled):not(.no-hover):hover { background-color: @iconHoverColor; }
 #OfficeUI input:not(.no-hover):hover, #OfficeUI input:focus { border-color: @activeIconColor; }

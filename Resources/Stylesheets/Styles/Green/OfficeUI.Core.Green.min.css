@@ -1,1 +1,1 @@
-#OfficeUI .icon:active{background-color:#86bfa0!important}#OfficeUI .application-icons.icon img:hover:not(.disabled):not(:first-child),#OfficeUI .icon:not(.disabled):not(.active):not(.no-hover):hover{background-color:#d3f0e0}#OfficeUI input:not(.no-hover):hover,#OfficeUI input:focus{border-color:#86bfa0}
+#OfficeUI .icon:active,#OfficeUI .icon.active{background-color:#86bfa0!important}#OfficeUI .icon:not(.disabled):not(.no-hover):hover{background-color:#d3f0e0}#OfficeUI input:not(.no-hover):hover,#OfficeUI input:focus{border-color:#86bfa0}

@@ -1,11 +1,14 @@
 /* Import Statements. */
 /* Import statements. */
-/* General styling. */
-#OfficeUI .icon:active {
+/* General styling for the OfficeUI application.
+ * Remarks: All the elements which are being styled are wrapped inside an #OfficeUI key selector.
+ * This is because we don't want to affect elements which are on the page, which aren't being placed in our #OfficeUI container.
+ */
+#OfficeUI .icon:active,
+#OfficeUI .icon.active {
   background-color: #7cbab2 !important;
 }
-#OfficeUI .application-icons.icon img:hover:not(.disabled):not(:first-child),
-#OfficeUI .icon:not(.disabled):not(.active):not(.no-hover):hover {
+#OfficeUI .icon:not(.disabled):not(.no-hover):hover {
   background-color: #d3f0ec;
 }
 #OfficeUI input:not(.no-hover):hover,
@@ -13,54 +16,60 @@
   border-color: #7cbab2;
 }
 /* Import statements. */
-/* Ribbon styling. */
-.ribbon > ul li .tab.active {
+/* General styling for the OfficeUI Ribbon.
+ * Remarks: All the elements which are being styled are wrapped inside an #OfficeUI key selector.
+ * This is because we don't want to affect elements which are on the page, which aren't being placed in our #OfficeUI container.
+ */
+#OfficeUI .ribbon .tab.active {
   color: #077568;
 }
-.ribbon > ul li .tab.application {
+#OfficeUI .ribbon .tab.application {
   background-color: #077568;
 }
-.ribbon > ul li .tab.application {
+#OfficeUI .ribbon .tab.application {
   border-color: #077568;
 }
-#OfficeUI .icon.active {
-  background-color: #7cbab2;
-}
-#OfficeUI ul[role="ribbonTabs"] li:not(.application):hover,
-#OfficeUI ul[role="ribbonTabs"] li.active {
+#OfficeUI .ribbon li.tab:not(.application):hover,
+#OfficeUI .ribbon li.tab.active {
   color: #077568;
 }
-#OfficeUI ul[role="ribbonTabs"] li.application {
+#OfficeUI .ribbon li.tab.application {
   background-color: #077568;
   border-color: #077568;
 }
-#OfficeUI ul[role="ribbonTabs"] li.application:hover {
+#OfficeUI .ribbon li.tab.application:hover {
   background-color: #3e948a;
   border-color: #3e948a;
 }
 /* Import statements. */
-/* General styling. */
-#OfficeUI .application-contents #navigation {
+/* General styling for the OfficeUI Ribbon Application Menu.
+ * Remarks: All the elements which are being styled are wrapped inside an #OfficeUI key selector.
+ * This is because we don't want to affect elements which are on the page, which aren't being placed in our #OfficeUI container.
+ */
+#OfficeUI #navigation-application-menu {
   background-color: #077568;
 }
-#OfficeUI .application-contents #navigation ul li:not(.seperator).active {
+#OfficeUI #navigation-application-menu li:not(.seperator).active {
   background-color: #3e948a;
 }
-#OfficeUI .application-contents #navigation ul li:not(.seperator):hover {
+#OfficeUI #navigation-application-menu li:not(.seperator):hover {
   background-color: #23645c;
 }
-#OfficeUI .application-contents #navigation ul li .seperator {
-  border-color: #3e948a !important;
+#OfficeUI #navigation-application-menu li .seperator {
+  background-color: #3e948a;
 }
-#OfficeUI .application-contents #navigation .back-arrow {
+#OfficeUI #navigation-application-menu .back-arrow {
   background-image: url('/Resources/Images/Ribbon/ApplicationMenu/NavigationArrow-Turquoise.png');
 }
-#OfficeUI .application-contents #navigation .back-arrow:hover {
-  background-image: url('/Resources/Images/Ribbon/ApplicationMenu/NavigationArrow-Turquoise_hover.png');
+#OfficeUI #navigation-application-menu .back-arrow:hover {
+  background-image: url('/Resources/Images/Ribbon/ApplicationMenu/NavigationArrow-Turquoise_Hover.png');
 }
 /* Import statements. */
-/* Menu styling. */
-#OfficeUI header .ribbon ul.tabs-content ul .menu ul li:hover {
+/* General styling for the OfficeUI menu.
+ * Remarks: All the elements which are being styled are wrapped inside an #OfficeUI key selector.
+ * This is because we don't want to affect elements which are on the page, which aren't being placed in our #OfficeUI container.
+ */
+#OfficeUI .ribbon .menu li:hover {
   background-color: #d3f0ec;
 }
 /* Section: Variables. */

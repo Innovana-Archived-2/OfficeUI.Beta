@@ -472,7 +472,7 @@
   margin-top: 4px;
   vertical-align: top;
 }
-#OfficeUI header .application-contents {
+#OfficeUI header .application-tab-contents {
   position: fixed;
   width: 100%;
   background-color: white;
@@ -480,58 +480,59 @@
   top: 0;
   z-index: 999;
 }
-#OfficeUI header .application-contents .title {
+#OfficeUI header .application-tab-contents .title {
   position: fixed;
   left: 0;
   width: 100%;
   z-index: 200;
 }
-#OfficeUI header .application-contents #navigation {
+#OfficeUI header .application-tab-contents #navigation-application-menu {
   float: left;
   color: #fff;
   height: 100%;
   width: 135px;
 }
-#OfficeUI header .application-contents #navigation .back-arrow {
+#OfficeUI header .application-tab-contents #navigation-application-menu .back-arrow {
   background-repeat: no-repeat;
   height: 35px;
   margin-left: 23px;
   margin-top: 19px;
   width: 35px;
 }
-#OfficeUI header .application-contents #navigation ul {
+#OfficeUI header .application-tab-contents #navigation-application-menu ul {
   margin-top: 15px;
 }
-#OfficeUI header .application-contents #navigation ul li {
+#OfficeUI header .application-tab-contents #navigation-application-menu ul li {
   line-height: 16px;
   padding: 11px 10px 11px 26px;
   vertical-align: middle;
 }
-#OfficeUI header .application-contents #navigation ul li.seperator {
+#OfficeUI header .application-tab-contents #navigation-application-menu ul li.seperator {
   margin-bottom: -1px;
+  display: block;
 }
-#OfficeUI header .application-contents #navigation ul li .seperator {
-  border-bottom: 1px solid #fff;
+#OfficeUI header .application-tab-contents #navigation-application-menu ul li .seperator {
+  height: 1px;
 }
-#OfficeUI header .application-contents #content {
+#OfficeUI header .application-tab-contents #content {
   position: relative;
   background: url('/Resources/Images/Application/Backgrounds/Circuit.png') no-repeat right top;
   overflow-y: scroll;
   height: 100%;
 }
-#OfficeUI header .application-contents #content .top {
+#OfficeUI header .application-tab-contents #content .top {
   position: fixed;
   background-color: white;
   height: 50px;
   width: 100%;
   z-index: -1;
 }
-#OfficeUI header .application-contents #content h1 {
+#OfficeUI header .application-tab-contents #content h1 {
   font-size: 3.2em;
   font-weight: 100;
   margin: 25px 0 25px 0;
 }
-#OfficeUI header .application-contents #content .content-area {
+#OfficeUI header .application-tab-contents #content .content-area {
   position: absolute;
   margin-left: 40px;
   margin-top: 34px;

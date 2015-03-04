@@ -1,26 +1,26 @@
 /* Import statements. */
-/* Ribbon styling. */
-.ribbon > ul li .tab.active {
+/* General styling for the OfficeUI Ribbon.
+ * Remarks: All the elements which are being styled are wrapped inside an #OfficeUI key selector.
+ * This is because we don't want to affect elements which are on the page, which aren't being placed in our #OfficeUI container.
+ */
+#OfficeUI .ribbon .tab.active {
   color: #2b579a;
 }
-.ribbon > ul li .tab.application {
+#OfficeUI .ribbon .tab.application {
   background-color: #2b579a;
 }
-.ribbon > ul li .tab.application {
+#OfficeUI .ribbon .tab.application {
   border-color: #2b579a;
 }
-#OfficeUI .icon.active {
-  background-color: #a3bde3;
-}
-#OfficeUI ul[role="ribbonTabs"] li:not(.application):hover,
-#OfficeUI ul[role="ribbonTabs"] li.active {
+#OfficeUI .ribbon li.tab:not(.application):hover,
+#OfficeUI .ribbon li.tab.active {
   color: #2b579a;
 }
-#OfficeUI ul[role="ribbonTabs"] li.application {
+#OfficeUI .ribbon li.tab.application {
   background-color: #2b579a;
   border-color: #2b579a;
 }
-#OfficeUI ul[role="ribbonTabs"] li.application:hover {
+#OfficeUI .ribbon li.tab.application:hover {
   background-color: #3e6db5;
   border-color: #3e6db5;
 }

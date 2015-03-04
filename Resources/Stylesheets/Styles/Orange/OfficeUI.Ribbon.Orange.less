@@ -1,12 +1,13 @@
 /* Import statements. */
 @import (reference) 'OfficeUI.Style.Orange.less';
 
-/* Ribbon styling. */
-.ribbon > ul li .tab.active { color: @navigationDefaultColor; }
-.ribbon > ul li .tab.application { background-color: @navigationDefaultColor; }
-.ribbon > ul li .tab.application { border-color: @navigationDefaultColor; }
-
-#OfficeUI .icon.active { background-color: @activeIconColor; }
-#OfficeUI ul[role="ribbonTabs"] li:not(.application):hover, #OfficeUI ul[role="ribbonTabs"] li.active { color: @navigationDefaultColor; }
-#OfficeUI ul[role="ribbonTabs"] li.application { background-color: @navigationDefaultColor; border-color: @navigationDefaultColor; }
-#OfficeUI ul[role="ribbonTabs"] li.application:hover { background-color: @navigationActiveElement; border-color: @navigationActiveElement; }
+/* General styling for the OfficeUI Ribbon.
+ * Remarks: All the elements which are being styled are wrapped inside an #OfficeUI key selector.
+ * This is because we don't want to affect elements which are on the page, which aren't being placed in our #OfficeUI container.
+ */
+#OfficeUI .ribbon .tab.active { color: @navigationDefaultColor; }
+#OfficeUI .ribbon .tab.application { background-color: @navigationDefaultColor; }
+#OfficeUI .ribbon .tab.application { border-color: @navigationDefaultColor; }
+#OfficeUI .ribbon li.tab:not(.application):hover, #OfficeUI .ribbon li.tab.active { color: @navigationDefaultColor; }
+#OfficeUI .ribbon li.tab.application { background-color: @navigationDefaultColor; border-color: @navigationDefaultColor; }
+#OfficeUI .ribbon li.tab.application:hover { background-color: @navigationActiveElement; border-color: @navigationActiveElement; }

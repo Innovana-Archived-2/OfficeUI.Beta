@@ -1,20 +1,23 @@
 /* Import statements. */
-/* General styling. */
-#OfficeUI .application-contents #navigation {
+/* General styling for the OfficeUI Ribbon Application Menu.
+ * Remarks: All the elements which are being styled are wrapped inside an #OfficeUI key selector.
+ * This is because we don't want to affect elements which are on the page, which aren't being placed in our #OfficeUI container.
+ */
+#OfficeUI #navigation-application-menu {
   background-color: #6a3889;
 }
-#OfficeUI .application-contents #navigation ul li:not(.seperator).active {
+#OfficeUI #navigation-application-menu li:not(.seperator).active {
   background-color: #8653a5;
 }
-#OfficeUI .application-contents #navigation ul li:not(.seperator):hover {
+#OfficeUI #navigation-application-menu li:not(.seperator):hover {
   background-color: #582e73;
 }
-#OfficeUI .application-contents #navigation ul li .seperator {
-  border-color: #8653a5 !important;
+#OfficeUI #navigation-application-menu li .seperator {
+  background-color: #8653a5;
 }
-#OfficeUI .application-contents #navigation .back-arrow {
+#OfficeUI #navigation-application-menu .back-arrow {
   background-image: url('/Resources/Images/Ribbon/ApplicationMenu/NavigationArrow-Purple.png');
 }
-#OfficeUI .application-contents #navigation .back-arrow:hover {
-  background-image: url('/Resources/Images/Ribbon/ApplicationMenu/NavigationArrow-Purple_hover.png');
+#OfficeUI #navigation-application-menu .back-arrow:hover {
+  background-image: url('/Resources/Images/Ribbon/ApplicationMenu/NavigationArrow-Purple_Hover.png');
 }

@@ -149,12 +149,12 @@
         </ul>
     </div>
 
-    <div class="application-contents" data-ng-show="isApplicationMenuOpened()">
+    <div class="application-tab-contents" data-ng-show="isApplicationMenuOpened()">
         <div class="title">
             <span>{{OfficeUI.Title}}</span>
         </div>
 
-        <div id="navigation" data-ng-show="isApplicationMenuOpened()">
+        <div id="navigation-application-menu" data-ng-show="isApplicationMenuOpened()">
             <div class="back-arrow" data-ng-click="toggleApplicationMenu()">&nbsp;</div>
 
             <ul data-ng-repeat="tab in OfficeUIRibbon.Tabs" data-ng-if="$first">
