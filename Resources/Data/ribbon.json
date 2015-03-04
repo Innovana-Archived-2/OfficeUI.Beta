@@ -1200,19 +1200,19 @@
                   "MenuItems": [
                     {
                       "Id": "menuCollapseThisGroup",
-                      "Legend": "Collapse This Group"
+                      "Label": "Collapse This Group"
                     },
                     {
                       "Id": "menuExpandThisGroup",
-                      "Legend": "Expand This Group"
+                      "Label": "Expand This Group"
                     },
                     {
                       "Id": "menuCollapseAllGroups",
-                      "Legend": "Collapse All Groups"
+                      "Label": "Collapse All Groups"
                     },
                     {
                       "Id": "menuExpandAllGroups",
-                      "Legend": "Expand All Groups"
+                      "Label": "Expand All Groups"
                     }
                   ]
                 }
