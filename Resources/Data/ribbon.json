@@ -1152,19 +1152,19 @@
                   "MenuItems": [
                     {
                       "Id": "menuOff",
-                      "Legend": "Off"
+                      "Label": "Off"
                     },
                     {
                       "Id": "menuOneLine",
-                      "Legend": "1 Line"
+                      "Label": "1 Line"
                     },
                     {
                       "Id": "menuTwoLines",
-                      "Legend": "2 Lines"
+                      "Label": "2 Lines"
                     },
                     {
                       "Id": "menuThreeLines",
-                      "Legend": "3 Lines"
+                      "Label": "3 Lines"
                     }
                   ]
                 }
@@ -1234,23 +1234,23 @@
                   "MenuItems": [
                     {
                       "Id": "menuNormal",
-                      "Legend": "Normal"
+                      "Label": "Normal"
                     },
                     {
                       "Id": "menuMinimized",
-                      "Legend": "Minimized"
+                      "Label": "Minimized"
                     },
                     {
                       "Id": "menuLegend",
-                      "Legend": "Off"
+                      "Label": "Off"
                     },
                     {
                       "Id": "menuFavorites",
-                      "Legend": "Favorites"
+                      "Label": "Favorites"
                     },
                     {
                       "Id": "menuOptions",
-                      "Legend": "Options..."
+                      "Label": "Options..."
                     }
                   ]
                 },
@@ -1263,19 +1263,19 @@
                   "MenuItems": [
                     {
                       "Id": "menuRight",
-                      "Legend": "Right"
+                      "Label": "Right"
                     },
                     {
                       "Id": "menuBottom",
-                      "Legend": "Bottom"
+                      "Label": "Bottom"
                     },
                     {
                       "Id": "menuOff",
-                      "Legend": "Off"
+                      "Label": "Off"
                     },
                     {
                       "Id": "menuOptions",
-                      "Legend": "Options..."
+                      "Label": "Options..."
                     }
                   ]
                 },
@@ -1288,19 +1288,19 @@
                   "MenuItems": [
                     {
                       "Id": "menuCalendar",
-                      "Legend": "Calendar"
+                      "Label": "Calendar"
                     },
                     {
                       "Id": "menuPeople",
-                      "Legend": "People"
+                      "Label": "People"
                     },
                     {
                       "Id": "menuTasks",
-                      "Legend": "Tasks"
+                      "Label": "Tasks"
                     },
                     {
                       "Id": "menuOff",
-                      "Legend": "Off"
+                      "Label": "Off"
                     }
                   ]
                 }
@@ -1322,19 +1322,19 @@
                   "MenuItems": [
                     {
                       "Id": "menuNormal",
-                      "Legend": "Normal"
+                      "Label": "Normal"
                     },
                     {
                       "Id": "menuMinimized",
-                      "Legend": "Minimized"
+                      "Label": "Minimized"
                     },
                     {
                       "Id": "menuOff",
-                      "Legend": "Off"
+                      "Label": "Off"
                     },
                     {
                       "Id": "menuAccountSettings",
-                      "Legend": "Account Settings..."
+                      "Label": "Account Settings..."
                     }
                   ]
                 }
