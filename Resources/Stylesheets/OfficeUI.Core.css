@@ -1,0 +1,44 @@
+/* General OfficeUI styling.
+ *
+ * Version 1.0
+ * Kevin De Coninck
+ */
+.noMargin {
+  margin: 0;
+}
+.noPadding {
+  padding: 0;
+}
+#OfficeUI {
+  color: #444444;
+  font-family: 'Segoe UI', serif;
+  font-size: 0.75em;
+}
+#OfficeUI .title {
+  display: inline-block;
+  width: 100%;
+  height: 28px;
+  z-index: 70;
+}
+#OfficeUI .application-icons-holder {
+  float: left;
+  position: relative;
+  margin: 3px 0 0 5px;
+  height: 22px;
+  overflow: hidden;
+}
+#OfficeUI .application-icon {
+  margin: 0 5px 0 2px;
+}
+#OfficeUI .application-icon:not(:first-child) {
+  margin-right: 6px;
+}
+#OfficeUI .title .legend {
+  margin-top: 6px;
+  margin-right: 2px;
+  vertical-align: top;
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

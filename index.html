@@ -6,23 +6,29 @@
     <!-- Meta tags for the website. -->
     <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
 
+    <!-- Reference the external scripts which are needed for the application to function. -->
     <script src="/Resources/Scripts/External/Angular.js"></script>
     <script src="/Resources/Scripts/External/angular-animate.min.js"></script>
     <script src="/Resources/Scripts/External/angular-sanitize.min.js"></script>
     <script src="/Resources/Scripts/External/jQuery-2.1.3.min.js"></script>
     <script src="/Resources/Scripts/External/jQueryUI.min.js"></script>
     <script src="/Resources/Scripts/External/JSPath.min.js"></script>
+
+    <!-- Reference the external css files wihch are needed for the application to function. -->
+    <link rel="stylesheet" href="/Resources/Stylesheets/External/Font-Awesome/font-awesome.min.css" />
+
+    <!-- Reference all the css files which are needed for the application to function. -->
+    <link rel="stylesheet" href="/Resources/Stylesheets/OfficeUI.Core.min.css" />
+
+    <!-- Reference all the scripts file which are required for the application to function. -->
     <script src="/Resources/Scripts/OfficeUI.min.js"></script>
     <script src="/Resources/Scripts/OfficeUI.ThemeManager.min.js"></script>
-
-    <link rel="stylesheet" href="/Resources/Stylesheets/External/Font-Awesome/font-awesome.min.css" />
-    <link rel="stylesheet" href="/Resources/Stylesheets/OfficeUI.min.css" />
-
     <script src="/Resources/Scripts/AngularJS/Modules/OfficeUI.Module.Ribbon.min.js"></script>
     <script src="/Resources/Scripts/AngularJS/Modules/OfficeUI.Module.min.js"></script>
     <script src="/Resources/Scripts/AngularJS/Controllers/OfficeUI.Controller.min.js"></script>
     <script src="/Resources/Scripts/AngularJS/Controllers/OfficeUI.Controller.Ribbon.min.js"></script>
     <script src="/Resources/Scripts/AngularJS/Directives/OfficeUI.Directive.StopPropagation.min.js"></script>
+    <script src="/Resources/Scripts/AngularJS/Directives/OfficeUI.Directive.Responsive.js"></script>
     <script src="/Resources/Scripts/AngularJS/Directives/OfficeUI.Directive.Tooltip.min.js"></script>
     <script src="/Resources/Scripts/AngularJS/Directives/OfficeUI.Directive.DynamicEventHandling.min.js"></script>
     <script src="/Resources/Scripts/AngularJS/Directives/OfficeUI.Directive.Scrolling.min.js"></script>
@@ -40,16 +46,15 @@
     <script src="/Resources/Scripts/AngularJS/Directives/OfficeUI/Ribbon/Components/Actions/OfficeUI.Directive.Ribbon.Action.Checkbox.min.js"></script>
     <script src="/Resources/Scripts/AngularJS/Directives/OfficeUI/Ribbon/Components/Actions/OfficeUI.Directive.Ribbon.Action.Input.min.js"></script>
 </head>
-<body class="noPadding noMargin" data-ng-controller="OfficeUI as OfficeUI" data-ng-class="{'no-overflow': isApplicationMenuOpened()}">
+<body class="noPadding noMargin" data-ng-controller="OfficeUI as OfficeUI" data-responsive data-ng-class="{'no-overflow': isApplicationMenuOpened()}">
     <div id="OfficeUI" data-ng-controller="OfficeUIRibbon as OfficeUIRibbon">
         <header>
-            <div data-officeui-application-title></div> <!-- Renders the OfficeUI Application. -->
-            <div data-officeui-ribbon></div> <!-- Renders the OfficeUI Ribbon. -->
+            <!-- Renders the OfficeUI Ribbon. -->
+            <div data-officeui-ribbon></div>
         </header>
     </div>
 
-    <!-- Renders the contents of the website. -->
-    <div class="content" data-ng-class="{'animate-ribbon-hiding': isRibbonHidden() && !isRibbonInitialized(), 'no-animate-ribbon-hiding': isRibbonHidden() && isRibbonInitialized(), 'animate-ribbon-showing': isRibbonVisible() }">
+    <!--<div class="content" data-ng-class="{'animate-ribbon-hiding': isRibbonHidden() && !isRibbonInitialized(), 'no-animate-ribbon-hiding': isRibbonHidden() && isRibbonInitialized(), 'animate-ribbon-showing': isRibbonVisible() }">
         <h2>Functions</h2>
         <h3>Tabs</h3>
         <a href="#" data-ng-click="setActiveTab('tabHome')" style="padding-right: 40px;" data-stop-propagation="click">Activate Tab 'Home'</a>
@@ -82,7 +87,7 @@
         <h4>Menu items</h4>
         <a href="#" data-ng-click="disableMenuEntry('menuEmailMessage')" style="padding-right: 40px;" data-stop-propagation="click">Disable action 'Menu (Email Message)'</a>
         <a href="#" data-ng-click="enableMenuEntry('menuEmailMessage')" style="padding-right: 40px;" data-stop-propagation="click">Enable action 'Menu (Email Message)'</a>
-    </div>
+    </div>-->
 
     <!-- Provides some functions to configure the OfficeUI application. -->
     <script type="text/javascript">
