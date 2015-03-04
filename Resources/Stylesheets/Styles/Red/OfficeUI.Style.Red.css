@@ -1,4 +1,18 @@
+/* OfficeUI Styling
+ *
+ * Version 1.0
+ * Kevin De Coninck
+ *
+ * The purpose of this stylesheet is to provide a style theme for OfficeUI.
+ */
 /* Import Statements. */
+/* OfficeUI Core Styling
+ *
+ * Version 1.0
+ * Kevin De Coninck
+ *
+ * The purpose of this stylesheet is to provide a style theme for the OfficeUI core.
+ */
 /* Import statements. */
 /* General styling for the OfficeUI application.
  * Remarks: All the elements which are being styled are wrapped inside an #OfficeUI key selector.
@@ -15,6 +29,13 @@
 #OfficeUI input:focus {
   border-color: #f7a8ab;
 }
+/* OfficeUI Ribbon Styling
+ *
+ * Version 1.0
+ * Kevin De Coninck
+ *
+ * The purpose of this stylesheet is to provide a style theme for the OfficeUI Ribbon.
+ */
 /* Import statements. */
 /* General styling for the OfficeUI Ribbon.
  * Remarks: All the elements which are being styled are wrapped inside an #OfficeUI key selector.
@@ -41,6 +62,13 @@
   background-color: #c75659;
   border-color: #c75659;
 }
+/* OfficeUI Application Menu Styling
+ *
+ * Version 1.0
+ * Kevin De Coninck
+ *
+ * The purpose of this stylesheet is to provide a style theme for the OfficeUI application menu.
+ */
 /* Import statements. */
 /* General styling for the OfficeUI Ribbon Application Menu.
  * Remarks: All the elements which are being styled are wrapped inside an #OfficeUI key selector.
@@ -64,6 +92,13 @@
 #OfficeUI #navigation-application-menu .back-arrow:hover {
   background-image: url('/Resources/Images/Ribbon/ApplicationMenu/NavigationArrow-Red_Hover.png');
 }
+/* OfficeUI Ribbon Menu Styling
+ *
+ * Version 1.0
+ * Kevin De Coninck
+ *
+ * The purpose of this stylesheet is to provide a style theme for the OfficeUI Ribbon Menu.
+ */
 /* Import statements. */
 /* General styling for the OfficeUI menu.
  * Remarks: All the elements which are being styled are wrapped inside an #OfficeUI key selector.
