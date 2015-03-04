@@ -81,34 +81,43 @@
                       "Resource": "/Resources/Images/Ribbon/Tabs/Home/Menu/EmailMessage.png"
                     },
                     {
+                      "Id": "menuAppointment",
                       "Label": "Appointment",
                       "Resource": "/Resources/Images/Ribbon/Tabs/Home/Menu/Appointment.png"
                     },
                     {
+                      "Id": "menuMeeting",
                       "Label": "Meeting",
                       "Resource": "/Resources/Images/Ribbon/Tabs/Home/Menu/Meeting.png"
                     },
                     {
+                      "Id": "menuContact",
                       "Label": "Contact",
                       "Resource": "/Resources/Images/Ribbon/Tabs/Home/Menu/Contact.png"
                     },
                     {
+                      "Id": "menuTask",
                       "Label": "Task",
                       "Resource": "/Resources/Images/Ribbon/Tabs/Home/Menu/Task.png"
                     },
                     {
+                      "Id": "menuEmailMessageUsing",
                       "Label": "E-mail message using",
                       "MenuItems": [
                         {
+                          "Id": "menuMoreStationary",
                           "Label": "More Stationary..."
                         },
                         {
+                          "Id": "menuPlainText",
                           "Label": "Plain Text"
                         },
                         {
+                          "Id": "menuRichText",
                           "Label": "Rich Text"
                         },
                         {
+                          "Id": "menuHTML",
                           "Label": "HTML"
                         }
                       ]
@@ -117,29 +126,37 @@
                       "Label": "More Items",
                       "MenuItems": [
                         {
+                          "Id": "menuPostInThisFolder",
                           "Label": "Post in This Folder"
                         },
                         {
+                          "Id": "menuContactGroup",
                           "Label": "Contact Group"
                         },
                         {
+                          "Id": "menuTaskRequest",
                           "Label": "Task Request"
                         },
                         {
+                          "Id": "menuInternetFax",
                           "Label": "Internet Fax"
                         },
                         {
+                          "Id": "menuChooseForm",
                           "Label": "Choose Form..."
                         },
                         {
+                          "Id": "menuChooseInfoPathForm",
                           "Label": "Choose InfoPath Form..."
                         },
                         {
+                          "Id": "menuOutlookDataFile",
                           "Label": "Outlook Data File..."
                         }
                       ]
                     },
                     {
+                      "Id": "menuLyncMeeting",
                       "Label": "Lync Meeting",
                       "Resource": "/Resources/Images/Ribbon/Tabs/Home/Menu/Lync.png"
                     }
@@ -169,13 +186,16 @@
                   "Tooltip": "<strong>Clean Up</strong><p>Remove redundant messages in the selected conversation.</p>",
                   "MenuItems": [
                     {
+                      "Id": "menuCleanUpConversation",
                       "Label": "Clean Up Converation",
                       "Resource": "/Resources/Images/Ribbon/Tabs/Home/Menu/CleanUpMenu.png"
                     },
                     {
+                      "Id": "menuCleanUpFolder",
                       "Label": "Clean Up Folder"
                     },
                     {
+                      "Id": "menuCleanUpFolderAndSubFolders",
                       "Label": "Clean Up Folder & Subfolders"
                     }
                   ]
@@ -188,21 +208,27 @@
                   "Type": "sIcon",
                   "MenuItems": [
                     {
+                      "Id": "menuBlockSender",
                       "Label": "Block Sender"
                     },
                     {
+                      "Id": "menuNeverBlockSender",
                       "Label": "Never Block Sender"
                     },
                     {
+                      "Id": "menuNeverBlockSendersDomain",
                       "Label": "Never Block Sender's Domain (@example.com)"
                     },
                     {
+                      "Id": "menuNeverBlockThisGroupOrMailingList",
                       "Label": "Never Block this Group or Mailing List"
                     },
                     {
+                      "Id": "menuNotJunk",
                       "Label": "Not Junk"
                     },
                     {
+                      "Id": "menuJunkEmailOptions",
                       "Label": "Junk E-mail Options"
                     }
                   ]
@@ -267,9 +293,11 @@
                   "Type": "sIcon",
                   "MenuItems": [
                     {
+                      "Id": "menuReplyWithIM",
                       "Label": "Reply with IM"
                     },
                     {
+                      "Id": "menuReplyAllWithIM",
                       "Label": "Reply all with IM"
                     }
                   ]
@@ -283,15 +311,18 @@
                   "Type": "sIcon",
                   "MenuItems": [
                     {
+                      "Id": "menuForwardAsAttachment",
                       "Label": "Forward as Attachment"
                     },
                     {
                       "Label": "Call",
                       "MenuItems": [
                         {
+                          "Id": "menuCall",
                           "Label": "Call anybody@github.com"
                         },
                         {
+                          "Id": "menuCallAll",
                           "Label": "Call all"
                         }
                       ]
@@ -315,12 +346,15 @@
                   "Type": "bIcon",
                   "MenuItems": [
                     {
+                      "Id": "menuOtherFolder",
                       "Label": "Other Folder..."
                     },
                     {
+                      "Id": "menuCopyToFolder",
                       "Label": "Copy to Folder..."
                     },
                     {
+                      "Id": "menuAlwaysMoveMessagesInThisConversation",
                       "Label": "Always Move Messages in This Conversation..."
                     }
                   ]
@@ -333,15 +367,19 @@
                   "Type": "bIcon",
                   "MenuItems": [
                     {
+                      "Id": "menuAlwaysMoveMessagesFrom",
                       "Label": "Always move messages from: anybody@github.com"
                     },
                     {
+                      "Id": "menuAlwaysMoveMessagesTo",
                       "Label": "Always move messages to: Github"
                     },
                     {
+                      "Id": "menuCreateRule",
                       "Label": "Create Rule..."
                     },
                     {
+                      "Id": "menuManageRulesAndAlerts",
                       "Label": "Manage Rules & Alerts..."
                     }
                   ]
@@ -363,33 +401,43 @@
                   "Type": "bIcon",
                   "MenuItems": [
                     {
+                      "Id": "menuOneMonthDelete",
                       "Label": "1 Month Delete (30 days)"
                     },
                     {
+                      "Id": "menuOneWeekDelete",
                       "Label": "1 Week Delete (1 week)"
                     },
                     {
+                      "Id": "menuOneYearDelete",
                       "Label": "1 Year Delete (1 year)"
                     },
                     {
+                      "Id": "menuFiveYearDelete",
                       "Label": "5 Year Delete (5 years)"
                     },
                     {
+                      "Id": "menuSixMonthDelete",
                       "Label": "6 Month Delete (6 months)"
                     },
                     {
+                      "Id": "menuNeverDelete",
                       "Label": "Never Delete (never)"
                     },
                     {
+                      "Id": "menuUseFolderPolicy",
                       "Label": "Use Folder Policy"
                     },
                     {
+                      "Id": "menuMoreRetentionPolicies",
                       "Label": "More Retention Policies..."
                     },
                     {
+                      "Id": "menuSetFolderPolicy",
                       "Label": "Set Folder Policy..."
                     },
                     {
+                      "Id": "menuViewItemsExpiringSoon",
                       "Label": "View Items Expiring Soon"
                     }
                   ]
@@ -413,30 +461,39 @@
                   "Type": "sIcon",
                   "MenuItems": [
                     {
+                      "Id": "menuClearAllCategories",
                       "Label": "Clear All Categories"
                     },
                     {
+                      "Id": "menuBlueCategory",
                       "Label": "Blue Category"
                     },
                     {
+                      "Id": "menuGreenCategory",
                       "Label": "Green Category"
                     },
                     {
+                      "Id": "menuOrangeCategory",
                       "Label": "Orange Category"
                     },
                     {
+                      "Id": "menuPurpleCategory",
                       "Label": "Purple Category"
                     },
                     {
+                      "Id": "menuRedCategory",
                       "Label": "Red Category"
                     },
                     {
+                      "Id": "menuYellowCategory",
                       "Label": "Yellow Category"
                     },
                     {
+                      "Id": "menuAllCategories",
                       "Label": "All Categories..."
                     },
                     {
+                      "Id": "menuSetQuickLink",
                       "Label": "Set Quick Click..."
                     }
                   ]
@@ -449,33 +506,43 @@
                   "Type": "sIcon",
                   "MenuItems": [
                     {
+                      "Id": "menuToday",
                       "Label": "Today"
                     },
                     {
+                      "Id": "menuTomorrow",
                       "Label": "Tomorrow"
                     },
                     {
+                      "Id": "menuThisWeek",
                       "Label": "This Week"
                     },
                     {
+                      "Id": "menuNextWeek",
                       "Label": "Next Week"
                     },
                     {
+                      "Id": "menuNoDate",
                       "Label": "No Date"
                     },
                     {
+                      "Id": "menuCustom",
                       "Label": "Custom..."
                     },
                     {
+                      "Id": "menuAddReminder",
                       "Label": "Add Reminder..."
                     },
                     {
+                      "Id": "menuMarkComplete",
                       "Label": "Mark Complete"
                     },
                     {
+                      "Id": "menuClearFlag",
                       "Label": "Clear Flag"
                     },
                     {
+                      "Id": "menuSetQuickClick",
                       "Label": "Set Quick Click"
                     }
                   ]
@@ -510,82 +577,107 @@
                   "Type": "sIcon",
                   "MenuItems": [
                     {
+                      "Id": "menuUnread",
                       "Label": "Unread"
                     },
                     {
+                      "Id": "menuHasAttachments",
                       "Label": "Has Attachments"
                     },
                     {
+                      "Id": "menuThisWeek",
                       "Label": "This Week",
                       "MenuItems": [
                         {
+                          "Id": "menuToday",
                           "Label": "Today"
                         },
                         {
+                          "Id": "menuYesterday",
                           "Label": "Yesterday"
                         },
                         {
+                          "Id": "menuThisWeekTwo",
                           "Label": "This Week"
                         },
                         {
+                          "Id": "menuLastWeek",
                           "Label": "Last Week"
                         },
                         {
+                          "Id": "menuThisMonth",
                           "Label": "This Month"
                         },
                         {
+                          "Id": "menuLastMonth",
                           "Label": "Last Month"
                         },
                         {
+                          "Id": "menuThisYear",
                           "Label": "This Year"
                         },
                         {
+                          "Id": "menuLastYear",
                           "Label": "Last Year"
                         }
                       ]
                     },
                     {
+                      "Id": "menuCategorized",
                       "Label": "Categorized",
                       "MenuItems": [
                         {
+                          "Id": "menuCategorizedBlue",
                           "Label": "Blue Category"
                         },
                         {
+                          "Id": "menuCategorizedGreen",
                           "Label": "Green Category"
                         },
                         {
+                          "Id": "menuCategorizedOrange",
                           "Label": "Orange Category"
                         },
                         {
+                          "Id": "menuCategorizedPurple",
                           "Label": "Purple Category"
                         },
                         {
+                          "Id": "menuCategorizedRed",
                           "Label": "Red Category"
                         },
                         {
+                          "Id": "menuCategorizedYellow",
                           "Label": "Yellow Category"
                         },
                         {
+                          "Id": "menuCategorizedAny",
                           "Label": "Any Category"
                         },
                         {
+                          "Id": "menuCategorizedNoCategory",
                           "Label": "No Category"
                         }
                       ]
                     },
                     {
+                      "Id": "menuFlagged",
                       "Label": "Flagged"
                     },
                     {
+                      "Id": "menuImportant",
                       "Label": "Important"
                     },
                     {
+                      "Id": "menuSentToMeOrCCMe",
                       "Label": "Sent To: Me or CC: Me"
                     },
                     {
+                      "Id": "menuViewItemsExpiringSoon",
                       "Label": "View Items Expiring Soon"
                     },
                     {
+                      "Id": "menuMoreFilters",
                       "Label": "More Filters..."
                     }
                   ]
@@ -638,18 +730,23 @@
                   "Type": "sIcon",
                   "MenuItems": [
                     {
+                      "Id": "menuAllAccountsGroup",
                       "Label": "0 \"All Accounts\" Group"
                     },
                     {
+                      "Id": "menuInbox",
                       "Label": "Inbox"
                     },
                     {
+                      "Id": "menuDownloadAddressBook",
                       "Label": "Download Address Book..."
                     },
                     {
+                      "Id": "menuDefineSendReceiveGroups",
                       "Label": "Define Send/Receive Groups"
                     },
                     {
+                      "Id": "menuDisableScheduledSendReceive",
                       "Label": "Disable Scheduled Send/Receive"
                     }
                   ]
@@ -705,9 +802,11 @@
                   "Type": "sIcon",
                   "MenuItems": [
                     {
+                      "Id": "menuMarkToDownload",
                       "Label": "Mark to Download"
                     },
                     {
+                      "Id": "menuMarkToDownloadMessageCopy",
                       "Label": "Mark to Download Message Copy"
                     }
                   ]
@@ -720,9 +819,11 @@
                   "Type": "sIcon",
                   "MenuItems": [
                     {
+                      "Id": "menuUnmarkToDownload",
                       "Label": "Unmark to Download"
                     },
                     {
+                      "Id": "menuUnmarkAllToDownload",
                       "Label": "Unmark All to Download"
                     }
                   ]
@@ -735,9 +836,11 @@
                   "Type": "sIcon",
                   "MenuItems": [
                     {
+                      "Id": "menuProcessMarkedHeaders",
                       "Label": "Process Marked Headers"
                     },
                     {
+                      "Id": "menuProcessMarkedHeadersInAllFolders",
                       "Label": "Process Marked Headers In All Folders"
                     }
                   ]
@@ -759,15 +862,19 @@
                   "Type": "bIcon",
                   "MenuItems": [
                     {
+                      "Id": "menuDownloadFullItems",
                       "Label": "Download Full Items"
                     },
                     {
+                      "Id": "menuDownloadHeadersAndThenFullItems",
                       "Label": "Download Headers and Then Full Items"
                     },
                     {
+                      "Id": "menuDownloadHeaders",
                       "Label": "Download Headers"
                     },
                     {
+                      "Id": "menuOnSlowConnectionDownloadOnlyHeaders",
                       "Label": "On Slow Connection Download Only Headers"
                     }
                   ]
@@ -1044,15 +1151,19 @@
                   "Type": "bIcon",
                   "MenuItems": [
                     {
+                      "Id": "menuOff",
                       "Legend": "Off"
                     },
                     {
+                      "Id": "menuOneLine",
                       "Legend": "1 Line"
                     },
                     {
+                      "Id": "menuTwoLines",
                       "Legend": "2 Lines"
                     },
                     {
+                      "Id": "menuThreeLines",
                       "Legend": "3 Lines"
                     }
                   ]
@@ -1088,15 +1199,19 @@
                   "Type": "sIcon",
                   "MenuItems": [
                     {
+                      "Id": "menuCollapseThisGroup",
                       "Legend": "Collapse This Group"
                     },
                     {
+                      "Id": "menuExpandThisGroup",
                       "Legend": "Expand This Group"
                     },
                     {
+                      "Id": "menuCollapseAllGroups",
                       "Legend": "Collapse All Groups"
                     },
                     {
+                      "Id": "menuExpandAllGroups",
                       "Legend": "Expand All Groups"
                     }
                   ]
@@ -1118,18 +1233,23 @@
                   "Type": "bIcon",
                   "MenuItems": [
                     {
+                      "Id": "menuNormal",
                       "Legend": "Normal"
                     },
                     {
+                      "Id": "menuMinimized",
                       "Legend": "Minimized"
                     },
                     {
+                      "Id": "menuLegend",
                       "Legend": "Off"
                     },
                     {
+                      "Id": "menuFavorites",
                       "Legend": "Favorites"
                     },
                     {
+                      "Id": "menuOptions",
                       "Legend": "Options..."
                     }
                   ]
@@ -1142,15 +1262,19 @@
                   "Type": "bIcon",
                   "MenuItems": [
                     {
+                      "Id": "menuRight",
                       "Legend": "Right"
                     },
                     {
+                      "Id": "menuBottom",
                       "Legend": "Bottom"
                     },
                     {
+                      "Id": "menuOff",
                       "Legend": "Off"
                     },
                     {
+                      "Id": "menuOptions",
                       "Legend": "Options..."
                     }
                   ]
@@ -1163,15 +1287,19 @@
                   "Type": "bIcon",
                   "MenuItems": [
                     {
+                      "Id": "menuCalendar",
                       "Legend": "Calendar"
                     },
                     {
+                      "Id": "menuPeople",
                       "Legend": "People"
                     },
                     {
+                      "Id": "menuTasks",
                       "Legend": "Tasks"
                     },
                     {
+                      "Id": "menuOff",
                       "Legend": "Off"
                     }
                   ]
@@ -1193,15 +1321,19 @@
                   "Type": "bIcon",
                   "MenuItems": [
                     {
+                      "Id": "menuNormal",
                       "Legend": "Normal"
                     },
                     {
+                      "Id": "menuMinimized",
                       "Legend": "Minimized"
                     },
                     {
+                      "Id": "menuOff",
                       "Legend": "Off"
                     },
                     {
+                      "Id": "menuAccountSettings",
                       "Legend": "Account Settings..."
                     }
                   ]

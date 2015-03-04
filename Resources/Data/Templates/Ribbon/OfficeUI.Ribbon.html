@@ -23,7 +23,7 @@
                 <ul>
                     <li data-ng-repeat="tab in OfficeUIRibbon.Tabs" data-ng-show="isTabActive(tab.Id)" data-stop-propagation="click">
                         <!-- Defines the contents of the ribbon. -->
-                        <div>
+                        <div class="tab-content">
                             <div class="group" data-ng-repeat-start="group in tab.Groups">
                                 <div class="legend">{{group.Legend}}</div>
 
