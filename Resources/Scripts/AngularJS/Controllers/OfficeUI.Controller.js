@@ -248,4 +248,14 @@ OfficeUI.controller('OfficeUI', ['$scope', '$http', 'OfficeUIRibbonService', fun
         OfficeUIRibbonService.enableAction(action);
     }
 
+    /**
+     * @ngdoc Function
+     * @name toggleRibbonState
+     *
+     * @description
+     * Toggle the state of the ribbon.
+     */
+    $scope.toggleRibbonState = function() {
+        OfficeUIRibbonService.toggleRibbonState();
+    }
 }]);

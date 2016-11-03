@@ -343,6 +343,21 @@ OfficeUIRibbon.factory('OfficeUIRibbonService', function() {
             if (item.length == 1) {
                 item[0].Disabled = "False";
             }
+        },
+
+        /**
+         * @ngdoc Function
+         * @name toggleRibbonState
+         *
+         * @description
+         * Toggle the state of the ribbon.
+         */
+        toggleRibbonState: function() {
+            if (serviceInstance.state == ribbonStates.Showed) {
+                serviceInstance.state = ribbonStates.Hidden;
+            } else {
+                serviceInstance.state = ribbonStates.Showed;
+            }
         }
     };
 });
