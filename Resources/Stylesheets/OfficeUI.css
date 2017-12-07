@@ -327,6 +327,7 @@
   height: 92px;
   z-index: 70;
 }
+ul.tabs-content > li > ul > li > div { position: absolute; top: 0}
 #OfficeUI header .ribbon ul.tabs-content .collapse {
   text-align: center;
   position: absolute;
